@@ -566,28 +566,30 @@
                 {{/unless}}
                 {{/if}}
 
+                {{!-- contact section --}}
+                {{#if contacts.value.contacts}}
+                {{#if contacts.value.contacts.contactForm}}
+                {{#unless contacts.meta.hide}}
                 <section id="contact" class="no-top px-4">
                     <div class="container-fluid">
                         <div class="row g-4 gx-5">
 
                             <div class="col-lg-12">
                                 <div class="text-center">
-                                    <!-- contact->section_title -->
-                                    <h2>Contact Me</h2>
+                                    <h2>
+                                        {{#if
+                                        contacts.value.contacts.section_title}}
+                                        {{contacts.value.contacts.section_title}}
+                                        {{else}}Get In Touch{{/if}}
+                                    </h2>
                                 </div>
                             </div>
 
                             <div class="col-lg-8 offset-lg-2  fadeInUp">
-                                <!-- contact->description -->
-                                <p>Whether you have a question, a
-                                    suggestion, or just want to say
-                                    hello, this is the place
-                                    to do it.
-                                    Please fill out the form below with
-                                    your details and message, and we'll
-                                    get back to you
-                                    as soon as
-                                    possible.</p>
+                                {{#if contacts.value.contacts.description}}
+                                <p
+                                    class="text-center">{{contacts.value.contacts.description}}</p>
+                                {{/if}}
 
                                 <form name="contactForm"
                                     id="contact_form"
@@ -671,6 +673,9 @@
                         </div>
                     </div>
                 </section>
+                {{/unless}}
+                {{/if}}
+                {{/if}}
 
             </div>
             <footer>
@@ -685,26 +690,36 @@
                             <!-- sociallinks -->
                             <div
                                 class="col-12 col-lg-6 text-center text-lg-start">
+                                {{#if social.value.social.items}}
+                                {{#unless social.meta.hide}}
                                 <div class="d-menu-1">
                                     <ul>
+                                        {{#each social.value.social.items}}
                                         <li><a
-                                                href="#">Facebook</a></li>
-                                        <li><a href="#">Twitter</a></li>
-                                        <li><a
-                                                href="#">Instagram</a></li>
+                                                href="{{this.url}}"
+                                                target="_blank">{{this.label}}</a></li>
+                                        {{/each}}
                                     </ul>
                                     <p class="no-bottom">All Right
                                         Reserved</p>
                                 </div>
+                                {{/unless}}
+                                {{/if}}
                             </div>
 
                             <div
                                 class="col-12 col-lg-6 text-center text-lg-end">
-                                <a href="#contact">
-                                    <!-- contact->heading -->
+                                <a
+                                    href="{{#if contacts.value.contacts.email}} mailto:{{contacts.value.contacts.email}} {{else}} #contact {{/if}}">
                                     <h2
-                                        class="fs-84 fw-800 pe-lg-3 shuffle fadeInLeft">Let's
-                                        Talk</h2>
+                                        class="fs-84 fw-800 pe-lg-3 shuffle fadeInLeft">
+                                        {{#if
+                                        contacts.value.contacts.heading}}
+                                        {{contacts.value.contacts.heading}}
+                                        {{else}} Let's
+                                        Talk
+                                        {{/if}}
+                                    </h2>
                                 </a>
                             </div>
 

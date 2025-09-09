@@ -230,7 +230,7 @@
         "buttonText": "Schedule a Consultation",
         "subheading": "Contact Details",
         "contactForm": true,
-        "description": "Feel free to reach out with any questions or inquiries. I'm here to help!",
+        "description": "Whether you have a question, a suggestion, or just want to say hello, this is the place to do it. Please fill out the form below with your details and message, and we'll get back to you as soon as possible.",
         "section_title": "GET IN TOUCH",
         "contactFormHeading": "Send Me a Message",
         "contactFormButtonText": "Send Message"
@@ -428,7 +428,15 @@
             "description": "Asynchronous JavaScript is a powerful feature that allows developers to handle operations that take time to complete without blocking the main thread...",
             "publishedDate": "2023-09-15T00:00:00.000Z",
             "commentsCount": 5
-          }
+          },
+              {
+                "title": "A Comprehensive Guide to JavaScript ES6 Features",
+                "url": "https://ummarfarooq.hashnode.dev/a-comprehensive-guide-to-javascript-es6-features",
+                "image": "https://cdn.hashnode.com/res/hashnode/image/upload/v1696113034853/1e3e4a7e-2f4c-4fc3-8f4e-3f0e5f6b8e7d.png?w=200&h=200&fit=crop&crop=faces&auto=compress,format&format=webp",
+                "description": "Asynchronous JavaScript is a powerful feature that allows developers to handle operations that take time to complete without blocking the main thread...",
+                "publishedDate": "2023-09-15T00:00:00.000Z",
+                "commentsCount": 5
+              }
         ],
         "section_title": "My Blogs"
       }
