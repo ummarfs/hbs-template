@@ -381,7 +381,8 @@
                 {{#unless projects.meta.hide}}
                 <section id="works" class="no-top px-4">
                     <div class="container-fluid">
-                        <div class="row g-4 fadeInRight justify-content-center">
+                        <div class="row g-4 fadeInRight">
+
                             <div class="col-xl-4">
                                 <div
                                     class="p-lg-5 p-4 bg-color h-100 rounded-1">
@@ -389,11 +390,14 @@
                                         {{#if
                                         projects.value.projects.section_title}}
                                         {{projects.value.projects.section_title}}
-                                        {{else}}Featured Projects{{/if}}
+                                        {{else}}
+                                        Featured Projects
+                                        {{/if}}
                                     </div>
-                                    <h2> {{#if
+                                    <h2>
+                                        {{#if
                                         projects.value.projects.description}}
-                                        {{ projects.value.projects.description}}
+                                        {{projects.value.projects.description}}
                                         {{else}}
                                         A showcase of selected works that
                                         represent my journey and skills
@@ -401,38 +405,38 @@
                                     </h2>
                                 </div>
                             </div>
+
                             {{#each projects.value.projects.items}}
                             <div class="col-xl-4 col-md-6">
                                 <div
-                                    class="bg-dark rounded-1 overflow-hidden">
-                                    <div
-                                        class="hover relative overflow-hidden text-light">
-                                        <a href="{{this.url}}"
-                                            target="_blank"
-                                            class="overflow-hidden d-block relative">
-                                            <img
-                                                src="{{this.image}}"
-                                                class="img-fluid hover-scale-1-2"
-                                                alt>
-                                        </a>
+                                    class="bg-dark rounded-1 overflow-hidden h-100 d-flex flex-column hover relative text-light">
 
-                                        <div
-                                            class="p-4 d-flex justify-content-between align-items-center">
-                                            <div>
-                                                <h3
-                                                    class="mb-0 lh-1-2">{{this.title}}</h3>
-                                                {{#if this.subtitle}}
-                                                <span
-                                                    class="fs-14">{{this.subtitle}}</span>
-                                                {{/if}}
-                                            </div>
-                                            <div class="fw-bold">
-                                                <a href="{{this.url}}"
-                                                    class="text-light"
-                                                    target="_blank"><i
-                                                        class="fa fa-link"></i></a>
-                                            </div>
+                                    <div class="overflow-hidden">
+                                        <img
+                                            src="{{#if this.image}}{{this.image}}{{else}}https://placehold.co/400x300/gray/ffffff?text=No+Image{{/if}}"
+                                            class="img-fluid hover-scale-1-2 project-card-img"
+                                            alt="{{this.title}}" />
+                                    </div>
+
+                                    <div
+                                        class="p-4 d-flex justify-content-between align-items-center mt-auto">
+                                        <div>
+                                            <h3
+                                                class="mb-0 lh-1-2">{{this.title}}</h3>
+                                            {{#if this.subtitle}}
+                                            <span
+                                                class="fs-14">{{this.subtitle}}</span>
+                                            {{/if}}
                                         </div>
+                                        {{#if this.url}}
+                                        <div class="fw-bold">
+                                            <a href="{{this.url}}"
+                                                class="text-light"
+                                                target="_blank">
+                                                <i class="fa fa-link"></i>
+                                            </a>
+                                        </div>
+                                        {{/if}}
                                     </div>
                                 </div>
                             </div>
@@ -443,58 +447,60 @@
                 {{/unless}}
                 {{/if}}
 
+                {{!-- blog section --}}
+                {{#if blogs.value.blogs.items}}
+                {{#unless blogs.meta.hide}}
                 <section id="blog" class="no-top px-4">
                     <div class="container-fluid">
                         <div class="row g-4">
 
                             <div class="col-lg-12">
                                 <div class="text-center">
-                                    <h2>My blog</h2>
+                                    <h2>
+                                        {{#if
+                                        blogs.value.blogs.section_title}}
+                                        {{blogs.value.blogs.section_title}}
+                                        {{else}}My Blogs{{/if}}
+                                    </h2>
                                 </div>
                             </div>
 
+                            {{#each blogs.value.blogs.items}}
                             <div class="col-lg-6">
                                 <div
                                     class="rounded-1 bg-color text-dark overflow-hidden">
                                     <div class="row g-0">
+                                        <!-- Date Column -->
                                         <div class="col-12 col-sm-6">
-                                            <div
-                                                class="auto-height relative">
+                                            <div class="auto-height relative">
                                                 <div
                                                     class="abs start-0 top-0 bg-dark text-white p-3 pb-2 m-3 text-center fw-600 rounded-1">
-                                                    <div
-                                                        class="fs-36 mb-0">20</div>
-                                                    <span>Jun</span>
+                                                    <div class="fs-36 mb-0"
+                                                        id="blogday-{{@index}}">00</div>
+                                                    <span
+                                                        id="blogmonth-{{@index}}">Mon</span>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div
-                                            class="col-12 col-sm-6 relative">
-                                            <div class="p-30 pb-60">
-                                                <h4
-                                                    class="fs-28 lh-1-2"><a
-                                                        href="07_blog-single.html"
-                                                        class="text-dark">The
-                                                        Latest
-                                                        Innovations: Top
-                                                        Gadgets to Watch
-                                                        in 2024</a></h4>
-                                                <p class="mb-0">This
-                                                    month has been
-                                                    bustling with
-                                                    exciting
-                                                    developments in
-                                                    the world of
-                                                    gadgets. From
-                                                    groundbreaking new
-                                                    devices to
-                                                    innovative...</p>
 
-                                                <div
-                                                    class="abs bottom-0 pb-20">
+                                        <!-- Content Column -->
+                                        <div class="col-12 col-sm-6 relative">
+                                            <div class="p-30 pb-60">
+                                                <h4 class="fs-28 lh-1-2">
+                                                    <a
+                                                        href="{{#if this.url}}{{this.url}}{{else}}#{{/if}}"
+                                                        class="text-dark">
+                                                        {{this.title}}
+                                                    </a>
+                                                </h4>
+                                                <p
+                                                    class="mb-0">{{this.description}}</p>
+                                                <div class="abs bottom-0 pb-20">
                                                     <div
-                                                        class="d-inline fs-14 fw-600 me-3"><i
-                                                            class="icofont-chat me-2"></i>10
+                                                        class="d-inline fs-14 fw-600 me-3">
+                                                        <i
+                                                            class="icofont-chat me-2"></i>{{#if
+                                                        this.commentsCount}}{{this.commentsCount}}{{else}}0{{/if}}
                                                         Comments
                                                     </div>
                                                 </div>
@@ -504,57 +510,20 @@
                                 </div>
                             </div>
 
-                            <div class="col-lg-6">
-                                <div
-                                    class="rounded-1 bg-color text-dark overflow-hidden">
-                                    <div class="row g-0">
-                                        <div class="col-sm-6">
-                                            <div
-                                                class="auto-height relative">
-                                                <div
-                                                    class="abs start-0 top-0 bg-dark text-white p-3 pb-2 m-3 text-center fw-600 rounded-1">
-                                                    <div
-                                                        class="fs-36 mb-0">20</div>
-                                                    <span>Jun</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 relative">
-                                            <div class="p-30 pb-60">
-                                                <h4
-                                                    class="fs-28 lh-1-2"><a
-                                                        href="07_blog-single.html"
-                                                        class="text-dark">Breakthroughs
-                                                        in Tech:
-                                                        Must-Have
-                                                        Gadgets of the
-                                                        Year</a></h4>
-                                                <p class="mb-0">This
-                                                    month has been
-                                                    bustling with
-                                                    exciting
-                                                    developments in
-                                                    the world of
-                                                    gadgets. From
-                                                    groundbreaking new
-                                                    devices to
-                                                    innovative...</p>
+                            <!-- Script to format date -->
+                            <script>
+    (function(){
+      const dayElem = document.getElementById('blogday-{{@index}}');
+      const monthElem = document.getElementById('blogmonth-{{@index}}');
+      const date = new Date("{{this.publishedDate}}");
+      dayElem.textContent = ("0" + date.getDate()).slice(-2);
+      monthElem.textContent = date.toLocaleString('en-US', { month: 'short' });
+    })();
+  </script>
 
-                                                <div
-                                                    class="abs bottom-0 pb-20">
-                                                    <div
-                                                        class="d-inline fs-14 fw-600 me-3"><i
-                                                            class="icofont-chat me-2"></i>10
-                                                        Comments
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            {{/each}}
 
-                            <div class="col-lg-12 pt-4 text-center">
+                            {{!-- <div class="col-lg-12 pt-4 text-center">
                                 <div class="d-inline-block">
                                     <nav
                                         aria-label="Page navigation example">
@@ -590,10 +559,12 @@
                                         </ul>
                                     </nav>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </section>
+                {{/unless}}
+                {{/if}}
 
                 <section id="contact" class="no-top px-4">
                     <div class="container-fluid">

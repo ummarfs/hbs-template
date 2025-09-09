@@ -349,7 +349,30 @@
             "buttonText": "View",
             "description": "it is good",
             "subtitle": "MERN Stack"
-          }
+          },
+            {
+                "url": "https://facebook.com",
+                "image": "https://d1xwrlfgrqppfv.cloudfront.net/projectimage/cmfb2lyfz0006mq2objw37464-1757393096026-image.jpeg",
+                "title": "E-Commerce Website",
+                "buttonText": "View",
+                "description": "it is good",
+                "subtitle": "MERN Stack"
+            },
+            {
+               
+                "image": "https://d1xwrlfgrqppfv.cloudfront.net/projectimage/cmfb2lyfz0006mq2objw37464-1757393096026-image.jpeg",
+                "title": "Social Media App",
+                "buttonText": "View",
+                "description": "it is good",
+                "subtitle": "MERN Stack"
+            },
+            {
+                "url": "https://instagram.com",
+                "title": "Blog Platform",
+                "buttonText": "View",
+                "description": "it is good",
+                "subtitle": "MERN Stack"
+            }
         ],
         "section_title": "Featured Projects",
         "description": "How I bring ideas to life through thoughtful design and development."
@@ -391,10 +414,10 @@
       "blogs": {
         "items": [
           {
-            "title": "Understanding Asynchronous JavaScript: Callbacks, Promises, and Async/Await",
+            "title": "Understanding Asynchronous JavaScript",
             "url": "https://ummarfarooq.hashnode.dev/understanding-asynchronous-javascript-callbacks-promises-and-asyncawait",
             "image": "https://cdn.hashnode.com/res/hashnode/image/upload/v1696113034853/1e3e4a7e-2f4c-4fc3-8f4e-3f0e5f6b8e7d.png?w=200&h=200&fit=crop&crop=faces&auto=compress,format&format=webp",
-            "description": "Asynchronous JavaScript is a powerful feature that allows developers to handle operations that take time to complete without blocking the main thread. In this blog post, we will explore the three main ways to handle asynchronous operations in JavaScript: Callbacks, Promises, and Async/Await.",
+            "description": "Asynchronous JavaScript is a powerful feature that allows developers to handle operations that take time to complete without blocking the main thread...",
             "publishedDate": "2023-10-01T00:00:00.000Z",
             "commentsCount": 3
           },
@@ -402,11 +425,12 @@
             "title": "A Comprehensive Guide to JavaScript ES6 Features",
             "url": "https://ummarfarooq.hashnode.dev/a-comprehensive-guide-to-javascript-es6-features",
             "image": "https://cdn.hashnode.com/res/hashnode/image/upload/v1696113034853/1e3e4a7e-2f4c-4fc3-8f4e-3f0e5f6b8e7d.png?w=200&h=200&fit=crop&crop=faces&auto=compress,format&format=webp",
-            "description": "ES6, also known as ECMAScript 2015, introduced several new features and enhancements to JavaScript. In this blog post, we will explore some of the most important ES6 features that every JavaScript developer should know.",
+            "description": "Asynchronous JavaScript is a powerful feature that allows developers to handle operations that take time to complete without blocking the main thread...",
             "publishedDate": "2023-09-15T00:00:00.000Z",
             "commentsCount": 5
           }
-        ]
+        ],
+        "section_title": "My Blogs"
       }
     }
   }

@@ -1922,3 +1922,12 @@ This applies the new rules to show the full image, but ONLY on desktop.
     justify-content: center;
   }
 }
+
+.project-card-img {
+  width: 100%;
+  /* Creates a 4:3 aspect ratio. Adjust as needed (e.g., 16/9 for widescreen). */
+  aspect-ratio: 4 / 3;
+  /* Ensures the image fills the container without being stretched or squished. */
+  object-fit: cover;
+}
+
