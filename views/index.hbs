@@ -65,16 +65,6 @@
                                             </a></li>
                                         {{/unless}}
                                         {{/if}}
-                                        {{#if blogs.value.blogs.items}}
-                                        {{#unless blogs.meta.hide}}
-                                        <li><a href="#blog">
-                                                {{#if
-                                                blogs.value.blogs.section_title}}
-                                                {{blogs.value.blogs.section_title}}
-                                                {{else}}Blog{{/if}}
-                                            </a></li>
-                                        {{/unless}}
-                                        {{/if}}
                                         {{#if contacts.value.contacts}}
                                         {{#if
                                         contacts.value.contacts.contactForm}}
@@ -212,7 +202,7 @@
                 {{#unless client_logos.meta.hide}}
                 <section id="client_logo" class="no-top px-4">
                     <div class="container-fluid">
-                        <div class="row g-4">
+                        <div class="row g-4 justify-content-center">
                             {{#each client_logos.value.client_logos.items}}
                             <div class="col-md-3 rounded-1  fadeInRight">
                                 <div class="text-center">
@@ -228,6 +218,8 @@
                 </section>
                 {{/unless}}
                 {{/if}}
+
+                <!-- skills -->
                 {{#if skills.value.skills.items}}
                 {{#unless skills.value.skills.hide}}
                 <section id="skill_section" class="no-top px-4">
@@ -254,7 +246,10 @@
                                             <div class="d-bar">
                                                 <div class="d-skill">
                                                     <div class="d-info">
-                                                        <span>{{this.name}}</span>
+                                                        <span>{{#if this.name}}
+                                                            {{this.name}}
+                                                            {{else}} {{this}}
+                                                            {{/if}}</span>
                                                     </div>
                                                     <div
                                                         class="d-progress-line">
@@ -477,78 +472,6 @@
                                             <span
                                                 class="fs-14">{{this.subtitle}}</span>
                                             {{/if}}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            {{/each}}
-                        </div>
-                    </div>
-                </section>
-                {{/unless}}
-                {{/if}}
-
-                {{!-- blog section --}}
-                {{#if blogs.value.blogs.items}}
-                {{#unless blogs.meta.hide}}
-                <section id="blog" class="no-top px-4">
-                    <div class="container-fluid">
-                        <div class="row g-4">
-
-                            <div class="col-lg-12">
-                                <div class="text-center">
-                                    <h2>
-                                        {{#if
-                                        blogs.value.blogs.section_title}}
-                                        {{blogs.value.blogs.section_title}}
-                                        {{else}}My Blogs{{/if}}
-                                    </h2>
-                                </div>
-                            </div>
-
-                            {{#each blogs.value.blogs.items}}
-                            <div class="col-lg-6">
-                                <div
-                                    class="rounded-1 bg-color text-dark overflow-hidden">
-                                    <div class="row g-0">
-                                        <!-- Date Column -->
-                                        <div class="col-12 col-sm-6">
-                                            <div class="auto-height relative">
-                                                <div
-                                                    class="abs start-0 top-0 bg-dark text-white p-3 pb-2 m-3 text-center fw-600 rounded-1">
-                                                    <div
-                                                        class="fs-36 mb-0">{{blogDate
-                                                        this.publishedDate
-                                                        "day"}}</div>
-                                                    <span>{{blogDate
-                                                        this.publishedDate
-                                                        "month"}}</span>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Content Column -->
-                                        <div class="col-12 col-sm-6 relative">
-                                            <div class="p-30 pb-60">
-                                                <h4 class="fs-28 lh-1-2">
-                                                    <a
-                                                        href="{{#if this.url}}{{this.url}}{{else}}#{{/if}}"
-                                                        class="text-dark">
-                                                        {{this.title}}
-                                                    </a>
-                                                </h4>
-                                                <p
-                                                    class="mb-0">{{this.description}}</p>
-                                                <div class="abs bottom-0 pb-20">
-                                                    <div
-                                                        class="d-inline fs-14 fw-600 me-3">
-                                                        <i
-                                                            class="icofont-chat me-2"></i>{{#if
-                                                        this.commentsCount}}{{this.commentsCount}}{{else}}0{{/if}}
-                                                        Comments
-                                                    </div>
-                                                </div>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
