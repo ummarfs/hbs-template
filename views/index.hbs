@@ -32,15 +32,38 @@
                                     <ul>
                                         <li class="active"><a
                                                 href="#top">Home</a></li>
+                                        {{#if about.value.about.content}}
+                                        {{#unless about.meta.hide}}
                                         <li><a href="#about">About
                                                 Me</a></li>
+                                        {{/unless}}
+                                        {{/if}}
+                                        {{#if services.value.services.items}}
+                                        {{#unless services.meta.hide}}
                                         <li><a href="#services">What I
                                                 Do</a></li>
+                                        {{/unless}}
+                                        {{/if}}
+                                        {{#if projects.value.projects.items}}
+                                        {{#unless projects.meta.hide}}
                                         <li><a
                                                 href="#works">Works</a></li>
+                                        {{/unless}}
+                                        {{/if}}
+                                        {{#if blogs.value.blogs.items}}
+                                        {{#unless blogs.meta.hide}}
                                         <li><a href="#blog">Blog</a></li>
+                                        {{/unless}}
+                                        {{/if}}
+                                        {{#if contacts.value.contacts}}
+                                        {{#if
+                                        contacts.value.contacts.contactForm}}
+                                        {{#unless contacts.meta.hide}}
                                         <li><a href="#contact">Contact
                                                 Me</a></li>
+                                        {{/unless}}
+                                        {{/if}}
+                                        {{/if}}
                                     </ul>
                                 </div>
                             </div>
@@ -475,10 +498,13 @@
                                             <div class="auto-height relative">
                                                 <div
                                                     class="abs start-0 top-0 bg-dark text-white p-3 pb-2 m-3 text-center fw-600 rounded-1">
-                                                    <div class="fs-36 mb-0"
-                                                        id="blogday-{{@index}}">00</div>
-                                                    <span
-                                                        id="blogmonth-{{@index}}">Mon</span>
+                                                    <div
+                                                        class="fs-36 mb-0">{{blogDate
+                                                        this.publishedDate
+                                                        "day"}}</div>
+                                                    <span>{{blogDate
+                                                        this.publishedDate
+                                                        "month"}}</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -509,57 +535,7 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <!-- Script to format date -->
-                            <script>
-    (function(){
-      const dayElem = document.getElementById('blogday-{{@index}}');
-      const monthElem = document.getElementById('blogmonth-{{@index}}');
-      const date = new Date("{{this.publishedDate}}");
-      dayElem.textContent = ("0" + date.getDate()).slice(-2);
-      monthElem.textContent = date.toLocaleString('en-US', { month: 'short' });
-    })();
-  </script>
-
                             {{/each}}
-
-                            {{!-- <div class="col-lg-12 pt-4 text-center">
-                                <div class="d-inline-block">
-                                    <nav
-                                        aria-label="Page navigation example">
-                                        <ul class="pagination light">
-                                            <li class="page-item">
-                                                <a class="page-link"
-                                                    href="07_blog.html#"
-                                                    aria-label="Previous">
-                                                    <span
-                                                        aria-hidden="true"><i
-                                                            class="fa fa-chevron-left"></i></span>
-                                                </a>
-                                            </li>
-                                            <li class="page-item"><a
-                                                    class="page-link"
-                                                    href="07_blog.html#">1</a></li>
-                                            <li class="page-item active"
-                                                aria-current="page"><a
-                                                    class="page-link"
-                                                    href="07_blog.html#">2</a></li>
-                                            <li class="page-item"><a
-                                                    class="page-link"
-                                                    href="07_blog.html#">3</a></li>
-                                            <li class="page-item">
-                                                <a class="page-link"
-                                                    href="07_blog.html#"
-                                                    aria-label="Next">
-                                                    <span
-                                                        aria-hidden="true"><i
-                                                            class="fa fa-chevron-right"></i></span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </div> --}}
                         </div>
                     </div>
                 </section>
@@ -646,8 +622,6 @@
                                         </div>
                                     </div>
 
-                                    <div class="g-recaptcha"
-                                        data-sitekey="6LdW03QgAAAAAJko8aINFd1eJUdHlpvT4vNKakj6"></div>
                                     <div id='submit' class="mt20">
                                         <input type='submit'
                                             id='send_message'
