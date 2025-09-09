@@ -19,7 +19,7 @@
     "value": {
       "firstName": "Ummar",
       "lastName": "Farooq",
-      "headline": "Innovative Full Stack Developer Delivering Scalable Solutions",
+      "headline": "Innovative Full Stack Developer",
       "profilePicureUrl": "https://d1xwrlfgrqppfv.cloudfront.net/profile/cmfb2lyfz0006mq2objw37464-1757392827008-image.jpeg",
       "location": "india",
       "coverImage": "https://d1xwrlfgrqppfv.cloudfront.net/coverimage/cmfb2lyfz0006mq2objw37464-1757392828958-image.jpeg",
@@ -36,7 +36,11 @@
           {
             "url": "https://www.linkedin.com/in/ummarfarooq-pk",
             "label": "LinkedIn"
-          }
+          },
+           {
+            "url": "https://instagram.com",
+            "label": "Instagram"
+           }
         ]
       }
     }
@@ -374,7 +378,7 @@
                 "subtitle": "MERN Stack"
             }
         ],
-        "section_title": "Featured Projects",
+        "section_title": "Projects",
         "description": "How I bring ideas to life through thoughtful design and development."
       }
     }

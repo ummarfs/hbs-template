@@ -34,33 +34,57 @@
                                                 href="#top">Home</a></li>
                                         {{#if about.value.about.content}}
                                         {{#unless about.meta.hide}}
-                                        <li><a href="#about">About
-                                                Me</a></li>
+                                        <li><a href="#about">
+                                                {{#if
+                                                about.value.about.section_title}}
+                                                {{about.value.about.section_title}}
+                                                {{else}}About Me{{/if}}
+                                            </a></li>
                                         {{/unless}}
                                         {{/if}}
                                         {{#if services.value.services.items}}
                                         {{#unless services.meta.hide}}
-                                        <li><a href="#services">What I
-                                                Do</a></li>
+                                        <li><a href="#services">
+                                                {{#if
+                                                services.value.services.section_title}}
+                                                {{services.value.services.section_title}}
+                                                {{else}}What I Do{{/if}}
+                                            </a></li>
                                         {{/unless}}
                                         {{/if}}
                                         {{#if projects.value.projects.items}}
                                         {{#unless projects.meta.hide}}
                                         <li><a
-                                                href="#works">Works</a></li>
+                                                href="#works">
+                                                {{#if
+                                                projects.value.projects.section_title}}
+                                                {{projects.value.projects.section_title}}
+                                                {{else}}
+                                                Works
+                                                {{/if}}
+                                            </a></li>
                                         {{/unless}}
                                         {{/if}}
                                         {{#if blogs.value.blogs.items}}
                                         {{#unless blogs.meta.hide}}
-                                        <li><a href="#blog">Blog</a></li>
+                                        <li><a href="#blog">
+                                                {{#if
+                                                blogs.value.blogs.section_title}}
+                                                {{blogs.value.blogs.section_title}}
+                                                {{else}}Blog{{/if}}
+                                            </a></li>
                                         {{/unless}}
                                         {{/if}}
                                         {{#if contacts.value.contacts}}
                                         {{#if
                                         contacts.value.contacts.contactForm}}
                                         {{#unless contacts.meta.hide}}
-                                        <li><a href="#contact">Contact
-                                                Me</a></li>
+                                        <li><a href="#contact">
+                                                {{#if
+                                                contacts.value.contacts.section_title}}
+                                                {{contacts.value.contacts.section_title}}
+                                                {{else}}Contact{{/if}}
+                                            </a></li>
                                         {{/unless}}
                                         {{/if}}
                                         {{/if}}
@@ -113,9 +137,8 @@
                             </div>
                             <div class="col-12 col-xl-6">
                                 <div
-                                    class="relative rounded-1 overflow-hidden p-lg-5 p-4 pb-5 bg-color h-100 fadeInUp">
-                                    <h2
-                                        class="pb-4 mb-5 mb-lg-0">{{personal_info.value.position}}</h2>
+                                    class="relative rounded-1 overflow-hidden p-lg-5 p-4 bg-color h-100 fadeInUp">
+                                    <h2>{{personal_info.value.position}}</h2>
                                 </div>
                             </div>
 
@@ -435,12 +458,16 @@
                                     class="bg-dark rounded-1 overflow-hidden h-100 d-flex flex-column hover relative text-light">
 
                                     <div class="overflow-hidden">
-                                        <img
-                                            src="{{#if this.image}}{{this.image}}{{else}}https://placehold.co/400x300/gray/ffffff?text=No+Image{{/if}}"
-                                            class="img-fluid hover-scale-1-2 project-card-img"
-                                            alt="{{this.title}}" />
+                                        <a
+                                            href="{{#if this.url}}{{this.url}}{{else}}#{{/if}}"
+                                            class="overflow-hidden d-block relative"
+                                            target="_blank">
+                                            <img
+                                                src="{{#if this.image}}{{this.image}}{{else}}https://placehold.co/400x300/gray/ffffff?text=No+Image{{/if}}"
+                                                class="img-fluid hover-scale-1-2 project-card-img"
+                                                alt="{{this.title}}" />
+                                        </a>
                                     </div>
-
                                     <div
                                         class="p-4 d-flex justify-content-between align-items-center mt-auto">
                                         <div>
@@ -451,15 +478,6 @@
                                                 class="fs-14">{{this.subtitle}}</span>
                                             {{/if}}
                                         </div>
-                                        {{#if this.url}}
-                                        <div class="fw-bold">
-                                            <a href="{{this.url}}"
-                                                class="text-light"
-                                                target="_blank">
-                                                <i class="fa fa-link"></i>
-                                            </a>
-                                        </div>
-                                        {{/if}}
                                     </div>
                                 </div>
                             </div>
@@ -702,7 +720,5 @@
                 </div>
             </footer>
         </div>
-
     </body>
-
 </html>
