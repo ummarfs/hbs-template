@@ -1,0 +1,413 @@
+{
+  "general_info": {
+    "pageDomain": "ummar-farooq-h1lsy5",
+    "templateId": "graphite_edge",
+    "domain": null,
+    "title": "Ummar Farooq | VisePage",
+    "description": "Portfolio of Ummar Farooq created with VisePage",
+    "favicon": null,
+    "ogImage": null,
+    "keywords": [],
+    "isLinkedInImported": true,
+    "domain_verified": false,
+    "hasProSubscription": false
+  },
+  "personal_info": {
+    "meta": {
+      "hide": false
+    },
+    "value": {
+      "firstName": "Ummar",
+      "lastName": "Farooq",
+      "headline": "Innovative Full Stack Developer Delivering Scalable Solutions",
+      "profilePicureUrl": "https://d1xwrlfgrqppfv.cloudfront.net/profile/cmfb2lyfz0006mq2objw37464-1757392827008-image.jpeg",
+      "location": "india",
+      "coverImage": "https://d1xwrlfgrqppfv.cloudfront.net/coverimage/cmfb2lyfz0006mq2objw37464-1757392828958-image.jpeg",
+      "position": "I have robust experience crafting impactful software applications."
+    }
+  },
+  "social": {
+    "meta": {
+      "hide": false
+    },
+    "value": {
+      "social": {
+        "items": [
+          {
+            "url": "https://www.linkedin.com/in/ummarfarooq-pk",
+            "label": "LinkedIn"
+          }
+        ]
+      }
+    }
+  },
+  "languages": {
+    "meta": {
+      "hide": false
+    },
+    "value": {
+      "languages": {
+        "items": [
+          {
+            "name": "Arabic",
+            "proficiency": null
+          },
+          {
+            "name": "English",
+            "proficiency": null
+          }
+        ]
+      }
+    }
+  },
+  "introduction_video": {
+    "meta": {
+      "hide": false
+    },
+    "value": {
+      "introduction_video": {
+        "content": "https://www.youtube.com/embed/LOS5WB75gkY"
+      }
+    }
+  },
+  "educations": {
+    "meta": {
+      "hide": false
+    },
+    "value": {
+      "educations": {
+        "items": [
+          {
+            "endDate": {
+              "year": 2026,
+              "month": 8
+            },
+            "startDate": {
+              "year": 2024,
+              "month": 8
+            },
+            "degreeName": "Master of Computer Applications - MCA, Computer Science",
+            "schoolName": "Lovely Professional University",
+            "description": null,
+            "fieldOfStudy": null
+          },
+          {
+            "endDate": {
+              "year": 2023,
+              "month": 5
+            },
+            "startDate": {
+              "year": 2021,
+              "month": 8
+            },
+            "degreeName": "Bachelor of Commerce - BCOM, Business/Commerce, General",
+            "schoolName": "University of Calicut",
+            "description": null,
+            "fieldOfStudy": null
+          }
+        ],
+        "section_title": "Educations"
+      }
+    }
+  },
+  "skills": {
+    "meta": {
+      "hide": false
+    },
+    "value": {
+      "skills": {
+        "items": [
+          {
+            "name": "JavaScript",
+            "percentage": "20%"
+          },
+          {
+            "name": "React",
+            "percentage": "70%"
+          },
+          {
+            "name": "Node.js",
+            "percentage": "60%"
+          },
+          {
+            "name": "Express.js",
+            "percentage": "30%"
+          },
+          {
+            "name": "MongoDB",
+            "percentage": "50%"
+          },
+          {
+            "name": "HTML/CSS",
+            "percentage": "80%"
+          }
+        ],
+        "section_title": "Skills"
+      }
+    }
+  },
+  "certifications": {
+    "meta": {
+      "hide": false
+    },
+    "value": {
+      "certifications": {
+        "items": [
+          {
+            "name": "Data Structures & Algorithms in js + 100 LEETCODE Problems ",
+            "issuedDate": null,
+            "credentialUrl": null,
+            "organizationName": "Udemy"
+          },
+          {
+            "name": "Javascript (Basic)",
+            "issuedDate": null,
+            "credentialUrl": null,
+            "organizationName": "HackerRank"
+          }
+        ]
+      }
+    }
+  },
+  "about": {
+    "meta": {
+      "hide": false
+    },
+    "value": {
+      "about": {
+        "content": "As an accomplished Full-Stack Developer, I specialize in designing and delivering scalable applications that drive innovation. My strong grasp of both frontend and backend technologies enables me to create solutions that resonate with users. I thrive in dynamic environments, continuously embracing new technologies to enhance application quality and functionality.",
+        "section_title": "About Me"
+      }
+    }
+  },
+  "services": {
+    "meta": {
+      "hide": false
+    },
+    "value": {
+      "services": {
+        "items": [
+          {
+            "image": "https://images.pexels.com/photos/360591/pexels-photo-360591.jpeg?w=800",
+            "title": "Web Development",
+            "description": "I create scalable web applications utilizing modern technologies for efficiency."
+          },
+          {
+            "image": "https://images.pexels.com/photos/3585093/pexels-photo-3585093.jpeg?w=800",
+            "title": "Application Design",
+            "description": "I design user-friendly applications tailored to meet dynamic user needs."
+          },
+          {
+            "image": "https://images.pexels.com/photos/6755148/pexels-photo-6755148.jpeg?w=800",
+            "title": "Technical Consulting",
+            "description": "I provide expert guidance on technology integration and application scaling."
+          }
+        ],
+        "heading": "Empowering growth for you and your business",
+        "section_title": "MY SERVICES"
+      }
+    }
+  },
+  "contacts": {
+    "meta": {
+      "hide": false
+    },
+    "value": {
+      "contacts": {
+        "email": "admin@mail.vise.com",
+        "phone": "+917401531101",
+        "address": {
+          "city": "Ernakulam",
+          "state": "Kerala",
+          "street": "Kochi Road",
+          "country": "India",
+          "postalCode": "616301"
+        },
+        "booking": {
+          "enabled": false
+        },
+        "heading": "Let's Start a Conversation",
+        "buttonText": "Schedule a Consultation",
+        "subheading": "Contact Details",
+        "contactForm": true,
+        "description": "Feel free to reach out with any questions or inquiries. I'm here to help!",
+        "section_title": "GET IN TOUCH",
+        "contactFormHeading": "Send Me a Message",
+        "contactFormButtonText": "Send Message"
+      }
+    }
+  },
+  "testimonials": {
+    "meta": {
+      "hide": false
+    },
+    "value": {
+      "testimonials": {
+        "items": [
+          {
+            "date": "2025-09-09",
+            "recommenderName": "John Smith",
+            "recommendationText": "he is a good guy"
+          }
+        ],
+        "heading": "What My Clients Say",
+        "description": "Don't just take my word for it. Here's what leaders and organizations have to say about our work together.",
+        "section_title": "CLIENT TESTIMONIALS"
+      }
+    }
+  },
+  "why_choose_me": {
+    "meta": {
+      "hide": false
+    },
+    "value": {
+      "why_choose_me": {
+        "heading": "A Strategic Partnership Built Around Your Goals",
+        "benefits": [
+          {
+            "title": "Experienced Professional",
+            "description": "i will work better"
+          }
+        ],
+        "description": "Choosing the right advisor is a critical business decision. That's why I focus on a personalized, collaborative approach — combining real-world experience with executive-level insight to drive measurable, lasting results.",
+        "section_title": "WHY WORK WITH ME"
+      }
+    }
+  },
+  "client_logos": {
+    "meta": {
+      "hide": false
+    },
+    "value": {
+      "client_logos": {
+        "items": [
+          {
+            "url": "https://d1xwrlfgrqppfv.cloudfront.net/clientlogo/cmfb2lyfz0006mq2objw37464-1757393005859-image.jpeg",
+            "name": "Sinyar"
+          },
+          {
+            "url": "https://d1xwrlfgrqppfv.cloudfront.net/clientlogo/cmfb2lyfz0006mq2objw37464-1757393007334-image.jpeg",
+            "name": "IDMS"
+          },
+          {
+            "url": "https://d1xwrlfgrqppfv.cloudfront.net/clientlogo/cmfb2lyfz0006mq2objw37464-1757393007334-image.jpeg",
+            "name": "Figma"
+          },
+          {
+            "url": "https://d1xwrlfgrqppfv.cloudfront.net/clientlogo/cmfb2lyfz0006mq2objw37464-1757393007334-image.jpeg",
+            "name": "Adobe"
+          }
+        ],
+        "section_title": "Trusted by amazing clients"
+      }
+    }
+  },
+  "experiences": {
+    "meta": {
+      "hide": false
+    },
+    "value": {
+      "experiences": {
+        "items": [
+          {
+            "title": "Full-Stack Web Developer ",
+            "startDate": {
+              "year": 2023,
+              "month": 7
+            },
+            "companyName": "Floges Software Solutions (P) Ltd"
+          },
+          {
+            "title": "Internship Trainee",
+            "startDate": {
+              "year": 2021,
+              "month": 6
+            },
+            "endDate": {
+              "year": 2022,
+              "month": 8
+            },
+            "companyName": "Floges Software Solutions (P) Ltd"
+          }
+        ],
+        "section_title": "Experience",
+        "section_subtitle": "Experience"
+      }
+    }
+  },
+  "projects": {
+    "meta": {
+      "hide": false
+    },
+    "value": {
+      "projects": {
+        "items": [
+          {
+            "url": "https://google.com",
+            "image": "https://d1xwrlfgrqppfv.cloudfront.net/projectimage/cmfb2lyfz0006mq2objw37464-1757393096026-image.jpeg",
+            "title": "Chat App",
+            "buttonText": "View",
+            "description": "it is good",
+            "subtitle": "MERN Stack"
+          }
+        ],
+        "section_title": "Featured Projects",
+        "description": "How I bring ideas to life through thoughtful design and development."
+      }
+    }
+  },
+  "stats": {
+    "meta": {
+      "hide": false
+    },
+    "value": {
+      "stats": {
+        "items": [
+          {
+            "number": "5+",
+            "label": "Projects Completed"
+          },
+          {
+            "number": "3+",
+            "label": "Technologies Mastered"
+          },
+          {
+            "number": "2+",
+            "label": "Years of Experience"
+          },
+          {
+            "number": "10K+",
+            "label": "Lines of Code Written"
+          }
+        ]
+      }
+    }
+  },
+  "blogs": {
+    "meta": {
+      "hide": false
+    },
+    "value": {
+      "blogs": {
+        "items": [
+          {
+            "title": "Understanding Asynchronous JavaScript: Callbacks, Promises, and Async/Await",
+            "url": "https://ummarfarooq.hashnode.dev/understanding-asynchronous-javascript-callbacks-promises-and-asyncawait",
+            "image": "https://cdn.hashnode.com/res/hashnode/image/upload/v1696113034853/1e3e4a7e-2f4c-4fc3-8f4e-3f0e5f6b8e7d.png?w=200&h=200&fit=crop&crop=faces&auto=compress,format&format=webp",
+            "description": "Asynchronous JavaScript is a powerful feature that allows developers to handle operations that take time to complete without blocking the main thread. In this blog post, we will explore the three main ways to handle asynchronous operations in JavaScript: Callbacks, Promises, and Async/Await.",
+            "publishedDate": "2023-10-01T00:00:00.000Z",
+            "commentsCount": 3
+          },
+          {
+            "title": "A Comprehensive Guide to JavaScript ES6 Features",
+            "url": "https://ummarfarooq.hashnode.dev/a-comprehensive-guide-to-javascript-es6-features",
+            "image": "https://cdn.hashnode.com/res/hashnode/image/upload/v1696113034853/1e3e4a7e-2f4c-4fc3-8f4e-3f0e5f6b8e7d.png?w=200&h=200&fit=crop&crop=faces&auto=compress,format&format=webp",
+            "description": "ES6, also known as ECMAScript 2015, introduced several new features and enhancements to JavaScript. In this blog post, we will explore some of the most important ES6 features that every JavaScript developer should know.",
+            "publishedDate": "2023-09-15T00:00:00.000Z",
+            "commentsCount": 5
+          }
+        ]
+      }
+    }
+  }
+}
