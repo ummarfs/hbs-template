@@ -385,8 +385,10 @@
                                         {{else}}
                                         Present
                                         {{/if}}</h6>
-                                    <h3 class="text-break">{{this.degreeName}}</h3>
-                                    <p class="mb-0 text-break">{{this.schoolName}}</p>
+                                    <h3
+                                        class="text-break">{{this.degreeName}}</h3>
+                                    <p
+                                        class="mb-0 text-break">{{this.schoolName}}</p>
                                 </div>
                             </div>
                             {{/each}}
@@ -423,7 +425,6 @@
                 <section id="works" class="no-top px-4">
                     <div class="container-fluid">
                         <div class="row g-4 fadeInRight">
-
                             <div class="col-xl-4">
                                 <div
                                     class="p-lg-5 p-4 bg-color h-100 rounded-1">
@@ -449,34 +450,32 @@
 
                             {{#each projects.value.projects.items}}
                             <div class="col-xl-4 col-md-6">
-                                <div
-                                    class="bg-dark rounded-1 overflow-hidden h-100 d-flex flex-column hover relative text-light">
-
-                                    <div class="overflow-hidden">
+                                <div class="bg-dark rounded-1 overflow-hidden">
+                                    <div
+                                        class="hover relative overflow-hidden text-light">
                                         <a
                                             href="{{#if this.url}}{{this.url}}{{else}}#{{/if}}"
-                                            class="overflow-hidden d-block relative"
-                                            target="_blank">
+                                            class="overflow-hidden d-block relative">
                                             <img
                                                 src="{{#if this.image}}{{this.image}}{{else}}https://placehold.co/400x300/gray/ffffff?text=No+Image{{/if}}"
-                                                class="img-fluid hover-scale-1-2 project-card-img"
-                                                alt="{{this.title}}" />
+                                                class="img-fluid hover-scale-1-2"
+                                                alt>
                                         </a>
-                                    </div>
-                                    <div
-                                        class="p-4 d-flex justify-content-between align-items-center mt-auto">
-                                        <div>
-                                            <h3
-                                                class="mb-0 lh-1-2">{{this.title}}</h3>
-                                            {{#if this.subtitle}}
-                                            <span
-                                                class="fs-14">{{this.subtitle}}</span>
-                                            {{/if}}
+
+                                        <div
+                                            class="p-4 d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h3
+                                                    class="mb-0 lh-1-2">{{this.title}}</h3>
+                                                <span
+                                                    class="fs-14">{{this.subtitle}}</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             {{/each}}
+
                         </div>
                     </div>
                 </section>
