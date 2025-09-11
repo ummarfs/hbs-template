@@ -85,7 +85,10 @@
                     </div>
                 </section>
 
-                <section class="relative">
+                <section class="relative section-wrapper"
+                    data-edit-section="personal_info"
+                    data-section="personal_info"
+                    data-title="Personal Info">
                     <div class="container-fluid">
                         <div class="row justify-content-center">
                             <div class="col-lg-12 text-center">
@@ -111,7 +114,10 @@
                         class="w-20 me-5 abs top-0 end-0" alt>
                 </section>
 
-                <section class="no-top px-4">
+                <section class="no-top px-4 section-wrapper"
+                    data-edit-section="personal_info"
+                    data-section="personal_info"
+                    data-title="Personal Info">
                     <div class="container-fluid">
                         <div class="row g-4 mb-4">
 
@@ -148,7 +154,10 @@
                         <!-- stats section -->
                         {{#if stats.value.stats.items}}
                         {{#unless stats.meta.hide}}
-                        <div class="row g-4">
+                        <div class="row g-4 section-wrapper"
+                            data-edit-section="stats"
+                            data-section="stats"
+                            data-title="Stats">
                             {{#each stats.value.stats.items}}
                             <div class="col-md-3 col-sm-6 mb-sm-30">
                                 <div
@@ -169,7 +178,10 @@
 
                 {{#if about.value.about.content}}
                 {{#unless about.meta.hide}}
-                <section id="about" class="no-top px-4">
+                <section id="about" class="no-top px-4 section-wrapper"
+                    data-edit-section="about"
+                    data-section="about"
+                    data-title="About Me">
                     <div class="container-fluid">
                         <div class="row g-4 justify-content-center">
                             <div class="col-xl-8">
@@ -200,7 +212,10 @@
                 <!-- clien logos -->
                 {{#if client_logos.value.client_logos.items}}
                 {{#unless client_logos.meta.hide}}
-                <section id="client_logo" class="no-top px-4">
+                <section id="client_logo" class="no-top px-4 section-wrapper"
+                    data-edit-section="client_logos"
+                    data-section="client_logos"
+                    data-title="Client Logos">
                     <div class="container-fluid">
                         <div class="row g-4 justify-content-center">
                             {{#each client_logos.value.client_logos.items}}
@@ -222,7 +237,11 @@
                 <!-- skills -->
                 {{#if skills.value.skills.items}}
                 {{#unless skills.value.skills.hide}}
-                <section id="skill_section" class="no-top px-4">
+                <section id="skill_section"
+                    class="no-top px-4 section-wrapper"
+                    data-edit-section="skills"
+                    data-section="skills"
+                    data-title="Skills">
                     <div class="container-fluid">
                         <div class="row g-4 justify-content-center">
                             <div class="col-lg-12">
@@ -239,28 +258,13 @@
                             </div>
 
                             <div class="col-lg-8">
-                                <div class="row g-4 gx-5">
+                                <div
+                                    class="d-flex flex-wrap justify-content-center gap-3">
                                     {{#each skills.value.skills.items}}
-                                    <div class="col-md-6 fadeInRight">
-                                        <div class="d-skills-bar">
-                                            <div class="d-bar">
-                                                <div class="d-skill">
-                                                    <div class="d-info">
-                                                        <span>{{#if this.name}}
-                                                            {{this.name}}
-                                                            {{else}} {{this}}
-                                                            {{/if}}</span>
-                                                    </div>
-                                                    <div
-                                                        class="d-progress-line">
-                                                        <span
-                                                            class
-                                                            style="width:{{#if this.percentage}} {{this.percentage}} {{else}} 100% {{/if}}"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <span
+                                        class="badge rounded-pill bg-color text-dark px-3 py-2 fs-6">
+                                        {{this}}
+                                    </span>
                                     {{/each}}
                                 </div>
                             </div>
@@ -273,7 +277,11 @@
                 <!-- services -->
                 {{#if services.value.services.items}}
                 {{#unless services.meta.hide}}
-                <section id="services" class="no-top px-4">
+                <section id="services"
+                    class="no-top px-4 section-wrapper"
+                    data-edit-section="services"
+                    data-section="services"
+                    data-title="Services">
                     <div class="container-fluid">
                         <div class="row g-4 justify-content-center">
                             <div class="col-lg-12">
@@ -296,7 +304,7 @@
                                             <div class="row">
                                                 <div class="col-xl-6 ">
                                                     <h4
-                                                        class="fs-32 lh-1-2">{{this.title}}</h4>
+                                                        class="fs-32 lh-1-2 text-break">{{this.title}}</h4>
                                                 </div>
                                                 <div class="col-xl-6 ">
                                                     <p
@@ -317,7 +325,10 @@
                 {{!-- experience section --}}
                 {{#if experiences.value.experiences.items }}
                 {{#unless experiences.meta.hide}}
-                <section class="no-top px-4">
+                <section class="no-top px-4 section-wrapper"
+                    data-edit-section="experiences"
+                    data-section="experiences"
+                    data-title="Experience">
                     <div class="container-fluid">
                         <div class="row g-4 justify-content-center">
                             <div class="col-lg-12">
@@ -359,7 +370,10 @@
                 <!-- education section -->
                 {{#if educations.value.educations.items }}
                 {{#unless educations.meta.hide}}
-                <section class="no-top px-4">
+                <section class="no-top px-4 section-wrapper"
+                    data-edit-section="educations"
+                    data-section="educations"
+                    data-title="Education">
                     <div class="container-fluid">
                         <div class="row g-4 justify-content-center">
                             <div class="col-lg-12">
@@ -400,7 +414,10 @@
 
                 {{#if services.value.services.heading}}
                 {{#unless services.meta.hide}}
-                <section class="no-top px-4">
+                <section class="no-top px-4 section-wrapper"
+                    data-edit-section="services"
+                    data-section="services"
+                    data-title="Services Heading">
                     <div class="container-fluid">
                         <div
                             class="spacer-double d-lg-none d-sm-block"></div>
@@ -422,7 +439,11 @@
                 <!-- projects -->
                 {{#if projects.value.projects.items}}
                 {{#unless projects.meta.hide}}
-                <section id="works" class="no-top px-4">
+                <section id="works"
+                    class="no-top px-4 section-wrapper"
+                    data-edit-section="projects"
+                    data-section="projects"
+                    data-title="Projects">
                     <div class="container-fluid">
                         <div class="row g-4 fadeInRight">
                             <div class="col-xl-4">
@@ -457,7 +478,7 @@
                                             href="{{#if this.url}}{{this.url}}{{else}}#{{/if}}"
                                             class="overflow-hidden d-block relative">
                                             <img
-                                                src="{{#if this.image}}{{this.image}}{{else}}https://placehold.co/400x300/gray/ffffff?text=No+Image{{/if}}"
+                                                src="{{#if this.image}}{{this.image}}{{else}}https://api.dicebear.com/9.x/glass/svg{{/if}}"
                                                 class="img-fluid hover-scale-1-2"
                                                 alt>
                                         </a>
@@ -486,10 +507,13 @@
                 {{#if contacts.value.contacts}}
                 {{#if contacts.value.contacts.contactForm}}
                 {{#unless contacts.meta.hide}}
-                <section id="contact" class="no-top px-4">
+                <section id="contact"
+                    class="no-top px-4 section-wrapper"
+                    data-edit-section="contacts"
+                    data-section="contacts"
+                    data-title="Contact">
                     <div class="container-fluid">
                         <div class="row g-4 gx-5">
-
                             <div class="col-lg-12">
                                 <div class="text-center">
                                     <h2>
@@ -603,7 +627,10 @@
                         <div class="row g-4 align-items-center">
                             <!-- sociallinks -->
                             <div
-                                class="col-12 col-lg-6 text-center text-lg-start">
+                                class="col-12 col-lg-6 text-center text-lg-start section-wrapper"
+                                data-edit-section="social"
+                                data-section="social"
+                                data-title="Social Links">
                                 {{#if social.value.social.items}}
                                 {{#unless social.meta.hide}}
                                 <div class="d-menu-1">

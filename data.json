@@ -120,32 +120,7 @@
     },
     "value": {
       "skills": {
-        "items": [
-          {
-            "name": "JavaScript",
-            "percentage": "20%"
-          },
-          {
-            "name": "React",
-            "percentage": "70%"
-          },
-          {
-            "name": "Node.js",
-            "percentage": "60%"
-          },
-          {
-            "name": "Express.js",
-            "percentage": "30%"
-          },
-          {
-            "name": "MongoDB",
-            "percentage": "50%"
-          },
-          {
-            "name": "HTML/CSS",
-            "percentage": "80%"
-          }
-        ],
+        "items": ["JavaScript", "React", "Node.js", "Express.js", "MongoDB"],
         "section_title": "Skills"
       }
     }
@@ -192,8 +167,13 @@
       "services": {
         "items": [
           {
+            "image": "https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?w=800",
+            "title": "Tech Entrepreneurship",
+            "description": "I develop tailored software solutions to meet unique business requirements."
+          },
+          {
             "image": "https://images.pexels.com/photos/360591/pexels-photo-360591.jpeg?w=800",
-            "title": "Web Development",
+            "title": "Web Development Services",
             "description": "I create scalable web applications utilizing modern technologies for efficiency."
           },
           {
