@@ -1,673 +1,1429 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title>Rayo - Digital Agency & Personal Portfolio HTML Template</title>
+    <link rel="icon" href="/2/img/favicon/favicon.ico" sizes="any">
+    <link rel="icon" href="/2/img/favicon/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/2/img/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="/2/img/favicon/manifest.webmanifest">
+    <link rel="stylesheet" type="text/css" href="/2/style.css">
+  </head>
 
-    <head>
-        <title>Nathan Personal Website</title>
-        <link rel="icon" href="images/icon.webp" type="image/gif" sizes="16x16">
-        <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content name="description">
-        <meta content name="keywords">
-        <meta content name="author">
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-            crossorigin="anonymous">
-        <link rel="stylesheet" href="style.css">
-    </head>
+  <body>
 
-    <body>
-        <div id="wrapper">
-            <div class="section-dark no-bottom no-top" id="content">
+    <!-- Header Start -->
+    <header id="header" class="mxd-header">
+      <!-- header controls -->
+      <div class="mxd-header__controls loading__fade">
+        <a
+          class="btn btn-anim btn-default btn-mobile-icon btn-outline slide-right-up"
+          href="contact.html">
+          <span class="btn-caption">Say Hello</span>
+          <i class="ph-bold ph-arrow-up-right"></i>
+        </a>
+      </div>
+    </header>
+    <!-- Header End -->
 
-                <div id="top"></div>
+    <!-- Page Content Start -->
+    <main id="mxd-page-content" class="mxd-page-content">
 
-                <section class="p-4">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div
-                                    class="text-center pt-3 text-uppercase d-menu-1 fs-14 fw-bold">
-                                    <ul>
-                                        <li class="active"><a
-                                                href="#top">Home</a></li>
-                                        {{#if about.value.about.content}}
-                                        {{#unless about.meta.hide}}
-                                        <li><a href="#about">
-                                                {{#if
-                                                about.value.about.section_title}}
-                                                {{about.value.about.section_title}}
-                                                {{else}}About Me{{/if}}
-                                            </a></li>
-                                        {{/unless}}
-                                        {{/if}}
-                                        {{#if services.value.services.items}}
-                                        {{#unless services.meta.hide}}
-                                        <li><a href="#services">
-                                                {{#if
-                                                services.value.services.section_title}}
-                                                {{services.value.services.section_title}}
-                                                {{else}}What I Do{{/if}}
-                                            </a></li>
-                                        {{/unless}}
-                                        {{/if}}
-                                        {{#if projects.value.projects.items}}
-                                        {{#unless projects.meta.hide}}
-                                        <li><a
-                                                href="#works">
-                                                {{#if
-                                                projects.value.projects.section_title}}
-                                                {{projects.value.projects.section_title}}
-                                                {{else}}
-                                                Works
-                                                {{/if}}
-                                            </a></li>
-                                        {{/unless}}
-                                        {{/if}}
-                                        {{#if contacts.value.contacts}}
-                                        {{#if
-                                        contacts.value.contacts.contactForm}}
-                                        {{#unless contacts.meta.hide}}
-                                        <li><a href="#contact">
-                                                {{#if
-                                                contacts.value.contacts.section_title}}
-                                                {{contacts.value.contacts.section_title}}
-                                                {{else}}Contact{{/if}}
-                                            </a></li>
-                                        {{/unless}}
-                                        {{/if}}
-                                        {{/if}}
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="relative section-wrapper"
-                    data-edit-section="personal_info"
-                    data-section="personal_info"
-                    data-title="Personal Info">
-                    <div class="container-fluid">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-12 text-center">
-                                <h1
-                                    class="fs-120 fs-xs-60 text-resize-h1 lh-0-75 mb-4">{{personal_info.value.firstName}}<br>{{personal_info.value.lastName}}</h1>
-                                {{#if personal_info.value.headline}}
-                                <h4
-                                    class="id-color bg-dark d-inline rounded-20 p-1 px-3 fs-16">
-                                    {{personal_info.value.headline}}
-                                </h4>
-                                {{/if}}
-
-                                <div class="spacer-single"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <img
-                        src="https://vise-page.s3.us-east-1.amazonaws.com/asset/image-1757319069785-scratches-1.webp"
-                        class="w-20 ms-4 abs abs-middle" alt>
-                    <img
-                        src="https://vise-page.s3.us-east-1.amazonaws.com/asset/image-1757319099997-scratches-2.webp"
-                        class="w-20 me-5 abs top-0 end-0" alt>
-                </section>
-
-                <section class="no-top px-4 section-wrapper"
-                    data-edit-section="personal_info"
-                    data-section="personal_info"
-                    data-title="Personal Info">
-                    <div class="container-fluid">
-                        <div class="row g-4 mb-4">
-
-                            {{#if personal_info.value.profilePicureUrl}}
-                            <div class="col-12 col-xl-6">
-                                <div
-                                    class="relative jarallax h-100 rounded-1 overflow-hidden fadeInUp">
-                                    <img
-                                        src="{{personal_info.value.profilePicureUrl}}"
-                                        class="jarallax-img"
-                                        alt="{{personal_info.value.headline}}">
-                                </div>
-                            </div>
-                            <div class="col-12 col-xl-6">
-                                <div
-                                    class="relative rounded-1 overflow-hidden p-lg-5 p-4 bg-color h-100 fadeInUp">
-                                    <h2>{{personal_info.value.position}}</h2>
-                                </div>
-                            </div>
-
-                            {{else}}
-                            <div class="col-12 col-xl-6 offset-xl-3">
-                                <div
-                                    class="relative rounded-1 overflow-hidden p-lg-5 p-4 pb-5 bg-color h-100 fadeInUp">
-                                    <h2
-                                        class="pb-4 mb-5 mb-lg-0">{{personal_info.value.position}}</h2>
-                                </div>
-                            </div>
-
-                            {{/if}}
-
-                        </div>
-
-                        <!-- stats section -->
-                        {{#if stats.value.stats.items}}
-                        {{#unless stats.meta.hide}}
-                        <div class="row g-4 section-wrapper w-auto"
-                            data-edit-section="stats"
-                            data-section="stats"
-                            data-title="Stats">
-                            {{#each stats.value.stats.items}}
-                            <div class="col-md-3 col-sm-6 mb-sm-30">
-                                <div
-                                    class="de_count bg-light py-4 rounded-1 text-center fs-15 fadeInRight">
-                                    <h3 class="fs-48 mb-1"><span class="timer"
-                                            data-to="8240"
-                                            data-speed="3000">{{this.number}}</span>
-                                    </h3>
-                                    <div class="fs-15">{{this.label}}</div>
-                                </div>
-                            </div>
-                            {{/each}}
-                        </div>
-                        {{/unless}}
-                        {{/if}}
-                    </div>
-                </section>
-
-                {{#if about.value.about.content}}
-                {{#unless about.meta.hide}}
-                <section id="about" class="no-top px-4 section-wrapper"
-                    data-edit-section="about"
-                    data-section="about"
-                    data-title="About Me">
-                    <div class="container-fluid">
-                        <div class="row g-4 justify-content-center">
-                            <div class="col-xl-8">
-                                <div class="relative fadeInUp">
-                                    <div class="text-center">
-                                        <h2>
-                                            {{#if
-                                            about.value.about.section_title}}
-                                            {{about.value.about.section_title}}
-                                            {{else}}About Me{{/if}}
-                                        </h2>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <p>{{about.value.about.content}}</p>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                {{/unless}}
-                {{/if}}
-
-                <!-- clien logos -->
-                {{#if client_logos.value.client_logos.items}}
-                {{#unless client_logos.meta.hide}}
-                <section id="client_logo" class="no-top px-4 section-wrapper"
-                    data-edit-section="client_logos"
-                    data-section="client_logos"
-                    data-title="Client Logos">
-                    <div class="container-fluid">
-                        <div class="row g-4 justify-content-center">
-                            {{#each client_logos.value.client_logos.items}}
-                            <div class="col-md-3 rounded-1  fadeInRight">
-                                <div class="text-center">
-                                    <img src="{{this.url}}"
-                                        class="w-80px mb-3" alt>
-                                    <h4>{{this.name}}</h4>
-                                </div>
-                            </div>
-                            {{/each}}
-                        </div>
-                    </div>
-
-                </section>
-                {{/unless}}
-                {{/if}}
-
-                <!-- skills -->
-                {{#if skills.value.skills.items}}
-                {{#unless skills.value.skills.hide}}
-                <section id="skill_section"
-                    class="no-top px-4 section-wrapper"
-                    data-edit-section="skills"
-                    data-section="skills"
-                    data-title="Skills">
-                    <div class="container-fluid">
-                        <div class="row g-4 justify-content-center">
-                            <div class="col-lg-12">
-                                <div class="text-center">
-                                    <h2>
-                                        {{#if
-                                        skills.value.skills.section_title}}
-                                        {{skills.value.skills.section_title}}
-                                        {{else}}
-                                        Skills
-                                        {{/if}}
-                                    </h2>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-8">
-                                <div
-                                    class="d-flex flex-wrap justify-content-center gap-3">
-                                    {{#each skills.value.skills.items}}
-                                    <span
-                                        class="badge rounded-pill bg-color text-dark px-3 py-2 fs-6">
-                                        {{this}}
-                                    </span>
-                                    {{/each}}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                {{/unless}}
-                {{/if}}
-
-                <!-- services -->
-                {{#if services.value.services.items}}
-                {{#unless services.meta.hide}}
-                <section id="services"
-                    class="no-top px-4 section-wrapper"
-                    data-edit-section="services"
-                    data-section="services"
-                    data-title="Services">
-                    <div class="container-fluid">
-                        <div class="row g-4 justify-content-center">
-                            <div class="col-lg-12">
-                                <div class="text-center">
-                                    <h2>
-                                        {{#if
-                                        services.value.services.section_title}}
-                                        {{services.value.services.section_title}}
-                                        {{else}}What I Do{{/if}}
-                                    </h2>
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="row g-4">
-                                    {{#each services.value.services.items}}
-                                    <div
-                                        class="col-lg-6 col-sm-6  fadeInUp">
-                                        <div
-                                            class="relative p-lg-5 p-4 bg-color text-dark rounded-1 h-100">
-                                            <div class="row">
-                                                <div class="col-xl-6 ">
-                                                    <h4
-                                                        class="fs-32 lh-1-2 text-break">{{this.title}}</h4>
-                                                </div>
-                                                <div class="col-xl-6 ">
-                                                    <p
-                                                        class="fs-20">{{this.description}}</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    {{/each}}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                {{/unless}}
-                {{/if}}
-
-                {{!-- experience section --}}
-                {{#if experiences.value.experiences.items }}
-                {{#unless experiences.meta.hide}}
-                <section class="no-top px-4 section-wrapper"
-                    data-edit-section="experiences"
-                    data-section="experiences"
-                    data-title="Experience">
-                    <div class="container-fluid">
-                        <div class="row g-4 justify-content-center">
-                            <div class="col-lg-12">
-                                <div class="text-center">
-                                    <h2>
-                                        {{#if
-                                        experiences.value.experiences.section_title}}
-                                        {{experiences.value.experiences.section_title}}
-                                        {{else}}Experience{{/if}}
-                                    </h2>
-                                </div>
-                            </div>
-
-                            {{#each experiences.value.experiences.items}}
-                            <div
-                                class="col-md-3 text-center fadeInRight">
-                                <div
-                                    class="p-4 py-lg-5 py-4 bg-light h-100 rounded-1">
-                                    <h6>
-                                        {{this.startDate.year}}
-                                        -
-                                        {{#if this.endDate}}
-                                        {{this.endDate.year}}
-                                        {{else}}
-                                        Present
-                                        {{/if}}
-                                    </h6>
-                                    <h3>{{this.title}}</h3>
-                                    <p class="mb-0">{{this.companyName}}</p>
-                                </div>
-                            </div>
-                            {{/each}}
-                        </div>
-                    </div>
-                </section>
-                {{/unless}}
-                {{/if}}
-
-                <!-- education section -->
-                {{#if educations.value.educations.items }}
-                {{#unless educations.meta.hide}}
-                <section class="no-top px-4 section-wrapper"
-                    data-edit-section="educations"
-                    data-section="educations"
-                    data-title="Education">
-                    <div class="container-fluid">
-                        <div class="row g-4 justify-content-center">
-                            <div class="col-lg-12">
-                                <div class="text-center">
-                                    <h2>
-                                        {{#if
-                                        educations.value.educations.section_title}}
-                                        {{educations.value.educations.section_title}}
-                                        {{else}}Education{{/if}}
-                                    </h2>
-                                </div>
-                            </div>
-
-                            {{#each educations.value.educations.items}}
-                            <div
-                                class="col-md-3 text-center  fadeInRight">
-                                <div
-                                    class="p-4 py-lg-5 py-4 bg-light h-100 rounded-1">
-                                    <h6>{{this.startDate.year}}
-                                        -
-                                        {{#if this.endDate}}
-                                        {{this.endDate.year}}
-                                        {{else}}
-                                        Present
-                                        {{/if}}</h6>
-                                    <h3
-                                        class="text-break">{{this.degreeName}}</h3>
-                                    <p
-                                        class="mb-0 text-break">{{this.schoolName}}</p>
-                                </div>
-                            </div>
-                            {{/each}}
-                        </div>
-                    </div>
-                </section>
-                {{/unless}}
-                {{/if}}
-
-                {{#if services.value.services.heading}}
-                {{#unless services.meta.hide}}
-                <section class="no-top px-4 section-wrapper"
-                    data-edit-section="services"
-                    data-section="services"
-                    data-title="Services Heading">
-                    <div class="container-fluid">
-                        <div
-                            class="spacer-double d-lg-none d-sm-block"></div>
-                        <div
-                            class="row justify-content-center g-4 gx-5">
-                            <div class="col-lg-6 text-center">
-                                <div class="relative">
-                                    <h1
-                                        class="lh-1 fadeInUp">{{services.value.services.heading}}</h1>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                {{/unless}}
-                {{/if}}
-
-                <!-- projects -->
-                {{#if projects.value.projects.items}}
-                {{#unless projects.meta.hide}}
-                <section id="works"
-                    class="no-top px-4 section-wrapper"
-                    data-edit-section="projects"
-                    data-section="projects"
-                    data-title="Projects">
-                    <div class="container-fluid">
-                        <div class="row g-4 fadeInRight">
-                            <div class="col-xl-4">
-                                <div
-                                    class="p-lg-5 p-4 bg-color h-100 rounded-1">
-                                    <div class="subtitle">
-                                        {{#if
-                                        projects.value.projects.section_title}}
-                                        {{projects.value.projects.section_title}}
-                                        {{else}}
-                                        Featured Projects
-                                        {{/if}}
-                                    </div>
-                                    <h2>
-                                        {{#if
-                                        projects.value.projects.description}}
-                                        {{projects.value.projects.description}}
-                                        {{else}}
-                                        A showcase of selected works that
-                                        represent my journey and skills
-                                        {{/if}}
-                                    </h2>
-                                </div>
-                            </div>
-
-                            {{#each projects.value.projects.items}}
-                            <div class="col-xl-4 col-md-6">
-                                <div class="bg-dark rounded-1 overflow-hidden">
-                                    <div
-                                        class="hover relative overflow-hidden text-light">
-                                        <a
-                                            href="{{#if this.url}}{{this.url}}{{else}}#{{/if}}"
-                                            class="overflow-hidden d-block relative">
-                                            <img
-                                                src="{{#if this.image}}{{this.image}}{{else}}https://api.dicebear.com/9.x/glass/svg{{/if}}"
-                                                class="img-fluid hover-scale-1-2"
-                                                alt>
-                                        </a>
-
-                                        <div
-                                            class="p-4 d-flex justify-content-between align-items-center">
-                                            <div>
-                                                <h3
-                                                    class="mb-0 lh-1-2">{{this.title}}</h3>
-                                                <span
-                                                    class="fs-14">{{this.subtitle}}</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            {{/each}}
-
-                        </div>
-                    </div>
-                </section>
-                {{/unless}}
-                {{/if}}
-
-                {{!-- contact section --}}
-                {{#if contacts.value.contacts}}
-                {{#if contacts.value.contacts.contactForm}}
-                {{#unless contacts.meta.hide}}
-                <section id="contact"
-                    class="no-top px-4 section-wrapper"
-                    data-edit-section="contacts"
-                    data-section="contacts"
-                    data-title="Contact">
-                    <div class="container-fluid">
-                        <div class="row g-4 gx-5">
-                            <div class="col-lg-12">
-                                <div class="text-center">
-                                    <h2>
-                                        {{#if
-                                        contacts.value.contacts.section_title}}
-                                        {{contacts.value.contacts.section_title}}
-                                        {{else}}Get In Touch{{/if}}
-                                    </h2>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-8 offset-lg-2  fadeInUp">
-                                {{#if contacts.value.contacts.description}}
-                                <p
-                                    class="text-center">{{contacts.value.contacts.description}}</p>
-                                {{/if}}
-
-                                <form name="contactForm"
-                                    id="contact_form"
-                                    class="position-relative z1000"
-                                    method="post"
-                                    action="07_contact.html#">
-                                    <div class="row gx-4">
-                                        <div
-                                            class="col-lg-6 col-md-6 mb10">
-                                            <div class="field-set">
-                                                <span
-                                                    class="d-label fw-bold">Name</span>
-                                                <input type="text"
-                                                    name="Name"
-                                                    id="name"
-                                                    class="form-control no-border"
-                                                    placeholder="Your Name"
-                                                    required>
-                                            </div>
-
-                                            <div class="field-set">
-                                                <span
-                                                    class="d-label fw-bold">Email</span>
-                                                <input type="text"
-                                                    name="Email"
-                                                    id="email"
-                                                    class="form-control no-border"
-                                                    placeholder="Your Email"
-                                                    required>
-                                            </div>
-
-                                            <div class="field-set">
-                                                <span
-                                                    class="d-label fw-bold">Phone</span>
-                                                <input type="text"
-                                                    name="phone"
-                                                    id="phone"
-                                                    class="form-control no-border"
-                                                    placeholder="Your Phone"
-                                                    required>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-6 col-md-6">
-                                            <div class="field-set mb20">
-                                                <span
-                                                    class="d-label fw-bold">Message</span>
-                                                <textarea name="message"
-                                                    id="message"
-                                                    class="form-control no-border"
-                                                    placeholder="Your Message"
-                                                    required></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div id='submit' class="mt20">
-                                        <input type='submit'
-                                            id='send_message'
-                                            value='Send Message'
-                                            class="btn-main btn-line text-dark">
-                                    </div>
-
-                                    <div id="success_message"
-                                        class='success'>
-                                        Your message has been sent
-                                        successfully. Refresh this page
-                                        if you want to send more
-                                        messages.
-                                    </div>
-                                    <div id="error_message"
-                                        class='error'>
-                                        Sorry there was an error sending
-                                        your form.
-                                    </div>
-                                </form>
-
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                {{/unless}}
-                {{/if}}
-                {{/if}}
-
+      <!-- Hero Section Start -->
+      <div class="mxd-section">
+        <div class="mxd-hero-09">
+          <div class="mxd-hero-09__wrap loading-wrap">
+            <div class="mxd-hero-09__headline">
+              <div class="hero-09-headline__caption loading__item">
+                <p>Award-winning creative projects, over ten years of digital
+                  experience.</p>
+              </div>
+              <div class="hero-09-headline__title loading__item">
+                <h1 class="hero-09-headline__hidden">Alex Walker</h1>
+                <svg class="hero-09-svg-mobile"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                  viewBox="0 0 153.2 74.1"
+                  style="enable-background:new 0 0 153.2 74.1;"
+                  xml:space="preserve">
+                  <path
+                    d="M9.7,34c-2.8,0-5-0.7-6.6-2c-1.6-1.4-2.4-3.2-2.4-5.4c0-2.3,0.8-4.2,2.4-5.4c1.6-1.3,3.9-1.9,7-1.9h7.3v-1
+                  c0-2.9-1.7-4.4-5.1-4.4c-2.9,0-4.7,1-5.2,3.1h-6c0.5-2.6,1.7-4.5,3.6-5.9c1.9-1.3,4.4-2,7.6-2c3.5,0,6.2,0.8,8,2.4
+                  c1.8,1.6,2.8,3.9,2.8,6.9v9.2H26v6h-6.1v-3.8h-1.7c-0.8,1.4-1.9,2.4-3.3,3.2S11.7,34,9.7,34z M10.6,29.4c1.3,0,2.5-0.2,3.5-0.7
+                  c1-0.5,1.9-1.2,2.5-2c0.6-0.8,0.9-1.8,0.9-2.8v-0.6h-7c-2.7,0-4,1-4,3c0,1,0.4,1.8,1.1,2.3C8.2,29.2,9.3,29.4,10.6,29.4z M30.6,33.6
+                  V0h6v33.6H30.6z M53.6,34.1c-2.6,0-4.8-0.5-6.7-1.5c-1.9-1-3.4-2.5-4.4-4.4c-1-1.9-1.5-4.1-1.5-6.7s0.5-4.8,1.5-6.6
+                  c1-1.9,2.5-3.3,4.3-4.3c1.9-1,4.1-1.5,6.6-1.5c2.5,0,4.6,0.5,6.3,1.4c1.8,0.9,3.1,2.3,4.1,4.1c1,1.8,1.4,3.9,1.4,6.3V23H46.7
+                  c0.2,2,1,3.6,2.1,4.7c1.2,1.1,2.8,1.6,4.7,1.6c1.5,0,2.7-0.3,3.6-0.8s1.6-1.4,1.9-2.5h6c-0.6,2.5-1.8,4.5-3.9,5.9
+                  C59.2,33.4,56.7,34.1,53.6,34.1z M46.8,19h12.6c-0.2-1.7-0.8-2.9-1.9-3.8c-1.1-0.9-2.5-1.3-4.2-1.3c-1.7,0-3.2,0.4-4.3,1.3
+                  S47.2,17.3,46.8,19z M66.2,33.6l9.4-12.3L66.7,9.6h6.6l5.8,7.6l5.8-7.6h6.6l-8.9,11.7l9.4,12.3h-6.7L79,25.4l-6.2,8.2H66.2z
+                  M7.7,73.6L0,49.6h6.1l5,16.6h0.2l5.9-16.6H23l5.9,16.6h0.2l5-16.6h6l-7.7,24h-6.4l-5.9-16.3H20l-5.9,16.3H7.7z M50.5,74
+                  c-2.8,0-5-0.7-6.6-2c-1.6-1.4-2.4-3.2-2.4-5.4c0-2.3,0.8-4.2,2.4-5.4c1.6-1.3,3.9-1.9,7-1.9h7.3v-1c0-2.9-1.7-4.4-5.1-4.4
+                  c-2.9,0-4.7,1-5.2,3.1h-6c0.5-2.6,1.7-4.5,3.6-5.9s4.4-2,7.6-2c3.5,0,6.2,0.8,8,2.4s2.8,3.9,2.8,6.9v9.2h2.8v6h-6.1v-3.8H59
+                  c-0.8,1.4-1.9,2.4-3.3,3.2S52.5,74,50.5,74z M51.4,69.4c1.3,0,2.5-0.2,3.5-0.7c1-0.5,1.9-1.2,2.5-2c0.6-0.8,0.9-1.8,0.9-2.8v-0.6h-7
+                  c-2.7,0-4,1-4,3c0,1,0.4,1.8,1.1,2.3C49.1,69.2,50.1,69.4,51.4,69.4z M71.4,73.6V40h6v33.6H71.4z M83.1,73.6V40h6v18.9h0.2l10.1-9.3
+                  h7.1L96,59l11.3,14.6h-7l-8.4-10.9L89.1,65v8.6H83.1z M120.7,74.1c-2.6,0-4.8-0.5-6.7-1.5c-1.9-1-3.4-2.5-4.4-4.4s-1.5-4.1-1.5-6.7
+                  c0-2.6,0.5-4.8,1.5-6.6c1-1.9,2.5-3.3,4.3-4.3c1.9-1,4.1-1.5,6.6-1.5c2.5,0,4.6,0.5,6.3,1.4s3.1,2.3,4.1,4.1c1,1.8,1.4,3.9,1.4,6.3
+                  V63h-18.5c0.2,2,1,3.6,2.1,4.7c1.2,1.1,2.8,1.6,4.7,1.6c1.5,0,2.7-0.3,3.6-0.8s1.6-1.4,1.9-2.5h6c-0.6,2.5-1.8,4.5-3.9,5.9
+                  C126.3,73.4,123.8,74.1,120.7,74.1z M114,59h12.6c-0.2-1.7-0.8-2.9-1.9-3.8c-1.1-0.9-2.5-1.3-4.2-1.3c-1.7,0-3.2,0.4-4.3,1.3
+                  C115.1,56.1,114.3,57.3,114,59z M138.5,73.6v-18h-3v-6h6.1v4.6h1.7c0.7-1.6,1.7-2.8,3.1-3.6c1.4-0.8,3-1.2,4.8-1.2h2v5.1h-2.3
+                  c-2.2,0-3.8,0.6-4.9,1.9c-1.1,1.3-1.6,2.9-1.6,5v12.2H138.5z" />
+                </svg>
+                <svg class="hero-09-svg-desktop"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                  viewBox="0 0 257.3 34.1"
+                  style="enable-background:new 0 0 257.3 34.1;"
+                  xml:space="preserve">
+                  <path
+                    d="M9,34c-2.8,0-5-0.7-6.6-2C0.8,30.6,0,28.8,0,26.6c0-2.3,0.8-4.2,2.4-5.4c1.6-1.3,3.9-1.9,7-1.9h7.3v-1
+                  c0-2.9-1.7-4.4-5.1-4.4c-2.9,0-4.7,1-5.2,3.1h-6c0.5-2.6,1.7-4.5,3.6-5.9c1.9-1.3,4.4-2,7.6-2c3.5,0,6.2,0.8,8,2.4
+                  c1.8,1.6,2.8,3.9,2.8,6.9v9.2h2.8v6h-6.1v-3.8h-1.7c-0.8,1.4-1.9,2.4-3.3,3.2C12.7,33.7,11,34,9,34z M9.8,29.4
+                  c1.3,0,2.5-0.2,3.5-0.7c1-0.5,1.9-1.2,2.5-2c0.6-0.8,0.9-1.8,0.9-2.8v-0.6h-7c-2.7,0-4,1-4,3c0,1,0.4,1.8,1.1,2.3
+                  C7.5,29.2,8.5,29.4,9.8,29.4z M29.8,33.6V0h6v33.6H29.8z M52.9,34.1c-2.6,0-4.8-0.5-6.7-1.5c-1.9-1-3.4-2.5-4.4-4.4
+                  c-1-1.9-1.5-4.1-1.5-6.7s0.5-4.8,1.5-6.6c1-1.9,2.5-3.3,4.3-4.3c1.9-1,4.1-1.5,6.6-1.5c2.5,0,4.6,0.5,6.3,1.4
+                  c1.8,0.9,3.1,2.3,4.1,4.1c1,1.8,1.4,3.9,1.4,6.3V23H46c0.2,2,1,3.6,2.1,4.7s2.8,1.6,4.7,1.6c1.5,0,2.7-0.3,3.6-0.8
+                  c0.9-0.5,1.6-1.4,1.9-2.5h6c-0.6,2.5-1.8,4.5-3.9,5.9C58.5,33.4,55.9,34.1,52.9,34.1z M46.1,19h12.6c-0.2-1.7-0.8-2.9-1.9-3.8
+                  c-1.1-0.9-2.5-1.3-4.2-1.3c-1.7,0-3.2,0.4-4.3,1.3S46.5,17.3,46.1,19z M65.5,33.6l9.4-12.3L66,9.6h6.6l5.8,7.6l5.8-7.6h6.6
+                  l-8.9,11.7l9.4,12.3h-6.7l-6.2-8.2l-6.2,8.2H65.5z M111.9,33.6l-7.7-24h6.1l5,16.6h0.2l5.9-16.6h5.7l5.9,16.6h0.2l5-16.6h6l-7.7,24
+                  h-6.4l-5.9-16.3h-0.2l-5.9,16.3H111.9z M154.7,34c-2.8,0-5-0.7-6.6-2c-1.6-1.4-2.4-3.2-2.4-5.4c0-2.3,0.8-4.2,2.4-5.4
+                  c1.6-1.3,3.9-1.9,7-1.9h7.3v-1c0-2.9-1.7-4.4-5.1-4.4c-2.9,0-4.7,1-5.2,3.1h-6c0.5-2.6,1.7-4.5,3.6-5.9c1.9-1.3,4.4-2,7.6-2
+                  c3.5,0,6.2,0.8,8,2.4c1.8,1.6,2.8,3.9,2.8,6.9v9.2h2.8v6h-6.1v-3.8h-1.7c-0.8,1.4-1.9,2.4-3.3,3.2C158.4,33.7,156.7,34,154.7,34z
+                  M155.6,29.4c1.3,0,2.5-0.2,3.5-0.7c1-0.5,1.9-1.2,2.5-2c0.6-0.8,0.9-1.8,0.9-2.8v-0.6h-7c-2.7,0-4,1-4,3c0,1,0.4,1.8,1.1,2.3
+                  C153.2,29.2,154.3,29.4,155.6,29.4z M175.6,33.6V0h6v33.6H175.6z M187.3,33.6V0h6v18.9h0.2l10.1-9.3h7.1L200.2,19l11.3,14.6h-7
+                  L196,22.7l-2.8,2.3v8.6H187.3z M224.9,34.1c-2.6,0-4.8-0.5-6.7-1.5c-1.9-1-3.4-2.5-4.4-4.4s-1.5-4.1-1.5-6.7s0.5-4.8,1.5-6.6
+                  c1-1.9,2.5-3.3,4.3-4.3c1.9-1,4.1-1.5,6.6-1.5c2.5,0,4.6,0.5,6.3,1.4c1.8,0.9,3.1,2.3,4.1,4.1c1,1.8,1.4,3.9,1.4,6.3V23H218
+                  c0.2,2,1,3.6,2.1,4.7s2.8,1.6,4.7,1.6c1.5,0,2.7-0.3,3.6-0.8c0.9-0.5,1.6-1.4,1.9-2.5h6c-0.6,2.5-1.8,4.5-3.9,5.9
+                  C230.5,33.4,227.9,34.1,224.9,34.1z M218.1,19h12.6c-0.2-1.7-0.8-2.9-1.9-3.8c-1.1-0.9-2.5-1.3-4.2-1.3c-1.7,0-3.2,0.4-4.3,1.3
+                  C219.2,16.1,218.5,17.3,218.1,19z M242.7,33.6v-18h-3v-6h6.1v4.6h1.7c0.7-1.6,1.7-2.8,3.1-3.6c1.4-0.8,3-1.2,4.8-1.2h2v5.1H255
+                  c-2.2,0-3.8,0.6-4.9,1.9c-1.1,1.3-1.6,2.9-1.6,5v12.2H242.7z" />
+                </svg>
+              </div>
+              <div class="hero-09-headline__tags loading__fade">
+                <span class="tag tag-default tag-outline">Midjourney</span>
+                <span class="tag tag-default tag-outline">AI</span>
+                <span class="tag tag-default tag-outline">Editorial</span>
+                <span class="tag tag-default tag-outline">Interactive
+                  design</span>
+                <span class="tag tag-default tag-outline">Web experience</span>
+                <span class="tag tag-default tag-outline">Web design</span>
+                <span class="tag tag-default tag-outline">Branding</span>
+                <span class="tag tag-default tag-outline">UI</span>
+                <span class="tag tag-default tag-outline">UX</span>
+                <span class="tag tag-default tag-outline">HTML</span>
+                <span class="tag tag-default tag-outline">Frontend</span>
+                <span class="tag tag-default tag-outline">Motion design</span>
+                <span class="tag tag-default tag-outline">3d modeling</span>
+                <span class="tag tag-default tag-outline">Video editing</span>
+              </div>
             </div>
-            <footer>
-                <img
-                    src="https://vise-page.s3.us-east-1.amazonaws.com/asset/image-1757319106385-scratches-3.webp"
-                    class="w-20 me-5 abs bottom-0 abs-center d-none d-lg-block"
-                    alt>
-
-                <div class="container-fluid">
-                    <div class="px-2">
-                        <div class="row g-4 align-items-center">
-                            <!-- sociallinks -->
-                            <div
-                                class="col-12 col-lg-6 text-center text-lg-start section-wrapper"
-                                data-edit-section="social"
-                                data-section="social"
-                                data-title="Social Links">
-                                {{#if social.value.social.items}}
-                                {{#unless social.meta.hide}}
-                                <div class="d-menu-1">
-                                    <ul>
-                                        {{#each social.value.social.items}}
-                                        <li><a
-                                                href="{{this.url}}"
-                                                target="_blank">{{this.label}}</a></li>
-                                        {{/each}}
-                                    </ul>
-                                    <p class="no-bottom">All Right
-                                        Reserved</p>
-                                </div>
-                                {{/unless}}
-                                {{/if}}
-                            </div>
-
-                            <div
-                                class="col-12 col-lg-6 text-center text-lg-end">
-                                <a
-                                    href="{{#if contacts.value.contacts.email}} mailto:{{contacts.value.contacts.email}} {{else}} #contact {{/if}}">
-                                    <h2
-                                        class="fs-84 fw-800 pe-lg-3 shuffle fadeInLeft">
-                                        {{#if
-                                        contacts.value.contacts.heading}}
-                                        {{contacts.value.contacts.heading}}
-                                        {{else}} Let's
-                                        Talk
-                                        {{/if}}
-                                    </h2>
-                                </a>
-                            </div>
-
-                        </div>
-                    </div>
+            <div class="mxd-hero-09__objects">
+              <div class="hero-09-objects__image loading__item">
+                <img class="mxd-move" src="/2/img/hero/22_hero-img.webp"
+                  alt="Hero Image">
+              </div>
+              <div class="hero-09-objects__item item-01 loading__item">
+                <div class="mxd-counter horizontal">
+                  <p id="stats-counter-1"
+                    class="mxd-counter__number mxd-stats-number xsmall">0</p>
+                  <p class="mxd-counter__descr t-140 t-bright t-small">Years
+                    of<br>experience</p>
                 </div>
-            </footer>
+              </div>
+              <div class="hero-09-objects__item item-02 loading__item">
+                <div class="mxd-counter horizontal">
+                  <p id="stats-counter-2"
+                    class="mxd-counter__number mxd-stats-number xsmall">0</p>
+                  <p
+                    class="mxd-counter__descr t-140 t-bright t-small">Successful<br>projects</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-    </body>
+      </div>
+      <!-- Hero Section End -->
+
+      <!-- Section - Projects Pinned #02 Start -->
+      <div id="projects"
+        class="mxd-section padding-hero-09 padding-grid-pre-mtext">
+        <div class="mxd-container grid-container">
+
+          <!-- Block - Projects Pinned #01 with Section Title Start -->
+          <div class="mxd-block">
+            <div class="mxd-pinned-projects">
+              <div class="container-fluid px-0">
+                <div class="row gx-0">
+                  <div class="col-12 col-xl-5 mxd-pinned-projects__static">
+                    <div class="mxd-pinned-projects__static-inner no-margin">
+
+                      <!-- Section Title Start -->
+                      <div class="mxd-section-title no-margin-desktop">
+                        <div class="container-fluid p-0">
+                          <div class="row g-0">
+                            <div class="col-12 mxd-grid-item no-margin">
+                              <div class="mxd-section-title__title">
+                                <h2 class="h2-large reveal-type">Projects</h2>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Section Title Start -->
+
+                    </div>
+                  </div>
+                  <div class="col-12 col-xl-7 mxd-pinned-projects__scroll">
+                    <div
+                      class="mxd-pinned-projects__scroll-inner mxd-grid-item no-margin">
+                      <!-- item -->
+                      <div class="mxd-project-item">
+                        <a class="mxd-project-item__media anim-uni-in-up"
+                          href="project-details.html">
+
+                          <img
+                            src="/2/img/works/preview/1400x1400_prv-01.webp"
+                            alt="Project preview"
+                            class="parallax-img-small mxd-project-item__preview ">
+
+                          <div class="mxd-project-item__tags">
+                            <span
+                              class="tag tag-default tag-permanent">UI/UX</span>
+                            <span class="tag tag-default tag-permanent">Web
+                              design</span>
+                            <span
+                              class="tag tag-default tag-permanent">Development</span>
+                          </div>
+                        </a>
+                        <div class="mxd-project-item__promo">
+                          <div class="mxd-project-item__name">
+                            <a class="anim-uni-in-up"
+                              href="project-details.html"><span>Rayo
+                                template</span> creative studio solution</a>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- item -->
+                      <div class="mxd-project-item">
+                        <a class="mxd-project-item__media anim-uni-in-up"
+                          href="project-details.html">
+                          <img
+                            src="/2/img/works/preview/1400x1400_prv-01.webp"
+                            alt="Project preview"
+                            class="parallax-img-small mxd-project-item__preview ">
+                          <div class="mxd-project-item__tags">
+                            <span
+                              class="tag tag-default tag-permanent">Midjourney</span>
+                            <span
+                              class="tag tag-default tag-permanent">Editorial</span>
+                          </div>
+                        </a>
+                        <div class="mxd-project-item__promo">
+                          <div class="mxd-project-item__name">
+                            <a class="anim-uni-in-up"
+                              href="project-details.html"><span>AI
+                                experiments</span> themed illustrations
+                              series</a>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- item -->
+                      <div class="mxd-project-item">
+                        <a class="mxd-project-item__media anim-uni-in-up"
+                          href="project-details.html">
+                          <img
+                            src="/2/img/works/preview/1400x1400_prv-01.webp"
+                            alt="Project preview"
+                            class="parallax-img-small mxd-project-item__preview ">
+                          <div class="mxd-project-item__tags">
+                            <span
+                              class="tag tag-default tag-permanent">UI/UX</span>
+                            <span
+                              class="tag tag-default tag-permanent">Mobile</span>
+                          </div>
+                        </a>
+                        <div class="mxd-project-item__promo">
+                          <div class="mxd-project-item__name">
+                            <a class="anim-uni-in-up"
+                              href="project-details.html"><span>Delivery
+                                service</span> mobile app design</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Block - Projects Pinned #01 with Section Title Start -->
+
+        </div>
+      </div>
+      <!-- Section - Projects Pinned #02 End -->
+
+      <!-- Section - Marquee Text One Line Start -->
+      <div class="mxd-section padding-mtext-pre-stack">
+        <div class="mxd-container fullwidth-container">
+
+          <!-- Block - Marquee Text One Line Start -->
+          <div class="mxd-block">
+            <div class="marquee marquee-right--gsap muted-extra">
+              <div class="marquee__toright">
+                <!-- single item -->
+                <div class="marquee__item one-line item-regular text">
+                  <p class="marquee__text">I Can Do Best</p>
+                  <div class="marquee__image">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 80 80" fill="currentColor">
+                      <path fill="currentColor"
+                        d="M78.4,38.4c0,0-11.8,0-15.8,0c-1.6,0-4.8-0.2-7.1-0.8c-2.3-0.6-4.3-0.8-6.3-2.4c-2-1.2-3.5-3.2-4.7-4.8
+                        c-1.2-1.6-1.6-3.6-2-5.5c-0.3-1.5-0.7-4.3-0.8-5.9c-0.2-4.3,0-17.4,0-17.4C41.8,0.8,41,0,40.2,0s-1.6,0.8-1.6,1.6c0,0,0,13.1,0,17.4
+                        c0,1.6-0.6,4.3-0.8,5.9c-0.3,2-0.8,4-2,5.5c-1.2,2-2.8,3.6-4.7,4.8s-4,1.8-6.3,2.4c-1.9,0.5-4.7,0.6-6.7,0.8c-3.9,0.4-16.6,0-16.6,0
+                        C0.8,38.4,0,39.2,0,40c0,0.8,0.8,1.6,1.6,1.6c0,0,12.2,0,16.6,0c1.6,0,4.8,0.3,6.7,0.8c2.3,0.6,4.3,0.8,6.3,2.4
+                        c1.6,1.2,3.2,2.8,4.3,4.4c1.2,2,2.1,3.9,2.4,6.3c0.2,1.7,0.7,4.7,0.8,6.7c0.2,4,0,16.2,0,16.2c0,0.8,0.8,1.6,1.6,1.6
+                        s1.6-0.8,1.6-1.6c0,0,0-12.3,0-16.2c0-1.6,0.5-5.1,0.8-6.7c0.5-2.3,0.8-4.4,2.4-6.3c1.2-1.6,2.8-3.2,4.3-4.4c2-1.2,3.9-2,6.3-2.4
+                        c1.8-0.3,5.1-0.7,7.1-0.8c3.5-0.2,15.8,0,15.8,0c0.8,0,1.6-0.8,1.6-1.6C80,39.2,79.2,38.4,78.4,38.4C78.4,38.4,78.4,38.4,78.4,38.4z
+                        " />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Block - Marquee Text One Line End -->
+        </div>
+      </div>
+      <!-- Section - Marquee Text One Line End -->
+
+      <!-- Section - Services/Features Stacking Cards Start -->
+      <div class="mxd-section padding-stacked-section">
+        <div class="mxd-container grid-container">
+
+          <!-- Block - Services/Features Stacking Cards Start -->
+          <div class="mxd-block mxd-grid-item no-margin">
+            <div class="content__block">
+              <div class="stack-wrapper">
+                <div class="stack-offset"></div>
+                <div class="services-stack">
+                  <!-- services stack single item -->
+                  <div class="stack-item">
+                    <div
+                      class="mxd-services-stack__inner justify-between bg-base-opp">
+                      <div class="mxd-services-stack__title width-60">
+                        <h3 class="opposite">Digital art and graphic design</h3>
+                      </div>
+                      <div class="mxd-services-stack__info width-60">
+                        <div class="mxd-services-cards__tags">
+                          <span
+                            class="tag tag-default tag-outline-opposite">UI/UX</span>
+                          <span class="tag tag-default tag-outline-opposite">Web
+                            design</span>
+                          <span
+                            class="tag tag-default tag-outline-opposite">Packaging</span>
+                          <span
+                            class="tag tag-default tag-outline-opposite">Motion</span>
+                          <span class="tag tag-default tag-outline-opposite">3D
+                            models</span>
+                        </div>
+                        <p class="t-opposite">We create visually compelling
+                          designs that enhance user experience.
+                          We make sure your brand's visuals resonate with your
+                          audience.</p>
+                      </div>
+                      <div class="services-stack__image">
+                        <img class="service-img service-img-s"
+                          src="/2/img/services/800x800_ser-01.webp"
+                          alt="Service/Feature Image">
+                        <img class="service-img service-img-m"
+                          src="/2/img/services/1000x1000_ser-01.webp"
+                          alt="Service/Feature Image">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Block - Services/Features Stacking Cards End -->
+
+        </div>
+      </div>
+      <!-- Section - Services/Features Stacking Cards End -->
+
+      <!-- Section - About Start -->
+      <div class="mxd-section padding-default">
+        <div class="mxd-container grid-container">
+
+          <!-- Block - About Description with Manifest Start -->
+          <div class="mxd-block">
+            <div class="container-fluid px-0">
+              <div class="row gx-0 d-xl-flex justify-content-xl-center">
+                <div class="col-12 col-xl-8 mxd-grid-item no-margin">
+                  <div class="mxd-block__content">
+                    <div class="mxd-block__manifest centered anim-uni-in-up">
+                      <p class="mxd-manifest mxd-manifest-l reveal-type">Web
+                        design is evolving rapidly,
+                        and I strive to stay ahead. Emerging tools and
+                        technologies enable me to create
+                        visually stunning and seamlessly functional
+                        websites.</p>
+                      <div class="mxd-manifest__controls anim-uni-in-up">
+                        <div class="mxd-btngroup centered">
+                          <a
+                            class="btn btn-anim btn-default btn-accent slide-right-up"
+                            href="works-masonry.html">
+                            <span class="btn-caption">My Works</span>
+                            <i class="ph-bold ph-arrow-up-right"></i>
+                          </a>
+                          <a
+                            class="btn btn-anim btn-default btn-outline slide-down"
+                            href="index-personal-portfolio.html#0">
+                            <span class="btn-caption">Download CV</span>
+                            <i class="ph-bold ph-arrow-down"></i>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Block - About Description with Manifest End -->
+
+        </div>
+      </div>
+      <!-- Section - About End -->
+
+      <!-- Section - Parallax Divider Start -->
+      <div class="mxd-section padding-pre-title">
+        <div class="mxd-container">
+          <div class="mxd-container__circle">
+            <a class="btn-rotating btn-rotating-blur-outline ver-02"
+              href="contact.html">
+              <!-- SVG rotating text -->
+              <svg version="1.1" id="scrollDown"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                viewBox="0 0 160 160" style="enable-background:new 0 0 160 160;"
+                xml:space="preserve"
+                class="btn-rotating__text animate-rotation" data-value="360">
+                <defs>
+                  <path id="textPath"
+                    d="M149.7,80c0,38.5-31.2,69.7-69.7,69.7S10.3,118.5,10.3,80S41.5,10.3,80,10.3S149.7,41.5,149.7,80z" />
+                </defs>
+                <g>
+                  <use xlink:href="#textPath" fill="none"></use>
+                  <text>
+                    <!-- button text here!!! -->
+                    <textpath xlink:href="#textPath">Let's start new project *
+                      Let's start new project * </textpath>
+                  </text>
+                </g>
+              </svg>
+              <!-- image -->
+              <img class="btn-rotating__image"
+                src="/2/img/icons/300x300_obj-btn-02.webp" alt="Object">
+            </a>
+          </div>
+          <div class="mxd-divider">
+            <div class="mxd-divider__image divider-image-6 parallax-img"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Section - Parallax Divider End -->
+
+      <!-- Section - Experience Start -->
+      <div class="mxd-section padding-default">
+        <div class="mxd-container grid-container">
+
+          <!-- Block - Stack Universal Pinned Block with Section Title Start -->
+          <div class="mxd-block">
+            <div class="mxd-pinned-universal">
+              <div class="container-fluid px-0">
+                <div class="row gx-0">
+                  <div class="col-12 col-xl-5 mxd-pinned-universal__static">
+                    <div class="mxd-pinned-universal__static-inner no-margin">
+
+                      <!-- Section Title Start -->
+                      <div class="mxd-section-title h2-only no-margin-desktop">
+                        <div class="container-fluid p-0">
+                          <div class="row g-0">
+                            <div class="col-12 mxd-grid-item no-margin">
+                              <div
+                                class="mxd-section-title__title card-split-title">
+                                <h2 class="reveal-type">Work<br>experience</h2>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Section Title Start -->
+
+                    </div>
+                  </div>
+                  <div class="col-12 col-xl-7 mxd-pinned-universal__scroll">
+                    <div
+                      class="mxd-pinned-universal__scroll-inner mxd-grid-item no-margin">
+                      <div class="mxd-res-list">
+                        <!-- item -->
+                        <div class="mxd-res-list__item">
+                          <div
+                            class="mxd-res-list__divider anim-uni-in-up"></div>
+                          <div class="mxd-res-list__content">
+                            <div class="mxd-res-list__data">
+                              <div class="mxd-res-list__title">
+                                <h4 class="anim-uni-in-up">Illustrator</h4>
+                                <p class="mxd-res-list__source anim-uni-in-up">
+                                  in the
+                                  <a href="about-me.html#0"
+                                    target="_blank">Creative Mind</a>
+                                  agency
+                                </p>
+                              </div>
+                              <div class="mxd-res-list__descr">
+                                <p class="anim-uni-in-up">I created original
+                                  images for a range of digital and printed
+                                  products.</p>
+                              </div>
+                            </div>
+                            <div class="mxd-res-list__year">
+                              <p class="anim-uni-in-up">2019 - 2021</p>
+                            </div>
+                          </div>
+                          <div
+                            class="mxd-res-list__divider anim-uni-in-up"></div>
+                        </div>
+                        <!-- item -->
+                        <div class="mxd-res-list__item">
+                          <div
+                            class="mxd-res-list__divider anim-uni-in-up"></div>
+                          <div class="mxd-res-list__content">
+                            <div class="mxd-res-list__data">
+                              <div class="mxd-res-list__title">
+                                <h4 class="anim-uni-in-up">Graphic designer</h4>
+                                <p class="mxd-res-list__source anim-uni-in-up">
+                                  in the
+                                  <a href="about-me.html#0" target="_blank">Moon
+                                    Light</a>
+                                  agency
+                                </p>
+                              </div>
+                              <div class="mxd-res-list__descr">
+                                <p class="anim-uni-in-up">My job was to create
+                                  adverts, branding, signage and other media
+                                  products.</p>
+                              </div>
+                            </div>
+                            <div class="mxd-res-list__year">
+                              <p class="anim-uni-in-up">2021 - 2024</p>
+                            </div>
+                          </div>
+                          <div
+                            class="mxd-res-list__divider anim-uni-in-up"></div>
+                        </div>
+                        <!-- item -->
+                        <div class="mxd-res-list__item">
+                          <div
+                            class="mxd-res-list__divider anim-uni-in-up"></div>
+                          <div class="mxd-res-list__content">
+                            <div class="mxd-res-list__data">
+                              <div class="mxd-res-list__title">
+                                <h4 class="anim-uni-in-up">UI/UX designer</h4>
+                                <p class="mxd-res-list__source anim-uni-in-up">
+                                  in the
+                                  <a href="about-me.html#0" target="_blank">Moon
+                                    Light</a>
+                                  agency
+                                </p>
+                              </div>
+                              <div class="mxd-res-list__descr">
+                                <p class="anim-uni-in-up">I am actively involved
+                                  in creating user interfaces for mobile apps
+                                  and websites.</p>
+                              </div>
+                            </div>
+                            <div class="mxd-res-list__year">
+                              <p class="anim-uni-in-up">2024 - now</p>
+                            </div>
+                          </div>
+                          <div
+                            class="mxd-res-list__divider anim-uni-in-up"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Block - Stack Universal Pinned Block with Section Title Start -->
+
+        </div>
+      </div>
+      <!-- Section - Experience End -->
+
+      <!-- Section - Tech Stack Marquee One Line Start -->
+      <div class="mxd-section padding-grid-pre-pinned">
+        <div class="mxd-container fullwidth-container">
+
+          <!-- Block - Tech Stack Marquee One Line Start -->
+          <div class="mxd-block">
+            <!-- Marquee Divider Start -->
+            <div class="marquee marquee-right--gsap">
+              <div class="marquee__toright">
+                <!-- single item -->
+                <div class="marquee__item one-line item-regular">
+                  <div class="mxd-tech-stack-cards__item">
+                    <div class="mxd-tech-stack-cards__inner-v3">
+                      <div class="mxd-tech-stack-cards__icon">
+                        <img src="img/tech/icon-photoshop.svg"
+                          alt="Tech Stack Icon">
+                      </div>
+                      <div class="mxd-tech-stack-cards__title">
+                        <p class="t-bright t-caption">Photoshop</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- single item -->
+                <div class="marquee__item one-line item-regular">
+                  <div class="mxd-tech-stack-cards__item">
+                    <div class="mxd-tech-stack-cards__inner-v3">
+                      <div class="mxd-tech-stack-cards__icon">
+                        <img src="img/tech/icon-figma.svg"
+                          alt="Tech Stack Icon">
+                      </div>
+                      <div class="mxd-tech-stack-cards__title">
+                        <p class="t-bright t-caption">Figma</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- single item -->
+                <div class="marquee__item one-line item-regular">
+                  <div class="mxd-tech-stack-cards__item">
+                    <div class="mxd-tech-stack-cards__inner-v3">
+                      <div class="mxd-tech-stack-cards__icon">
+                        <img src="img/tech/icon-illustrator.svg"
+                          alt="Tech Stack Icon">
+                      </div>
+                      <div class="mxd-tech-stack-cards__title">
+                        <p class="t-bright t-caption">Illustrator</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- single item -->
+                <div class="marquee__item one-line item-regular">
+                  <div class="mxd-tech-stack-cards__item">
+                    <div class="mxd-tech-stack-cards__inner-v3">
+                      <div class="mxd-tech-stack-cards__icon">
+                        <img src="img/tech/icon-scketch.svg"
+                          alt="Tech Stack Icon">
+                      </div>
+                      <div class="mxd-tech-stack-cards__title">
+                        <p class="t-bright t-caption">Sketch</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- single item -->
+                <div class="marquee__item one-line item-regular">
+                  <div class="mxd-tech-stack-cards__item">
+                    <div class="mxd-tech-stack-cards__inner-v3">
+                      <div class="mxd-tech-stack-cards__icon">
+                        <img src="img/tech/icon-blender.svg"
+                          alt="Tech Stack Icon">
+                      </div>
+                      <div class="mxd-tech-stack-cards__title">
+                        <p class="t-bright t-caption">Blender</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- single item -->
+                <div class="marquee__item one-line item-regular">
+                  <div class="mxd-tech-stack-cards__item">
+                    <div class="mxd-tech-stack-cards__inner-v3">
+                      <div class="mxd-tech-stack-cards__icon">
+                        <img src="img/tech/icon-html.svg" alt="Tech Stack Icon">
+                      </div>
+                      <div class="mxd-tech-stack-cards__title">
+                        <p class="t-bright t-caption">HTML5</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- single item -->
+                <div class="marquee__item one-line item-regular">
+                  <div class="mxd-tech-stack-cards__item">
+                    <div class="mxd-tech-stack-cards__inner-v3">
+                      <div class="mxd-tech-stack-cards__icon">
+                        <img src="img/tech/icon-css.svg" alt="Tech Stack Icon">
+                      </div>
+                      <div class="mxd-tech-stack-cards__title">
+                        <p class="t-bright t-caption">CSS3</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- single item -->
+                <div class="marquee__item one-line item-regular">
+                  <div class="mxd-tech-stack-cards__item">
+                    <div class="mxd-tech-stack-cards__inner-v3">
+                      <div class="mxd-tech-stack-cards__icon">
+                        <img src="img/tech/icon-notion.svg"
+                          alt="Tech Stack Icon">
+                      </div>
+                      <div class="mxd-tech-stack-cards__title">
+                        <p class="t-bright t-caption">Notion</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <!-- Marquee Divider End -->
+          </div>
+          <!-- Block - Tech Stack Marquee One Line End -->
+
+        </div>
+      </div>
+      <!-- Section - Tech Stack Marquee One Line End -->
+
+      <!-- Section - Education Start -->
+      <div class="mxd-section padding-grid-pre-mtext">
+        <div class="mxd-container grid-container">
+
+          <!-- Block - Stack Universal Pinned Block with Section Title Start -->
+          <div class="mxd-block">
+            <div class="mxd-pinned-universal">
+              <div class="container-fluid px-0">
+                <div class="row gx-0">
+                  <div class="col-12 col-xl-5 mxd-pinned-universal__static">
+                    <div class="mxd-pinned-universal__static-inner no-margin">
+
+                      <!-- Section Title Start -->
+                      <div class="mxd-section-title h2-only no-margin-desktop">
+                        <div class="container-fluid p-0">
+                          <div class="row g-0">
+                            <div class="col-12 mxd-grid-item no-margin">
+                              <div
+                                class="mxd-section-title__title card-split-title">
+                                <h2 class="reveal-type">My<br>education</h2>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Section Title Start -->
+
+                    </div>
+                  </div>
+                  <div class="col-12 col-xl-7 mxd-pinned-universal__scroll">
+                    <div
+                      class="mxd-pinned-universal__scroll-inner mxd-grid-item no-margin">
+                      <div class="mxd-res-list">
+                        <!-- item -->
+                        <div class="mxd-res-list__item">
+                          <div
+                            class="mxd-res-list__divider anim-uni-in-up"></div>
+                          <div class="mxd-res-list__content">
+                            <div class="mxd-res-list__data">
+                              <div class="mxd-res-list__title">
+                                <h4 class="anim-uni-in-up">Drawing
+                                  Concentration</h4>
+                                <p class="mxd-res-list__source anim-uni-in-up">
+                                  course by
+                                  <a href="about-me.html#0" target="_blank">New
+                                    York Academy of Art</a>
+                                </p>
+                              </div>
+                              <div class="mxd-res-list__descr">
+                                <p class="anim-uni-in-up">Intensive drawing
+                                  courses that present the
+                                  fundamental principles of drawing.</p>
+                              </div>
+                            </div>
+                            <div class="mxd-res-list__year">
+                              <p class="anim-uni-in-up">2015 - 2016</p>
+                            </div>
+                          </div>
+                          <div
+                            class="mxd-res-list__divider anim-uni-in-up"></div>
+                        </div>
+                        <!-- item -->
+                        <div class="mxd-res-list__item">
+                          <div
+                            class="mxd-res-list__divider anim-uni-in-up"></div>
+                          <div class="mxd-res-list__content">
+                            <div class="mxd-res-list__data">
+                              <div class="mxd-res-list__title">
+                                <h4 class="anim-uni-in-up">UI/UX Design
+                                  Specialization</h4>
+                                <p class="mxd-res-list__source anim-uni-in-up">
+                                  course by
+                                  <a href="about-me.html#0"
+                                    target="_blank">California Institute of
+                                    Arts</a>
+                                </p>
+                              </div>
+                              <div class="mxd-res-list__descr">
+                                <p class="anim-uni-in-up">Research, design, and
+                                  prototype effective,
+                                  visually-driven websites and apps.</p>
+                              </div>
+                            </div>
+                            <div class="mxd-res-list__year">
+                              <p class="anim-uni-in-up">2019 - 2021</p>
+                            </div>
+                          </div>
+                          <div
+                            class="mxd-res-list__divider anim-uni-in-up"></div>
+                        </div>
+                        <!-- item -->
+                        <div class="mxd-res-list__item">
+                          <div
+                            class="mxd-res-list__divider anim-uni-in-up"></div>
+                          <div class="mxd-res-list__content">
+                            <div class="mxd-res-list__data">
+                              <div class="mxd-res-list__title">
+                                <h4 class="anim-uni-in-up">UI/UX Designer</h4>
+                                <p class="mxd-res-list__source anim-uni-in-up">
+                                  course by
+                                  <a href="about-me.html#0"
+                                    target="_blank">Coursera</a>
+                                </p>
+                              </div>
+                              <div class="mxd-res-list__descr">
+                                <p class="anim-uni-in-up">This cource is about
+                                  how to complete the design
+                                  process from beginning to end.</p>
+                              </div>
+                            </div>
+                            <div class="mxd-res-list__year">
+                              <p class="anim-uni-in-up">2022</p>
+                            </div>
+                          </div>
+                          <div
+                            class="mxd-res-list__divider anim-uni-in-up"></div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Block - Stack Universal Pinned Block with Section Title Start -->
+
+        </div>
+      </div>
+      <!-- Section - Education End -->
+
+      <!-- Section - Marquee Text One Line Start -->
+      <div class="mxd-section padding-mtext">
+        <div class="mxd-container fullwidth-container">
+          <!-- Block - Marquee Text One Line Start -->
+          <div class="mxd-block">
+            <div class="marquee marquee-right--gsap muted-extra">
+              <div class="marquee__toright">
+                <!-- single item -->
+                <div class="marquee__item one-line item-regular text">
+                  <p class="marquee__text">Clients Approve</p>
+                  <div class="marquee__image">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 80 80" fill="currentColor">
+                      <path fill="currentColor"
+                        d="M78.4,38.4c0,0-11.8,0-15.8,0c-1.6,0-4.8-0.2-7.1-0.8c-2.3-0.6-4.3-0.8-6.3-2.4c-2-1.2-3.5-3.2-4.7-4.8
+                        c-1.2-1.6-1.6-3.6-2-5.5c-0.3-1.5-0.7-4.3-0.8-5.9c-0.2-4.3,0-17.4,0-17.4C41.8,0.8,41,0,40.2,0s-1.6,0.8-1.6,1.6c0,0,0,13.1,0,17.4
+                        c0,1.6-0.6,4.3-0.8,5.9c-0.3,2-0.8,4-2,5.5c-1.2,2-2.8,3.6-4.7,4.8s-4,1.8-6.3,2.4c-1.9,0.5-4.7,0.6-6.7,0.8c-3.9,0.4-16.6,0-16.6,0
+                        C0.8,38.4,0,39.2,0,40c0,0.8,0.8,1.6,1.6,1.6c0,0,12.2,0,16.6,0c1.6,0,4.8,0.3,6.7,0.8c2.3,0.6,4.3,0.8,6.3,2.4
+                        c1.6,1.2,3.2,2.8,4.3,4.4c1.2,2,2.1,3.9,2.4,6.3c0.2,1.7,0.7,4.7,0.8,6.7c0.2,4,0,16.2,0,16.2c0,0.8,0.8,1.6,1.6,1.6
+                        s1.6-0.8,1.6-1.6c0,0,0-12.3,0-16.2c0-1.6,0.5-5.1,0.8-6.7c0.5-2.3,0.8-4.4,2.4-6.3c1.2-1.6,2.8-3.2,4.3-4.4c2-1.2,3.9-2,6.3-2.4
+                        c1.8-0.3,5.1-0.7,7.1-0.8c3.5-0.2,15.8,0,15.8,0c0.8,0,1.6-0.8,1.6-1.6C80,39.2,79.2,38.4,78.4,38.4C78.4,38.4,78.4,38.4,78.4,38.4z
+                        " />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Block - Marquee Text One Line End -->
+        </div>
+      </div>
+      <!-- Section - Marquee Text One Line End -->
+
+      <!-- Section - Testimonials Slider #03 Start -->
+      <div id="testimonials"
+        class="mxd-section overflow-hidden padding-default">
+        <div class="mxd-container grid-container">
+          <!-- Block - Testimonials Slider #03 Start -->
+          <div class="mxd-block">
+            <div class="testimonials-slider-2 no-padding">
+              <!-- slider main container -->
+              <div class="swiper-testimonials-2 no-padding">
+                <!-- additional required wrapper -->
+                <div class="swiper-wrapper">
+                  <!-- single slide -->
+                  <div class="swiper-slide mxd-fullwidth-slide no-blur">
+                    <div class="mxd-testimonials-image">
+                      <div class="container-fluid p-0 fullheight-l">
+                        <div
+                          class="row g-0 d-flex align-items-stretch fullheight-l">
+                          <div
+                            class="col-12 col-xl-7 mxd-testimonials-image__content mxd-grid-item no-margin">
+                            <div class="mxd-testimonials-image__author"
+                              data-swiper-parallax-x="-50"
+                              data-swiper-parallax-opacity="0">
+                              <div class="mxd-testimonials-image__avatar">
+                                <img src="img/avatars/300x300_ava-03.webp"
+                                  alt="Review Author">
+                              </div>
+                              <div class="mxd-testimonials-image__info">
+
+                                <h5 class="mxd-testimonials-image__name">John
+                                  Lemon</h5>
+                                <p
+                                  class="mxd-testimonials-image__position t-small">Brand
+                                  Manager in
+                                  <a class="link-small-underline"
+                                    href="about-me.html#">Instant Design</a>
+                                </p>
+                                <div class="mxd-testimonials-image__rating">
+                                  <i class="ph-fill ph-star"></i>
+                                  <i class="ph-fill ph-star"></i>
+                                  <i class="ph-fill ph-star"></i>
+                                  <i class="ph-fill ph-star"></i>
+                                  <i class="ph-fill ph-star"></i>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="mxd-testimonials-image__text"
+                              data-swiper-parallax-x="-100"
+                              data-swiper-parallax-opacity="0">
+                              <p class="t-large">Working with Alex was an
+                                absolute pleasure! He took the time to
+                                understand our business
+                                needs and translated them into a beautifully
+                                designed, user-friendly website.</p>
+                              <a
+                                class="btn btn-anim btn-default btn-small btn-opposite slide-right-up"
+                                href="about-me.html#0">
+                                <span class="btn-caption">Project Page</span>
+                                <i class="ph ph-arrow-up-right"></i>
+                              </a>
+                            </div>
+                          </div>
+                          <div
+                            class="col-12 col-xl-5 mxd-testimonials-image__img mxd-grid-item no-margin"
+                            data-swiper-parallax-x="-50"
+                            data-swiper-parallax-opacity="0">
+                            <img
+                              src="img/illustrations/1400x1400_values-01.webp"
+                              alt>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- single slide -->
+                  <div class="swiper-slide mxd-fullwidth-slide no-blur">
+                    <div class="mxd-testimonials-image">
+                      <div class="container-fluid p-0 fullheight-l">
+                        <div
+                          class="row g-0 d-flex align-items-stretch fullheight-l">
+                          <div
+                            class="col-12 col-xl-7 mxd-testimonials-image__content mxd-grid-item no-margin">
+                            <div class="mxd-testimonials-image__author"
+                              data-swiper-parallax-x="-50"
+                              data-swiper-parallax-opacity="0">
+                              <div class="mxd-testimonials-image__avatar">
+                                <img src="img/avatars/300x300_ava-04.webp"
+                                  alt="Review Author">
+                              </div>
+                              <div class="mxd-testimonials-image__info">
+                                <h5 class="mxd-testimonials-image__name">Alex
+                                  Tomato</h5>
+                                <p
+                                  class="mxd-testimonials-image__position t-small">Brand
+                                  Manager in
+                                  <a class="link-small-underline"
+                                    href="about-me.html#">Instant Design</a>
+                                </p>
+                                <div class="mxd-testimonials-image__rating">
+                                  <i class="ph-fill ph-star"></i>
+                                  <i class="ph-fill ph-star"></i>
+                                  <i class="ph-fill ph-star"></i>
+                                  <i class="ph-fill ph-star"></i>
+                                  <i class="ph-fill ph-star"></i>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="mxd-testimonials-image__text"
+                              data-swiper-parallax-x="-100"
+                              data-swiper-parallax-opacity="0">
+                              <p class="t-large">Amazing job on our website!
+                                Alex understood exactly
+                                what we needed and made it look great and easy
+                                to use.</p>
+                              <a
+                                class="btn btn-anim btn-default btn-small btn-opposite slide-right-up"
+                                href="about-me.html#0">
+                                <span class="btn-caption">Project Page</span>
+                                <i class="ph ph-arrow-up-right"></i>
+                              </a>
+                            </div>
+                          </div>
+                          <div
+                            class="col-12 col-xl-5 mxd-testimonials-image__img mxd-grid-item no-margin"
+                            data-swiper-parallax-x="-50"
+                            data-swiper-parallax-opacity="0">
+                            <img
+                              src="img/illustrations/1400x1400_values-02.webp"
+                              alt>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- navigation buttons -->
+                <div class="swiper-testimonials__controls">
+                  <div
+                    class="swiper-button-prev mxd-slider-btn mxd-slider-btn-round-prev">
+                    <a
+                      class="btn btn-round btn-round-small btn-outline slide-left anim-no-delay"
+                      href="about-me.html#0">
+                      <i class="ph ph-arrow-left"></i>
+                    </a>
+                  </div>
+                  <div
+                    class="swiper-pagination mxd-swiper-pagination-fraction"></div>
+                  <div
+                    class="swiper-button-next mxd-slider-btn mxd-slider-btn-round-next">
+                    <a
+                      class="btn btn-round btn-round-small btn-outline slide-right anim-no-delay"
+                      href="about-me.html#0">
+                      <i class="ph ph-arrow-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Block - Testimonials Slider #03 End -->
+        </div>
+      </div>
+      <!-- Section - Testimonials Slider #03 End -->
+
+      <!-- Section - Inner Page Headline Start -->
+      <div
+        class="mxd-section mxd-section-inner-headline padding-s-text-pre-form overflow-hidden">
+        <div class="mxd-container grid-container">
+
+          <!-- Block - Inner Page Headline Start -->
+          <div class="mxd-block loading-wrap">
+            <div class="container-fluid px-0">
+              <div class="row gx-0">
+
+                <!-- Inner Headline Name Start -->
+                <div class="col-12 col-xl-2 mxd-grid-item no-margin">
+                  <div class="mxd-block__name name-inner-headline">
+                    <p class="mxd-point-subtitle">
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                        x="0px" y="0px" width="20px" height="20px"
+                        viewBox="0 0 20 20" fill="currentColor">
+                        <path fill="currentColor"
+                          d="M19.6,9.6c0,0-3,0-4,0c-0.4,0-1.8-0.2-1.8-0.2c-0.6-0.1-1.1-0.2-1.6-0.6c-0.5-0.3-0.9-0.8-1.2-1.2
+                          c-0.3-0.4-0.4-0.9-0.5-1.4c0,0-0.1-1.1-0.2-1.5c-0.1-1.1,0-4.4,0-4.4C10.4,0.2,10.2,0,10,0S9.6,0.2,9.6,0.4c0,0,0.1,3.3,0,4.4
+                          c0,0.4-0.2,1.5-0.2,1.5C9.4,6.7,9.2,7.2,9,7.6C8.7,8.1,8.2,8.5,7.8,8.9c-0.5,0.3-1,0.5-1.6,0.6c0,0-1.2,0.1-1.7,0.2
+                          c-1,0.1-4.2,0-4.2,0C0.2,9.6,0,9.8,0,10c0,0.2,0.2,0.4,0.4,0.4c0,0,3.1-0.1,4.2,0c0.4,0,1.7,0.2,1.7,0.2c0.6,0.1,1.1,0.2,1.6,0.6
+                          c0.4,0.3,0.8,0.7,1.1,1.1c0.3,0.5,0.5,1,0.6,1.6c0,0,0.1,1.3,0.2,1.7c0,1,0,4.1,0,4.1c0,0.2,0.2,0.4,0.4,0.4s0.4-0.2,0.4-0.4
+                          c0,0,0-3.1,0-4.1c0-0.4,0.2-1.7,0.2-1.7c0.1-0.6,0.2-1.1,0.6-1.6c0.3-0.4,0.7-0.8,1.1-1.1c0.5-0.3,1-0.5,1.6-0.6
+                          c0,0,1.3-0.1,1.8-0.2c1,0,4,0,4,0c0.2,0,0.4-0.2,0.4-0.4C20,9.8,19.8,9.6,19.6,9.6L19.6,9.6z" />
+                      </svg>
+                      <span>Contact</span>
+                    </p>
+                  </div>
+                </div>
+                <!-- Inner Headline Name Start -->
+
+                <!-- Inner Headline Content Start -->
+                <div class="col-12 col-xl-8 mxd-grid-item no-margin">
+
+                  <div class="mxd-block__content">
+                    <div class="mxd-block__inner-headline loading__item">
+                      <h1 class="inner-headline__title">
+                        Let's talk<br>about your project!
+                        <!-- <a class="btn btn-line-headline slide-right-up anim-no-delay" href="mailto:example@example.com?subject=Message%20from%20your%20site">
+                          <span class="btn-caption">hello@rayo.com</span>
+                          <i class="ph-bold ph-arrow-up-right"></i>
+                        </a> -->
+                      </h1>
+                      <a
+                        class="btn btn-line-headline slide-right-up anim-no-delay"
+                        href="mailto:example@example.com?subject=Message%20from%20your%20site">
+                        <span class="btn-caption">hello@rayo.com</span>
+                        <i class="ph-bold ph-arrow-up-right"></i>
+                      </a>
+                      <p
+                        class="inner-headline__text t-large t-bright loading__item">Have
+                        questions? We've got the answers!
+                        Here, you'll find clear and concise information about
+                        our services, process,
+                        and what to expect when working with us. If you need
+                        more details, feel free to
+                        reach out!</p>
+                    </div>
+                  </div>
+
+                </div>
+                <!-- Inner Headline Content End -->
+
+              </div>
+            </div>
+          </div>
+          <!-- Block - Inner Page Headline End -->
+
+        </div>
+      </div>
+      <!-- Section - Inner Page Headline End -->
+
+      <!-- Section - Inner Page Form Start -->
+      <div class="mxd-section mxd-section-inner-form padding-default">
+        <div class="mxd-container grid-container">
+
+          <!-- Block - Inner Page Headline Start -->
+          <div class="mxd-block">
+            <div class="container-fluid px-0">
+              <div class="row gx-0">
+
+                <!-- Inner Headline Name Start -->
+                <div class="col-12 col-xl-2 mxd-grid-item no-margin"></div>
+                <!-- Inner Headline Name Start -->
+
+                <!-- Inner Headline Content Start -->
+                <div class="col-12 col-xl-8">
+
+                  <div class="mxd-block__content contact">
+                    <div class="mxd-block__inner-form loading__fade">
+                      <div class="form-container">
+
+                        <!-- Reply Messages Start -->
+                        <div class="form__reply centered text-center">
+                          <i class="ph-fill ph-smiley-wink reply__icon"></i>
+                          <!-- <i class="ph-fill ph-smiley reply__icon"></i> -->
+                          <p class="reply__title">Done!</p>
+                          <span class="reply__text">Thanks for your message.
+                            We'll get back as soon as possible.</span>
+                        </div>
+                        <!-- Reply Messages End -->
+
+                        <!-- Contact Form Start -->
+                        <form class="form contact-form" id="contact-form">
+                          <!-- Hidden Required Fields -->
+                          <input type="hidden" name="project_name"
+                            value="Rayo Template">
+                          <input type="hidden" name="admin_email"
+                            value="support@mixdesign.dev">
+                          <input type="hidden" name="form_subject"
+                            value="Contact Form Message">
+                          <!-- END Hidden Required Fields-->
+                          <div class="container-fluid p-0">
+                            <div class="row gx-0">
+                              <div
+                                class="col-12 col-md-6 mxd-grid-item anim-uni-in-up">
+                                <input type="text" name="Name"
+                                  placeholder="Your name*" required>
+                              </div>
+                              <div
+                                class="col-12 col-md-6 mxd-grid-item anim-uni-in-up">
+                                <input type="text" name="Company"
+                                  placeholder="Company name">
+                              </div>
+                              <div
+                                class="col-12 col-md-6 mxd-grid-item anim-uni-in-up">
+                                <input type="email" name="E-mail"
+                                  placeholder="Email*" required>
+                              </div>
+                              <div
+                                class="col-12 col-md-6 mxd-grid-item anim-uni-in-up">
+                                <input type="tel" name="Phone"
+                                  placeholder="Phone">
+                              </div>
+                              <div class="col-12 mxd-grid-item anim-uni-in-up">
+                                <textarea name="Message"
+                                  placeholder="A few words about your project*"
+                                  required></textarea>
+                              </div>
+                              <div class="col-12 mxd-grid-item anim-uni-in-up">
+                                <button
+                                  class="btn btn-anim btn-default btn-large btn-opposite slide-right-up"
+                                  type="submit">
+                                  <span class="btn-caption">Submit</span>
+                                  <i class="ph-bold ph-arrow-up-right"></i>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                        <!-- Contact Form End -->
+
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <!-- Inner Headline Content End -->
+
+              </div>
+            </div>
+          </div>
+          <!-- Block - Inner Page Headline End -->
+        </div>
+      </div>
+      <!-- Section - Inner Page Form End -->
+
+    </main>
+    <!-- Page Content End -->
+
+    <!-- Footer Start -->
+    <footer id="mxd-footer" class="mxd-footer">
+
+      <!-- Footer Block - Fullwidth Text Start -->
+      <div class="mxd-footer__text-wrap">
+        <div class="fullwidth-text__tl-trigger"></div>
+        <div class="mxd-footer__fullwidth-text personal anim-top-to-bottom">
+          <svg class="mxd-footer__svg-v2" version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            viewBox="0 0 518 72" style="enable-background:new 0 0 518 72;"
+            xml:space="preserve">
+            <path
+              d="M18.9,71.9C13,71.9,8.4,70.5,5,67.6c-3.4-2.9-5-6.7-5-11.4c0-5,1.7-8.8,5.1-11.5c3.4-2.7,8.3-4.1,14.8-4.1h15.5v-2
+            c0-6.2-3.6-9.3-10.8-9.3c-6.1,0-9.8,2.2-11.1,6.6H0.8c1.1-5.4,3.6-9.5,7.7-12.4c4.1-2.8,9.4-4.3,16-4.3c7.4,0,13.1,1.7,17,5
+            c3.9,3.4,5.8,8.2,5.8,14.7v19.4h6V71H40.4v-8.1h-3.6c-1.7,2.9-4.1,5.1-7.1,6.7C26.9,71.1,23.2,71.9,18.9,71.9z M20.8,62.2
+            c2.8,0,5.2-0.5,7.4-1.6c2.2-1,3.9-2.4,5.2-4.2c1.3-1.8,1.9-3.8,1.9-6v-1.2H20.6c-5.7,0-8.5,2.1-8.5,6.3c0,2.1,0.8,3.7,2.3,4.9
+            C15.9,61.6,18,62.2,20.8,62.2z M63.1,71V0h12.6v71H63.1z M111.8,72c-5.4,0-10.1-1.1-14.2-3.3c-4-2.2-7.1-5.2-9.3-9.2
+            c-2.2-4-3.3-8.7-3.3-14.1c0-5.4,1.1-10.1,3.2-14c2.1-3.9,5.2-6.9,9.1-9c3.9-2.1,8.6-3.2,13.9-3.2c5.2,0,9.6,1,13.4,3
+            c3.7,2,6.6,4.9,8.6,8.6c2,3.7,3,8.2,3,13.3v4.4H97.2c0.5,4.3,2,7.6,4.5,9.8c2.5,2.3,5.8,3.4,10,3.4c3.1,0,5.6-0.6,7.6-1.7
+            c1.9-1.2,3.3-2.9,4.1-5.2h12.7c-1.2,5.4-3.9,9.5-8.2,12.5C123.7,70.5,118.3,72,111.8,72z M97.5,40.1h26.7c-0.5-3.5-1.8-6.2-4-8
+            c-2.2-1.8-5.2-2.7-8.9-2.7c-3.7,0-6.7,0.9-9,2.8C99.9,34,98.3,36.6,97.5,40.1z M138.4,71L158.3,45l-18.9-24.8h14l12.2,16l12.3-16
+            h13.9L172.9,45L192.8,71h-14.1l-13.1-17.3L152.4,71H138.4z M210.5,71l-16.3-50.7h12.9l10.7,35.1h0.4l12.5-35.1h12.1l12.5,35.1h0.4
+            l10.7-35.1h12.8L262.9,71h-13.5l-12.5-34.4h-0.3L224,71H210.5z M301,71.9c-5.9,0-10.6-1.4-13.9-4.3c-3.4-2.9-5-6.7-5-11.4
+            c0-5,1.7-8.8,5.1-11.5c3.4-2.7,8.3-4.1,14.8-4.1h15.5v-2c0-6.2-3.6-9.3-10.8-9.3c-6.1,0-9.8,2.2-11.1,6.6h-12.6
+            c1.1-5.4,3.6-9.5,7.7-12.4c4.1-2.8,9.4-4.3,16-4.3c7.4,0,13.1,1.7,17,5c3.9,3.4,5.8,8.2,5.8,14.7v19.4h6V71h-12.9v-8.1h-3.6
+            c-1.7,2.9-4.1,5.1-7.1,6.7C308.9,71.1,305.3,71.9,301,71.9z M302.9,62.2c2.8,0,5.2-0.5,7.4-1.6c2.2-1,3.9-2.4,5.2-4.2
+            c1.3-1.8,1.9-3.8,1.9-6v-1.2h-14.8c-5.7,0-8.5,2.1-8.5,6.3c0,2.1,0.8,3.7,2.3,4.9C297.9,61.6,300.1,62.2,302.9,62.2z M345.1,71V0
+            h12.6v71H345.1z M369.9,71V0h12.6v39.9h0.3l21.4-19.6h15.1l-22.1,19.9L421.1,71h-14.9l-17.8-23.1l-5.9,4.8V71H369.9z M449.4,72
+            c-5.4,0-10.1-1.1-14.2-3.3c-4-2.2-7.1-5.2-9.3-9.2c-2.2-4-3.3-8.7-3.3-14.1c0-5.4,1.1-10.1,3.2-14c2.1-3.9,5.2-6.9,9.1-9
+            c3.9-2.1,8.6-3.2,13.9-3.2c5.2,0,9.6,1,13.4,3c3.7,2,6.6,4.9,8.6,8.6c2,3.7,3,8.2,3,13.3v4.4h-39.2c0.5,4.3,2,7.6,4.5,9.8
+            c2.5,2.3,5.8,3.4,10,3.4c3.1,0,5.6-0.6,7.6-1.7c1.9-1.2,3.3-2.9,4.1-5.2h12.7c-1.2,5.4-3.9,9.5-8.2,12.5
+            C461.3,70.5,455.9,72,449.4,72z M435.1,40.1h26.7c-0.5-3.5-1.8-6.2-4-8c-2.2-1.8-5.2-2.7-8.9-2.7c-3.7,0-6.7,0.9-9,2.8
+            C437.5,34,435.9,36.6,435.1,40.1z M487,71V32.9h-6.3V20.3h12.9v9.8h3.6c1.4-3.4,3.6-5.9,6.5-7.7c2.9-1.7,6.3-2.6,10.1-2.6h4.2v10.8
+            h-4.8c-4.6,0-8.1,1.3-10.3,4c-2.3,2.6-3.4,6.2-3.4,10.6V71H487z" />
+          </svg>
+        </div>
+      </div>
+      <!-- Footer Block - Fullwidth Text End -->
+
+      <!-- Footer Block - Info Columns Start -->
+      <div class="mxd-footer__footer-blocks">
+        <!-- single column -->
+        <div class="footer-blocks__column animate-card-3">
+          <!-- inner card -->
+          <div class="footer-blocks__card fullheight-card">
+            <!-- footer navigation -->
+            <div class="footer-blocks__nav">
+              <ul class="footer-nav">
+                <li class="footer-nav__item anim-uni-in-up">
+                  <a href="index-main.html" class="footer-nav__link btn-anim">
+                    <span class="btn-caption">Home</span>
+                  </a>
+                </li>
+                <li class="footer-nav__item anim-uni-in-up">
+                  <a href="about-me.html" class="footer-nav__link btn-anim">
+                    <span class="btn-caption">About me</span>
+                  </a>
+                </li>
+                <li class="footer-nav__item anim-uni-in-up">
+                  <a href="works-simple.html" class="footer-nav__link btn-anim">
+                    <span class="btn-caption">Works</span>
+                  </a>
+                  <p class="footer-nav__counter">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                      x="0px" y="0px" width="20px" height="20px"
+                      viewBox="0 0 20 20" fill="currentColor">
+                      <path fill="currentColor"
+                        d="M19.6,9.6c0,0-3,0-4,0c-0.4,0-1.8-0.2-1.8-0.2c-0.6-0.1-1.1-0.2-1.6-0.6c-0.5-0.3-0.9-0.8-1.2-1.2
+                        c-0.3-0.4-0.4-0.9-0.5-1.4c0,0-0.1-1.1-0.2-1.5c-0.1-1.1,0-4.4,0-4.4C10.4,0.2,10.2,0,10,0S9.6,0.2,9.6,0.4c0,0,0.1,3.3,0,4.4
+                        c0,0.4-0.2,1.5-0.2,1.5C9.4,6.7,9.2,7.2,9,7.6C8.7,8.1,8.2,8.5,7.8,8.9c-0.5,0.3-1,0.5-1.6,0.6c0,0-1.2,0.1-1.7,0.2
+                        c-1,0.1-4.2,0-4.2,0C0.2,9.6,0,9.8,0,10c0,0.2,0.2,0.4,0.4,0.4c0,0,3.1-0.1,4.2,0c0.4,0,1.7,0.2,1.7,0.2c0.6,0.1,1.1,0.2,1.6,0.6
+                        c0.4,0.3,0.8,0.7,1.1,1.1c0.3,0.5,0.5,1,0.6,1.6c0,0,0.1,1.3,0.2,1.7c0,1,0,4.1,0,4.1c0,0.2,0.2,0.4,0.4,0.4s0.4-0.2,0.4-0.4
+                        c0,0,0-3.1,0-4.1c0-0.4,0.2-1.7,0.2-1.7c0.1-0.6,0.2-1.1,0.6-1.6c0.3-0.4,0.7-0.8,1.1-1.1c0.5-0.3,1-0.5,1.6-0.6
+                        c0,0,1.3-0.1,1.8-0.2c1,0,4,0,4,0c0.2,0,0.4-0.2,0.4-0.4C20,9.8,19.8,9.6,19.6,9.6L19.6,9.6z"></path>
+                    </svg>
+                    <span>10</span>
+                  </p>
+                </li>
+                <li class="footer-nav__item anim-uni-in-up">
+                  <a href="services.html" class="footer-nav__link btn-anim">
+                    <span class="btn-caption">Services</span>
+                  </a>
+                </li>
+                <li class="footer-nav__item anim-uni-in-up">
+                  <a href="blog-standard.html"
+                    class="footer-nav__link btn-anim">
+                    <span class="btn-caption">Insights</span>
+                  </a>
+                </li>
+                <li class="footer-nav__item anim-uni-in-up">
+                  <a href="contact.html" class="footer-nav__link btn-anim">
+                    <span class="btn-caption">Contact</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!-- links -->
+            <div class="footer-blocks__links anim-uni-in-up">
+              <a class="btn btn-line-xsmall btn-muted slide-right anim-no-delay"
+                href="index-personal-portfolio.html#0">
+                <span class="btn-caption">Privacy Policy</span>
+                <i class="ph ph-arrow-right"></i>
+              </a>
+              <a class="btn btn-line-xsmall btn-muted slide-right anim-no-delay"
+                href="index-personal-portfolio.html#0">
+                <span class="btn-caption">Terms & conditions</span>
+                <i class="ph ph-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- single column -->
+        <div class="footer-blocks__column animate-card-3">
+          <!-- inner card -->
+          <div class="footer-blocks__card">
+            <p class="mxd-point-subtitle anim-uni-in-up">
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px"
+                y="0px" width="20px" height="20px" viewBox="0 0 20 20"
+                fill="currentColor">
+                <path fill="currentColor"
+                  d="M19.6,9.6c0,0-3,0-4,0c-0.4,0-1.8-0.2-1.8-0.2c-0.6-0.1-1.1-0.2-1.6-0.6c-0.5-0.3-0.9-0.8-1.2-1.2
+                  c-0.3-0.4-0.4-0.9-0.5-1.4c0,0-0.1-1.1-0.2-1.5c-0.1-1.1,0-4.4,0-4.4C10.4,0.2,10.2,0,10,0S9.6,0.2,9.6,0.4c0,0,0.1,3.3,0,4.4
+                  c0,0.4-0.2,1.5-0.2,1.5C9.4,6.7,9.2,7.2,9,7.6C8.7,8.1,8.2,8.5,7.8,8.9c-0.5,0.3-1,0.5-1.6,0.6c0,0-1.2,0.1-1.7,0.2
+                  c-1,0.1-4.2,0-4.2,0C0.2,9.6,0,9.8,0,10c0,0.2,0.2,0.4,0.4,0.4c0,0,3.1-0.1,4.2,0c0.4,0,1.7,0.2,1.7,0.2c0.6,0.1,1.1,0.2,1.6,0.6
+                  c0.4,0.3,0.8,0.7,1.1,1.1c0.3,0.5,0.5,1,0.6,1.6c0,0,0.1,1.3,0.2,1.7c0,1,0,4.1,0,4.1c0,0.2,0.2,0.4,0.4,0.4s0.4-0.2,0.4-0.4
+                  c0,0,0-3.1,0-4.1c0-0.4,0.2-1.7,0.2-1.7c0.1-0.6,0.2-1.1,0.6-1.6c0.3-0.4,0.7-0.8,1.1-1.1c0.5-0.3,1-0.5,1.6-0.6
+                  c0,0,1.3-0.1,1.8-0.2c1,0,4,0,4,0c0.2,0,0.4-0.2,0.4-0.4C20,9.8,19.8,9.6,19.6,9.6L19.6,9.6z"></path>
+              </svg>
+              <a
+                href="mailto:example@example.com?subject=Message%20from%20your%20site">hello@rayostudio.com</a>
+            </p>
+          </div>
+          <!-- inner card -->
+          <div class="footer-blocks__card">
+            <p class="mxd-point-subtitle anim-uni-in-up">
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px"
+                y="0px" width="20px" height="20px" viewBox="0 0 20 20"
+                fill="currentColor">
+                <path fill="currentColor"
+                  d="M19.6,9.6c0,0-3,0-4,0c-0.4,0-1.8-0.2-1.8-0.2c-0.6-0.1-1.1-0.2-1.6-0.6c-0.5-0.3-0.9-0.8-1.2-1.2
+                  c-0.3-0.4-0.4-0.9-0.5-1.4c0,0-0.1-1.1-0.2-1.5c-0.1-1.1,0-4.4,0-4.4C10.4,0.2,10.2,0,10,0S9.6,0.2,9.6,0.4c0,0,0.1,3.3,0,4.4
+                  c0,0.4-0.2,1.5-0.2,1.5C9.4,6.7,9.2,7.2,9,7.6C8.7,8.1,8.2,8.5,7.8,8.9c-0.5,0.3-1,0.5-1.6,0.6c0,0-1.2,0.1-1.7,0.2
+                  c-1,0.1-4.2,0-4.2,0C0.2,9.6,0,9.8,0,10c0,0.2,0.2,0.4,0.4,0.4c0,0,3.1-0.1,4.2,0c0.4,0,1.7,0.2,1.7,0.2c0.6,0.1,1.1,0.2,1.6,0.6
+                  c0.4,0.3,0.8,0.7,1.1,1.1c0.3,0.5,0.5,1,0.6,1.6c0,0,0.1,1.3,0.2,1.7c0,1,0,4.1,0,4.1c0,0.2,0.2,0.4,0.4,0.4s0.4-0.2,0.4-0.4
+                  c0,0,0-3.1,0-4.1c0-0.4,0.2-1.7,0.2-1.7c0.1-0.6,0.2-1.1,0.6-1.6c0.3-0.4,0.7-0.8,1.1-1.1c0.5-0.3,1-0.5,1.6-0.6
+                  c0,0,1.3-0.1,1.8-0.2c1,0,4,0,4,0c0.2,0,0.4-0.2,0.4-0.4C20,9.8,19.8,9.6,19.6,9.6L19.6,9.6z"></path>
+              </svg>
+              <a href="tel:+12127089400">+1 212-708-9400</a>
+            </p>
+          </div>
+          <!-- inner card -->
+          <div class="footer-blocks__card fill-card notify">
+            <!-- card title -->
+            <div class="footer-blocks__title anim-uni-in-up">
+              <p class="footer-blocks__title-m">Subscribe to our insights:</p>
+            </div>
+            <!-- subscribe form container -->
+            <div class="form-container anim-uni-in-up">
+              <!-- reply messages -->
+              <div class="form__reply subscription-ok">
+                <span class="reply__text">Done! Thanks for subscribing.</span>
+              </div>
+              <div class="form__reply subscription-error">
+                <span class="reply__text">Ooops! Something went wrong. Please
+                  try again later.</span>
+              </div>
+              <!-- subscribe form -->
+              <form class="form notify-form form-light">
+                <input type="email" placeholder="Your Email" required>
+                <button
+                  class="btn btn-form btn-absolute-right btn-muted slide-right-up anim-no-delay"
+                  type="submit">
+                  <i class="ph ph-arrow-up-right"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- single column -->
+        <div class="footer-blocks__column animate-card-3">
+          <!-- inner card -->
+          <div class="footer-blocks__card fullheight-card">
+            <!-- nav block -->
+            <div class="footer-blocks__block">
+              <!-- card title -->
+              <div class="footer-blocks__title anim-uni-in-up">
+                <p class="footer-blocks__title-l">Ecosystem</p>
+              </div>
+              <!-- footer socials -->
+              <div class="footer-blocks__socials">
+                <ul class="footer-socials">
+                  <li class="footer-socials__item anim-uni-in-up"><a
+                      href="https://dribbble.com/" class="footer-socials__link"
+                      target="_blank">Dribbble</a></li>
+                  <li class="footer-socials__item anim-uni-in-up"><a
+                      href="https://www.behance.net/"
+                      class="footer-socials__link"
+                      target="_blank">Behance</a></li>
+                  <li class="footer-socials__item anim-uni-in-up"><a
+                      href="https://www.instagram.com/"
+                      class="footer-socials__link"
+                      target="_blank">Instagram</a></li>
+                  <li class="footer-socials__item anim-uni-in-up"><a
+                      href="https://github.com/" class="footer-socials__link"
+                      target="_blank">Github</a></li>
+                  <li class="footer-socials__item anim-uni-in-up"><a
+                      href="https://codepen.io/" class="footer-socials__link"
+                      target="_blank">Codepen</a></li>
+                  <li class="footer-socials__item anim-uni-in-up"><a
+                      href="https://www.figma.com/community"
+                      class="footer-socials__link" target="_blank">Figma
+                      Community</a></li>
+                </ul>
+              </div>
+            </div>
+            <!-- links -->
+            <div class="footer-blocks__links anim-uni-in-up">
+              <p class="t-xsmall t-muted">
+                <a class="no-effect" href="https://1.envato.market/EKA9WD"
+                  target="_blank">Mix_Design</a>
+                <i class="ph-bold ph-copyright"></i>
+                2025
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Footer Block - Info Columns End -->
+
+    </footer>
+    <!-- Footer End -->
+
+  </body>
+
 </html>

@@ -13,7 +13,7 @@ app.use(express.static(path.join(__dirname, "public")));
 registerBlogDateHelper(hbs);
 
 app.get("/",(req,res)=>{
-  res.redirect("/1");
+  res.redirect("/2");
 })
 
 app.get("/1", (req, res) => {
