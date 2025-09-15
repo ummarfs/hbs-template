@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Nathan Personal Website</title>
+        <link rel="icon" href="1/images/icon.webp" type="image/gif" sizes="16x16">
+        <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content name="description">
+        <meta content name="keywords">
+        <meta content name="author">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous">
+        <link rel="stylesheet" href="/1/style.css">
+    </head>
+
+    <body>
+        <div id="wrapper">
+            <div class="section-dark no-bottom no-top" id="content">
+
+                <div id="top"></div>
+
+                <section class="p-4">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div
+                                    class="text-center pt-3 text-uppercase d-menu-1 fs-14 fw-bold">
+                                    <ul>
+                                        <li class="active"><a
+                                                href="#top">Home</a></li>
+                                        {{#if about.value.about.content}}
+                                        {{#unless about.meta.hide}}
+                                        <li><a href="#about">
+                                                {{#if
+                                                about.value.about.section_title}}
+                                                {{about.value.about.section_title}}
+                                                {{else}}About Me{{/if}}
+                                            </a></li>
+                                        {{/unless}}
+                                        {{/if}}
+                                        {{#if services.value.services.items}}
+                                        {{#unless services.meta.hide}}
+                                        <li><a href="#services">
+                                                {{#if
+                                                services.value.services.section_title}}
+                                                {{services.value.services.section_title}}
+                                                {{else}}What I Do{{/if}}
+                                            </a></li>
+                                        {{/unless}}
+                                        {{/if}}
+                                        {{#if projects.value.projects.items}}
+                                        {{#unless projects.meta.hide}}
+                                        <li><a
+                                                href="#works">
+                                                {{#if
+                                                projects.value.projects.section_title}}
+                                                {{projects.value.projects.section_title}}
+                                                {{else}}
+                                                Works
+                                                {{/if}}
+                                            </a></li>
+                                        {{/unless}}
+                                        {{/if}}
+                                        {{#if contacts.value.contacts}}
+                                        {{#if
+                                        contacts.value.contacts.contactForm}}
+                                        {{#unless contacts.meta.hide}}
+                                        <li><a href="#contact">
+                                                {{#if
+                                                contacts.value.contacts.section_title}}
+                                                {{contacts.value.contacts.section_title}}
+                                                {{else}}Contact{{/if}}
+                                            </a></li>
+                                        {{/unless}}
+                                        {{/if}}
+                                        {{/if}}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="relative section-wrapper"
+                    data-edit-section="personal_info"
+                    data-section="personal_info"
+                    data-title="Personal Info">
+                    <div class="container-fluid">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-12 text-center">
+                                <h1
+                                    class="fs-120 fs-xs-60 text-resize-h1 lh-0-75 mb-4">{{personal_info.value.firstName}}<br>{{personal_info.value.lastName}}</h1>
+                                {{#if personal_info.value.headline}}
+                                <h4
+                                    class="id-color bg-dark d-inline rounded-20 p-1 px-3 fs-16">
+                                    {{personal_info.value.headline}}
+                                </h4>
+                                {{/if}}
+
+                                <div class="spacer-single"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <img
+                        src="https://vise-page.s3.us-east-1.amazonaws.com/asset/image-1757319069785-scratches-1.webp"
+                        class="w-20 ms-4 abs abs-middle" alt>
+                    <img
+                        src="https://vise-page.s3.us-east-1.amazonaws.com/asset/image-1757319099997-scratches-2.webp"
+                        class="w-20 me-5 abs top-0 end-0" alt>
+                </section>
+
+                <section class="no-top px-4 section-wrapper"
+                    data-edit-section="personal_info"
+                    data-section="personal_info"
+                    data-title="Personal Info">
+                    <div class="container-fluid">
+                        <div class="row g-4 mb-4">
+
+                            {{#if personal_info.value.profilePicureUrl}}
+                            <div class="col-12 col-xl-6">
+                                <div
+                                    class="relative jarallax h-100 rounded-1 overflow-hidden fadeInUp">
+                                    <img
+                                        src="{{personal_info.value.profilePicureUrl}}"
+                                        class="jarallax-img"
+                                        alt="{{personal_info.value.headline}}">
+                                </div>
+                            </div>
+                            <div class="col-12 col-xl-6">
+                                <div
+                                    class="relative rounded-1 overflow-hidden p-lg-5 p-4 bg-color h-100 fadeInUp">
+                                    <h2>{{personal_info.value.position}}</h2>
+                                </div>
+                            </div>
+
+                            {{else}}
+                            <div class="col-12 col-xl-6 offset-xl-3">
+                                <div
+                                    class="relative rounded-1 overflow-hidden p-lg-5 p-4 pb-5 bg-color h-100 fadeInUp">
+                                    <h2
+                                        class="pb-4 mb-5 mb-lg-0">{{personal_info.value.position}}</h2>
+                                </div>
+                            </div>
+
+                            {{/if}}
+
+                        </div>
+
+                        <!-- stats section -->
+                        {{#if stats.value.stats.items}}
+                        {{#unless stats.meta.hide}}
+                        <div class="row g-4 section-wrapper w-auto"
+                            data-edit-section="stats"
+                            data-section="stats"
+                            data-title="Stats">
+                            {{#each stats.value.stats.items}}
+                            <div class="col-md-3 col-sm-6 mb-sm-30">
+                                <div
+                                    class="de_count bg-light py-4 rounded-1 text-center fs-15 fadeInRight">
+                                    <h3 class="fs-48 mb-1"><span class="timer"
+                                            data-to="8240"
+                                            data-speed="3000">{{this.number}}</span>
+                                    </h3>
+                                    <div class="fs-15">{{this.label}}</div>
+                                </div>
+                            </div>
+                            {{/each}}
+                        </div>
+                        {{/unless}}
+                        {{/if}}
+                    </div>
+                </section>
+
+                {{#if about.value.about.content}}
+                {{#unless about.meta.hide}}
+                <section id="about" class="no-top px-4 section-wrapper"
+                    data-edit-section="about"
+                    data-section="about"
+                    data-title="About Me">
+                    <div class="container-fluid">
+                        <div class="row g-4 justify-content-center">
+                            <div class="col-xl-8">
+                                <div class="relative fadeInUp">
+                                    <div class="text-center">
+                                        <h2>
+                                            {{#if
+                                            about.value.about.section_title}}
+                                            {{about.value.about.section_title}}
+                                            {{else}}About Me{{/if}}
+                                        </h2>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <p>{{about.value.about.content}}</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                {{/unless}}
+                {{/if}}
+
+                <!-- clien logos -->
+                {{#if client_logos.value.client_logos.items}}
+                {{#unless client_logos.meta.hide}}
+                <section id="client_logo" class="no-top px-4 section-wrapper"
+                    data-edit-section="client_logos"
+                    data-section="client_logos"
+                    data-title="Client Logos">
+                    <div class="container-fluid">
+                        <div class="row g-4 justify-content-center">
+                            {{#each client_logos.value.client_logos.items}}
+                            <div class="col-md-3 rounded-1  fadeInRight">
+                                <div class="text-center">
+                                    <img src="{{this.url}}"
+                                        class="w-80px mb-3" alt>
+                                    <h4>{{this.name}}</h4>
+                                </div>
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div>
+
+                </section>
+                {{/unless}}
+                {{/if}}
+
+                <!-- skills -->
+                {{#if skills.value.skills.items}}
+                {{#unless skills.value.skills.hide}}
+                <section id="skill_section"
+                    class="no-top px-4 section-wrapper"
+                    data-edit-section="skills"
+                    data-section="skills"
+                    data-title="Skills">
+                    <div class="container-fluid">
+                        <div class="row g-4 justify-content-center">
+                            <div class="col-lg-12">
+                                <div class="text-center">
+                                    <h2>
+                                        {{#if
+                                        skills.value.skills.section_title}}
+                                        {{skills.value.skills.section_title}}
+                                        {{else}}
+                                        Skills
+                                        {{/if}}
+                                    </h2>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-8">
+                                <div
+                                    class="d-flex flex-wrap justify-content-center gap-3">
+                                    {{#each skills.value.skills.items}}
+                                    <span
+                                        class="badge rounded-pill bg-color text-dark px-3 py-2 fs-6">
+                                        {{this}}
+                                    </span>
+                                    {{/each}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                {{/unless}}
+                {{/if}}
+
+                <!-- services -->
+                {{#if services.value.services.items}}
+                {{#unless services.meta.hide}}
+                <section id="services"
+                    class="no-top px-4 section-wrapper"
+                    data-edit-section="services"
+                    data-section="services"
+                    data-title="Services">
+                    <div class="container-fluid">
+                        <div class="row g-4 justify-content-center">
+                            <div class="col-lg-12">
+                                <div class="text-center">
+                                    <h2>
+                                        {{#if
+                                        services.value.services.section_title}}
+                                        {{services.value.services.section_title}}
+                                        {{else}}What I Do{{/if}}
+                                    </h2>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="row g-4">
+                                    {{#each services.value.services.items}}
+                                    <div
+                                        class="col-lg-6 col-sm-6  fadeInUp">
+                                        <div
+                                            class="relative p-lg-5 p-4 bg-color text-dark rounded-1 h-100">
+                                            <div class="row">
+                                                <div class="col-xl-6 ">
+                                                    <h4
+                                                        class="fs-32 lh-1-2 text-break">{{this.title}}</h4>
+                                                </div>
+                                                <div class="col-xl-6 ">
+                                                    <p
+                                                        class="fs-20">{{this.description}}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{/each}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                {{/unless}}
+                {{/if}}
+
+                {{!-- experience section --}}
+                {{#if experiences.value.experiences.items }}
+                {{#unless experiences.meta.hide}}
+                <section class="no-top px-4 section-wrapper"
+                    data-edit-section="experiences"
+                    data-section="experiences"
+                    data-title="Experience">
+                    <div class="container-fluid">
+                        <div class="row g-4 justify-content-center">
+                            <div class="col-lg-12">
+                                <div class="text-center">
+                                    <h2>
+                                        {{#if
+                                        experiences.value.experiences.section_title}}
+                                        {{experiences.value.experiences.section_title}}
+                                        {{else}}Experience{{/if}}
+                                    </h2>
+                                </div>
+                            </div>
+
+                            {{#each experiences.value.experiences.items}}
+                            <div
+                                class="col-md-3 text-center fadeInRight">
+                                <div
+                                    class="p-4 py-lg-5 py-4 bg-light h-100 rounded-1">
+                                    <h6>
+                                        {{this.startDate.year}}
+                                        -
+                                        {{#if this.endDate}}
+                                        {{this.endDate.year}}
+                                        {{else}}
+                                        Present
+                                        {{/if}}
+                                    </h6>
+                                    <h3>{{this.title}}</h3>
+                                    <p class="mb-0">{{this.companyName}}</p>
+                                </div>
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div>
+                </section>
+                {{/unless}}
+                {{/if}}
+
+                <!-- education section -->
+                {{#if educations.value.educations.items }}
+                {{#unless educations.meta.hide}}
+                <section class="no-top px-4 section-wrapper"
+                    data-edit-section="educations"
+                    data-section="educations"
+                    data-title="Education">
+                    <div class="container-fluid">
+                        <div class="row g-4 justify-content-center">
+                            <div class="col-lg-12">
+                                <div class="text-center">
+                                    <h2>
+                                        {{#if
+                                        educations.value.educations.section_title}}
+                                        {{educations.value.educations.section_title}}
+                                        {{else}}Education{{/if}}
+                                    </h2>
+                                </div>
+                            </div>
+
+                            {{#each educations.value.educations.items}}
+                            <div
+                                class="col-md-3 text-center  fadeInRight">
+                                <div
+                                    class="p-4 py-lg-5 py-4 bg-light h-100 rounded-1">
+                                    <h6>{{this.startDate.year}}
+                                        -
+                                        {{#if this.endDate}}
+                                        {{this.endDate.year}}
+                                        {{else}}
+                                        Present
+                                        {{/if}}</h6>
+                                    <h3
+                                        class="text-break">{{this.degreeName}}</h3>
+                                    <p
+                                        class="mb-0 text-break">{{this.schoolName}}</p>
+                                </div>
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div>
+                </section>
+                {{/unless}}
+                {{/if}}
+
+                {{#if services.value.services.heading}}
+                {{#unless services.meta.hide}}
+                <section class="no-top px-4 section-wrapper"
+                    data-edit-section="services"
+                    data-section="services"
+                    data-title="Services Heading">
+                    <div class="container-fluid">
+                        <div
+                            class="spacer-double d-lg-none d-sm-block"></div>
+                        <div
+                            class="row justify-content-center g-4 gx-5">
+                            <div class="col-lg-6 text-center">
+                                <div class="relative">
+                                    <h1
+                                        class="lh-1 fadeInUp">{{services.value.services.heading}}</h1>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                {{/unless}}
+                {{/if}}
+
+                <!-- projects -->
+                {{#if projects.value.projects.items}}
+                {{#unless projects.meta.hide}}
+                <section id="works"
+                    class="no-top px-4 section-wrapper"
+                    data-edit-section="projects"
+                    data-section="projects"
+                    data-title="Projects">
+                    <div class="container-fluid">
+                        <div class="row g-4 fadeInRight">
+                            <div class="col-xl-4">
+                                <div
+                                    class="p-lg-5 p-4 bg-color h-100 rounded-1">
+                                    <div class="subtitle">
+                                        {{#if
+                                        projects.value.projects.section_title}}
+                                        {{projects.value.projects.section_title}}
+                                        {{else}}
+                                        Featured Projects
+                                        {{/if}}
+                                    </div>
+                                    <h2>
+                                        {{#if
+                                        projects.value.projects.description}}
+                                        {{projects.value.projects.description}}
+                                        {{else}}
+                                        A showcase of selected works that
+                                        represent my journey and skills
+                                        {{/if}}
+                                    </h2>
+                                </div>
+                            </div>
+
+                            {{#each projects.value.projects.items}}
+                            <div class="col-xl-4 col-md-6">
+                                <div class="bg-dark rounded-1 overflow-hidden">
+                                    <div
+                                        class="hover relative overflow-hidden text-light">
+                                        <a
+                                            href="{{#if this.url}}{{this.url}}{{else}}#{{/if}}"
+                                            class="overflow-hidden d-block relative">
+                                            <img
+                                                src="{{#if this.image}}{{this.image}}{{else}}https://api.dicebear.com/9.x/glass/svg{{/if}}"
+                                                class="img-fluid hover-scale-1-2"
+                                                alt>
+                                        </a>
+
+                                        <div
+                                            class="p-4 d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h3
+                                                    class="mb-0 lh-1-2">{{this.title}}</h3>
+                                                <span
+                                                    class="fs-14">{{this.subtitle}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{/each}}
+
+                        </div>
+                    </div>
+                </section>
+                {{/unless}}
+                {{/if}}
+
+                {{!-- contact section --}}
+                {{#if contacts.value.contacts}}
+                {{#if contacts.value.contacts.contactForm}}
+                {{#unless contacts.meta.hide}}
+                <section id="contact"
+                    class="no-top px-4 section-wrapper"
+                    data-edit-section="contacts"
+                    data-section="contacts"
+                    data-title="Contact">
+                    <div class="container-fluid">
+                        <div class="row g-4 gx-5">
+                            <div class="col-lg-12">
+                                <div class="text-center">
+                                    <h2>
+                                        {{#if
+                                        contacts.value.contacts.section_title}}
+                                        {{contacts.value.contacts.section_title}}
+                                        {{else}}Get In Touch{{/if}}
+                                    </h2>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-8 offset-lg-2  fadeInUp">
+                                {{#if contacts.value.contacts.description}}
+                                <p
+                                    class="text-center">{{contacts.value.contacts.description}}</p>
+                                {{/if}}
+
+                                <form name="contactForm"
+                                    id="contact_form"
+                                    class="position-relative z1000"
+                                    method="post"
+                                    action="07_contact.html#">
+                                    <div class="row gx-4">
+                                        <div
+                                            class="col-lg-6 col-md-6 mb10">
+                                            <div class="field-set">
+                                                <span
+                                                    class="d-label fw-bold">Name</span>
+                                                <input type="text"
+                                                    name="Name"
+                                                    id="name"
+                                                    class="form-control no-border"
+                                                    placeholder="Your Name"
+                                                    required>
+                                            </div>
+
+                                            <div class="field-set">
+                                                <span
+                                                    class="d-label fw-bold">Email</span>
+                                                <input type="text"
+                                                    name="Email"
+                                                    id="email"
+                                                    class="form-control no-border"
+                                                    placeholder="Your Email"
+                                                    required>
+                                            </div>
+
+                                            <div class="field-set">
+                                                <span
+                                                    class="d-label fw-bold">Phone</span>
+                                                <input type="text"
+                                                    name="phone"
+                                                    id="phone"
+                                                    class="form-control no-border"
+                                                    placeholder="Your Phone"
+                                                    required>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="field-set mb20">
+                                                <span
+                                                    class="d-label fw-bold">Message</span>
+                                                <textarea name="message"
+                                                    id="message"
+                                                    class="form-control no-border"
+                                                    placeholder="Your Message"
+                                                    required></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div id='submit' class="mt20">
+                                        <input type='submit'
+                                            id='send_message'
+                                            value='Send Message'
+                                            class="btn-main btn-line text-dark">
+                                    </div>
+
+                                    <div id="success_message"
+                                        class='success'>
+                                        Your message has been sent
+                                        successfully. Refresh this page
+                                        if you want to send more
+                                        messages.
+                                    </div>
+                                    <div id="error_message"
+                                        class='error'>
+                                        Sorry there was an error sending
+                                        your form.
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                {{/unless}}
+                {{/if}}
+                {{/if}}
+
+            </div>
+            <footer>
+                <img
+                    src="https://vise-page.s3.us-east-1.amazonaws.com/asset/image-1757319106385-scratches-3.webp"
+                    class="w-20 me-5 abs bottom-0 abs-center d-none d-lg-block"
+                    alt>
+
+                <div class="container-fluid">
+                    <div class="px-2">
+                        <div class="row g-4 align-items-center">
+                            <!-- sociallinks -->
+                            <div
+                                class="col-12 col-lg-6 text-center text-lg-start section-wrapper"
+                                data-edit-section="social"
+                                data-section="social"
+                                data-title="Social Links">
+                                {{#if social.value.social.items}}
+                                {{#unless social.meta.hide}}
+                                <div class="d-menu-1">
+                                    <ul>
+                                        {{#each social.value.social.items}}
+                                        <li><a
+                                                href="{{this.url}}"
+                                                target="_blank">{{this.label}}</a></li>
+                                        {{/each}}
+                                    </ul>
+                                    <p class="no-bottom">All Right
+                                        Reserved</p>
+                                </div>
+                                {{/unless}}
+                                {{/if}}
+                            </div>
+
+                            <div
+                                class="col-12 col-lg-6 text-center text-lg-end">
+                                <a
+                                    href="{{#if contacts.value.contacts.email}} mailto:{{contacts.value.contacts.email}} {{else}} #contact {{/if}}">
+                                    <h2
+                                        class="fs-84 fw-800 pe-lg-3 shuffle fadeInLeft">
+                                        {{#if
+                                        contacts.value.contacts.heading}}
+                                        {{contacts.value.contacts.heading}}
+                                        {{else}} Let's
+                                        Talk
+                                        {{/if}}
+                                    </h2>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>

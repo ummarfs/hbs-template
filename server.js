@@ -12,8 +12,16 @@ app.use(express.static(path.join(__dirname, "public")));
 
 registerBlogDateHelper(hbs);
 
-app.get("/", (req, res) => {
-  res.render("index", data);
+app.get("/",(req,res)=>{
+  res.redirect("/1");
+})
+
+app.get("/1", (req, res) => {
+  res.render("1", data);
+});
+
+app.get("/2", (req, res) => {
+  res.render("2", data);
 });
 
 app.listen(3001, () =>

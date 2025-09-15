@@ -1931,3 +1931,11 @@ This applies the new rules to show the full image, but ONLY on desktop.
   object-fit: cover;
 }
 
+
+.section-wrapper.row > .section-edit-btn {
+  width: auto;
+  max-width: none;
+  flex-shrink: initial; /* not forced by .row > * */
+  padding-right: .55rem; /* keep your button padding */
+  padding-left: .55rem;
+}
