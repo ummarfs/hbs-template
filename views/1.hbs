@@ -3,7 +3,8 @@
 
     <head>
         <title>Nathan Personal Website</title>
-        <link rel="icon" href="1/images/icon.webp" type="image/gif" sizes="16x16">
+        <link rel="icon" href="1/images/icon.webp" type="image/gif"
+            sizes="16x16">
         <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content name="description">
@@ -531,11 +532,13 @@
                                     class="text-center">{{contacts.value.contacts.description}}</p>
                                 {{/if}}
 
-                                <form name="contactForm"
-                                    id="contact_form"
+                                <form
                                     class="position-relative z1000"
-                                    method="post"
-                                    action="07_contact.html#">
+                                    action="/api/contact" method="post"
+                                    enctype="text/plain"
+                                    aria-label="Contact form"
+                                    id="contact_form">
+
                                     <div class="row gx-4">
                                         <div
                                             class="col-lg-6 col-md-6 mb10">
@@ -543,7 +546,7 @@
                                                 <span
                                                     class="d-label fw-bold">Name</span>
                                                 <input type="text"
-                                                    name="Name"
+                                                    name="name"
                                                     id="name"
                                                     class="form-control no-border"
                                                     placeholder="Your Name"
@@ -554,7 +557,7 @@
                                                 <span
                                                     class="d-label fw-bold">Email</span>
                                                 <input type="text"
-                                                    name="Email"
+                                                    name="email"
                                                     id="email"
                                                     class="form-control no-border"
                                                     placeholder="Your Email"
@@ -563,12 +566,12 @@
 
                                             <div class="field-set">
                                                 <span
-                                                    class="d-label fw-bold">Phone</span>
+                                                    class="d-label fw-bold">Subject</span>
                                                 <input type="text"
-                                                    name="phone"
-                                                    id="phone"
+                                                    name="subject"
+                                                    id="subject"
                                                     class="form-control no-border"
-                                                    placeholder="Your Phone"
+                                                    placeholder="Your Subject"
                                                     required>
                                             </div>
                                         </div>
@@ -585,27 +588,28 @@
                                             </div>
                                         </div>
                                     </div>
-
-                                    <div id='submit' class="mt20">
-                                        <input type='submit'
-                                            id='send_message'
-                                            value='Send Message'
-                                            class="btn-main btn-line text-dark">
+                                    <div
+                                        class="flex items-center justify-between mt-2">
+                                        <button type="submit"
+                                            class="btn-line text-dark px-3 "
+                                            id='send_message'>
+                                            Send message
+                                        </button>
                                     </div>
-
-                                    <div id="success_message"
-                                        class='success'>
-                                        Your message has been sent
-                                        successfully. Refresh this page
-                                        if you want to send more
-                                        messages.
-                                    </div>
-                                    <div id="error_message"
-                                        class='error'>
-                                        Sorry there was an error sending
-                                        your form.
-                                    </div>
-                                </form>
+                                  
+                                        <div id="success_message"
+                                            class='success'>
+                                            Your message has been sent
+                                            successfully. Refresh this page
+                                            if you want to send more
+                                            messages.
+                                        </div>
+                                        <div id="error_message"
+                                            class='error'>
+                                            Sorry there was an error sending
+                                            your form.
+                                        </div>
+                                    </form></div>
 
                             </div>
                         </div>

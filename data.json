@@ -19,11 +19,12 @@
     "value": {
       "firstName": "Ummar",
       "lastName": "Farooq",
-      "headline": "Innovative Full Stack Developer",
+      "headline": "Driving Sustainable Growth for Ambitious Businesses",
       "profilePicureUrl": "https://d1xwrlfgrqppfv.cloudfront.net/profile/cmfb2lyfz0006mq2objw37464-1757392827008-image.jpeg",
       "location": "india",
       "coverImage": "https://d1xwrlfgrqppfv.cloudfront.net/coverimage/cmfb2lyfz0006mq2objw37464-1757392828958-image.jpeg",
-      "position": "I have robust experience crafting impactful software applications."
+      "position": "Strategic insights and actionable roadmaps to scale your operations and maximize profitability.",
+      "role": "Consultant"
     }
   },
   "social": {
@@ -208,7 +209,10 @@
           "postalCode": "616301"
         },
         "booking": {
-          "enabled": false
+          "url": "https://mycalandy.com",
+          "enabled": true,
+          "heading": "Ready to Talk?",
+          "buttonText": "Schedule a Consultation"
         },
         "heading": "Let's Start a Conversation",
         "buttonText": "Schedule a Consultation",
@@ -378,6 +382,21 @@
             "label": "Lines of Code Written"
           }
         ]
+      }
+    }
+  },
+  "color_palette": {
+    "meta": {
+      "hide": false
+    },
+    "value": {
+      "colorPalette": {
+        "primary": "#78350f", 
+        "secondary": "#fffcee", 
+        "accent": "#d6d3d1",
+        "tertiary": "#f3f4f6",
+        "quaternary": "#ffffff",
+        "tertiary-bright": "#e5e7eb"
       }
     }
   }
