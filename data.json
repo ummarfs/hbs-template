@@ -391,12 +391,14 @@
     },
     "value": {
       "colorPalette": {
-        "primary": "#78350f", 
-        "secondary": "#fffcee", 
+        "primary": "#78350f",
+        "secondary": "#fffcee",
         "accent": "#d6d3d1",
         "tertiary": "#f3f4f6",
         "quaternary": "#ffffff",
-        "tertiary-bright": "#e5e7eb"
+        "tertiary-bright": "#e5e7eb",
+        "primary-dim": "rgba(120, 53, 15, 0.7)",
+        "border-primary-dim":"rgba(120, 53, 15, 0.2)"
       }
     }
   }

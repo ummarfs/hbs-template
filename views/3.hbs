@@ -22,7 +22,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   </head>
   <body>
-    <div class="font-questrial"
+    < class="font-questrial"
       style="background-color: {{color_palette.value.colorPalette.tertiary}};">
       <header class="sticky top-0 z-50 shadow-sm py-2"
         style="background-color: {{color_palette.value.colorPalette.tertiary-bright}};">
@@ -37,7 +37,8 @@
                   personal_info.value.firstName}}</span>
               </div>
               <h1
-                class="text-xl lg:text-2xl font-bold"  style="color: {{color_palette.value.colorPalette.primary}};">{{personal_info.value.firstName}}
+                class="text-xl lg:text-2xl font-bold"
+                style="color: {{color_palette.value.colorPalette.primary}};">{{personal_info.value.firstName}}
                 |
                 {{#if personal_info.value.role}} {{personal_info.value.role}}
                 {{/if}}</h1>
@@ -45,23 +46,29 @@
 
             <nav class="hidden md:flex space-x-8 text-xl">
               <a href="#about"
-                class="text-primary hover:text-primary/80 transition-colors">About</a>
+                class="transition-colors"
+                style="color: {{color_palette.value.colorPalette.primary}};">About</a>
               <a href="#offerings"
-                class="text-primary hover:text-primary/80 transition-colors">Offerings</a>
+                class="transition-colors"
+                style="color: {{color_palette.value.colorPalette.primary}};">Offerings</a>
               <a href="#casestudies"
-                class="text-primary hover:text-primary/80 transition-colors">Case
+                class="transition-colors"
+                style="color: {{color_palette.value.colorPalette.primary}};">Case
                 Studies</a>
               <a href="#faq"
-                class="text-primary hover:text-primary/80 transition-colors">FAQ</a>
+                class="transition-colors"
+                style="color: {{color_palette.value.colorPalette.primary}};">FAQ</a>
               <a href="#contact"
-                class="text-primary hover:text-primary/80 transition-colors">Work
+                class="transition-colors"
+                style="color: {{color_palette.value.colorPalette.primary}};">Work
                 With Me</a>
             </nav>
 
             <button class="md:hidden p-2" id="mobile-menu-btn">
-              <svg class="w-6 h-6 text-primary" fill="none"
+              <svg class="w-6 h-6" fill="none"
                 stroke="currentColor"
-                viewBox="0 0 24 24">
+                viewBox="0 0 24 24"
+                style="color: {{color_palette.value.colorPalette.primary}};">
                 <path stroke-linecap="round" stroke-linejoin="round"
                   stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
               </svg>
@@ -69,34 +76,43 @@
           </div>
 
           <div class="md:hidden hidden" id="mobile-menu">
-            <div class="px-2 pt-2 pb-3 space-y-1 bg-secondary border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1 border-t"
+              style="background-color: {{color_palette.value.colorPalette.secondary}};">
               <a href="#about"
-                class="block px-3 py-2 text-primary hover:bg-gray-300 rounded-md">About</a>
+                class="block px-3 py-2 hover:bg-gray-300 rounded-md"
+                style="color: {{color_palette.value.colorPalette.primary}};">About</a>
               <a href="#offerings"
-                class="block px-3 py-2 text-primary hover:bg-gray-300 rounded-md">Offerings</a>
+                class="block px-3 py-2 rounded-md"
+                style="color: {{color_palette.value.colorPalette.primary}};">Offerings</a>
               <a href="#casestudies"
-                class="block px-3 py-2 text-primary hover:bg-gray-300 rounded-md">Case
+                class="block px-3 py-2 rounded-md"
+                style="color: {{color_palette.value.colorPalette.primary}};">Case
                 Studies</a>
               <a href="#faq"
-                class="block px-3 py-2 text-primary hover:bg-gray-300 rounded-md">FAQ</a>
+                class="block px-3 py-2 rounded-md"
+                style="color: {{color_palette.value.colorPalette.primary}};">FAQ</a>
               <a href="#contact"
-                class="block px-3 py-2 text-primary hover:bg-gray-300 rounded-md">Work
+                class="block px-3 py-2 rounded-md"
+                style="color: {{color_palette.value.colorPalette.primary}};">Work
                 With Me</a>
             </div>
           </div>
         </div>
       </header>
 
-      <section class="bg-gray-200 py-12 lg:py-20">
+      <section class="bg-gray-200 py-12 lg:py-20"
+        style="background-color:{{color_palette.value.colorPalette.tertiary-bright}};">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
             class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div class="order-2 lg:order-1">
               <h1
-                class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-primary leading-tight mb-6">
+                class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6"
+                style="color: {{color_palette.value.colorPalette.primary}};">
                 {{personal_info.value.headline}}
               </h1>
-              <p class="text-lg lg:text-xl text-primary mb-8">
+              <p class="text-lg lg:text-xl mb-8"
+                style="color: {{color_palette.value.colorPalette.primary}};">
                 {{personal_info.value.position}}
               </p>
               {{#if contacts.value.contacts}}
@@ -104,12 +120,14 @@
               {{#if contacts.value.contacts.booking.enabled}}
               <a href="{{contacts.value.contacts.booking.url}}"
                 target="_blank"
-                class="inline-block bg-primary text-white px-8 py-3 rounded-lg text-lg font-medium hover:bg-primary/90 transition-colors">
+                class="inline-block px-8 py-3 rounded-lg text-lg font-medium hover:bg-primary/90 transition-colors"
+                style="color: {{color_palette.value.colorPalette.quaternary}};background-color: {{color_palette.value.colorPalette.primary}};">
                 {{contacts.value.contacts.booking.buttonText}}
               </a>
               {{else}}
               <a href="#contact"
-                class="inline-block bg-primary text-white px-8 py-3 rounded-lg text-lg font-medium hover:bg-primary/90 transition-colors">
+                class="inline-block px-8 py-3 rounded-lg text-lg font-medium transition-colors"
+                style="color: {{color_palette.value.colorPalette.quaternary}};background-color: {{color_palette.value.colorPalette.primary}};">
                 {{contacts.value.contacts.buttonText}}
               </a>
               {{/if}}
@@ -126,7 +144,8 @@
         </div>
       </section>
 
-      <section id="about" class="py-12 lg:py-20 bg-gray-200" data-aos="fade-up">
+      <section id="about" class="py-12 lg:py-20" data-aos="fade-up"
+        style="background-color: {{color_palette.value.colorPalette.tertiary-bright}};">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
             class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -137,14 +156,17 @@
                 class="w-full h-64 sm:h-80 lg:h-96 object-cover rounded-lg shadow-lg">
             </div>
             <div>
-              <h2 class="text-3xl lg:text-4xl font-bold text-primary mb-4">
+              <h2 class="text-3xl lg:text-4xl font-bold mb-4"
+                style="color: {{color_palette.value.colorPalette.primary}};">
                 From Corporate Strategy to Your Strategic Partner
               </h2>
-              <p class="text-lg lg:text-xl text-primary mb-6">
+              <p class="text-lg lg:text-xl mb-6"
+                style="color: {{color_palette.value.colorPalette.primary}};">
                 My philosophy is simple: empower founders with the clarity and
                 tools to build resilient, profitable businesses.
               </p>
-              <p class="text-base text-primary leading-relaxed">
+              <p class="text-base  leading-relaxed"
+                style="color: {{color_palette.value.colorPalette.primary}};">
                 After a decade leading growth initiatives at Fortune 500
                 companies, I saw that the same powerful strategies could
                 transform
@@ -161,22 +183,28 @@
         </div>
       </section>
 
-      <section id="offerings" class="py-12 lg:py-20 bg-gray-200"
-        data-aos="fade-up">
+      <section id="offerings" class="py-12 lg:py-20"
+        data-aos="fade-up"
+        style="background-color: {{color_palette.value.colorPalette.tertiary-bright}};">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2
-            class="text-3xl lg:text-4xl font-bold text-primary text-center mb-12">
+            class="text-3xl lg:text-4xl font-bold text-center mb-12"
+            style="color: {{color_palette.value.colorPalette.primary}};">
             Consulting Offerings
           </h2>
 
           <div class="space-y-8">
             <div class="bg-secondary rounded-lg p-6 lg:p-8">
-              <h3 class="text-2xl lg:text-3xl font-bold text-primary mb-2">
+              <h3 class="text-2xl lg:text-3xl font-bold mb-2"
+                style="color: {{color_palette.value.colorPalette.primary}};">
                 Growth Strategy Roadmap
               </h3>
-              <p class="text-lg lg:text-xl text-primary mb-4">For businesses
+              <p class="text-lg lg:text-xl mb-4"
+                style="color: {{color_palette.value.colorPalette.primary}};">For
+                businesses
                 seeking clear direction.</p>
-              <p class="text-base text-primary leading-relaxed">
+              <p class="text-base leading-relaxed"
+                style="color: {{color_palette.value.colorPalette.primary}};">
                 A comprehensive deep-dive into your business model, market
                 position, and financials. We'll collaboratively build a 12-month
                 actionable roadmap to achieve your most ambitious growth
@@ -184,14 +212,19 @@
               </p>
             </div>
 
-            <div class="bg-secondary rounded-lg p-6 lg:p-8">
-              <h3 class="text-2xl lg:text-3xl font-bold text-primary mb-2">
+            <div class="rounded-lg p-6 lg:p-8"
+              style="background-color: {{color_palette.value.colorPalette.secondary}};">
+              <h3 class="text-2xl lg:text-3xl font-bold mb-2"
+                style="color: {{color_palette.value.colorPalette.primary}};">
                 Operational Efficiency Audit
               </h3>
-              <p class="text-lg lg:text-xl text-primary mb-4">For businesses
+              <p class="text-lg lg:text-xl mb-4"
+                style="color: {{color_palette.value.colorPalette.primary}};">For
+                businesses
                 ready
                 to scale smarter.</p>
-              <p class="text-base text-primary leading-relaxed">
+              <p class="text-base leading-relaxed"
+                style="color: {{color_palette.value.colorPalette.primary}};">
                 We'll analyze your current workflows, systems, and team
                 structure
                 to identify key bottlenecks and opportunities. The result is a
@@ -199,13 +232,18 @@
               </p>
             </div>
 
-            <div class="bg-secondary rounded-lg p-6 lg:p-8">
-              <h3 class="text-2xl lg:text-3xl font-bold text-primary mb-2">
+            <div class="rounded-lg p-6 lg:p-8"
+              style="background-color: {{color_palette.value.colorPalette.secondary}};">
+              <h3 class="text-2xl lg:text-3xl font-bold mb-2"
+                style="color: {{color_palette.value.colorPalette.primary}};">
                 Fractional COO / Advisory Retainer
               </h3>
-              <p class="text-lg lg:text-xl text-primary mb-4">For ongoing
+              <p class="text-lg lg:text-xl mb-4"
+                style="color: {{color_palette.value.colorPalette.primary}};">For
+                ongoing
                 strategic guidance.</p>
-              <p class="text-base text-primary leading-relaxed">
+              <p class="text-base leading-relaxed"
+                style="color: {{color_palette.value.colorPalette.primary}};">
                 Get consistent, high-level strategic support without the cost of
                 a
                 full-time executive. Ideal for founders needing a trusted
@@ -217,23 +255,28 @@
         </div>
       </section>
 
-      <section id="casestudies" class="py-12 lg:py-20 bg-white"
-        data-aos="fade-up">
+      <section id="casestudies" class="py-12 lg:py-20"
+        data-aos="fade-up"
+        style="background-color: {{color_palette.value.colorPalette.quaternary}};">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2
-            class="text-3xl lg:text-4xl font-bold text-primary text-center mb-12">
+            class="text-3xl lg:text-4xl font-bold text-center mb-12"
+            style="color: {{color_palette.value.colorPalette.primary}};">
             Client Success Stories
           </h2>
           <div
             class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div class="order-2 md:order-1">
               <p
-                class="text-sm font-bold text-primary/70 tracking-wider">ECOMMERCE
+                class="text-sm font-bold tracking-wider"
+                style="color: {{color_palette.value.colorPalette.primary-dim}};">ECOMMERCE
                 CO</p>
-              <h3 class="text-2xl lg:text-3xl font-bold text-primary mt-2 mb-4">
+              <h3 class="text-2xl lg:text-3xl font-bold mt-2 mb-4"
+                style="color: {{color_palette.value.colorPalette.primary}};">
                 40% Revenue Growth in Six Months
               </h3>
-              <p class="text-base text-primary leading-relaxed mb-4">
+              <p class="text-base leading-relaxed mb-4"
+                style="color: {{color_palette.value.colorPalette.primary}};">
                 Ecommerce Co was struggling with stagnant sales and inefficient
                 marketing spend. Through a complete Growth Strategy Roadmap, we
                 restructured their ad campaigns, optimized their conversion
@@ -241,12 +284,18 @@
               </p>
               <div class="flex space-x-8">
                 <div>
-                  <p class="text-2xl font-bold text-primary">40%</p>
-                  <p class="text-sm text-primary">Revenue Increase</p>
+                  <p class="text-2xl font-bold"
+                    style="color: {{color_palette.value.colorPalette.primary}};">40%</p>
+                  <p class="text-sm"
+                    style="color: {{color_palette.value.colorPalette.primary}};">Revenue
+                    Increase</p>
                 </div>
                 <div>
-                  <p class="text-2xl font-bold text-primary">25%</p>
-                  <p class="text-sm text-primary">Reduction in Ad Spend</p>
+                  <p class="text-2xl font-bold"
+                    style="color: {{color_palette.value.colorPalette.primary}};">25%</p>
+                  <p class="text-sm"
+                    style="color: {{color_palette.value.colorPalette.primary}};">Reduction
+                    in Ad Spend</p>
                 </div>
               </div>
             </div>
@@ -257,116 +306,61 @@
                 class="w-full h-80 object-cover rounded-lg shadow-lg">
             </div>
           </div>
-          <div
-            class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center mt-12 lg:mt-20">
-            <div class="order-1">
-              <img
-                src="https://images.unsplash.com/photo-1517048676732-d65bc937f952"
-                alt="Tech startup team"
-                class="w-full h-80 object-cover rounded-lg shadow-lg">
-            </div>
-            <div class="order-2">
-              <p
-                class="text-sm font-bold text-primary/70 tracking-wider">TECHSOLUTIONS
-                LLC</p>
-              <h3 class="text-2xl lg:text-3xl font-bold text-primary mt-2 mb-4">
-                Streamlined Operations to Prepare for Scale
-              </h3>
-              <p class="text-base text-primary leading-relaxed mb-4">
-                This fast-growing SaaS startup had operational bottlenecks that
-                were hindering their growth. Our Operational Efficiency Audit
-                identified critical process gaps. We implemented new project
-                management systems and automated workflows.
-              </p>
-              <div class="flex space-x-8">
-                <div>
-                  <p class="text-2xl font-bold text-primary">50%</p>
-                  <p class="text-sm text-primary">Faster Project Delivery</p>
-                </div>
-                <div>
-                  <p class="text-2xl font-bold text-primary">10</p>
-                  <p class="text-sm text-primary">Hours Saved Per Week</p>
-                </div>
-              </div>
-            </div>
           </div>
-        </div>
       </section>
 
-      <section class="py-12 lg:py-20 bg-gray-200" data-aos="fade-up">
+      <section class="py-12 lg:py-20" data-aos="fade-up"  style="background-color: {{color_palette.value.colorPalette.tertiary-bright}};">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2
-            class="text-3xl lg:text-4xl font-bold text-primary text-center mb-12">
+            class="text-3xl lg:text-4xl font-bold text-center mb-12" style="color: {{color_palette.value.colorPalette.primary}};">
             What My Clients Say
           </h2>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-secondary rounded-lg p-6">
-              <p class="text-base text-primary leading-relaxed mb-6">
+            <div class="rounded-lg p-6" style="background-color: {{color_palette.value.colorPalette.secondary}};">
+              <p class="text-base leading-relaxed mb-6" style="color: {{color_palette.value.colorPalette.primary}};">
                 "Working with M. Caldwell was a game-changer. We finally have a clear strategy and the confidence to execute it. Our revenue is up 40% in just six months."
               </p>
-              <p class="text-lg font-medium text-primary">John Doe, CEO of
+              <p class="text-lg font-medium" style="color: {{color_palette.value.colorPalette.primary}};">John Doe, CEO of
                 Ecommerce Co</p>
-            </div>
-            <div class="bg-secondary rounded-lg p-6">
-              <p class="text-base text-primary leading-relaxed mb-6">
-                "The Operational Efficiency Audit identified bottlenecks we didn't even know we had. We're now more productive and profitable than ever before. Highly recommended."
-              </p>
-              <p class="text-lg font-medium text-primary">Jane Smith, Founder of
-                TechSolutions</p>
-            </div>
-            <div class="bg-secondary rounded-lg p-6">
-              <p class="text-base text-primary leading-relaxed mb-6">
-                "As a solo founder, having M. Caldwell as a strategic advisor is invaluable. It's like having a seasoned COO on my team, providing the clarity and accountability I need to grow."
-              </p>
-              <p class="text-lg font-medium text-primary">David Lee, Owner of
-                Startup Inc.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="trustedby" class="py-12 lg:py-20 bg-gray-200"
-        data-aos="fade-up">
+      <section id="trustedby" class="py-12 lg:py-20"
+        data-aos="fade-up" style="background-color: {{color_palette.value.colorPalette.tertiary-bright}};">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2
-            class="text-3xl lg:text-4xl font-bold text-primary text-center mb-12">
+            class="text-3xl lg:text-4xl font-bold text-primary mb-12" style="color: {{color_palette.value.colorPalette.primary}};">
             Trusted By Leading Businesses
           </h2>
           <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div class="p-6 flex items-center justify-center h-24"><span
-                class="text-2xl text-primary/70 font-bold">STARTUP
+                class="text-2xl font-bold" style="color: {{color_palette.value.colorPalette.primary-dim}};">STARTUP
                 INC.</span></div>
-            <div class="p-6 flex items-center justify-center h-24"><span
-                class="text-2xl text-primary/70 font-bold">ECOMMERCE
-                CO</span></div>
-            <div class="p-6 flex items-center justify-center h-24"><span
-                class="text-2xl text-primary/70 font-bold">TECHSOLUTIONS</span></div>
-            <div class="p-6 flex items-center justify-center h-24"><span
-                class="text-2xl text-primary/70 font-bold">LOCAL
-                BIZ</span></div>
           </div>
         </div>
       </section>
 
-      <section id="faq" class="py-12 lg:py-20 bg-white" data-aos="fade-up">
+      <section id="faq" class="py-12 lg:py-20" data-aos="fade-up"  style="background-color: {{color_palette.value.colorPalette.quaternary}};">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2
-            class="text-3xl lg:text-4xl font-bold text-primary text-center mb-12">
+            class="text-3xl lg:text-4xl font-bold text-center mb-12" style="color: {{color_palette.value.colorPalette.primary}};">
             Frequently Asked Questions
           </h2>
           <div class="max-w-4xl mx-auto">
-            <div class="faq-item border-b border-primary/20 py-4">
+            <div class="faq-item border-b py-4" style="border-color: {{color_palette.value.colorPalette.border-primary-dim}};">
               <button
                 class="faq-question w-full flex justify-between items-center text-left focus:outline-none">
-                <h3 class="text-xl lg:text-2xl font-bold text-primary">Who is
+                <h3 class="text-xl lg:text-2xl font-bold" style="color: {{color_palette.value.colorPalette.primary}};">Who is
                   your
                   ideal client?</h3>
                 <span
-                  class="faq-icon text-primary text-3xl font-light transform transition-transform duration-300">&plus;</span>
+                  class="faq-icon text-3xl font-light transform transition-transform duration-300" style="color: {{color_palette.value.colorPalette.primary}};">&plus;</span>
               </button>
               <div
                 class="faq-answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-                <p class="text-base text-primary leading-relaxed pt-4">
+                <p class="text-base leading-relaxed pt-4" style="color: {{color_palette.value.colorPalette.primary}};">
                   I primarily work with established small to medium-sized
                   businesses (typically $1M - $10M in annual revenue) that are
                   poised for growth but lack the internal strategic clarity to
@@ -374,71 +368,6 @@
                   to the next level. My ideal clients are ambitious founders and
                   leaders who are open to new ideas and ready to take decisive
                   action.
-                </p>
-              </div>
-            </div>
-            <div class="faq-item border-b border-primary/20 py-4">
-              <button
-                class="faq-question w-full flex justify-between items-center text-left focus:outline-none">
-                <h3 class="text-xl lg:text-2xl font-bold text-primary">How do
-                  you
-                  structure your consulting engagements?</h3>
-                <span
-                  class="faq-icon text-primary text-3xl font-light transform transition-transform duration-300">&plus;</span>
-              </button>
-              <div
-                class="faq-answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-                <p class="text-base text-primary leading-relaxed pt-4">
-                  Engagements are tailored to your needs, but most fall into one
-                  of three categories: project-based (like the Growth Strategy
-                  Roadmap), monthly retainers for ongoing advisory, or intensive
-                  half-day workshops. We determine the best fit during our
-                  initial
-                  discovery call.
-                </p>
-              </div>
-            </div>
-            <div class="faq-item border-b border-primary/20 py-4">
-              <button
-                class="faq-question w-full flex justify-between items-center text-left focus:outline-none">
-                <h3 class="text-xl lg:text-2xl font-bold text-primary">What does
-                  the investment look like?</h3>
-                <span
-                  class="faq-icon text-primary text-3xl font-light transform transition-transform duration-300">&plus;</span>
-              </button>
-              <div
-                class="faq-answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-                <p class="text-base text-primary leading-relaxed pt-4">
-                  My services are priced based on value and the scope of the
-                  engagement, not just hours. This ensures I am fully aligned
-                  with
-                  your success. Project-based work begins in the low five
-                  figures,
-                  with retainer options available for ongoing support. I am
-                  happy
-                  to provide a detailed proposal after our initial consultation.
-                </p>
-              </div>
-            </div>
-            <div class="faq-item border-b border-primary/20 py-4">
-              <button
-                class="faq-question w-full flex justify-between items-center text-left focus:outline-none">
-                <h3 class="text-xl lg:text-2xl font-bold text-primary">What
-                  makes
-                  you different from other business consultants?</h3>
-                <span
-                  class="faq-icon text-primary text-3xl font-light transform transition-transform duration-300">&plus;</span>
-              </button>
-              <div
-                class="faq-answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-                <p class="text-base text-primary leading-relaxed pt-4">
-                  Unlike larger firms that hand you a generic report, I operate
-                  as
-                  a hands-on strategic partner. My approach is built on a
-                  foundation of real-world experience from both corporate and
-                  startup environments. I don't just deliver a plan; I work
-                  alongside you to implement it, ensuring the strategies we
-                  develop lead to tangible, measurable results.
                 </p>
               </div>
             </div>
