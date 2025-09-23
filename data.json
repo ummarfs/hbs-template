@@ -156,7 +156,10 @@
     "value": {
       "about": {
         "content": "As an accomplished Full-Stack Developer, I specialize in designing and delivering scalable applications that drive innovation. My strong grasp of both frontend and backend technologies enables me to create solutions that resonate with users. I thrive in dynamic environments, continuously embracing new technologies to enhance application quality and functionality.",
-        "section_title": "About Me"
+        "section_title": "About Me",
+        "heading": "From Corporate Strategy to Your Strategic Partner",
+        "subheading": "My journey from corporate strategy to consulting",
+        "image": "https://c.animaapp.com/mfnpsvda9pPWxp/assets/88aac0_70dba72adce54eea9f53068b36a9e0e9~mv2.jpeg"
       }
     }
   },
@@ -170,26 +173,30 @@
           {
             "image": "https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?w=800",
             "title": "Tech Entrepreneurship",
+            "subtitle": "Custom Software Solutions",
             "description": "I develop tailored software solutions to meet unique business requirements."
           },
           {
             "image": "https://images.pexels.com/photos/360591/pexels-photo-360591.jpeg?w=800",
             "title": "Web Development Services",
+            "subtitle": "Custom Software Solutions",
             "description": "I create scalable web applications utilizing modern technologies for efficiency."
           },
           {
             "image": "https://images.pexels.com/photos/3585093/pexels-photo-3585093.jpeg?w=800",
             "title": "Application Design",
+            "subtitle": "Custom Software Solutions",
             "description": "I design user-friendly applications tailored to meet dynamic user needs."
           },
           {
             "image": "https://images.pexels.com/photos/6755148/pexels-photo-6755148.jpeg?w=800",
             "title": "Technical Consulting",
+            "subtitle": "Custom Software Solutions",
             "description": "I provide expert guidance on technology integration and application scaling."
           }
         ],
         "heading": "Empowering growth for you and your business",
-        "section_title": "MY SERVICES"
+        "section_title": "Consulting Offerings"
       }
     }
   },
@@ -235,7 +242,8 @@
           {
             "date": "2025-09-09",
             "recommenderName": "John Smith",
-            "recommendationText": "he is a good guy"
+            "recommendationText": "he is a good guy",
+            "recommenderDesignation": "COO of Google"
           }
         ],
         "heading": "What My Clients Say",
@@ -398,8 +406,52 @@
         "quaternary": "#ffffff",
         "tertiary-bright": "#e5e7eb",
         "primary-dim": "rgba(120, 53, 15, 0.7)",
-        "border-primary-dim":"rgba(120, 53, 15, 0.2)",
-        "border-quatenary-dim":"rgba(255, 255, 255, 0.2)"
+        "border-primary-dim": "rgba(120, 53, 15, 0.2)",
+        "border-quatenary-dim": "rgba(255, 255, 255, 0.2)"
+      }
+    }
+  },
+  "success_stories": {
+    "meta": {
+      "hide": false
+    },
+    "value": {
+      "success_stories": {
+        "items": [
+          {
+            "title": "Boosted E-commerce Sales by 30%",
+            "description": "By optimizing supply chain logistics and enhancing customer experience, we achieved a 30% increase in sales within six months.",
+            "client": "ECOMMERCE CO",
+            "stats": [
+              {
+                "number": "40%",
+                "label": "Revenue Increase"
+              },
+              {
+                "number": "25%",
+                "label": "Reduction in Ad Spend"
+              }
+            ],
+            "image": "https://images.unsplash.com/photo-1517048676732-d65bc937f952"
+          },
+          {
+            "title": "Boosted E-commerce Sales by 30%",
+            "description": "By optimizing supply chain logistics and enhancing customer experience, we achieved a 30% increase in sales within six months.",
+            "client": "ECOMMERCE CO",
+            "stats": [
+              {
+                "number": "40%",
+                "label": "Revenue Increase"
+              },
+              {
+                "number": "25%",
+                "label": "Reduction in Ad Spend"
+              }
+            ],
+            "image": "https://images.unsplash.com/photo-1517048676732-d65bc937f952"
+          }
+        ],
+        "section_title": "Client Success Stories"
       }
     }
   }
