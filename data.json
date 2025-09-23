@@ -159,7 +159,8 @@
         "section_title": "About Me",
         "heading": "From Corporate Strategy to Your Strategic Partner",
         "subheading": "My journey from corporate strategy to consulting",
-        "image": "https://c.animaapp.com/mfnpsvda9pPWxp/assets/88aac0_70dba72adce54eea9f53068b36a9e0e9~mv2.jpeg"
+        "image": "https://c.animaapp.com/mfnpsvda9pPWxp/assets/88aac0_70dba72adce54eea9f53068b36a9e0e9~mv2.jpeg",
+        "navbarName":"About"
       }
     }
   },
@@ -196,7 +197,8 @@
           }
         ],
         "heading": "Empowering growth for you and your business",
-        "section_title": "Consulting Offerings"
+        "section_title": "Consulting Offerings",
+        "navbarName":"Offerings"
       }
     }
   },
@@ -228,7 +230,9 @@
         "description": "Whether you have a question, a suggestion, or just want to say hello, this is the place to do it. Please fill out the form below with your details and message, and we'll get back to you as soon as possible.",
         "section_title": "GET IN TOUCH",
         "contactFormHeading": "Send Me a Message",
-        "contactFormButtonText": "Send Message"
+        "contactFormButtonText": "Send Message",
+        "messageInputLabel":"What's your biggest business challenge right now?",
+        "navbarName":"Work With Me"
       }
     }
   },
@@ -451,7 +455,28 @@
             "image": "https://images.unsplash.com/photo-1517048676732-d65bc937f952"
           }
         ],
-        "section_title": "Client Success Stories"
+        "section_title": "Client Success Stories",
+        "navbarName":"Success"
+      }
+    }
+  },
+  "faq": {
+    "meta": {
+      "hide": false
+    },
+    "value": {
+      "faq": {
+        "section_title": "Frequently Asked Questions",
+        "items": [
+          {
+            "question": "Who is your ideal client?",
+            "answer": "I primarily work with established small to medium-sized businesses (typically $1M - $10M in annual revenue) that are poised for growth but lack the internal strategic clarity to get to the next level. My ideal clients are ambitious founders and leaders who are open to new ideas and ready to take decisive action."
+          }, {
+            "question": "Who is your ideal client?",
+            "answer": "I primarily work with established small to medium-sized businesses (typically $1M - $10M in annual revenue) that are poised for growth but lack the internal strategic clarity to get to the next level. My ideal clients are ambitious founders and leaders who are open to new ideas and ready to take decisive action."
+          }
+        ],
+        "navbarName":"FAQ"
       }
     }
   }

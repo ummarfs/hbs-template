@@ -40,23 +40,44 @@
             </div>
 
             <nav class="hidden md:flex space-x-8 text-xl">
+              {{#if about.value.about.content}}
+              {{#unless about.meta.hide}}
               <a href="#about"
                 class="transition-colors"
-                style="color: {{color_palette.value.colorPalette.primary}};">About</a>
+                style="color: {{color_palette.value.colorPalette.primary}};">{{about.value.about.navbarName}}</a>
+              {{/unless}}
+              {{/if}}
+              {{#if services.value.services.items}}
+              {{#unless services.meta.hide}}
               <a href="#offerings"
                 class="transition-colors"
-                style="color: {{color_palette.value.colorPalette.primary}};">Offerings</a>
+                style="color: {{color_palette.value.colorPalette.primary}};">{{services.value.services.navbarName}}</a>
+              {{/unless}}
+              {{/if}}
+              {{#if success_stories.value.success_stories.items}}
+              {{#unless success_stories.meta.hide}}
               <a href="#casestudies"
                 class="transition-colors"
-                style="color: {{color_palette.value.colorPalette.primary}};">Case
-                Studies</a>
+                style="color: {{color_palette.value.colorPalette.primary}};">{{success_stories.value.success_stories.navbarName}}</a>
+              {{/unless}}
+              {{/if}}
+              {{#if faq.value.faq.items}}
+              {{#unless faq.meta.hide}}
               <a href="#faq"
                 class="transition-colors"
-                style="color: {{color_palette.value.colorPalette.primary}};">FAQ</a>
+                style="color: {{color_palette.value.colorPalette.primary}};">{{faq.value.faq.navbarName}}</a>
+              {{/unless}}
+              {{/if}}
+              {{#if contacts.value.contacts}}
+              {{#if
+              contacts.value.contacts.contactForm}}
+              {{#unless contacts.meta.hide}}
               <a href="#contact"
                 class="transition-colors"
-                style="color: {{color_palette.value.colorPalette.primary}};">Work
-                With Me</a>
+                style="color: {{color_palette.value.colorPalette.primary}};">{{contacts.value.contacts.navbarName}}</a>
+              {{/unless}}
+              {{/if}}
+              {{/if}}
             </nav>
 
             <button class="md:hidden p-2" id="mobile-menu-btn">
@@ -71,25 +92,46 @@
           </div>
 
           <div class="md:hidden hidden" id="mobile-menu">
-            <div class="px-2 pt-2 pb-3 space-y-1 border-t"
+            <div class="px-2 pt-2 pb-3 space-y-1 border-t flex flex-col"
               style="background-color: {{color_palette.value.colorPalette.secondary}};">
+              {{#if about.value.about.content}}
+              {{#unless about.meta.hide}}
               <a href="#about"
-                class="block px-3 py-2 hover:bg-gray-300 rounded-md"
-                style="color: {{color_palette.value.colorPalette.primary}};">About</a>
+                class="transition-colors"
+                style="color: {{color_palette.value.colorPalette.primary}};">{{about.value.about.navbarName}}</a>
+              {{/unless}}
+              {{/if}}
+              {{#if services.value.services.items}}
+              {{#unless services.meta.hide}}
               <a href="#offerings"
-                class="block px-3 py-2 rounded-md"
-                style="color: {{color_palette.value.colorPalette.primary}};">Offerings</a>
+                class="transition-colors"
+                style="color: {{color_palette.value.colorPalette.primary}};">{{services.value.services.navbarName}}</a>
+              {{/unless}}
+              {{/if}}
+              {{#if success_stories.value.success_stories.items}}
+              {{#unless success_stories.meta.hide}}
               <a href="#casestudies"
-                class="block px-3 py-2 rounded-md"
-                style="color: {{color_palette.value.colorPalette.primary}};">Case
-                Studies</a>
+                class="transition-colors"
+                style="color: {{color_palette.value.colorPalette.primary}};">{{success_stories.value.success_stories.navbarName}}</a>
+              {{/unless}}
+              {{/if}}
+              {{#if faq.value.faq.items}}
+              {{#unless faq.meta.hide}}
               <a href="#faq"
-                class="block px-3 py-2 rounded-md"
-                style="color: {{color_palette.value.colorPalette.primary}};">FAQ</a>
+                class="transition-colors"
+                style="color: {{color_palette.value.colorPalette.primary}};">{{faq.value.faq.navbarName}}</a>
+              {{/unless}}
+              {{/if}}
+              {{#if contacts.value.contacts}}
+              {{#if
+              contacts.value.contacts.contactForm}}
+              {{#unless contacts.meta.hide}}
               <a href="#contact"
-                class="block px-3 py-2 rounded-md"
-                style="color: {{color_palette.value.colorPalette.primary}};">Work
-                With Me</a>
+                class="transition-colors"
+                style="color: {{color_palette.value.colorPalette.primary}};">{{contacts.value.contacts.navbarName}}</a>
+              {{/unless}}
+              {{/if}}
+              {{/if}}
             </div>
           </div>
         </div>
@@ -226,7 +268,7 @@
           <div
             class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
             {{#each success_stories.value.success_stories.items}}
-            <div class="order-2 md:order-1">
+            <div class="md:order-1">
               <p
                 class="text-sm font-bold tracking-wider"
                 style="color: {{../color_palette.value.colorPalette.primary-dim}};">{{this.client}}</p>
@@ -249,7 +291,7 @@
                 {{/each}}
               </div>
             </div>
-            <div class="order-1 md:order-2">
+            <div class="">
               <img
                 src="{{this.image}}"
                 alt="Ecommerce business success"
@@ -281,7 +323,8 @@
                 "{{this.recommendationText}}"
               </p>
               <p class="text-lg font-medium"
-                style="color: {{../color_palette.value.colorPalette.primary}};">{{this.recommenderName}}{{#if this.recommenderDesignation}},
+                style="color: {{../color_palette.value.colorPalette.primary}};">{{this.recommenderName}}{{#if
+                this.recommenderDesignation}},
                 {{this.recommenderDesignation}}{{/if}}</p>
             </div>
             {{/each}}
@@ -291,64 +334,70 @@
       {{/unless}}
       {{/if}}
 
+      {{#if client_logos.value.client_logos.items}}
+      {{#unless client_logos.meta.hide}}
       <section id="trustedby" class="py-12 lg:py-20"
         data-aos="fade-up"
         style="background-color: {{color_palette.value.colorPalette.tertiary-bright}};">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2
-            class="text-3xl lg:text-4xl font-bold text-primary mb-12"
+            class="text-3xl lg:text-4xl font-bold text-primary mb-12 text-center"
             style="color: {{color_palette.value.colorPalette.primary}};">
-            Trusted By Leading Businesses
+            {{client_logos.value.client_logos.section_title}}
           </h2>
           <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {{#each client_logos.value.client_logos.items}}
             <div class="p-6 flex items-center justify-center h-24"><span
                 class="text-2xl font-bold"
-                style="color: {{color_palette.value.colorPalette.primary-dim}};">STARTUP
-                INC.</span></div>
+                style="color: {{../color_palette.value.colorPalette.primary-dim}};">{{this.name}}</span>
+            </div>
+            {{/each}}
           </div>
         </div>
       </section>
+      {{/unless}}
+      {{/if}}
 
+      {{#if faq.value.faq.items}}
+      {{#unless faq.meta.hide}}
       <section id="faq" class="py-12 lg:py-20" data-aos="fade-up"
         style="background-color: {{color_palette.value.colorPalette.quaternary}};">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2
             class="text-3xl lg:text-4xl font-bold text-center mb-12"
             style="color: {{color_palette.value.colorPalette.primary}};">
-            Frequently Asked Questions
+            {{faq.value.faq.section_title}}
           </h2>
           <div class="max-w-4xl mx-auto">
+            {{#each faq.value.faq.items}}
             <div class="faq-item border-b py-4"
-              style="border-color: {{color_palette.value.colorPalette.border-primary-dim}};">
+              style="border-color: {{../color_palette.value.colorPalette.border-primary-dim}};">
               <button
                 class="faq-question w-full flex justify-between items-center text-left focus:outline-none">
                 <h3 class="text-xl lg:text-2xl font-bold"
-                  style="color: {{color_palette.value.colorPalette.primary}};">Who
-                  is
-                  your
-                  ideal client?</h3>
+                  style="color: {{../color_palette.value.colorPalette.primary}};">{{this.question}}</h3>
                 <span
                   class="faq-icon text-3xl font-light transform transition-transform duration-300"
-                  style="color: {{color_palette.value.colorPalette.primary}};">&plus;</span>
+                  style="color: {{../color_palette.value.colorPalette.primary}};">&plus;</span>
               </button>
               <div
                 class="faq-answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
                 <p class="text-base leading-relaxed pt-4"
-                  style="color: {{color_palette.value.colorPalette.primary}};">
-                  I primarily work with established small to medium-sized
-                  businesses (typically $1M - $10M in annual revenue) that are
-                  poised for growth but lack the internal strategic clarity to
-                  get
-                  to the next level. My ideal clients are ambitious founders and
-                  leaders who are open to new ideas and ready to take decisive
-                  action.
+                  style="color: {{../color_palette.value.colorPalette.primary}};">
+                  {{this.answer}}
                 </p>
               </div>
             </div>
+            {{/each}}
           </div>
         </div>
       </section>
+      {{/unless}}
+      {{/if}}
 
+      {{#if contacts.value.contacts}}
+      {{#if contacts.value.contacts.contactForm}}
+      {{#unless contacts.meta.hide}}
       <section id="contact" class="py-12 lg:py-20"
         data-aos="fade-up"
         style="background-color: {{color_palette.value.colorPalette.primary}};">
@@ -358,35 +407,22 @@
             <h2
               class="text-2xl lg:text-3xl font-bold mb-4 text-center"
               style="color: {{color_palette.value.colorPalette.primary}};">
-              Ready to Scale Your Business?
+              {{contacts.value.contacts.heading}}
             </h2>
+            {{#if contacts.value.contacts.description}}
             <p class="text-center mb-8"
-              style="color: {{color_palette.value.colorPalette.primary}};">Fill
-              out the form below for
-              a
-              complimentary discovery call to see if we're a good fit.</p>
-            <form class="space-y-6">
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label for="firstName"
-                    class="block text-sm font-medium mb-2"
-                    style="color: {{color_palette.value.colorPalette.primary}};">First
-                    name
-                    *</label>
-                  <input type="text" id="firstName" name="firstName" required
-                    class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[{{color_palette.value.colorPalette.border-primary-dim}}]"
-                    style="border-color: {{color_palette.value.colorPalette.primary}};">
-                </div>
-                <div>
-                  <label for="lastName"
-                    class="block text-sm font-medium mb-2"
-                    style="color: {{color_palette.value.colorPalette.primary}};">Last
-                    name
-                    *</label>
-                  <input type="text" id="lastName" name="lastName" required
-                    class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[{{color_palette.value.colorPalette.border-primary-dim}}]"
-                    style="border-color: {{color_palette.value.colorPalette.primary}};">
-                </div>
+              style="color: {{color_palette.value.colorPalette.primary}};">{{contacts.value.contacts.description}}</p>
+            {{/if}}
+            <form class="space-y-6" action="/api/contact" method="post"
+              enctype="text/plain">
+              <div>
+                <label for="name"
+                  class="block text-sm font-medium mb-2"
+                  style="color: {{color_palette.value.colorPalette.primary}};">Name
+                  *</label>
+                <input type="text" id="name" name="name" required
+                  class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[{{color_palette.value.colorPalette.border-primary-dim}}]"
+                  style="border-color: {{color_palette.value.colorPalette.primary}};">
               </div>
               <div>
                 <label for="email"
@@ -400,9 +436,7 @@
               <div>
                 <label for="message"
                   class="block text-sm font-medium mb-2"
-                  style="color: {{color_palette.value.colorPalette.primary}};">What's
-                  your
-                  biggest business challenge right now?</label>
+                  style="color: {{color_palette.value.colorPalette.primary}};">{{contacts.value.contacts.messageInputLabel}}</label>
                 <textarea id="message" name="message" rows="4"
                   class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[{{color_palette.value.colorPalette.border-primary-dim}}]"
                   style="border-color: {{color_palette.value.colorPalette.primary}};"></textarea>
@@ -410,12 +444,15 @@
               <button type="submit"
                 class="w-full bg-transparent border-2 px-6 py-3 rounded-lg text-lg font-medium hover:bg-primary hover:text-white transition-colors"
                 style="border-color: {{color_palette.value.colorPalette.primary}};color: {{color_palette.value.colorPalette.primary}};">
-                Request a Discovery Call
+                {{contacts.value.contacts.contactFormButtonText}}
               </button>
             </form>
           </div>
         </div>
       </section>
+      {{/unless}}
+      {{/if}}
+      {{/if}}
 
       <footer class="py-12"
         style="background-color: {{color_palette.value.colorPalette.primary}};">
@@ -427,32 +464,36 @@
                 class="w-12 h-12 rounded-full flex items-center justify-center"
                 style="background-color: {{color_palette.value.colorPalette.quaternary}};">
                 <span class="font-bold text-lg"
-                  style="color: {{color_palette.value.colorPalette.primary}};">M</span>
+                  style="color: {{color_palette.value.colorPalette.primary}};">{{firstChar
+                  personal_info.value.firstName}}</span>
               </div>
               <h3 class="text-2xl font-bold"
-                style="color: {{color_palette.value.colorPalette.quaternary}};">M.
-                Caldwell | Growth
-                Consultant</h3>
+                style="color: {{color_palette.value.colorPalette.quaternary}};">{{personal_info.value.firstName}}
+                |
+                {{#if personal_info.value.role}} {{personal_info.value.role}}
+                {{/if}}</h3>
             </div>
+            {{#if social.value.social.items}}
+            {{#unless social.meta.hide}}
             <div class="flex space-x-6">
-              <a href="#"
+              {{#each social.value.social.items}}
+              <a href="{{this.url}}"
                 class="hover:text-accent transition-colors"
                 style="color: {{color_palette.value.colorPalette.quaternary}};">
-                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"
-                  aria-hidden="true">
-                  <path fill-rule="evenodd"
-                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
-                    clip-rule="evenodd" />
-                </svg>
-                <span class="sr-only">LinkedIn</span>
+                {{{socialIcon url=this.url
+                label=this.label size=40 className="size-12" }}}
               </a>
+              {{/each}}
             </div>
+            {{/unless}}
+            {{/if}}
           </div>
           <div class="mt-8 pt-8 border-t text-center"
             style="border-color: {{color_palette.value.colorPalette.border-quatenary-dim}};">
             <p class="text-sm"
               style="color: {{color_palette.value.colorPalette.tertiary-bright}};">
-              © 2025 M. Caldwell Consulting. All Rights Reserved.
+              © {{currentYear}} {{personal_info.value.firstName}}. All Rights
+              Reserved.
             </p>
           </div>
         </div>

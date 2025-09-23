@@ -13,8 +13,12 @@ hbs.registerHelper("firstChar", function (str) {
   return str ? str.toUpperCase().charAt(0) : "";
 });
 
+hbs.registerHelper("currentYear", function () {
+  return new Date().getFullYear();
+});
+
 app.get("/", (req, res) => {
-  res.redirect("/3")
+  res.redirect("/3");
 });
 
 app.get("/1", (req, res) => {
