@@ -398,7 +398,8 @@
         "quaternary": "#ffffff",
         "tertiary-bright": "#e5e7eb",
         "primary-dim": "rgba(120, 53, 15, 0.7)",
-        "border-primary-dim":"rgba(120, 53, 15, 0.2)"
+        "border-primary-dim":"rgba(120, 53, 15, 0.2)",
+        "border-quatenary-dim":"rgba(255, 255, 255, 0.2)"
       }
     }
   }
