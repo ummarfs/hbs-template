@@ -1,27 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>L. Thompson | Strategic Consultant</title>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-  
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  
-  <script>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L. Thompson | Strategic Consultant</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap"
+      rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script>
     tailwind.config = {
       content: [],
       theme: {
         extend: {
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            poppins: ['Poppins', 'sans-serif'],
-          },
           colors: {
             'brand-dark': '#0E172A',
           }
@@ -30,323 +28,513 @@
     };
   </script>
 
-  <style>
+    <style>
     body {
       font-family: 'Inter', sans-serif;
       scroll-behavior: smooth;
     }
+
+     .font-poppins {
+      font-family: 'Poppins', sans-serif;
+    }
   </style>
-</head>
+  </head>
 
-<body class="bg-white text-brand-dark overflow-x-hidden">
+  <body class="bg-white text-brand-dark overflow-x-hidden">
 
-  <div class="relative w-full">
+    <div class="relative w-full">
 
-    <header class="sticky top-0 z-50 bg-brand-dark text-white">
-      <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-        <p class="text-lg font-sans">
-          <a href="#" class="text-white">L. Thompson</a>
-        </p>
-        <div class="md:hidden">
-          <button id="hamburger-button" class="text-white focus:outline-none" aria-label="Toggle menu" aria-expanded="false">
-            <svg id="menu-open-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-            <svg id="menu-close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-          </button>
+      <header class="sticky top-0 z-50 bg-brand-dark text-white">
+        <div
+          class="container mx-auto px-6 py-4 flex justify-between items-center">
+          <p class="text-lg ">
+            <a href="#" class="text-white">L. Thompson</a>
+          </p>
+          <div class="md:hidden">
+            <button id="hamburger-button" class="text-white focus:outline-none"
+              aria-label="Toggle menu" aria-expanded="false">
+              <svg id="menu-open-icon" class="w-6 h-6" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round"
+                  stroke-linejoin="round" stroke-width="2"
+                  d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+              <svg id="menu-close-icon" class="w-6 h-6 hidden" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round"
+                  stroke-linejoin="round" stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+          </div>
+          <nav class="hidden md:flex">
+            <ul class="flex items-center gap-x-4 ">
+              <li><a href="#about"
+                  class="px-2 py-1 tracking-wider text-base hover:text-gray-300">About</a></li>
+              <li><a href="#services"
+                  class="px-2 py-1 tracking-wider text-base hover:text-gray-300">Services</a></li>
+              <li><a href="#process"
+                  class="px-2 py-1 tracking-wider text-base hover:text-gray-300">Process</a></li>
+              <li><a href="#contact"
+                  class="px-2 py-1 tracking-wider text-base hover:text-gray-300">Contact</a></li>
+            </ul>
+          </nav>
         </div>
-        <nav class="hidden md:flex">
-          <ul class="flex items-center gap-x-4 font-sans">
-            <li><a href="#about" class="px-2 py-1 tracking-wider text-base hover:text-gray-300">About</a></li>
-            <li><a href="#services" class="px-2 py-1 tracking-wider text-base hover:text-gray-300">Services</a></li>
-            <li><a href="#process" class="px-2 py-1 tracking-wider text-base hover:text-gray-300">Process</a></li>
-            <li><a href="#contact" class="px-2 py-1 tracking-wider text-base hover:text-gray-300">Contact</a></li>
+        <nav id="mobile-menu"
+          class="hidden md:hidden bg-brand-dark absolute w-full">
+          <ul class="flex flex-col items-center py-4 ">
+            <li class="w-full text-center"><a href="#about"
+                class="block py-3 tracking-wider text-base hover:bg-gray-800">About</a></li>
+            <li class="w-full text-center"><a href="#services"
+                class="block py-3 tracking-wider text-base hover:bg-gray-800">Services</a></li>
+            <li class="w-full text-center"><a href="#process"
+                class="block py-3 tracking-wider text-base hover:bg-gray-800">Process</a></li>
+            <li class="w-full text-center"><a href="#contact"
+                class="block py-3 tracking-wider text-base hover:bg-gray-800">Contact</a></li>
           </ul>
         </nav>
-      </div>
-      <nav id="mobile-menu" class="hidden md:hidden bg-brand-dark absolute w-full">
-        <ul class="flex flex-col items-center py-4 font-sans">
-          <li class="w-full text-center"><a href="#about" class="block py-3 tracking-wider text-base hover:bg-gray-800">About</a></li>
-          <li class="w-full text-center"><a href="#services" class="block py-3 tracking-wider text-base hover:bg-gray-800">Services</a></li>
-          <li class="w-full text-center"><a href="#process" class="block py-3 tracking-wider text-base hover:bg-gray-800">Process</a></li>
-          <li class="w-full text-center"><a href="#contact" class="block py-3 tracking-wider text-base hover:bg-gray-800">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
+      </header>
 
-    <main>
+      <main>
 
-      <section class="w-full">
-        <div class="flex flex-col lg:flex-row min-h-[826px]">
-          <div class="w-full lg:w-2/5 h-[400px] lg:h-auto" data-aos="fade-in">
-            <img src="https://picsum.photos/id/119/800/1200" alt="Consultant in a modern business setting" class="w-full h-full object-cover" />
-          </div>
-          <div class="w-full lg:w-3/5 flex items-center justify-center p-8 md:p-12">
-            <div class="max-w-xl text-center lg:text-left" data-aos="fade-in" data-aos-delay="200">
-              <h1 class="text-5xl md:text-6xl lg:text-[76px] font-bold font-poppins leading-tight">Unlocking Your Business Potential</h1>
-              <div class="w-full border-t-2 border-neutral-800 my-8"></div>
-              <p class="text-xl font-sans mb-8">Data-driven strategies to navigate challenges, optimize performance, and accelerate your growth journey.</p>
-              <div class="flex justify-center lg:justify-end">
-                <a href="#contact" aria-label="Book a Free Consultation" class="bg-brand-dark text-white text-lg font-sans py-3 px-10 rounded-full hover:bg-gray-800 transition-colors">Book a Free Consultation</a>
+        <section class="w-full">
+          <div class="flex flex-col lg:flex-row min-h-[826px]">
+            <div class="w-full lg:w-2/5 h-[400px] lg:h-auto" data-aos="fade-in">
+              <img src="https://picsum.photos/id/119/800/1200"
+                alt="Consultant in a modern business setting"
+                class="w-full h-full object-cover" />
+            </div>
+            <div
+              class="w-full lg:w-3/5 flex items-center justify-center p-8 md:p-12">
+              <div class="max-w-xl text-center lg:text-left" data-aos="fade-in"
+                data-aos-delay="200">
+                <h1
+                  class="text-5xl md:text-6xl lg:text-[76px] font-bold font-poppins leading-tight">Unlocking
+                  Your Business Potential</h1>
+                <div class="w-full border-t-2 border-neutral-800 my-8"></div>
+                <p class="text-xl  mb-8">Data-driven strategies to navigate
+                  challenges, optimize performance, and accelerate your growth
+                  journey.</p>
+                <div class="flex justify-center lg:justify-end">
+                  <a href="#contact" aria-label="Book a Free Consultation"
+                    class="bg-brand-dark text-white text-lg  py-3 px-10 rounded-full hover:bg-gray-800 transition-colors">Book
+                    a Free Consultation</a>
+                </div>
+                <div class="w-full border-t-2 border-neutral-800 mt-8"></div>
               </div>
-              <div class="w-full border-t-2 border-neutral-800 mt-8"></div>
             </div>
           </div>
-        </div>
-      </section>
-      
-      <section id="about" class="w-full bg-brand-dark text-white py-16 md:py-24">
-        <div class="container mx-auto px-6 flex flex-col lg:flex-row items-center gap-10">
-          <div class="w-full lg:w-1/2 text-center lg:text-left" data-aos="fade-right">
-            <h2 class="text-4xl md:text-5xl lg:text-[64px] font-bold font-poppins leading-tight tracking-tighter">Your Dedicated Growth Partner</h2>
-            <p class="text-xl font-semibold font-poppins mt-4 mb-8">An Introduction</p>
-            <p class="text-lg font-sans max-w-md mx-auto lg:mx-0">
-              With a decade of experience in strategic consulting, I help founders and executives find clarity in complexity. My approach is simple: I listen, analyze, and co-create practical roadmaps that deliver tangible results. I'm not just a consultant; I'm an extension of your team, fully invested in your mission.
-            </p>
-          </div>
-          <div class="w-full lg:w-1/2 mt-8 lg:mt-0" data-aos="fade-left">
-            <img src="https://picsum.photos/id/237/800/800" alt="Professional headshot" class="w-full h-auto object-cover rounded-lg" />
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <section id="services" class="w-full py-16 md:py-24">
-        <div class="container mx-auto px-6">
-          <h2 class="text-4xl md:text-5xl lg:text-[64px] font-bold font-poppins mb-12 tracking-tighter" data-aos="fade-up">Core Services</h2>
-          <div class="flex flex-col md:flex-row items-center gap-8 py-6 border-b" data-aos="fade-up">
-            <div class="w-full md:w-1/3">
-              <h3 class="text-3xl lg:text-4xl font-bold font-poppins tracking-tight">Market Growth Strategy</h3>
+        <section id="about"
+          class="w-full bg-brand-dark text-white py-16 md:py-24">
+          <div
+            class="container mx-auto px-6 flex flex-col lg:flex-row items-center gap-10">
+            <div class="w-full lg:w-1/2 text-center lg:text-left"
+              data-aos="fade-right">
+              <h2
+                class="text-4xl md:text-5xl lg:text-[64px] font-bold font-poppins leading-tight tracking-tighter">Your
+                Dedicated Growth Partner</h2>
+              <p class="text-xl font-semibold font-poppins mt-4 mb-8">An
+                Introduction</p>
+              <p class="text-lg  max-w-md mx-auto lg:mx-0">
+                With a decade of experience in strategic consulting, I help
+                founders and executives find clarity in complexity. My approach
+                is simple: I listen, analyze, and co-create practical roadmaps
+                that deliver tangible results. I'm not just a consultant; I'm an
+                extension of your team, fully invested in your mission.
+              </p>
             </div>
-            <div class="w-full md:w-2/3">
-              <p class="text-xl font-medium mb-2">Sustainable Scaling</p>
-              <p class="text-lg font-sans">I design bespoke strategies to help your business capture new market segments, enhance performance, and build a foundation for long-term, sustainable growth.</p>
-            </div>
-          </div>
-          <div class="flex flex-col md:flex-row items-center gap-8 py-6 border-b" data-aos="fade-up" data-aos-delay="100">
-            <div class="w-full md:w-1/3">
-              <h3 class="text-3xl lg:text-4xl font-bold font-poppins tracking-tight">Operational Efficiency</h3>
-            </div>
-            <div class="w-full md:w-2/3">
-              <p class="text-xl font-medium mb-2">Process Optimization</p>
-              <p class="text-lg font-sans">By auditing your current workflows, I identify key bottlenecks and implement streamlined processes that boost productivity and reduce operational costs.</p>
-            </div>
-          </div>
-          <div class="flex flex-col md:flex-row items-center gap-8 py-6 border-b" data-aos="fade-up" data-aos-delay="200">
-            <div class="w-full md:w-1/3">
-              <h3 class="text-3xl lg:text-4xl font-bold font-poppins tracking-tight">Financial Roadmapping</h3>
-            </div>
-            <div class="w-full md:w-2/3">
-              <p class="text-xl font-medium mb-2">Enhanced Profitability</p>
-              <p class="text-lg font-sans">From financial modeling to risk management, I provide the insights you need to improve profitability and make confident, data-backed business decisions.</p>
+            <div class="w-full lg:w-1/2 mt-8 lg:mt-0" data-aos="fade-left">
+              <img src="https://picsum.photos/id/237/800/800"
+                alt="Professional headshot"
+                class="w-full h-auto object-cover rounded-lg" />
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section class="bg-gray-50 py-16">
-        <div class="container mx-auto px-6 text-center">
-          <h2 class="text-sm font-semibold text-gray-500 uppercase tracking-wider" data-aos="fade-up">
-            Proud to have worked with amazing businesses
-          </h2>
-          <div class="mt-8 flex flex-wrap justify-center items-center gap-x-12 gap-y-8 md:gap-x-16 lg:gap-x-20">
-            <img src="https://placehold.co/150x50/cccccc/FFFFFF/png?text=Client+A" alt="Client Logo A" class="h-8 md:h-10 filter grayscale hover:filter-none transition duration-300 ease-in-out opacity-70 hover:opacity-100" data-aos="fade-up" data-aos-delay="100">
-            <img src="https://placehold.co/150x50/cccccc/FFFFFF/png?text=Client+B" alt="Client Logo B" class="h-8 md:h-10 filter grayscale hover:filter-none transition duration-300 ease-in-out opacity-70 hover:opacity-100" data-aos="fade-up" data-aos-delay="200">
-            <img src="https://placehold.co/150x50/cccccc/FFFFFF/png?text=Client+C" alt="Client Logo C" class="h-8 md:h-10 filter grayscale hover:filter-none transition duration-300 ease-in-out opacity-70 hover:opacity-100" data-aos="fade-up" data-aos-delay="300">
-            <img src="https://placehold.co/150x50/cccccc/FFFFFF/png?text=Client+D" alt="Client Logo D" class="h-8 md:h-10 filter grayscale hover:filter-none transition duration-300 ease-in-out opacity-70 hover:opacity-100" data-aos="fade-up" data-aos-delay="400">
-            <img src="https://placehold.co/150x50/cccccc/FFFFFF/png?text=Client+E" alt="Client Logo E" class="h-8 md:h-10 filter grayscale hover:filter-none transition duration-300 ease-in-out opacity-70 hover:opacity-100" data-aos="fade-up" data-aos-delay="500">
-          </div>
-        </div>
-      </section>
-
-      <section class="w-full py-16 md:py-24">
-        <div class="container mx-auto px-6">
-          <h2 class="text-4xl md:text-5xl lg:text-[64px] font-bold font-poppins mb-12 tracking-tighter" data-aos="fade-up">Experience & Results</h2>
-          <div class="flex flex-col lg:flex-row items-stretch">
-            <div class="w-full lg:w-1/2" data-aos="fade-right">
-              <img src="https://picsum.photos/id/431/800/800" alt="Business professionals in a meeting" class="w-full h-full object-cover min-h-[400px]">
+        <section id="services" class="w-full py-16 md:py-24">
+          <div class="container mx-auto px-6">
+            <h2
+              class="text-4xl md:text-5xl lg:text-[64px] font-bold font-poppins mb-12 tracking-tighter"
+              data-aos="fade-up">Core Services</h2>
+            <div
+              class="flex flex-col md:flex-row items-center gap-8 py-6 border-b"
+              data-aos="fade-up">
+              <div class="w-full md:w-1/3">
+                <h3
+                  class="text-3xl lg:text-4xl font-bold font-poppins tracking-tight">Market
+                  Growth Strategy</h3>
+              </div>
+              <div class="w-full md:w-2/3">
+                <p class="text-xl font-medium mb-2">Sustainable Scaling</p>
+                <p class="text-lg ">I design bespoke strategies to help your
+                  business capture new market segments, enhance performance, and
+                  build a foundation for long-term, sustainable growth.</p>
+              </div>
             </div>
-            <div class="w-full lg:w-1/2 flex flex-col justify-center items-start p-8 md:p-16" data-aos="fade-left">
-              <div class="mb-8" data-aos="fade-up">
-                <p class="text-6xl lg:text-7xl font-bold font-poppins">50+</p>
-                <div class="bg-brand-dark mt-2">
-                  <p class="text-white text-2xl font-semibold font-poppins px-4 py-1">Successful Client Projects</p>
+            <div
+              class="flex flex-col md:flex-row items-center gap-8 py-6 border-b"
+              data-aos="fade-up" data-aos-delay="100">
+              <div class="w-full md:w-1/3">
+                <h3
+                  class="text-3xl lg:text-4xl font-bold font-poppins tracking-tight">Operational
+                  Efficiency</h3>
+              </div>
+              <div class="w-full md:w-2/3">
+                <p class="text-xl font-medium mb-2">Process Optimization</p>
+                <p class="text-lg ">By auditing your current workflows, I
+                  identify key bottlenecks and implement streamlined processes
+                  that boost productivity and reduce operational costs.</p>
+              </div>
+            </div>
+            <div
+              class="flex flex-col md:flex-row items-center gap-8 py-6 border-b"
+              data-aos="fade-up" data-aos-delay="200">
+              <div class="w-full md:w-1/3">
+                <h3
+                  class="text-3xl lg:text-4xl font-bold font-poppins tracking-tight">Financial
+                  Roadmapping</h3>
+              </div>
+              <div class="w-full md:w-2/3">
+                <p class="text-xl font-medium mb-2">Enhanced Profitability</p>
+                <p class="text-lg ">From financial modeling to risk management,
+                  I provide the insights you need to improve profitability and
+                  make confident, data-backed business decisions.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="bg-gray-50 py-16">
+          <div class="container mx-auto px-6 text-center">
+            <h2
+              class="text-sm font-semibold text-gray-500 uppercase tracking-wider"
+              data-aos="fade-up">
+              Proud to have worked with amazing businesses
+            </h2>
+            <div
+              class="mt-8 flex flex-wrap justify-center items-center gap-x-12 gap-y-8 md:gap-x-16 lg:gap-x-20">
+              <img
+                src="https://placehold.co/150x50/cccccc/FFFFFF/png?text=Client+A"
+                alt="Client Logo A"
+                class="h-8 md:h-10 filter grayscale hover:filter-none transition duration-300 ease-in-out opacity-70 hover:opacity-100"
+                data-aos="fade-up" data-aos-delay="100">
+              <img
+                src="https://placehold.co/150x50/cccccc/FFFFFF/png?text=Client+B"
+                alt="Client Logo B"
+                class="h-8 md:h-10 filter grayscale hover:filter-none transition duration-300 ease-in-out opacity-70 hover:opacity-100"
+                data-aos="fade-up" data-aos-delay="200">
+              <img
+                src="https://placehold.co/150x50/cccccc/FFFFFF/png?text=Client+C"
+                alt="Client Logo C"
+                class="h-8 md:h-10 filter grayscale hover:filter-none transition duration-300 ease-in-out opacity-70 hover:opacity-100"
+                data-aos="fade-up" data-aos-delay="300">
+              <img
+                src="https://placehold.co/150x50/cccccc/FFFFFF/png?text=Client+D"
+                alt="Client Logo D"
+                class="h-8 md:h-10 filter grayscale hover:filter-none transition duration-300 ease-in-out opacity-70 hover:opacity-100"
+                data-aos="fade-up" data-aos-delay="400">
+              <img
+                src="https://placehold.co/150x50/cccccc/FFFFFF/png?text=Client+E"
+                alt="Client Logo E"
+                class="h-8 md:h-10 filter grayscale hover:filter-none transition duration-300 ease-in-out opacity-70 hover:opacity-100"
+                data-aos="fade-up" data-aos-delay="500">
+            </div>
+          </div>
+        </section>
+
+        <section class="w-full py-16 md:py-24">
+          <div class="container mx-auto px-6">
+            <h2
+              class="text-4xl md:text-5xl lg:text-[64px] font-bold font-poppins mb-12 tracking-tighter"
+              data-aos="fade-up">Experience & Results</h2>
+            <div class="flex flex-col lg:flex-row items-stretch">
+              <div class="w-full lg:w-1/2" data-aos="fade-right">
+                <img src="https://picsum.photos/id/431/800/800"
+                  alt="Business professionals in a meeting"
+                  class="w-full h-full object-cover min-h-[400px]">
+              </div>
+              <div
+                class="w-full lg:w-1/2 flex flex-col justify-center items-start p-8 md:p-16"
+                data-aos="fade-left">
+                <div class="mb-8" data-aos="fade-up">
+                  <p class="text-6xl lg:text-7xl font-bold font-poppins">50+</p>
+                  <div class="bg-brand-dark mt-2">
+                    <p
+                      class="text-white text-2xl font-semibold font-poppins px-4 py-1">Successful
+                      Client Projects</p>
+                  </div>
+                </div>
+                <div class="mb-8" data-aos="fade-up" data-aos-delay="100">
+                  <p
+                    class="text-6xl lg:text-7xl font-bold font-poppins">$10M+</p>
+                  <div class="bg-brand-dark mt-2">
+                    <p
+                      class="text-white text-2xl font-semibold font-poppins px-4 py-1">In
+                      Client Revenue Growth</p>
+                  </div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="200">
+                  <p class="text-6xl lg:text-7xl font-bold font-poppins">10+</p>
+                  <div class="bg-brand-dark mt-2">
+                    <p
+                      class="text-white text-2xl font-semibold font-poppins px-4 py-1">Years
+                      of Industry Experience</p>
+                  </div>
                 </div>
               </div>
-              <div class="mb-8" data-aos="fade-up" data-aos-delay="100">
-                <p class="text-6xl lg:text-7xl font-bold font-poppins">$10M+</p>
-                <div class="bg-brand-dark mt-2">
-                  <p class="text-white text-2xl font-semibold font-poppins px-4 py-1">In Client Revenue Growth</p>
-                </div>
-              </div>
-              <div data-aos="fade-up" data-aos-delay="200">
-                <p class="text-6xl lg:text-7xl font-bold font-poppins">10+</p>
-                <div class="bg-brand-dark mt-2">
-                  <p class="text-white text-2xl font-semibold font-poppins px-4 py-1">Years of Industry Experience</p>
-                </div>
-              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section id="process" class="w-full py-16 md:py-24 bg-gray-50">
-        <div class="container mx-auto px-6">
-          <h2 class="text-4xl md:text-5xl lg:text-[64px] font-bold font-poppins mb-16 tracking-tighter text-center md:text-left" data-aos="fade-up">Our Collaborative Process</h2>
-          <div class="space-y-12">
-            <div class="flex flex-col md:flex-row items-center gap-8 text-center md:text-left" data-aos="fade-up">
-              <div class="bg-brand-dark text-white flex-shrink-0 w-32 h-32 flex items-center justify-center">
-                <p class="text-7xl font-poppins font-bold">1</p>
-              </div>
-              <div>
-                <h3 class="text-3xl lg:text-4xl font-bold font-poppins tracking-tight mb-2">Discovery & Alignment</h3>
-                <p class="text-lg font-sans">We begin with a deep dive to understand your unique vision, challenges, and objectives, ensuring we are perfectly aligned from day one.</p>
-              </div>
-            </div>
-            <div class="flex flex-col md:flex-row items-center gap-8 text-center md:text-left" data-aos="fade-up">
-              <div class="bg-brand-dark text-white flex-shrink-0 w-32 h-32 flex items-center justify-center">
-                <p class="text-7xl font-poppins font-bold">2</p>
-              </div>
-              <div>
-                <h3 class="text-3xl lg:text-4xl font-bold font-poppins tracking-tight mb-2">Strategy & Blueprint</h3>
-                <p class="text-lg font-sans">I craft a custom, data-driven action plan that provides a clear roadmap with actionable steps and measurable milestones for your team.</p>
-              </div>
-            </div>
-            <div class="flex flex-col md:flex-row items-center gap-8 text-center md:text-left" data-aos="fade-up">
-              <div class="bg-brand-dark text-white flex-shrink-0 w-32 h-32 flex items-center justify-center">
-                <p class="text-7xl font-poppins font-bold">3</p>
-              </div>
-              <div>
-                <h3 class="text-3xl lg:text-4xl font-bold font-poppins tracking-tight mb-2">Implementation & Support</h3>
-                <p class="text-lg font-sans">I work alongside you as a strategic partner to execute the plan, providing hands-on guidance, feedback, and support at every stage.</p>
-              </div>
-            </div>
-            <div class="flex flex-col md:flex-row items-center gap-8 text-center md:text-left" data-aos="fade-up">
-              <div class="bg-brand-dark text-white flex-shrink-0 w-32 h-32 flex items-center justify-center">
-                <p class="text-7xl font-poppins font-bold">4</p>
-              </div>
-              <div>
-                <h3 class="text-3xl lg:text-4xl font-bold font-poppins tracking-tight mb-2">Review & Scale</h3>
-                <p class="text-lg font-sans">We track key metrics against our goals, celebrating wins and refining our approach to ensure your business achieves sustainable, long-term growth.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="w-full py-16 md:py-24 bg-white">
-        <div class="container mx-auto px-6">
-          <div data-aos="fade-up">
-            <h2 class="text-4xl md:text-5xl lg:text-[64px] font-bold font-poppins mb-4 tracking-tighter">Client Impact Stories</h2>
-            <p class="text-xl mb-12 max-w-3xl">Tangible results and transformations delivered for businesses like yours.</p>
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-gray-50 border border-gray-200 p-8 flex flex-col justify-between" data-aos="fade-up">
-              <div>
-                <p class="text-sm font-semibold text-gray-500 uppercase tracking-wider">TechFlow Dynamics</p>
-                <h3 class="text-2xl font-bold font-poppins my-3">Operational Efficiency Overhaul</h3>
-                <p class="text-lg mb-6 font-sans">"The insights transformed our workflow. The strategic approach is second to none." - Mark J.</p>
-              </div>
-              <a href="#" class="font-bold text-lg hover:underline font-sans">Read the Full Story &rarr;</a>
-            </div>
-            <div class="bg-gray-50 border border-gray-200 p-8 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
-              <div>
-                <p class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Innovate Inc.</p>
-                <h3 class="text-2xl font-bold font-poppins my-3">Market Entry Strategy</h3>
-                <p class="text-lg mb-6 font-sans">"We couldn't have navigated our expansion without them. Truly a game-changer." - Emily A.</p>
-              </div>
-              <a href="#" class="font-bold text-lg hover:underline font-sans">Read the Full Story &rarr;</a>
-            </div>
-            <div class="bg-gray-50 border border-gray-200 p-8 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200">
-              <div>
-                <p class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Quantum Solutions</p>
-                <h3 class="text-2xl font-bold font-poppins my-3">Financial Restructuring</h3>
-                <p class="text-lg mb-6 font-sans">"Their financial advisory boosted our profitability by 30% in the first year. The results speak for themselves." - Sarah B.</p>
-              </div>
-              <a href="#" class="font-bold text-lg hover:underline font-sans">Read the Full Story &rarr;</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="h-[400px] md:h-[500px] bg-cover bg-center bg-fixed relative flex items-center justify-center text-center" style="background-image: url('https://picsum.photos/id/12/1200/800');">
-        <div class="absolute inset-0 bg-brand-dark opacity-60"></div>
-        <div class="relative z-10 p-8 text-white" data-aos="zoom-in">
-          <h2 class="text-4xl md:text-5xl font-bold font-poppins mb-4">Let's Build Your Future, Together.</h2>
-          <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto font-sans">Ready to discuss how we can work together? Let's start the conversation.</p>
-          <a href="#contact" class="bg-white text-brand-dark text-lg font-sans font-semibold py-3 px-10 rounded-full hover:bg-gray-200 transition-colors">Schedule Your Free Consultation</a>
-        </div>
-      </section>
-
-      <section id="contact" class="w-full py-16 md:py-24 bg-brand-dark text-white">
-        <div class="container mx-auto px-6">
-          <div class="max-w-3xl mx-auto" data-aos="fade-up">
-            <h2 class="text-4xl md:text-5xl font-poppins font-bold mb-8">Get in Touch</h2>
-            <form aria-label="Contact Form">
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <label for="first-name" class="block text-lg mb-2 font-sans">First name <span class="text-red-500">*</span></label>
-                  <input type="text" id="first-name" required class="w-full bg-transparent border border-gray-500 rounded-xl p-3 focus:border-white focus:outline-none font-sans">
+        <section id="process" class="w-full py-16 md:py-24 bg-gray-50">
+          <div class="container mx-auto px-6">
+            <h2
+              class="text-4xl md:text-5xl lg:text-[64px] font-bold font-poppins mb-16 tracking-tighter text-center md:text-left"
+              data-aos="fade-up">Our Collaborative Process</h2>
+            <div class="space-y-12">
+              <div
+                class="flex flex-col md:flex-row items-center gap-8 text-center md:text-left"
+                data-aos="fade-up">
+                <div
+                  class="bg-brand-dark text-white flex-shrink-0 w-32 h-32 flex items-center justify-center">
+                  <p class="text-7xl font-poppins font-bold">1</p>
                 </div>
                 <div>
-                  <label for="last-name" class="block text-lg mb-2 font-sans">Last name <span class="text-red-500">*</span></label>
-                  <input type="text" id="last-name" required class="w-full bg-transparent border border-gray-500 rounded-xl p-3 focus:border-white focus:outline-none font-sans">
-                </div>
-                <div class="md:col-span-2">
-                  <label for="email" class="block text-lg mb-2 font-sans">Email <span class="text-red-500">*</span></label>
-                  <input type="email" id="email" required class="w-full bg-transparent border border-gray-500 rounded-xl p-3 focus:border-white focus:outline-none font-sans">
-                </div>
-                <div class="md:col-span-2">
-                  <label for="interest" class="block text-lg mb-2 font-sans">I'm interested in... <span class="text-red-500">*</span></label>
-                  <select id="interest" required class="w-full bg-transparent border border-gray-500 rounded-xl p-3 focus:border-white focus:outline-none appearance-none font-sans" style="background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'); background-repeat: no-repeat; background-position: right 1rem center; background-size: .8em;">
-                    <option class="bg-brand-dark" value="">Please select an option...</option>
-                    <option class="bg-brand-dark" value="strategy">Market Growth Strategy</option>
-                    <option class="bg-brand-dark" value="operations">Operational Efficiency</option>
-                    <option class="bg-brand-dark" value="advisory">Financial Roadmapping</option>
-                    <option class="bg-brand-dark" value="general">General Inquiry</option>
-                  </select>
+                  <h3
+                    class="text-3xl lg:text-4xl font-bold font-poppins tracking-tight mb-2">Discovery
+                    & Alignment</h3>
+                  <p class="text-lg ">We begin with a deep dive to understand
+                    your unique vision, challenges, and objectives, ensuring we
+                    are perfectly aligned from day one.</p>
                 </div>
               </div>
-              <div class="mb-6">
-                <label for="message" class="block text-lg mb-2 font-sans">Message</label>
-                <textarea id="message" rows="4" class="w-full bg-transparent border border-gray-500 rounded-xl p-3 focus:border-white focus:outline-none font-sans"></textarea>
+              <div
+                class="flex flex-col md:flex-row items-center gap-8 text-center md:text-left"
+                data-aos="fade-up">
+                <div
+                  class="bg-brand-dark text-white flex-shrink-0 w-32 h-32 flex items-center justify-center">
+                  <p class="text-7xl font-poppins font-bold">2</p>
+                </div>
+                <div>
+                  <h3
+                    class="text-3xl lg:text-4xl font-bold font-poppins tracking-tight mb-2">Strategy
+                    & Blueprint</h3>
+                  <p class="text-lg ">I craft a custom, data-driven action plan
+                    that provides a clear roadmap with actionable steps and
+                    measurable milestones for your team.</p>
+                </div>
               </div>
-              <div>
-                <button type="submit" class="w-full bg-white text-brand-dark text-lg py-3 rounded-full hover:bg-gray-300 transition-colors font-sans font-semibold">Submit</button>
+              <div
+                class="flex flex-col md:flex-row items-center gap-8 text-center md:text-left"
+                data-aos="fade-up">
+                <div
+                  class="bg-brand-dark text-white flex-shrink-0 w-32 h-32 flex items-center justify-center">
+                  <p class="text-7xl font-poppins font-bold">3</p>
+                </div>
+                <div>
+                  <h3
+                    class="text-3xl lg:text-4xl font-bold font-poppins tracking-tight mb-2">Implementation
+                    & Support</h3>
+                  <p class="text-lg ">I work alongside you as a strategic
+                    partner to execute the plan, providing hands-on guidance,
+                    feedback, and support at every stage.</p>
+                </div>
               </div>
-            </form>
+              <div
+                class="flex flex-col md:flex-row items-center gap-8 text-center md:text-left"
+                data-aos="fade-up">
+                <div
+                  class="bg-brand-dark text-white flex-shrink-0 w-32 h-32 flex items-center justify-center">
+                  <p class="text-7xl font-poppins font-bold">4</p>
+                </div>
+                <div>
+                  <h3
+                    class="text-3xl lg:text-4xl font-bold font-poppins tracking-tight mb-2">Review
+                    & Scale</h3>
+                  <p class="text-lg ">We track key metrics against our goals,
+                    celebrating wins and refining our approach to ensure your
+                    business achieves sustainable, long-term growth.</p>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-    </main>
-
-    <footer class="bg-white text-brand-dark py-16">
-      <div class="container mx-auto px-6">
-        <div class="border-t-2 border-neutral-800 mb-8"></div>
-        <div class="flex flex-col md:flex-row justify-between gap-8">
-          <div class="text-center md:text-left">
-            <p class="text-xl mb-4"><a href="#">L. Thompson</a></p>
-            <p class="text-base">&copy; 2025 by L. Thompson</p>
+        <section class="w-full py-16 md:py-24 bg-white">
+          <div class="container mx-auto px-6">
+            <div data-aos="fade-up">
+              <h2
+                class="text-4xl md:text-5xl lg:text-[64px] font-bold font-poppins mb-4 tracking-tighter">Client
+                Impact Stories</h2>
+              <p class="text-xl mb-12 max-w-3xl">Tangible results and
+                transformations delivered for businesses like yours.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div
+                class="bg-gray-50 border border-gray-200 p-8 flex flex-col justify-between"
+                data-aos="fade-up">
+                <div>
+                  <p
+                    class="text-sm font-semibold text-gray-500 uppercase tracking-wider">TechFlow
+                    Dynamics</p>
+                  <h3 class="text-2xl font-bold font-poppins my-3">Operational
+                    Efficiency Overhaul</h3>
+                  <p
+                    class="text-lg mb-6 ">"The insights transformed our workflow. The strategic approach is second to none."
+                    - Mark J.</p>
+                </div>
+                <a href="#" class="font-bold text-lg hover:underline ">Read the
+                  Full Story &rarr;</a>
+              </div>
+              <div
+                class="bg-gray-50 border border-gray-200 p-8 flex flex-col justify-between"
+                data-aos="fade-up" data-aos-delay="100">
+                <div>
+                  <p
+                    class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Innovate
+                    Inc.</p>
+                  <h3 class="text-2xl font-bold font-poppins my-3">Market Entry
+                    Strategy</h3>
+                  <p
+                    class="text-lg mb-6 ">"We couldn't have navigated our expansion without them. Truly a game-changer."
+                    - Emily A.</p>
+                </div>
+                <a href="#" class="font-bold text-lg hover:underline ">Read the
+                  Full Story &rarr;</a>
+              </div>
+              <div
+                class="bg-gray-50 border border-gray-200 p-8 flex flex-col justify-between"
+                data-aos="fade-up" data-aos-delay="200">
+                <div>
+                  <p
+                    class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Quantum
+                    Solutions</p>
+                  <h3 class="text-2xl font-bold font-poppins my-3">Financial
+                    Restructuring</h3>
+                  <p
+                    class="text-lg mb-6 ">"Their financial advisory boosted our profitability by 30% in the first year. The results speak for themselves."
+                    - Sarah B.</p>
+                </div>
+                <a href="#" class="font-bold text-lg hover:underline ">Read the
+                  Full Story &rarr;</a>
+              </div>
+            </div>
           </div>
-          <div class="bg-brand-dark text-white p-8 max-w-md mx-auto md:mx-0 text-center md:text-left">
-            <p class="text-lg mb-4">123-456-7800</p>
-            <p class="text-lg mb-4"><a href="mailto:info@mysite.com">info@mysite.com</a></p>
-            <p class="text-lg mb-6">500 Terry Francine St. San Francisco, CA 94158</p>
-            <div class="flex justify-center md:justify-start space-x-4 mb-6">
-              <a href="#" aria-label="LinkedIn Profile">
-                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
-              </a>
-              <a href="#" aria-label="Twitter Profile">
-                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.223.085 4.934 4.934 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
-              </a>
+        </section>
+
+        <section
+          class="h-[400px] md:h-[500px] bg-cover bg-center bg-fixed relative flex items-center justify-center text-center"
+          style="background-image: url('https://picsum.photos/id/12/1200/800');">
+          <div class="absolute inset-0 bg-brand-dark opacity-60"></div>
+          <div class="relative z-10 p-8 text-white" data-aos="zoom-in">
+            <h2 class="text-4xl md:text-5xl font-bold font-poppins mb-4">Let's
+              Build Your Future, Together.</h2>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto ">Ready to
+              discuss how we can work together? Let's start the
+              conversation.</p>
+            <a href="#contact"
+              class="bg-white text-brand-dark text-lg  font-semibold py-3 px-10 rounded-full hover:bg-gray-200 transition-colors">Schedule
+              Your Free Consultation</a>
+          </div>
+        </section>
+
+        <section id="contact"
+          class="w-full py-16 md:py-24 bg-brand-dark text-white">
+          <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto" data-aos="fade-up">
+              <h2 class="text-4xl md:text-5xl font-poppins font-bold mb-8">Get
+                in Touch</h2>
+              <form aria-label="Contact Form">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                  <div>
+                    <label for="first-name" class="block text-lg mb-2 ">First
+                      name <span class="text-red-500">*</span></label>
+                    <input type="text" id="first-name" required
+                      class="w-full bg-transparent border border-gray-500 rounded-xl p-3 focus:border-white focus:outline-none ">
+                  </div>
+                  <div>
+                    <label for="last-name" class="block text-lg mb-2 ">Last name
+                      <span class="text-red-500">*</span></label>
+                    <input type="text" id="last-name" required
+                      class="w-full bg-transparent border border-gray-500 rounded-xl p-3 focus:border-white focus:outline-none ">
+                  </div>
+                  <div class="md:col-span-2">
+                    <label for="email" class="block text-lg mb-2 ">Email <span
+                        class="text-red-500">*</span></label>
+                    <input type="email" id="email" required
+                      class="w-full bg-transparent border border-gray-500 rounded-xl p-3 focus:border-white focus:outline-none ">
+                  </div>
+                  <div class="md:col-span-2">
+                    <label for="interest" class="block text-lg mb-2 ">I'm
+                      interested in... <span
+                        class="text-red-500">*</span></label>
+                    <select id="interest" required
+                      class="w-full bg-transparent border border-gray-500 rounded-xl p-3 focus:border-white focus:outline-none appearance-none "
+                      style="background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'); background-repeat: no-repeat; background-position: right 1rem center; background-size: .8em;">
+                      <option class="bg-brand-dark" value>Please select an
+                        option...</option>
+                      <option class="bg-brand-dark" value="strategy">Market
+                        Growth Strategy</option>
+                      <option class="bg-brand-dark"
+                        value="operations">Operational Efficiency</option>
+                      <option class="bg-brand-dark" value="advisory">Financial
+                        Roadmapping</option>
+                      <option class="bg-brand-dark" value="general">General
+                        Inquiry</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="mb-6">
+                  <label for="message"
+                    class="block text-lg mb-2 ">Message</label>
+                  <textarea id="message" rows="4"
+                    class="w-full bg-transparent border border-gray-500 rounded-xl p-3 focus:border-white focus:outline-none "></textarea>
+                </div>
+                <div>
+                  <button type="submit"
+                    class="w-full bg-white text-brand-dark text-lg py-3 rounded-full hover:bg-gray-300 transition-colors  font-semibold">Submit</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <footer class="bg-white text-brand-dark py-16">
+        <div class="container mx-auto px-6">
+          <div class="border-t-2 border-neutral-800 mb-8"></div>
+          <div class="flex flex-col md:flex-row justify-between gap-8">
+            <div class="text-center md:text-left">
+              <p class="text-xl mb-4"><a href="#">L. Thompson</a></p>
+              <p class="text-base">&copy; 2025 by L. Thompson</p>
+            </div>
+            <div
+              class="bg-brand-dark text-white p-8 max-w-md mx-auto md:mx-0 text-center md:text-left">
+              <p class="text-lg mb-4">123-456-7800</p>
+              <p class="text-lg mb-4"><a
+                  href="mailto:info@mysite.com">info@mysite.com</a></p>
+              <p class="text-lg mb-6">500 Terry Francine St. San Francisco, CA
+                94158</p>
+              <div class="flex justify-center md:justify-start space-x-4 mb-6">
+                <a href="#" aria-label="LinkedIn Profile">
+                  <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path
+                      d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z" /></svg>
+                </a>
+                <a href="#" aria-label="Twitter Profile">
+                  <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path
+                      d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.223.085 4.934 4.934 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" /></svg>
+                </a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </footer>
+      </footer>
 
-  </div>
+    </div>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
     // Initialize AOS
     AOS.init({
       duration: 800, // Animation duration in milliseconds
@@ -378,5 +566,5 @@
     });
   </script>
 
-</body>
+  </body>
 </html>
