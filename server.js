@@ -17,6 +17,10 @@ hbs.registerHelper("currentYear", function () {
   return new Date().getFullYear();
 });
 
+hbs.registerHelper("default", (v, fb) =>
+  v === undefined || v === null || v === "" ? fb : v
+);
+
 app.get("/", (req, res) => {
   res.redirect("/3");
 });

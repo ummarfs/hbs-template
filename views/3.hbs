@@ -18,50 +18,22 @@
   </head>
   <body>
     <div class="font-questrial"
-      style="{{#if colorPalette.value.colorPalette.tertiary}}
-         background-color: {{colorPalette.value.colorPalette.tertiary}};
-       {{else}}
-         background-color: #f3f4f6;
-       {{/if}}">
+      style="background-color: {{default colorPalette.value.colorPalette.tertiary '#f3f4f6'}};">
       <header class="sticky top-0 z-50 shadow-sm py-2"
-        style="
-        {{#if colorPalette.value.colorPalette.tertiary-bright}}
-        background-color: {{colorPalette.value.colorPalette.tertiary-bright}}
-        {{else}}
-         background-color: #e5e7eb;
-         {{/if}}
-        ;">
+        style="background-color: {{default colorPalette.value.colorPalette.tertiary-bright '#e5e7eb'}};">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="flex items-center justify-between h-16 lg:h-20">
             <div class="flex items-center space-x-3">
               <div
                 class="w-8 h-8 rounded-full flex items-center justify-center"
-                style="
-                {{#if colorPalette.value.colorPalette.primary}}
-                background-color: {{colorPalette.value.colorPalette.primary }}
-                {{else}}
-                background-color:#78350f
-                {{/if}}
-                ;">
+                style="background-color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">
                 <span class="font-bold text-sm"
-                  style="
-                  {{#if colorPalette.value.colorPalette.quaternary}}
-                  color: {{colorPalette.value.colorPalette.quaternary}}
-                  {{else}}
-                  color:#ffffff
-                  {{/if}}
-                  ;">{{firstChar
+                  style="color: {{default colorPalette.value.colorPalette.quaternary '#ffffff'}};">{{firstChar
                   personal_info.value.firstName}}</span>
               </div>
               <h1
                 class="text-xl lg:text-2xl font-bold"
-                style="
-                  {{#if colorPalette.value.colorPalette.primary}}
-                  color: {{colorPalette.value.colorPalette.primary}}
-                  {{else}}
-                  color:#78350f
-                  {{/if}}
-                  ;">{{personal_info.value.firstName}}
+                style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">{{personal_info.value.firstName}}
 
                 {{#if personal_info.value.role}} | {{personal_info.value.role}}
                 {{/if}}</h1>
@@ -72,52 +44,28 @@
               {{#unless about.meta.hide}}
               <a href="#about"
                 class="transition-colors"
-                style="
-                  {{#if colorPalette.value.colorPalette.primary}}
-                  color: {{colorPalette.value.colorPalette.primary}}
-                  {{else}}
-                  color:#78350f
-                  {{/if}}
-                  ;">{{about.value.about.navbarName}}</a>
+                style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">{{about.value.about.navbarName}}</a>
               {{/unless}}
               {{/if}}
               {{#if services.value.services.items}}
               {{#unless services.meta.hide}}
               <a href="#offerings"
                 class="transition-colors"
-                style="
-                  {{#if colorPalette.value.colorPalette.primary}}
-                  color: {{colorPalette.value.colorPalette.primary}}
-                  {{else}}
-                  color:#78350f
-                  {{/if}}
-                  ;">{{services.value.services.navbarName}}</a>
+                style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">{{services.value.services.navbarName}}</a>
               {{/unless}}
               {{/if}}
               {{#if success_stories.value.success_stories.items}}
               {{#unless success_stories.meta.hide}}
               <a href="#casestudies"
                 class="transition-colors"
-                style="
-                  {{#if colorPalette.value.colorPalette.primary}}
-                  color: {{colorPalette.value.colorPalette.primary}}
-                  {{else}}
-                  color:#78350f
-                  {{/if}}
-                  ;">{{success_stories.value.success_stories.navbarName}}</a>
+                style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">{{success_stories.value.success_stories.navbarName}}</a>
               {{/unless}}
               {{/if}}
               {{#if faq.value.faq.items}}
               {{#unless faq.meta.hide}}
               <a href="#faq"
                 class="transition-colors"
-                style="
-                  {{#if colorPalette.value.colorPalette.primary}}
-                  color: {{colorPalette.value.colorPalette.primary}}
-                  {{else}}
-                  color:#78350f
-                  {{/if}}
-                  ;">{{faq.value.faq.navbarName}}</a>
+                style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">{{faq.value.faq.navbarName}}</a>
               {{/unless}}
               {{/if}}
               {{#if contacts.value.contacts}}
@@ -126,13 +74,7 @@
               {{#unless contacts.meta.hide}}
               <a href="#contact"
                 class="transition-colors"
-                style="
-                  {{#if colorPalette.value.colorPalette.primary}}
-                  color: {{colorPalette.value.colorPalette.primary}}
-                  {{else}}
-                  color:#78350f
-                  {{/if}}
-                  ;">{{contacts.value.contacts.navbarName}}</a>
+                style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">{{contacts.value.contacts.navbarName}}</a>
               {{/unless}}
               {{/if}}
               {{/if}}
@@ -142,13 +84,7 @@
               <svg class="w-6 h-6" fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
-                style="
-                  {{#if colorPalette.value.colorPalette.primary}}
-                  color: {{colorPalette.value.colorPalette.primary}}
-                  {{else}}
-                  color:#78350f
-                  {{/if}}
-                  ;">
+                style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">
                 <path stroke-linecap="round" stroke-linejoin="round"
                   stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
               </svg>
@@ -157,63 +93,33 @@
 
           <div class="md:hidden hidden" id="mobile-menu">
             <div class="px-2 pt-2 pb-3 space-y-1 border-t flex flex-col"
-              style="
-              {{#if colorPalette.value.colorPalette.secondary}}
-              background-color: {{colorPalette.value.colorPalette.secondary}}
-              {{else}}
-              background-color:#fffcee
-              {{/if}}
-              ;">
+              style="background-color: {{default colorPalette.value.colorPalette.secondary '#fffcee'}};">
               {{#if about.value.about.content}}
               {{#unless about.meta.hide}}
               <a href="#about"
                 class="transition-colors"
-                style="
-                  {{#if colorPalette.value.colorPalette.primary}}
-                  color: {{colorPalette.value.colorPalette.primary}}
-                  {{else}}
-                  color:#78350f
-                  {{/if}}
-                  ;">{{about.value.about.navbarName}}</a>
+                style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">{{about.value.about.navbarName}}</a>
               {{/unless}}
               {{/if}}
               {{#if services.value.services.items}}
               {{#unless services.meta.hide}}
               <a href="#offerings"
                 class="transition-colors"
-                style="
-                  {{#if colorPalette.value.colorPalette.primary}}
-                  color: {{colorPalette.value.colorPalette.primary}}
-                  {{else}}
-                  color:#78350f
-                  {{/if}}
-                  ;">{{services.value.services.navbarName}}</a>
+                style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">{{services.value.services.navbarName}}</a>
               {{/unless}}
               {{/if}}
               {{#if success_stories.value.success_stories.items}}
               {{#unless success_stories.meta.hide}}
               <a href="#casestudies"
                 class="transition-colors"
-                style="
-                  {{#if colorPalette.value.colorPalette.primary}}
-                  color: {{colorPalette.value.colorPalette.primary}}
-                  {{else}}
-                  color:#78350f
-                  {{/if}}
-                  ;">{{success_stories.value.success_stories.navbarName}}</a>
+                style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">{{success_stories.value.success_stories.navbarName}}</a>
               {{/unless}}
               {{/if}}
               {{#if faq.value.faq.items}}
               {{#unless faq.meta.hide}}
               <a href="#faq"
                 class="transition-colors"
-                style="
-                  {{#if colorPalette.value.colorPalette.primary}}
-                  color: {{colorPalette.value.colorPalette.primary}}
-                  {{else}}
-                  color:#78350f
-                  {{/if}}
-                  ;">{{faq.value.faq.navbarName}}</a>
+                style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">{{faq.value.faq.navbarName}}</a>
               {{/unless}}
               {{/if}}
               {{#if contacts.value.contacts}}
@@ -222,13 +128,7 @@
               {{#unless contacts.meta.hide}}
               <a href="#contact"
                 class="transition-colors"
-                style="
-                  {{#if colorPalette.value.colorPalette.primary}}
-                  color: {{colorPalette.value.colorPalette.primary}}
-                  {{else}}
-                  color:#78350f
-                  {{/if}}
-                  ;">{{contacts.value.contacts.navbarName}}</a>
+                style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">{{contacts.value.contacts.navbarName}}</a>
               {{/unless}}
               {{/if}}
               {{/if}}
@@ -241,36 +141,18 @@
         data-edit-section="personal_info"
         data-section="personal_info"
         data-title="Personal Info"
-        style="
-        {{#if colorPalette.value.colorPalette.tertiary-bright}}
-        background-color:{{colorPalette.value.colorPalette.tertiary-bright}}
-        {{else}}
-        background-color:#e5e7eb
-        {{/if}}
-        ;">
+        style="background-color: {{default colorPalette.value.colorPalette.tertiary-bright '#e5e7eb'}};">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
             class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div class="order-2 lg:order-1">
               <h1
                 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6"
-                style="
-                  {{#if colorPalette.value.colorPalette.primary}}
-                  color: {{colorPalette.value.colorPalette.primary}}
-                  {{else}}
-                  color:#78350f
-                  {{/if}}
-                  ;">
+                style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">
                 {{personal_info.value.headline}}
               </h1>
               <p class="text-lg lg:text-xl mb-8"
-                style="
-                  {{#if colorPalette.value.colorPalette.primary}}
-                  color: {{colorPalette.value.colorPalette.primary}}
-                  {{else}}
-                  color:#78350f
-                  {{/if}}
-                  ;">
+                style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">
                 {{personal_info.value.position}}
               </p>
               {{#if contacts.value.contacts}}
@@ -279,19 +161,7 @@
               <a href="{{contacts.value.contacts.booking.url}}"
                 target="_blank"
                 class="inline-block px-8 py-3 rounded-lg text-lg font-medium hover:bg-primary/90 transition-colors"
-                style="
-                {{#if colorPalette.value.colorPalette.quaternary}}
-                color: {{colorPalette.value.colorPalette.quaternary}}
-                {{else}}
-                color:#ffffff
-                {{/if}}
-                ;
-                {{#if colorPalette.value.colorPalette.primary}}
-                background-color: {{colorPalette.value.colorPalette.primary}}
-                {{else}}
-                background-color:#78350f
-                {{/if}}
-                ;">
+                style="color: {{default colorPalette.value.colorPalette.quaternary '#ffffff'}}; background-color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">
                 {{#if contacts.value.contacts.buttonText}}
                 {{contacts.value.contacts.buttonText}} {{else}} Schedule a
                 Consultation {{/if}}
@@ -299,19 +169,7 @@
               {{else}}
               <a href="#contact"
                 class="inline-block px-8 py-3 rounded-lg text-lg font-medium transition-colors"
-                style="
-                {{#if colorPalette.value.colorPalette.quaternary}}
-                color: {{colorPalette.value.colorPalette.quaternary}}
-                {{else}}
-                color:#ffffff
-                {{/if}}
-                ;
-                {{#if colorPalette.value.colorPalette.primary}}
-                background-color: {{colorPalette.value.colorPalette.primary}}
-                {{else}}
-                background-color:#78350f
-                {{/if}}
-                ;">
+                style="color: {{default colorPalette.value.colorPalette.quaternary '#ffffff'}}; background-color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">
                 {{#if contacts.value.contacts.buttonText}}
                 {{contacts.value.contacts.buttonText}} {{else}} Schedule a
                 Consultation {{/if}}
@@ -337,13 +195,7 @@
         data-edit-section="about"
         data-section="about"
         data-title="About"
-        style="
-        {{#if colorPalette.value.colorPalette.tertiary-bright}}
-        background-color: {{colorPalette.value.colorPalette.tertiary-bright}}
-        {{else}}
-        background-color:#e5e7eb
-        {{/if}}
-        ;">
+        style="background-color: {{default colorPalette.value.colorPalette.tertiary-bright '#e5e7eb'}};">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
             class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -356,37 +208,18 @@
             <div>
               {{#if about.value.about.heading}}
               <h2 class="text-3xl lg:text-4xl font-bold mb-4"
-                style="
-                {{#if colorPalette.value.colorPalette.primary}}
-                color: {{colorPalette.value.colorPalette.primary}}
-                {{else}}
-                color:#78350f
-                {{/if}}
-                ;">
+                style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">
                 {{about.value.about.heading}}
               </h2>
               {{/if}}
               {{#if about.value.about.subheading}}
               <p class="text-lg lg:text-xl mb-6"
-                style="
-                {{#if colorPalette.value.colorPalette.primary}}
-                color: {{colorPalette.value.colorPalette.primary}}
-                {{else}}
-                color:#78350f
-                {{/if}}
-                ;">
+                style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">
                 {{about.value.about.subheading}}
               </p>
               {{/if}}
-              <!-- About Content -->
               <p class="text-base  leading-relaxed"
-                style="
-                {{#if colorPalette.value.colorPalette.primary}}
-                color: {{colorPalette.value.colorPalette.primary}}
-                {{else}}
-                color:#78350f
-                {{/if}}
-                ;">
+                style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">
                 {{about.value.about.content}}
               </p>
             </div>
@@ -403,62 +236,26 @@
         data-section="services"
         data-title="Services"
         data-aos="fade-up"
-        style="
-        {{#if colorPalette.value.colorPalette.tertiary-bright}}
-        background-color: {{colorPalette.value.colorPalette.tertiary-bright}}
-        {{else}}
-        background-color:#e5e7eb
-        {{/if}}
-        ;">
+        style="background-color: {{default colorPalette.value.colorPalette.tertiary-bright '#e5e7eb'}};">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2
             class="text-3xl lg:text-4xl font-bold text-center mb-12"
-            style="
-                {{#if colorPalette.value.colorPalette.primary}}
-                color: {{colorPalette.value.colorPalette.primary}}
-                {{else}}
-                color:#78350f
-                {{/if}}
-                ;">
+            style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">
             {{services.value.services.section_title}}
           </h2>
 
           <div class="space-y-8">
             {{#each services.value.services.items}}
             <div class="rounded-lg p-6 lg:p-8"
-              style="
-              {{#if ../colorPalette.value.colorPalette.secondary}}
-              background-color: {{../colorPalette.value.colorPalette.secondary}}
-              {{else}}
-              background-color:#fffcee
-              {{/if}}
-              ;">
+              style="background-color: {{default ../colorPalette.value.colorPalette.secondary '#fffcee'}};">
               <h3 class="text-2xl lg:text-3xl font-bold mb-2"
-                style="
-                {{#if ../colorPalette.value.colorPalette.primary}}
-                color: {{../colorPalette.value.colorPalette.primary}}
-                {{else}}
-                color:#78350f
-                {{/if}}
-                ;">
+                style="color: {{default ../colorPalette.value.colorPalette.primary '#78350f'}};">
                 {{this.title}}
               </h3>
               <p class="text-lg lg:text-xl mb-4"
-                style="
-                {{#if ../colorPalette.value.colorPalette.primary}}
-                color: {{../colorPalette.value.colorPalette.primary}}
-                {{else}}
-                color:#78350f
-                {{/if}}
-                ;">{{this.subtitle}}</p>
+                style="color: {{default ../colorPalette.value.colorPalette.primary '#78350f'}};">{{this.subtitle}}</p>
               <p class="text-base leading-relaxed"
-                style="
-                {{#if ../colorPalette.value.colorPalette.primary}}
-                color: {{../colorPalette.value.colorPalette.primary}}
-                {{else}}
-                color:#78350f
-                {{/if}}
-                ;">
+                style="color: {{default ../colorPalette.value.colorPalette.primary '#78350f'}};">
                 {{this.description}}
               </p>
             </div>
@@ -476,23 +273,11 @@
         data-edit-section="success_stories"
         data-section="success_stories"
         data-title="Success Stories"
-        style="
-        {{#if colorPalette.value.colorPalette.quaternary}}
-        background-color: {{colorPalette.value.colorPalette.quaternary}}
-        {{else}}
-        background-color:#ffffff
-        {{/if}}
-        ;">
+        style="background-color: {{default colorPalette.value.colorPalette.quaternary '#ffffff'}};">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2
             class="text-3xl lg:text-4xl font-bold text-center mb-12"
-            style="
-                {{#if colorPalette.value.colorPalette.primary}}
-                color: {{colorPalette.value.colorPalette.primary}}
-                {{else}}
-                color:#78350f
-                {{/if}}
-                ;">
+            style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">
             {{success_stories.value.success_stories.section_title}}
           </h2>
 
@@ -502,52 +287,22 @@
             <div class="md:order-1">
               <p
                 class="text-sm font-bold tracking-wider"
-                style="
-                {{#if ../colorPalette.value.colorPalette.primary-dim}}
-                color: {{../colorPalette.value.colorPalette.primary-dim}}
-                {{else}}
-                color:rgba(120, 53, 15, 0.7)
-                {{/if}}
-                ;">{{this.client}}</p>
+                style="color: {{default ../colorPalette.value.colorPalette.primary-dim 'rgba(120, 53, 15, 0.7)'}};">{{this.client}}</p>
               <h3 class="text-2xl lg:text-3xl font-bold mt-2 mb-4"
-                style="
-                {{#if ../colorPalette.value.colorPalette.primary}}
-                color: {{../colorPalette.value.colorPalette.primary}}
-                {{else}}
-                color:#78350f
-                {{/if}}
-                ;">
+                style="color: {{default ../colorPalette.value.colorPalette.primary '#78350f'}};">
                 {{this.title}}
               </h3>
               <p class="text-base leading-relaxed mb-4"
-                style="
-                {{#if ../colorPalette.value.colorPalette.primary}}
-                color: {{../colorPalette.value.colorPalette.primary}}
-                {{else}}
-                color:#78350f
-                {{/if}}
-                ;">
+                style="color: {{default ../colorPalette.value.colorPalette.primary '#78350f'}};">
                 {{this.description}}
               </p>
               <div class="flex space-x-8">
                 {{#each this.stats}}
                 <div>
                   <p class="text-2xl font-bold"
-                    style="
-                    {{#if ../../colorPalette.value.colorPalette.primary}}
-                    color: {{../../colorPalette.value.colorPalette.primary}}
-                    {{else}}
-                    color:#78350f
-                    {{/if}}
-                    ;">{{this.number}}</p>
+                    style="color: {{default ../../colorPalette.value.colorPalette.primary '#78350f'}};">{{this.number}}</p>
                   <p class="text-sm"
-                    style="
-                    {{#if ../../colorPalette.value.colorPalette.primary}}
-                    color: {{../../colorPalette.value.colorPalette.primary}}
-                    {{else}}
-                    color:#78350f
-                    {{/if}}
-                    ;">{{this.label}}</p>
+                    style="color: {{default ../../colorPalette.value.colorPalette.primary '#78350f'}};">{{this.label}}</p>
                 </div>
                 {{/each}}
               </div>
@@ -571,53 +326,23 @@
         data-edit-section="testimonials"
         data-section="testimonials"
         data-title="Testimonials"
-        style="
-        {{#if colorPalette.value.colorPalette.tertiary-bright}}
-        background-color: {{colorPalette.value.colorPalette.tertiary-bright}}
-        {{else}}
-        background-color:#e5e7eb
-        {{/if}}
-        ;">
+        style="background-color: {{default colorPalette.value.colorPalette.tertiary-bright '#e5e7eb'}};">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2
             class="text-3xl lg:text-4xl font-bold text-center mb-12"
-            style="
-            {{#if colorPalette.value.colorPalette.primary}}
-            color: {{colorPalette.value.colorPalette.primary}}
-            {{else}}
-            color:#78350f
-            {{/if}}
-            ;">
+            style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">
             {{testimonials.value.testimonials.section_title}}
           </h2>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {{#each testimonials.value.testimonials.items}}
             <div class="rounded-lg p-6"
-              style="
-              {{#if ../colorPalette.value.colorPalette.secondary}}
-              background-color: {{../colorPalette.value.colorPalette.secondary}}
-              {{else}}
-              background-color:#fffcee
-              {{/if}}
-              ;">
+              style="background-color: {{default ../colorPalette.value.colorPalette.secondary '#fffcee'}};">
               <p class="text-base leading-relaxed mb-6"
-                style="
-                {{#if ../colorPalette.value.colorPalette.primary}}
-                color: {{../colorPalette.value.colorPalette.primary}}
-                {{else}}
-                color:#78350f
-                {{/if}}
-                ;">
+                style="color: {{default ../colorPalette.value.colorPalette.primary '#78350f'}};">
                 "{{this.recommendationText}}"
               </p>
               <p class="text-lg font-medium"
-                style="
-                {{#if ../colorPalette.value.colorPalette.primary}}
-                color: {{../colorPalette.value.colorPalette.primary}}
-                {{else}}
-                color:#78350f
-                {{/if}}
-                ;">{{this.recommenderName}}{{#if
+                style="color: {{default ../colorPalette.value.colorPalette.primary '#78350f'}};">{{this.recommenderName}}{{#if
                 this.designation}},
                 {{this.designation}}{{/if}}</p>
             </div>
@@ -635,36 +360,18 @@
         data-section="client_logos"
         data-title="Client Logos"
         data-aos="fade-up"
-        style="
-        {{#if colorPalette.value.colorPalette.tertiary-bright}}
-        background-color: {{colorPalette.value.colorPalette.tertiary-bright}}
-        {{else}}
-        background-color:#e5e7eb
-        {{/if}}
-        ;">
+        style="background-color: {{default colorPalette.value.colorPalette.tertiary-bright '#e5e7eb'}};">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2
             class="text-3xl lg:text-4xl font-bold mb-12 text-center"
-            style="
-                {{#if colorPalette.value.colorPalette.primary}}
-                color: {{colorPalette.value.colorPalette.primary}}
-                {{else}}
-                color:#78350f
-                {{/if}}
-                ;">
+            style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">
             {{client_logos.value.client_logos.section_title}}
           </h2>
           <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
             {{#each client_logos.value.client_logos.items}}
             <div class="p-6 flex items-center justify-center h-24"><span
                 class="text-2xl font-bold"
-                style="
-                {{#if ../colorPalette.value.colorPalette.primary-dim}}
-                color: {{../colorPalette.value.colorPalette.primary-dim}}
-                {{else}}
-                color:rgba(120, 53, 15, 0.7)
-                {{/if}}
-                ;">{{this.name}}</span>
+                style="color: {{default ../colorPalette.value.colorPalette.primary-dim 'rgba(120, 53, 15, 0.7)'}};">{{this.name}}</span>
             </div>
             {{/each}}
           </div>
@@ -680,65 +387,29 @@
         data-edit-section="faq"
         data-section="faq"
         data-title="FAQ"
-        style="
-        {{#if colorPalette.value.colorPalette.quaternary}}
-        background-color: {{colorPalette.value.colorPalette.quaternary}}
-        {{else}}
-        background-color:#ffffff
-        {{/if}}
-        ;">
+        style="background-color: {{default colorPalette.value.colorPalette.quaternary '#ffffff'}};">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2
             class="text-3xl lg:text-4xl font-bold text-center mb-12"
-            style="
-            {{#if colorPalette.value.colorPalette.primary}}
-            color: {{colorPalette.value.colorPalette.primary}}
-            {{else}}
-            color:#78350f
-            {{/if}}
-            ;">
+            style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">
             {{faq.value.faq.section_title}}
           </h2>
           <div class="max-w-4xl mx-auto">
             {{#each faq.value.faq.items}}
             <div class="faq-item border-b py-4"
-              style="
-              {{#if ../colorPalette.value.colorPalette.border-primary-dim}}
-              border-color: {{../colorPalette.value.colorPalette.border-primary-dim}}
-              {{else}}
-              border-color:rgba(120, 53, 15, 0.2)
-              {{/if}}
-              ;">
+              style="border-color: {{default ../colorPalette.value.colorPalette.border-primary-dim 'rgba(120, 53, 15, 0.2)'}};">
               <button
                 class="faq-question w-full flex justify-between items-center text-left focus:outline-none">
                 <h3 class="text-xl lg:text-2xl font-bold"
-                  style="
-            {{#if ../colorPalette.value.colorPalette.primary}}
-            color: {{../colorPalette.value.colorPalette.primary}}
-            {{else}}
-            color:#78350f
-            {{/if}}
-            ;">{{this.question}}</h3>
+                  style="color: {{default ../colorPalette.value.colorPalette.primary '#78350f'}};">{{this.question}}</h3>
                 <span
                   class="faq-icon text-3xl font-light transform transition-transform duration-300"
-                  style="
-            {{#if ../colorPalette.value.colorPalette.primary}}
-            color: {{../colorPalette.value.colorPalette.primary}}
-            {{else}}
-            color:#78350f
-            {{/if}}
-            ;">&plus;</span>
+                  style="color: {{default ../colorPalette.value.colorPalette.primary '#78350f'}};">&plus;</span>
               </button>
               <div
                 class="faq-answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
                 <p class="text-base leading-relaxed pt-4"
-                  style="
-            {{#if ../colorPalette.value.colorPalette.primary}}
-            color: {{../colorPalette.value.colorPalette.primary}}
-            {{else}}
-            color:#78350f
-            {{/if}}
-            ;">
+                  style="color: {{default ../colorPalette.value.colorPalette.primary '#78350f'}};">
                   {{this.answer}}
                 </p>
               </div>
@@ -758,116 +429,50 @@
         data-section="contacts"
         data-title="Contacts"
         data-aos="fade-up"
-        style="
-        {{#if colorPalette.value.colorPalette.primary}}
-        background-color: {{colorPalette.value.colorPalette.primary}}
-        {{else}}
-        background-color:#78350f
-        {{/if}}
-        ;">
+        style="background-color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="rounded-lg p-6 lg:p-8"
-            style="
-              {{#if colorPalette.value.colorPalette.secondary}}
-              background-color: {{colorPalette.value.colorPalette.secondary}}
-              {{else}}
-              background-color:#fffcee
-              {{/if}}
-              ;">
+            style="background-color: {{default colorPalette.value.colorPalette.secondary '#fffcee'}};">
             <h2
               class="text-2xl lg:text-3xl font-bold mb-4 text-center"
-              style="
-              {{#if colorPalette.value.colorPalette.primary}}
-              color: {{colorPalette.value.colorPalette.primary}}
-              {{else}}
-              color:#78350f
-              {{/if}}
-              ;">
+              style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">
               {{contacts.value.contacts.heading}}
             </h2>
             {{#if contacts.value.contacts.description}}
             <p class="text-center mb-8"
-              style="
-              {{#if colorPalette.value.colorPalette.primary}}
-              color: {{colorPalette.value.colorPalette.primary}}
-              {{else}}
-              color:#78350f
-              {{/if}}
-              ;">{{contacts.value.contacts.description}}</p>
+              style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">{{contacts.value.contacts.description}}</p>
             {{/if}}
             <form class="space-y-6" action="/api/contact" method="post"
               enctype="text/plain">
               <div>
                 <label for="name"
                   class="block text-sm font-medium mb-2"
-                  style="
-              {{#if colorPalette.value.colorPalette.primary}}
-              color: {{colorPalette.value.colorPalette.primary}}
-              {{else}}
-              color:#78350f
-              {{/if}}
-              ;">Name
+                  style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">Name
                   *</label>
                 <input type="text" id="name" name="name" required
-                  class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[{{#if colorPalette.value.colorPalette.border-primary-dim}}{{colorPalette.value.colorPalette.border-primary-dim}}{{else}}rgba(120, 53, 15, 0.2){{/if}}]"
-                  style="
-                  {{#if colorPalette.value.colorPalette.primary}}
-                  border-color: {{colorPalette.value.colorPalette.primary}}
-                  {{else}}
-                  border-color:#78350f
-                  {{/if}}
-                  ;">
+                  class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[{{default colorPalette.value.colorPalette.border-primary-dim 'rgba(120, 53, 15, 0.2)'}}]"
+                  style="border-color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">
               </div>
               <div>
                 <label for="email"
                   class="block text-sm font-medium mb-2"
-                  style="
-              {{#if colorPalette.value.colorPalette.primary}}
-              color: {{colorPalette.value.colorPalette.primary}}
-              {{else}}
-              color:#78350f
-              {{/if}}
-              ;">Email
+                  style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">Email
                   *</label>
                 <input type="email" id="email" name="email" required
-                  class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[{{#if colorPalette.value.colorPalette.border-primary-dim}}{{colorPalette.value.colorPalette.border-primary-dim}}{{else}}rgba(120, 53, 15, 0.2){{/if}}]"
-                  style="
-                  {{#if colorPalette.value.colorPalette.primary}}
-                  border-color: {{colorPalette.value.colorPalette.primary}}
-                  {{else}}
-                  border-color:#78350f
-                  {{/if}}
-                  ;">
+                  class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[{{default colorPalette.value.colorPalette.border-primary-dim 'rgba(120, 53, 15, 0.2)'}}]"
+                  style="border-color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">
               </div>
               <div>
                 <label for="message"
                   class="block text-sm font-medium mb-2"
-                  style="
-              {{#if colorPalette.value.colorPalette.primary}}
-              color: {{colorPalette.value.colorPalette.primary}}
-              {{else}}
-              color:#78350f
-              {{/if}}
-              ;">{{contacts.value.contacts.messageInputLabel}}</label>
+                  style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">{{contacts.value.contacts.messageInputLabel}}</label>
                 <textarea id="message" name="message" rows="4"
                   class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[{{colorPalette.value.colorPalette.border-primary-dim}}]"
-                  style="
-                  {{#if colorPalette.value.colorPalette.primary}}
-                  border-color: {{colorPalette.value.colorPalette.primary}}
-                  {{else}}
-                  border-color:#78350f
-                  {{/if}}
-                  ;"></textarea>
+                  style="border-color: {{default colorPalette.value.colorPalette.primary '#78350f'}};"></textarea>
               </div>
               <button type="submit"
                 class="w-full bg-transparent border-2 px-6 py-3 rounded-lg text-lg font-medium hover:bg-primary hover:text-white transition-colors"
-                style="
-                {{#if colorPalette.value.colorPalette.primary}}
-                border-color: {{colorPalette.value.colorPalette.primary}};color: {{colorPalette.value.colorPalette.primary}};
-                {{else}}
-                border-color:#78350f;color:#78350f;
-                {{/if}}
-                ">
+                style="border-color: {{default colorPalette.value.colorPalette.primary '#78350f'}}; color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">
                 {{contacts.value.contacts.contactFormButtonText}}
               </button>
             </form>
@@ -879,44 +484,20 @@
       {{/if}}
 
       <footer class="py-12"
-        style="
-        {{#if colorPalette.value.colorPalette.primary}}
-        background-color: {{colorPalette.value.colorPalette.primary}}
-        {{else}}
-        background-color:#78350f
-        {{/if}}
-        ;">
+        style="background-color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
             class="flex flex-col md:flex-row justify-between items-center space-y-8 md:space-y-0">
             <div class="flex items-center space-x-3">
               <div
                 class="w-12 h-12 rounded-full flex items-center justify-center"
-                style="
-        {{#if colorPalette.value.colorPalette.quaternary}}
-        background-color: {{colorPalette.value.colorPalette.quaternary}}
-        {{else}}
-        background-color:#ffffff
-        {{/if}}
-        ;">
+                style="background-color: {{default colorPalette.value.colorPalette.quaternary '#ffffff'}};">
                 <span class="font-bold text-lg"
-                  style="
-                  {{#if colorPalette.value.colorPalette.primary}}
-                  color: {{colorPalette.value.colorPalette.primary}}
-                  {{else}}
-                  color:#78350f
-                  {{/if}}
-                  ;">{{firstChar
+                  style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">{{firstChar
                   personal_info.value.firstName}}</span>
               </div>
               <h3 class="text-2xl font-bold"
-                style="
-                {{#if colorPalette.value.colorPalette.quaternary}}
-                color: {{colorPalette.value.colorPalette.quaternary}}
-                {{else}}
-                color:#ffffff
-                {{/if}}
-                ;">{{personal_info.value.firstName}}
+                style="color: {{default colorPalette.value.colorPalette.quaternary '#ffffff'}};">{{personal_info.value.firstName}}
 
                 {{#if personal_info.value.role}} | {{personal_info.value.role}}
                 {{/if}}</h3>
@@ -930,13 +511,7 @@
               {{#each social.value.social.items}}
               <a href="{{this.url}}"
                 class="hover:text-accent transition-colors"
-                style="
-                {{#if colorPalette.value.colorPalette.quaternary}}
-                color: {{colorPalette.value.colorPalette.quaternary}}
-                {{else}}
-                color:#ffffff
-                {{/if}}
-                ;">
+                style="color: {{default ../colorPalette.value.colorPalette.quaternary '#ffffff'}};">
                 {{{socialIcon url=this.url
                 label=this.label size=40 className="size-12" }}}
               </a>
@@ -946,21 +521,9 @@
             {{/if}}
           </div>
           <div class="mt-8 pt-8 border-t text-center"
-            style="
-            {{#if colorPalette.value.colorPalette.border-quatenary-dim}}
-            border-color: {{colorPalette.value.colorPalette.border-quatenary-dim}}
-            {{else}}
-            border-color:rgba(255, 255, 255, 0.2)
-            {{/if}}
-            ;">
+            style="border-color: {{default colorPalette.value.colorPalette.border-quatenary-dim 'rgba(255, 255, 255, 0.2)'}};">
             <p class="text-sm"
-              style="
-              {{#if colorPalette.value.colorPalette.tertiary-bright}}
-              color: {{colorPalette.value.colorPalette.tertiary-bright}}
-              {{else}}
-              color:#e5e7eb
-              {{/if}}
-              ;">
+              style="color: {{default colorPalette.value.colorPalette.tertiary-bright '#e5e7eb'}};">
               © {{currentYear}} {{personal_info.value.firstName}}. All Rights
               Reserved.
             </p>
