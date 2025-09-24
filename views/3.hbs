@@ -237,7 +237,10 @@
         </div>
       </header>
 
-      <section class="py-12 lg:py-20"
+      <section class="py-12 lg:py-20 section-wrapper"
+        data-edit-section="personal_info"
+        data-section="personal_info"
+        data-title="Personal Info"
         style="
         {{#if color_palette.value.colorPalette.tertiary-bright}}
         background-color:{{color_palette.value.colorPalette.tertiary-bright}}
@@ -289,7 +292,9 @@
                 background-color:#78350f
                 {{/if}}
                 ;">
-                {{#if contacts.value.contacts.buttonText}} {{contacts.value.contacts.buttonText}} {{else}} Schedule a Consultation {{/if}}
+                {{#if contacts.value.contacts.buttonText}}
+                {{contacts.value.contacts.buttonText}} {{else}} Schedule a
+                Consultation {{/if}}
               </a>
               {{else}}
               <a href="#contact"
@@ -307,7 +312,9 @@
                 background-color:#78350f
                 {{/if}}
                 ;">
-                {{#if contacts.value.contacts.buttonText}} {{contacts.value.contacts.buttonText}} {{else}} Schedule a Consultation {{/if}}
+                {{#if contacts.value.contacts.buttonText}}
+                {{contacts.value.contacts.buttonText}} {{else}} Schedule a
+                Consultation {{/if}}
               </a>
               {{/if}}
               {{/unless}}
@@ -325,7 +332,11 @@
 
       {{#if about.value.about.content}}
       {{#unless about.meta.hide}}
-      <section id="about" class="py-12 lg:py-20" data-aos="fade-up"
+      <section id="about" class="py-12 lg:py-20 section-wrapper"
+        data-aos="fade-up"
+        data-edit-section="about"
+        data-section="about"
+        data-title="About"
         style="
         {{#if color_palette.value.colorPalette.tertiary-bright}}
         background-color: {{color_palette.value.colorPalette.tertiary-bright}}
@@ -387,7 +398,10 @@
 
       {{#if services.value.services.items}}
       {{#unless services.meta.hide}}
-      <section id="offerings" class="py-12 lg:py-20"
+      <section id="offerings" class="py-12 lg:py-20 section-wrapper"
+        data-edit-section="services"
+        data-section="services"
+        data-title="Services"
         data-aos="fade-up"
         style="
         {{#if color_palette.value.colorPalette.tertiary-bright}}
@@ -457,8 +471,11 @@
 
       {{#if success_stories.value.success_stories.items}}
       {{#unless success_stories.meta.hide}}
-      <section id="casestudies" class="py-12 lg:py-20"
+      <section id="casestudies" class="py-12 lg:py-20 section-wrapper"
         data-aos="fade-up"
+        data-edit-section="success_stories"
+        data-section="success_stories"
+        data-title="Success Stories"
         style="
         {{#if color_palette.value.colorPalette.quaternary}}
         background-color: {{color_palette.value.colorPalette.quaternary}}
@@ -550,7 +567,10 @@
 
       {{#if testimonials.value.testimonials.items}}
       {{#unless testimonials.meta.hide}}
-      <section class="py-12 lg:py-20" data-aos="fade-up"
+      <section class="py-12 lg:py-20 section-wrapper" data-aos="fade-up"
+        data-edit-section="testimonials"
+        data-section="testimonials"
+        data-title="Testimonials"
         style="
         {{#if color_palette.value.colorPalette.tertiary-bright}}
         background-color: {{color_palette.value.colorPalette.tertiary-bright}}
@@ -610,7 +630,10 @@
 
       {{#if client_logos.value.client_logos.items}}
       {{#unless client_logos.meta.hide}}
-      <section id="trustedby" class="py-12 lg:py-20"
+      <section id="trustedby" class="py-12 lg:py-20 section-wrapper"
+        data-edit-section="client_logos"
+        data-section="client_logos"
+        data-title="Client Logos"
         data-aos="fade-up"
         style="
         {{#if color_palette.value.colorPalette.tertiary-bright}}
@@ -652,7 +675,11 @@
 
       {{#if faq.value.faq.items}}
       {{#unless faq.meta.hide}}
-      <section id="faq" class="py-12 lg:py-20" data-aos="fade-up"
+      <section id="faq" class="py-12 lg:py-20 section-wrapper"
+        data-aos="fade-up"
+        data-edit-section="faq"
+        data-section="faq"
+        data-title="FAQ"
         style="
         {{#if color_palette.value.colorPalette.quaternary}}
         background-color: {{color_palette.value.colorPalette.quaternary}}
@@ -726,7 +753,10 @@
       {{#if contacts.value.contacts}}
       {{#if contacts.value.contacts.contactForm}}
       {{#unless contacts.meta.hide}}
-      <section id="contact" class="py-12 lg:py-20"
+      <section id="contact" class="py-12 lg:py-20 section-wrapper"
+        data-edit-section="contacts"
+        data-section="contacts"
+        data-title="Contacts"
         data-aos="fade-up"
         style="
         {{#if color_palette.value.colorPalette.primary}}
@@ -893,7 +923,10 @@
             </div>
             {{#if social.value.social.items}}
             {{#unless social.meta.hide}}
-            <div class="flex space-x-6">
+            <div class="flex space-x-6 section-wrapper"
+              data-edit-section="social"
+              data-section="social"
+              data-title="Social Links">
               {{#each social.value.social.items}}
               <a href="{{this.url}}"
                 class="hover:text-accent transition-colors"
