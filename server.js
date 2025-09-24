@@ -22,7 +22,7 @@ hbs.registerHelper("default", (v, fb) =>
 );
 
 app.get("/", (req, res) => {
-  res.redirect("/2");
+  res.redirect("/3");
 });
 
 app.get("/1", (req, res) => {
@@ -39,6 +39,10 @@ app.get("/3", (req, res) => {
 
 app.get("/4", (req, res) => {
   res.render("4", data);
+});
+
+app.get("/5", (req, res) => {
+  res.render("5", data);
 });
 
 app.listen(3001, () =>

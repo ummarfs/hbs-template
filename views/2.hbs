@@ -1,393 +1,595 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M. Caldwell - Business Growth Consultant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Questrial:wght@400&display=swap"
+      rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>L. Thompson | Strategic Consultant</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <script>
-    tailwind.config = {
-      content: [],
-      theme: {
-        extend: {
-          fontFamily: {
-            arial: [
-              'Arial'
-            ],
-            madefor_text: [
-              'madefor-text',
-              'helveticaneuew01-45ligh',
-              'helveticaneuew02-45ligh',
-              'helveticaneuew10-45ligh',
-              'sans-serif'
-            ],
-            poppins_semibold: [
-              'poppins-semibold',
-              'poppins',
-              'sans-serif'
-            ],
-            poppins_extralight: [
-              'poppins-extralight',
-              'poppins',
-              'sans-serif'
-            ]
-          }
-        }
-      }
-    };
-  </script>
-
-  <style>
-    @font-face {
-      font-family: 'poppins-semibold';
-      font-weight: 700;
-      font-style: normal;
-    }
-
-    @font-face {
-      font-family: 'poppins-extralight';
-      font-weight: 400;
-      font-style: normal;
-    }
-
-    @font-face {
-      font-family: 'madefor-text';
-      font-weight: 400;
-      font-style: normal;
-    }
-    
-    body {
-      font-family: 'madefor-text', sans-serif;
-      scroll-behavior: smooth;
-    }
-  </style>
-</head>
-
-<body class="bg-white text-black font-arial overflow-x-hidden">
-
-  <div class="relative w-full">
-
-    <header class="sticky top-0 z-50 bg-black text-white">
-      <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-        <p class="text-lg font-madefor_text">
-          <a href="#" class="text-white">L. Thompson</a>
-        </p>
-        <div class="md:hidden">
-          <button id="hamburger-button" class="text-white focus:outline-none" aria-label="Toggle menu" aria-expanded="false">
-            <svg id="menu-open-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-            <svg id="menu-close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-          </button>
-        </div>
-        <nav class="hidden md:flex">
-          <ul class="flex items-center gap-x-4">
-            <li><a href="#about" class="px-2 py-1 tracking-wider text-base hover:text-gray-300">About</a></li>
-            <li><a href="#services" class="px-2 py-1 tracking-wider text-base hover:text-gray-300">Services</a></li>
-            <li><a href="#process" class="px-2 py-1 tracking-wider text-base hover:text-gray-300">Process</a></li>
-            <li><a href="#contact" class="px-2 py-1 tracking-wider text-base hover:text-gray-300">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-      <nav id="mobile-menu" class="hidden md:hidden bg-black absolute w-full">
-        <ul class="flex flex-col items-center py-4">
-          <li class="w-full text-center"><a href="#about" class="block py-3 tracking-wider text-base hover:bg-gray-800">About</a></li>
-          <li class="w-full text-center"><a href="#services" class="block py-3 tracking-wider text-base hover:bg-gray-800">Services</a></li>
-          <li class="w-full text-center"><a href="#process" class="block py-3 tracking-wider text-base hover:bg-gray-800">Process</a></li>
-          <li class="w-full text-center"><a href="#contact" class="block py-3 tracking-wider text-base hover:bg-gray-800">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <main>
-
-      <section class="w-full">
-        <div class="flex flex-col lg:flex-row min-h-[826px]">
-          <div class="w-full lg:w-2/5 h-[400px] lg:h-auto" data-aos="fade-in">
-            <img src="https://c.animaapp.com/mfxt594ljln94V/assets/88aac0_9bbdec62e24644caa9afa95a773336a9~mv2.jpeg" alt="Professional woman in a business setting" class="w-full h-full object-cover" />
-          </div>
-          <div class="w-full lg:w-3/5 flex items-center justify-center p-8 md:p-12">
-            <div class="max-w-xl text-center lg:text-left" data-aos="fade-in" data-aos-delay="200">
-              <h1 class="text-5xl md:text-6xl lg:text-[76px] font-bold font-poppins_semibold leading-tight">Strategic Consulting for High-Growth Companies</h1>
-              <div class="w-full border-t-2 border-neutral-800 my-8"></div>
-              <p class="text-xl font-madefor_text mb-8">I translate complex business challenges into actionable growth strategies, helping you scale effectively and achieve lasting success.</p>
-              <div class="flex justify-center lg:justify-end">
-                <a href="#contact" aria-label="Book a Free Consultation" class="bg-black text-white text-lg font-madefor_text py-3 px-10 rounded-full hover:bg-gray-800 transition-colors">Book a Free Consultation</a>
+    <style>
+  body, .font-questrial {
+    font-family: 'Questrial', sans-serif;
+  }
+</style>
+  </head>
+  <body>
+    <div class="font-questrial"
+      style="background-color: {{default colorPalette.value.colorPalette.tertiary '#f3f4f6'}};">
+      <header class="sticky top-0 z-50 shadow-sm py-2"
+        style="background-color: {{default colorPalette.value.colorPalette.tertiary-bright '#e5e7eb'}};">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex items-center justify-between h-16 lg:h-20">
+            <div class="flex items-center space-x-3">
+              <div
+                class="w-8 h-8 rounded-full flex items-center justify-center"
+                style="background-color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">
+                <span class="font-bold text-sm"
+                  style="color: {{default colorPalette.value.colorPalette.quaternary '#ffffff'}};">{{firstChar
+                  personal_info.value.firstName}}</span>
               </div>
-              <div class="w-full border-t-2 border-neutral-800 mt-8"></div>
+              <h1
+                class="text-xl lg:text-2xl font-bold"
+                style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">{{personal_info.value.firstName}}
+
+                {{#if personal_info.value.role}} | {{personal_info.value.role}}
+                {{/if}}</h1>
+            </div>
+
+            <nav class="hidden md:flex space-x-8 text-xl">
+              {{#if about.value.about.content}}
+              {{#unless about.meta.hide}}
+              <a href="#about"
+                class="transition-colors"
+                style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">{{about.value.about.navbarName}}</a>
+              {{/unless}}
+              {{/if}}
+              {{#if services.value.services.items}}
+              {{#unless services.meta.hide}}
+              <a href="#offerings"
+                class="transition-colors"
+                style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">{{services.value.services.navbarName}}</a>
+              {{/unless}}
+              {{/if}}
+              {{#if success_stories.value.success_stories.items}}
+              {{#unless success_stories.meta.hide}}
+              <a href="#casestudies"
+                class="transition-colors"
+                style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">{{success_stories.value.success_stories.navbarName}}</a>
+              {{/unless}}
+              {{/if}}
+              {{#if faq.value.faq.items}}
+              {{#unless faq.meta.hide}}
+              <a href="#faq"
+                class="transition-colors"
+                style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">{{faq.value.faq.navbarName}}</a>
+              {{/unless}}
+              {{/if}}
+              {{#if contacts.value.contacts}}
+              {{#if
+              contacts.value.contacts.contactForm}}
+              {{#unless contacts.meta.hide}}
+              <a href="#contact"
+                class="transition-colors"
+                style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">{{contacts.value.contacts.navbarName}}</a>
+              {{/unless}}
+              {{/if}}
+              {{/if}}
+            </nav>
+
+            <button class="md:hidden p-2" id="mobile-menu-btn">
+              <svg class="w-6 h-6" fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
+          </div>
+
+          <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 border-t flex flex-col"
+              style="background-color: {{default colorPalette.value.colorPalette.secondary '#fffcee'}};">
+              {{#if about.value.about.content}}
+              {{#unless about.meta.hide}}
+              <a href="#about"
+                class="transition-colors"
+                style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">{{about.value.about.navbarName}}</a>
+              {{/unless}}
+              {{/if}}
+              {{#if services.value.services.items}}
+              {{#unless services.meta.hide}}
+              <a href="#offerings"
+                class="transition-colors"
+                style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">{{services.value.services.navbarName}}</a>
+              {{/unless}}
+              {{/if}}
+              {{#if success_stories.value.success_stories.items}}
+              {{#unless success_stories.meta.hide}}
+              <a href="#casestudies"
+                class="transition-colors"
+                style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">{{success_stories.value.success_stories.navbarName}}</a>
+              {{/unless}}
+              {{/if}}
+              {{#if faq.value.faq.items}}
+              {{#unless faq.meta.hide}}
+              <a href="#faq"
+                class="transition-colors"
+                style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">{{faq.value.faq.navbarName}}</a>
+              {{/unless}}
+              {{/if}}
+              {{#if contacts.value.contacts}}
+              {{#if
+              contacts.value.contacts.contactForm}}
+              {{#unless contacts.meta.hide}}
+              <a href="#contact"
+                class="transition-colors"
+                style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">{{contacts.value.contacts.navbarName}}</a>
+              {{/unless}}
+              {{/if}}
+              {{/if}}
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="py-12 lg:py-20 section-wrapper"
+        data-edit-section="personal_info"
+        data-section="personal_info"
+        data-title="Personal Info"
+        style="background-color: {{default colorPalette.value.colorPalette.tertiary-bright '#e5e7eb'}};">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div
+            class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div class="order-2 lg:order-1">
+              <h1
+                class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6"
+                style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">
+                {{personal_info.value.headline}}
+              </h1>
+              <p class="text-lg lg:text-xl mb-8"
+                style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">
+                {{personal_info.value.position}}
+              </p>
+              {{#if contacts.value.contacts}}
+              {{#unless contacts.meta.hide}}
+              {{#if contacts.value.contacts.booking.enabled}}
+              <a href="{{contacts.value.contacts.booking.url}}"
+                target="_blank"
+                class="inline-block px-8 py-3 rounded-lg text-lg font-medium hover:bg-primary/90 transition-colors"
+                style="color: {{default colorPalette.value.colorPalette.quaternary '#ffffff'}}; background-color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">
+                {{#if contacts.value.contacts.buttonText}}
+                {{contacts.value.contacts.buttonText}} {{else}} Schedule a
+                Consultation {{/if}}
+              </a>
+              {{else}}
+              <a href="#contact"
+                class="inline-block px-8 py-3 rounded-lg text-lg font-medium transition-colors"
+                style="color: {{default colorPalette.value.colorPalette.quaternary '#ffffff'}}; background-color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">
+                {{#if contacts.value.contacts.buttonText}}
+                {{contacts.value.contacts.buttonText}} {{else}} Schedule a
+                Consultation {{/if}}
+              </a>
+              {{/if}}
+              {{/unless}}
+              {{/if}}
+            </div>
+            <div class="order-1 lg:order-2">
+              <img
+                src="{{personal_info.value.profilePicureUrl}}"
+                alt="Consultant working on a business strategy"
+                class="w-full h-80 sm:h-96 lg:h-[500px] xl:h-[600px] object-cover rounded-lg shadow-lg">
             </div>
           </div>
         </div>
       </section>
 
-      <section id="about" class="w-full bg-black text-white py-16 md:py-24">
-        <div class="container mx-auto px-6 flex flex-col lg:flex-row items-center gap-10">
-          <div class="w-full lg:w-1/2 text-center lg:text-left" data-aos="fade-right">
-            <h2 class="text-4xl md:text-5xl lg:text-[64px] font-bold font-poppins_semibold leading-tight tracking-tighter">A Partner in Your Success</h2>
-            <p class="text-xl font-bold font-poppins_extralight mt-4 mb-8">Meet L. Thompson</p>
-            <p class="text-lg font-madefor_text max-w-md mx-auto lg:mx-0">
-              I'm a consultant based in Seattle, WA, with over a decade of experience helping businesses thrive. My expertise lies in cutting through the noise to identify core challenges and implementing practical, data-driven solutions. I partner with leaders like you to streamline processes, optimize finances, and unlock sustainable profitability. Your goals become my mission.
-            </p>
-          </div>
-          <div class="w-full lg:w-1/2 mt-8 lg:mt-0" data-aos="fade-left">
-            <img src="https://c.animaapp.com/mfxt594ljln94V/assets/88aac0_e3a74bda807a421cb13c1cfa99afa8f4~mv2.png" alt="Team members collaborating" class="w-full h-auto object-cover rounded-lg" />
-          </div>
-        </div>
-      </section>
-
-      <section id="services" class="w-full py-16 md:py-24">
-        <div class="container mx-auto px-6">
-          <h2 class="text-4xl md:text-5xl lg:text-[64px] font-bold font-poppins_semibold mb-12 tracking-tighter" data-aos="fade-up">How I Can Help</h2>
-          <div class="flex flex-col md:flex-row items-center gap-8 py-6 border-b" data-aos="fade-up">
-            <div class="w-full md:w-1/3">
-              <h3 class="text-3xl lg:text-4xl font-bold font-poppins_semibold tracking-tight">Custom Growth Strategy</h3>
+      {{#if about.value.about.content}}
+      {{#unless about.meta.hide}}
+      <section id="about" class="py-12 lg:py-20 section-wrapper"
+        data-aos="fade-up"
+        data-edit-section="about"
+        data-section="about"
+        data-title="About"
+        style="background-color: {{default colorPalette.value.colorPalette.tertiary-bright '#e5e7eb'}};">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div
+            class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div>
+              <img
+                src="{{#if about.value.about.image}} {{about.value.about.image}} {{else}} https://c.animaapp.com/mfnpsvda9pPWxp/assets/88aac0_70dba72adce54eea9f53068b36a9e0e9~mv2.jpeg {{/if}}"
+                alt="{{personal_info.value.firstName}}"
+                class="w-full h-64 sm:h-80 lg:h-96 object-cover rounded-lg shadow-lg">
             </div>
-            <div class="w-full md:w-2/3">
-              <p class="text-xl font-medium mb-2">Operational Excellence</p>
-              <p class="text-lg">I provide tailored business strategy solutions to enhance your company's performance and achieve sustainable growth. My focus on operational excellence helps streamline processes and maximize profitability.</p>
-            </div>
-          </div>
-          <div class="flex flex-col md:flex-row items-center gap-8 py-6 border-b" data-aos="fade-up" data-aos-delay="100">
-            <div class="w-full md:w-1/3">
-              <h3 class="text-3xl lg:text-4xl font-bold font-poppins_semibold tracking-tight">Efficient Operations</h3>
-            </div>
-            <div class="w-full md:w-2/3">
-              <p class="text-xl font-medium mb-2">Strategic Guidance</p>
-              <p class="text-lg">Through meticulous planning and execution, I help optimize your resources for maximum productivity. I offer strategic guidance to elevate your business and achieve your long-term objectives.</p>
-            </div>
-          </div>
-          <div class="flex flex-col md:flex-row items-center gap-8 py-6 border-b" data-aos="fade-up" data-aos-delay="200">
-            <div class="w-full md:w-1/3">
-              <h3 class="text-3xl lg:text-4xl font-bold font-poppins_semibold tracking-tight">Financial Advisory</h3>
-            </div>
-            <div class="w-full md:w-2/3">
-              <p class="text-xl font-medium mb-2">Profitability Boost</p>
-              <p class="text-lg">My financial advisory services are designed to boost profitability and financial efficiency. From analysis to risk management, I empower your business to make informed decisions and grow sustainably.</p>
+            <div>
+              {{#if about.value.about.heading}}
+              <h2 class="text-3xl lg:text-4xl font-bold mb-4"
+                style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">
+                {{about.value.about.heading}}
+              </h2>
+              {{/if}}
+              {{#if about.value.about.subheading}}
+              <p class="text-lg lg:text-xl mb-6"
+                style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">
+                {{about.value.about.subheading}}
+              </p>
+              {{/if}}
+              <p class="text-base  leading-relaxed"
+                style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">
+                {{about.value.about.content}}
+              </p>
             </div>
           </div>
         </div>
       </section>
+      {{/unless}}
+      {{/if}}
 
-      <section class="w-full py-16 md:py-24">
-        <div class="container mx-auto px-6">
-          <h2 class="text-4xl md:text-5xl lg:text-[64px] font-bold font-poppins_semibold mb-12 tracking-tighter" data-aos="fade-up">Proven Results & Experience</h2>
-          <div class="flex flex-col lg:flex-row items-stretch">
-            <div class="w-full lg:w-1/2" data-aos="fade-right">
-              <img src="https://c.animaapp.com/mfxt594ljln94V/assets/11062b_8241da7580d042fd9d45695b66b486be~mv2.jpg" alt="Business professionals in a meeting" class="w-full h-full object-cover min-h-[400px]">
+      {{#if services.value.services.items}}
+      {{#unless services.meta.hide}}
+      <section id="offerings" class="py-12 lg:py-20 section-wrapper"
+        data-edit-section="services"
+        data-section="services"
+        data-title="Services"
+        data-aos="fade-up"
+        style="background-color: {{default colorPalette.value.colorPalette.tertiary-bright '#e5e7eb'}};">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2
+            class="text-3xl lg:text-4xl font-bold text-center mb-12"
+            style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">
+            {{services.value.services.section_title}}
+          </h2>
+
+          <div class="space-y-8">
+            {{#each services.value.services.items}}
+            <div class="rounded-lg p-6 lg:p-8"
+              style="background-color: {{default ../colorPalette.value.colorPalette.secondary '#fffcee'}};">
+              <h3 class="text-2xl lg:text-3xl font-bold mb-2"
+                style="color: {{default ../colorPalette.value.colorPalette.primary '#78350f'}};">
+                {{this.title}}
+              </h3>
+              <p class="text-lg lg:text-xl mb-4"
+                style="color: {{default ../colorPalette.value.colorPalette.primary '#78350f'}};">{{this.subtitle}}</p>
+              <p class="text-base leading-relaxed"
+                style="color: {{default ../colorPalette.value.colorPalette.primary '#78350f'}};">
+                {{this.description}}
+              </p>
             </div>
-            <div class="w-full lg:w-1/2 flex flex-col justify-center items-start p-8 md:p-16" data-aos="fade-left">
-              <div class="mb-8" data-aos="fade-up">
-                <p class="text-6xl lg:text-7xl font-bold font-poppins_semibold">50+</p>
-                <div class="bg-black mt-2">
-                  <p class="text-white text-2xl font-bold font-poppins_extralight px-4 py-1">Successful Client Projects</p>
+            {{/each}}
+          </div>
+        </div>
+      </section>
+      {{/unless}}
+      {{/if}}
+
+      {{#if success_stories.value.success_stories.items}}
+      {{#unless success_stories.meta.hide}}
+      <section id="casestudies" class="py-12 lg:py-20 section-wrapper"
+        data-aos="fade-up"
+        data-edit-section="success_stories"
+        data-section="success_stories"
+        data-title="Success Stories"
+        style="background-color: {{default colorPalette.value.colorPalette.quaternary '#ffffff'}};">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2
+            class="text-3xl lg:text-4xl font-bold text-center mb-12"
+            style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">
+            {{success_stories.value.success_stories.section_title}}
+          </h2>
+
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
+            {{#each success_stories.value.success_stories.items}}
+            <div class="md:order-1">
+              <p
+                class="text-sm font-bold tracking-wider"
+                style="color: {{default ../colorPalette.value.colorPalette.primary-dim 'rgba(120, 53, 15, 0.7)'}};">{{this.client}}</p>
+              <h3 class="text-2xl lg:text-3xl font-bold mt-2 mb-4"
+                style="color: {{default ../colorPalette.value.colorPalette.primary '#78350f'}};">
+                {{this.title}}
+              </h3>
+              <p class="text-base leading-relaxed mb-4"
+                style="color: {{default ../colorPalette.value.colorPalette.primary '#78350f'}};">
+                {{this.description}}
+              </p>
+              <div class="flex space-x-8">
+                {{#each this.stats}}
+                <div>
+                  <p class="text-2xl font-bold"
+                    style="color: {{default ../../colorPalette.value.colorPalette.primary '#78350f'}};">{{this.number}}</p>
+                  <p class="text-sm"
+                    style="color: {{default ../../colorPalette.value.colorPalette.primary '#78350f'}};">{{this.label}}</p>
                 </div>
-              </div>
-              <div class="mb-8" data-aos="fade-up" data-aos-delay="100">
-                <p class="text-6xl lg:text-7xl font-bold font-poppins_semibold">$10M+</p>
-                <div class="bg-black mt-2">
-                  <p class="text-white text-2xl font-bold font-poppins_extralight px-4 py-1">In Client Revenue Growth</p>
-                </div>
-              </div>
-              <div data-aos="fade-up" data-aos-delay="200">
-                <p class="text-6xl lg:text-7xl font-bold font-poppins_semibold">10+</p>
-                <div class="bg-black mt-2">
-                  <p class="text-white text-2xl font-bold font-poppins_extralight px-4 py-1">Years of Industry Experience</p>
-                </div>
+                {{/each}}
               </div>
             </div>
+            <div>
+              <img
+                src="{{this.image}}"
+                alt="Ecommerce business success"
+                class="w-full h-80 object-cover rounded-lg shadow-lg">
+            </div>
+            {{/each}}
           </div>
         </div>
       </section>
+      {{/unless}}
+      {{/if}}
 
-      <section id="process" class="w-full py-16 md:py-24 bg-gray-50">
-        <div class="container mx-auto px-6">
-          <h2 class="text-4xl md:text-5xl lg:text-[64px] font-bold font-poppins_semibold mb-16 tracking-tighter text-center md:text-left" data-aos="fade-up">My Simple 4-Step Process</h2>
-          <div class="space-y-12">
-            <div class="flex flex-col md:flex-row items-center gap-8 text-center md:text-left" data-aos="fade-up">
-              <div class="bg-black text-white flex-shrink-0 w-32 h-32 flex items-center justify-center">
-                <p class="text-7xl font-poppins_semibold">1</p>
-              </div>
-              <div>
-                <h3 class="text-3xl lg:text-4xl font-bold font-poppins_semibold tracking-tight mb-2">Discovery Call</h3>
-                <p class="text-lg">We start with a deep dive into your business, vision, and challenges. This initial conversation is crucial for aligning on goals and ensuring a perfect fit.</p>
-              </div>
-            </div>
-            <div class="flex flex-col md:flex-row items-center gap-8 text-center md:text-left" data-aos="fade-up">
-              <div class="bg-black text-white flex-shrink-0 w-32 h-32 flex items-center justify-center">
-                <p class="text-7xl font-poppins_semibold">2</p>
-              </div>
-              <div>
-                <h3 class="text-3xl lg:text-4xl font-bold font-poppins_semibold tracking-tight mb-2">Strategic Blueprint</h3>
-                <p class="text-lg">Using insights from our discovery call, I develop a custom, data-driven action plan with clear milestones and deliverables for your team.</p>
-              </div>
-            </div>
-            <div class="flex flex-col md:flex-row items-center gap-8 text-center md:text-left" data-aos="fade-up">
-              <div class="bg-black text-white flex-shrink-0 w-32 h-32 flex items-center justify-center">
-                <p class="text-7xl font-poppins_semibold">3</p>
-              </div>
-              <div>
-                <h3 class="text-3xl lg:text-4xl font-bold font-poppins_semibold tracking-tight mb-2">Collaborative Implementation</h3>
-                <p class="text-lg">I work alongside you and your team as a strategic partner to execute the plan, providing hands-on guidance, feedback, and support at every stage.</p>
-              </div>
-            </div>
-            <div class="flex flex-col md:flex-row items-center gap-8 text-center md:text-left" data-aos="fade-up">
-              <div class="bg-black text-white flex-shrink-0 w-32 h-32 flex items-center justify-center">
-                <p class="text-7xl font-poppins_semibold">4</p>
-              </div>
-              <div>
-                <h3 class="text-3xl lg:text-4xl font-bold font-poppins_semibold tracking-tight mb-2">Measure & Refine</h3>
-                <p class="text-lg">Success is measured. We track key performance indicators against our goals, celebrate wins, and refine our approach to ensure sustainable, long-term growth.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="w-full py-16 md:py-24 bg-white">
-        <div class="container mx-auto px-6">
-          <div data-aos="fade-up">
-            <h2 class="text-4xl md:text-5xl lg:text-[64px] font-bold font-poppins_semibold mb-4 tracking-tighter">Client Success Stories</h2>
-            <p class="text-xl mb-12 max-w-3xl">See the tangible results I've delivered for businesses like yours.</p>
-          </div>
+      {{#if testimonials.value.testimonials.items}}
+      {{#unless testimonials.meta.hide}}
+      <section class="py-12 lg:py-20 section-wrapper" data-aos="fade-up"
+        data-edit-section="testimonials"
+        data-section="testimonials"
+        data-title="Testimonials"
+        style="background-color: {{default colorPalette.value.colorPalette.tertiary-bright '#e5e7eb'}};">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2
+            class="text-3xl lg:text-4xl font-bold text-center mb-12"
+            style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">
+            {{testimonials.value.testimonials.section_title}}
+          </h2>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-gray-50 border border-gray-200 p-8 flex flex-col justify-between" data-aos="fade-up">
-              <div>
-                <p class="text-sm font-semibold text-gray-500 uppercase tracking-wider">TechFlow Dynamics</p>
-                <h3 class="text-2xl font-bold font-poppins_semibold my-3">Operational Efficiency Overhaul</h3>
-                <p class="text-lg mb-6">"L. Thompson's insights transformed our workflow. Their strategic approach is second to none." - Mark J.</p>
-              </div>
-              <a href="#" class="font-bold text-lg hover:underline">Read the Full Story &rarr;</a>
+            {{#each testimonials.value.testimonials.items}}
+            <div class="rounded-lg p-6"
+              style="background-color: {{default ../colorPalette.value.colorPalette.secondary '#fffcee'}};">
+              <p class="text-base leading-relaxed mb-6"
+                style="color: {{default ../colorPalette.value.colorPalette.primary '#78350f'}};">
+                "{{this.recommendationText}}"
+              </p>
+              <p class="text-lg font-medium"
+                style="color: {{default ../colorPalette.value.colorPalette.primary '#78350f'}};">{{this.recommenderName}}{{#if
+                this.designation}},
+                {{this.designation}}{{/if}}</p>
             </div>
-            <div class="bg-gray-50 border border-gray-200 p-8 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
-              <div>
-                <p class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Innovate Inc.</p>
-                <h3 class="text-2xl font-bold font-poppins_semibold my-3">Market Entry Strategy</h3>
-                <p class="text-lg mb-6">"We couldn't have navigated our expansion without them. Truly a game-changer for our business." - Emily A.</p>
-              </div>
-              <a href="#" class="font-bold text-lg hover:underline">Read the Full Story &rarr;</a>
-            </div>
-            <div class="bg-gray-50 border border-gray-200 p-8 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200">
-              <div>
-                <p class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Quantum Solutions</p>
-                <h3 class="text-2xl font-bold font-poppins_semibold my-3">Financial Restructuring</h3>
-                <p class="text-lg mb-6">"Their financial advisory boosted our profitability by 30% in the first year. The results speak for themselves." - Sarah B.</p>
-              </div>
-              <a href="#" class="font-bold text-lg hover:underline">Read the Full Story &rarr;</a>
-            </div>
+            {{/each}}
           </div>
         </div>
       </section>
+      {{/unless}}
+      {{/if}}
 
-      <section class="h-[400px] md:h-[500px] bg-cover bg-center bg-fixed relative flex items-center justify-center text-center" style="background-image: url('https://c.animaapp.com/mfxt594ljln94V/assets/88aac0_1823d75a0798461fb99c3166f430cb6c~mv2.jpeg');">
-        <div class="absolute inset-0 bg-black opacity-50"></div>
-        <div class="relative z-10 p-8 text-white" data-aos="zoom-in">
-          <h2 class="text-4xl md:text-5xl font-bold font-poppins_semibold mb-4">Ready to Achieve Your Goals?</h2>
-          <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Let's have a conversation about how we can work together to create a strategy for your success.</p>
-          <a href="#contact" class="bg-white text-black text-lg font-madefor_text py-3 px-10 rounded-full hover:bg-gray-300 transition-colors">Schedule Your Free Consultation</a>
+      {{#if client_logos.value.client_logos.items}}
+      {{#unless client_logos.meta.hide}}
+      <section id="trustedby" class="py-12 lg:py-20 section-wrapper"
+        data-edit-section="client_logos"
+        data-section="client_logos"
+        data-title="Client Logos"
+        data-aos="fade-up"
+        style="background-color: {{default colorPalette.value.colorPalette.tertiary-bright '#e5e7eb'}};">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2
+            class="text-3xl lg:text-4xl font-bold mb-12 text-center"
+            style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">
+            {{client_logos.value.client_logos.section_title}}
+          </h2>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {{#each client_logos.value.client_logos.items}}
+            <div class="p-6 flex items-center justify-center h-24"><span
+                class="text-2xl font-bold"
+                style="color: {{default ../colorPalette.value.colorPalette.primary-dim 'rgba(120, 53, 15, 0.7)'}};">{{this.name}}</span>
+            </div>
+            {{/each}}
+          </div>
         </div>
       </section>
+      {{/unless}}
+      {{/if}}
 
-      <section id="contact" class="w-full py-16 md:py-24 bg-black text-white">
-        <div class="container mx-auto px-6">
-          <div class="max-w-3xl mx-auto" data-aos="fade-up">
-            <h2 class="text-4xl md:text-5xl font-poppins_semibold font-bold mb-8">Let's Get Started</h2>
-            <form aria-label="Contact Form">
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <label for="first-name" class="block text-lg mb-2">First name <span class="text-red-500">*</span></label>
-                  <input type="text" id="first-name" required class="w-full bg-transparent border border-gray-500 rounded-xl p-3 focus:border-white focus:outline-none">
-                </div>
-                <div>
-                  <label for="last-name" class="block text-lg mb-2">Last name <span class="text-red-500">*</span></label>
-                  <input type="text" id="last-name" required class="w-full bg-transparent border border-gray-500 rounded-xl p-3 focus:border-white focus:outline-none">
-                </div>
-                <div class="md:col-span-2">
-                  <label for="email" class="block text-lg mb-2">Email <span class="text-red-500">*</span></label>
-                  <input type="email" id="email" required class="w-full bg-transparent border border-gray-500 rounded-xl p-3 focus:border-white focus:outline-none">
-                </div>
-                <div class="md:col-span-2">
-                  <label for="interest" class="block text-lg mb-2">I'm interested in... <span class="text-red-500">*</span></label>
-                  <select id="interest" required class="w-full bg-transparent border border-gray-500 rounded-xl p-3 focus:border-white focus:outline-none appearance-none" style="background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'); background-repeat: no-repeat; background-position: right 1rem center; background-size: .8em;">
-                    <option class="bg-black" value="">Please select an option...</option>
-                    <option class="bg-black" value="strategy">Custom Growth Strategy</option>
-                    <option class="bg-black" value="operations">Efficient Operations</option>
-                    <option class="bg-black" value="advisory">Financial Advisory</option>
-                    <option class="bg-black" value="general">General Inquiry</option>
-                  </select>
-                </div>
+      {{#if faq.value.faq.items}}
+      {{#unless faq.meta.hide}}
+      <section id="faq" class="py-12 lg:py-20 section-wrapper"
+        data-aos="fade-up"
+        data-edit-section="faq"
+        data-section="faq"
+        data-title="FAQ"
+        style="background-color: {{default colorPalette.value.colorPalette.quaternary '#ffffff'}};">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2
+            class="text-3xl lg:text-4xl font-bold text-center mb-12"
+            style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">
+            {{faq.value.faq.section_title}}
+          </h2>
+          <div class="max-w-4xl mx-auto">
+            {{#each faq.value.faq.items}}
+            <div class="faq-item border-b py-4"
+              style="border-color: {{default ../colorPalette.value.colorPalette.border-primary-dim 'rgba(120, 53, 15, 0.2)'}};">
+              <button
+                class="faq-question w-full flex justify-between items-center text-left focus:outline-none">
+                <h3 class="text-xl lg:text-2xl font-bold"
+                  style="color: {{default ../colorPalette.value.colorPalette.primary '#78350f'}};">{{this.question}}</h3>
+                <span
+                  class="faq-icon text-3xl font-light transform transition-transform duration-300"
+                  style="color: {{default ../colorPalette.value.colorPalette.primary '#78350f'}};">&plus;</span>
+              </button>
+              <div
+                class="faq-answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                <p class="text-base leading-relaxed pt-4"
+                  style="color: {{default ../colorPalette.value.colorPalette.primary '#78350f'}};">
+                  {{this.answer}}
+                </p>
               </div>
-              <div class="mb-6">
-                <label for="message" class="block text-lg mb-2">Message</label>
-                <textarea id="message" rows="4" class="w-full bg-transparent border border-gray-500 rounded-xl p-3 focus:border-white focus:outline-none"></textarea>
+            </div>
+            {{/each}}
+          </div>
+        </div>
+      </section>
+      {{/unless}}
+      {{/if}}
+
+      {{#if contacts.value.contacts}}
+      {{#if contacts.value.contacts.contactForm}}
+      {{#unless contacts.meta.hide}}
+      <section id="contact" class="py-12 lg:py-20 section-wrapper"
+        data-edit-section="contacts"
+        data-section="contacts"
+        data-title="Contacts"
+        data-aos="fade-up"
+        style="background-color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="rounded-lg p-6 lg:p-8"
+            style="background-color: {{default colorPalette.value.colorPalette.secondary '#fffcee'}};">
+            <h2
+              class="text-2xl lg:text-3xl font-bold mb-4 text-center"
+              style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">
+              {{contacts.value.contacts.heading}}
+            </h2>
+            {{#if contacts.value.contacts.description}}
+            <p class="text-center mb-8"
+              style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">{{contacts.value.contacts.description}}</p>
+            {{/if}}
+            <form class="space-y-6" action="/api/contact" method="post"
+              enctype="text/plain">
+              <div>
+                <label for="name"
+                  class="block text-sm font-medium mb-2"
+                  style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">Name
+                  *</label>
+                <input type="text" id="name" name="name" required
+                  class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[{{default colorPalette.value.colorPalette.border-primary-dim 'rgba(120, 53, 15, 0.2)'}}]"
+                  style="border-color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">
               </div>
               <div>
-                <button type="submit" class="w-full bg-white text-black text-lg py-3 rounded-full hover:bg-gray-300 transition-colors">Submit</button>
+                <label for="email"
+                  class="block text-sm font-medium mb-2"
+                  style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">Email
+                  *</label>
+                <input type="email" id="email" name="email" required
+                  class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[{{default colorPalette.value.colorPalette.border-primary-dim 'rgba(120, 53, 15, 0.2)'}}]"
+                  style="border-color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">
               </div>
+              <div>
+                <label for="message"
+                  class="block text-sm font-medium mb-2"
+                  style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">{{contacts.value.contacts.messageInputLabel}}</label>
+                <textarea id="message" name="message" rows="4"
+                  class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[{{colorPalette.value.colorPalette.border-primary-dim}}]"
+                  style="border-color: {{default colorPalette.value.colorPalette.primary '#78350f'}};"></textarea>
+              </div>
+              <button type="submit"
+                class="w-full bg-transparent border-2 px-6 py-3 rounded-lg text-lg font-medium hover:bg-primary hover:text-white transition-colors"
+                style="border-color: {{default colorPalette.value.colorPalette.primary '#78350f'}}; color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">
+                {{contacts.value.contacts.contactFormButtonText}}
+              </button>
             </form>
           </div>
         </div>
       </section>
+      {{/unless}}
+      {{/if}}
+      {{/if}}
 
-    </main>
+      <footer class="py-12"
+        style="background-color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div
+            class="flex flex-col md:flex-row justify-between items-center space-y-8 md:space-y-0">
+            <div class="flex items-center space-x-3">
+              <div
+                class="w-12 h-12 rounded-full flex items-center justify-center"
+                style="background-color: {{default colorPalette.value.colorPalette.quaternary '#ffffff'}};">
+                <span class="font-bold text-lg"
+                  style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">{{firstChar
+                  personal_info.value.firstName}}</span>
+              </div>
+              <h3 class="text-2xl font-bold"
+                style="color: {{default colorPalette.value.colorPalette.quaternary '#ffffff'}};">{{personal_info.value.firstName}}
 
-    <footer class="bg-white text-black py-16">
-      <div class="container mx-auto px-6">
-        <div class="border-t-2 border-neutral-800 mb-8"></div>
-        <div class="flex flex-col md:flex-row justify-between gap-8">
-          <div class="text-center md:text-left">
-            <p class="text-xl mb-4"><a href="#">L. Thompson</a></p>
-            <p class="text-base">&copy; 2025 by L. Thompson</p>
-          </div>
-          <div class="bg-black text-white p-8 max-w-md mx-auto md:mx-0 text-center md:text-left">
-            <p class="text-lg mb-4">123-456-7800</p>
-            <p class="text-lg mb-4"><a href="mailto:info@mysite.com">info@mysite.com</a></p>
-            <p class="text-lg mb-6">500 Terry Francine St. San Francisco, CA 94158</p>
-            <div class="flex justify-center md:justify-start space-x-4 mb-6">
-              <a href="#" aria-label="LinkedIn Profile">
-                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" /></svg>
-              </a>
-              <a href="#" aria-label="Twitter Profile">
-                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616v.064c0 2.298 1.634 4.212 3.793 4.649-.65.177-1.354.23-2.06.088.621 1.956 2.423 3.379 4.565 3.419-1.77 1.39-3.995 2.215-6.42 2.215-.42 0-.835-.025-1.243-.073 2.289 1.474 5.021 2.34 8.001 2.34 9.497 0 14.694-7.857 14.694-14.695 0-.224-.005-.447-.015-.668.987-.71 1.852-1.6 2.541-2.638z" /></svg>
-              </a>
+                {{#if personal_info.value.role}} | {{personal_info.value.role}}
+                {{/if}}</h3>
             </div>
+            {{#if social.value.social.items}}
+            {{#unless social.meta.hide}}
+            <div class="flex space-x-6 section-wrapper"
+              data-edit-section="social"
+              data-section="social"
+              data-title="Social Links">
+              {{#each social.value.social.items}}
+              <a href="{{this.url}}"
+                class="hover:text-accent transition-colors"
+                style="color: {{default ../colorPalette.value.colorPalette.quaternary '#ffffff'}};">
+                {{{socialIcon url=this.url
+                label=this.label size=40 className="size-12" }}}
+              </a>
+              {{/each}}
+            </div>
+            {{/unless}}
+            {{/if}}
+          </div>
+          <div class="mt-8 pt-8 border-t text-center"
+            style="border-color: {{default colorPalette.value.colorPalette.border-quatenary-dim 'rgba(255, 255, 255, 0.2)'}};">
+            <p class="text-sm"
+              style="color: {{default colorPalette.value.colorPalette.tertiary-bright '#e5e7eb'}};">
+              © {{currentYear}} {{personal_info.value.firstName}}. All Rights
+              Reserved.
+            </p>
           </div>
         </div>
-      </div>
-    </footer>
-  </div>
+      </footer>
+    </div>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    // Initialize AOS
-    AOS.init({
-      duration: 800, // Animation duration in milliseconds
-      once: true,    // Whether animation should happen only once
-    });
-
-    // JavaScript for Hamburger Menu Toggle
-    const hamburgerButton = document.getElementById('hamburger-button');
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
-    const openIcon = document.getElementById('menu-open-icon');
-    const closeIcon = document.getElementById('menu-close-icon');
-
-    hamburgerButton.addEventListener('click', () => {
+    
+    mobileMenuBtn.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
-      openIcon.classList.toggle('hidden');
-      closeIcon.classList.toggle('hidden');
-      const isExpanded = hamburgerButton.getAttribute('aria-expanded') === 'true';
-      hamburgerButton.setAttribute('aria-expanded', !isExpanded);
+    });
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+          // Close mobile menu if open
+          if (!mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.add('hidden');
+          }
+        }
+      });
     });
 
-    // Close mobile menu when a link is clicked
-    document.querySelectorAll('#mobile-menu a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-        openIcon.classList.remove('hidden');
-        closeIcon.classList.add('hidden');
-        hamburgerButton.setAttribute('aria-expanded', 'false');
+     // FAQ Accordion
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+      const question = item.querySelector('.faq-question');
+      const answer = item.querySelector('.faq-answer');
+      const icon = item.querySelector('.faq-icon');
+
+      question.addEventListener('click', () => {
+        const isExpanded = answer.style.maxHeight && answer.style.maxHeight !== '0px';
+
+        // Close all other items
+        faqItems.forEach(otherItem => {
+          if (otherItem !== item) {
+            otherItem.querySelector('.faq-answer').style.maxHeight = null;
+            otherItem.querySelector('.faq-icon').classList.remove('rotate-45');
+          }
+        });
+        
+        // Toggle the clicked item
+        if (isExpanded) {
+          answer.style.maxHeight = null;
+          icon.classList.remove('rotate-45');
+        } else {
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+          icon.classList.add('rotate-45');
+        }
       });
     });
   </script>
-
-</body>
+  </body>
 </html>
