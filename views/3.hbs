@@ -18,24 +18,52 @@
   </head>
   <body>
     <div class="font-questrial"
-      style="background-color: {{color_palette.value.colorPalette.tertiary}};">
+      style="{{#if color_palette.value.colorPalette.tertiary}}
+         background-color: {{color_palette.value.colorPalette.tertiary}};
+       {{else}}
+         background-color: #f3f4f6;
+       {{/if}}">
       <header class="sticky top-0 z-50 shadow-sm py-2"
-        style="background-color: {{color_palette.value.colorPalette.tertiary-bright}};">
+        style="
+        {{#if color_palette.value.colorPalette.tertiary-bright}}
+        background-color: {{color_palette.value.colorPalette.tertiary-bright}}
+        {{else}}
+         background-color: #e5e7eb;
+         {{/if}}
+        ;">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="flex items-center justify-between h-16 lg:h-20">
             <div class="flex items-center space-x-3">
               <div
                 class="w-8 h-8 rounded-full flex items-center justify-center"
-                style="background-color: {{color_palette.value.colorPalette.primary }};">
+                style="
+                {{#if color_palette.value.colorPalette.primary}}
+                background-color: {{color_palette.value.colorPalette.primary }}
+                {{else}}
+                background-color:#78350f
+                {{/if}}
+                ;">
                 <span class="font-bold text-sm"
-                  style="color: {{color_palette.value.colorPalette.quaternary}};">{{firstChar
+                  style="
+                  {{#if color_palette.value.colorPalette.quaternary}}
+                  color: {{color_palette.value.colorPalette.quaternary}}
+                  {{else}}
+                  color:#ffffff
+                  {{/if}}
+                  ;">{{firstChar
                   personal_info.value.firstName}}</span>
               </div>
               <h1
                 class="text-xl lg:text-2xl font-bold"
-                style="color: {{color_palette.value.colorPalette.primary}};">{{personal_info.value.firstName}}
-                |
-                {{#if personal_info.value.role}} {{personal_info.value.role}}
+                style="
+                  {{#if color_palette.value.colorPalette.primary}}
+                  color: {{color_palette.value.colorPalette.primary}}
+                  {{else}}
+                  color:#78350f
+                  {{/if}}
+                  ;">{{personal_info.value.firstName}}
+
+                {{#if personal_info.value.role}} | {{personal_info.value.role}}
                 {{/if}}</h1>
             </div>
 
@@ -44,28 +72,52 @@
               {{#unless about.meta.hide}}
               <a href="#about"
                 class="transition-colors"
-                style="color: {{color_palette.value.colorPalette.primary}};">{{about.value.about.navbarName}}</a>
+                style="
+                  {{#if color_palette.value.colorPalette.primary}}
+                  color: {{color_palette.value.colorPalette.primary}}
+                  {{else}}
+                  color:#78350f
+                  {{/if}}
+                  ;">{{about.value.about.navbarName}}</a>
               {{/unless}}
               {{/if}}
               {{#if services.value.services.items}}
               {{#unless services.meta.hide}}
               <a href="#offerings"
                 class="transition-colors"
-                style="color: {{color_palette.value.colorPalette.primary}};">{{services.value.services.navbarName}}</a>
+                style="
+                  {{#if color_palette.value.colorPalette.primary}}
+                  color: {{color_palette.value.colorPalette.primary}}
+                  {{else}}
+                  color:#78350f
+                  {{/if}}
+                  ;">{{services.value.services.navbarName}}</a>
               {{/unless}}
               {{/if}}
               {{#if success_stories.value.success_stories.items}}
               {{#unless success_stories.meta.hide}}
               <a href="#casestudies"
                 class="transition-colors"
-                style="color: {{color_palette.value.colorPalette.primary}};">{{success_stories.value.success_stories.navbarName}}</a>
+                style="
+                  {{#if color_palette.value.colorPalette.primary}}
+                  color: {{color_palette.value.colorPalette.primary}}
+                  {{else}}
+                  color:#78350f
+                  {{/if}}
+                  ;">{{success_stories.value.success_stories.navbarName}}</a>
               {{/unless}}
               {{/if}}
               {{#if faq.value.faq.items}}
               {{#unless faq.meta.hide}}
               <a href="#faq"
                 class="transition-colors"
-                style="color: {{color_palette.value.colorPalette.primary}};">{{faq.value.faq.navbarName}}</a>
+                style="
+                  {{#if color_palette.value.colorPalette.primary}}
+                  color: {{color_palette.value.colorPalette.primary}}
+                  {{else}}
+                  color:#78350f
+                  {{/if}}
+                  ;">{{faq.value.faq.navbarName}}</a>
               {{/unless}}
               {{/if}}
               {{#if contacts.value.contacts}}
@@ -74,7 +126,13 @@
               {{#unless contacts.meta.hide}}
               <a href="#contact"
                 class="transition-colors"
-                style="color: {{color_palette.value.colorPalette.primary}};">{{contacts.value.contacts.navbarName}}</a>
+                style="
+                  {{#if color_palette.value.colorPalette.primary}}
+                  color: {{color_palette.value.colorPalette.primary}}
+                  {{else}}
+                  color:#78350f
+                  {{/if}}
+                  ;">{{contacts.value.contacts.navbarName}}</a>
               {{/unless}}
               {{/if}}
               {{/if}}
@@ -84,7 +142,13 @@
               <svg class="w-6 h-6" fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
-                style="color: {{color_palette.value.colorPalette.primary}};">
+                style="
+                  {{#if color_palette.value.colorPalette.primary}}
+                  color: {{color_palette.value.colorPalette.primary}}
+                  {{else}}
+                  color:#78350f
+                  {{/if}}
+                  ;">
                 <path stroke-linecap="round" stroke-linejoin="round"
                   stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
               </svg>
@@ -93,33 +157,63 @@
 
           <div class="md:hidden hidden" id="mobile-menu">
             <div class="px-2 pt-2 pb-3 space-y-1 border-t flex flex-col"
-              style="background-color: {{color_palette.value.colorPalette.secondary}};">
+              style="
+              {{#if color_palette.value.colorPalette.secondary}}
+              background-color: {{color_palette.value.colorPalette.secondary}}
+              {{else}}
+              background-color:#fffcee
+              {{/if}}
+              ;">
               {{#if about.value.about.content}}
               {{#unless about.meta.hide}}
               <a href="#about"
                 class="transition-colors"
-                style="color: {{color_palette.value.colorPalette.primary}};">{{about.value.about.navbarName}}</a>
+                style="
+                  {{#if color_palette.value.colorPalette.primary}}
+                  color: {{color_palette.value.colorPalette.primary}}
+                  {{else}}
+                  color:#78350f
+                  {{/if}}
+                  ;">{{about.value.about.navbarName}}</a>
               {{/unless}}
               {{/if}}
               {{#if services.value.services.items}}
               {{#unless services.meta.hide}}
               <a href="#offerings"
                 class="transition-colors"
-                style="color: {{color_palette.value.colorPalette.primary}};">{{services.value.services.navbarName}}</a>
+                style="
+                  {{#if color_palette.value.colorPalette.primary}}
+                  color: {{color_palette.value.colorPalette.primary}}
+                  {{else}}
+                  color:#78350f
+                  {{/if}}
+                  ;">{{services.value.services.navbarName}}</a>
               {{/unless}}
               {{/if}}
               {{#if success_stories.value.success_stories.items}}
               {{#unless success_stories.meta.hide}}
               <a href="#casestudies"
                 class="transition-colors"
-                style="color: {{color_palette.value.colorPalette.primary}};">{{success_stories.value.success_stories.navbarName}}</a>
+                style="
+                  {{#if color_palette.value.colorPalette.primary}}
+                  color: {{color_palette.value.colorPalette.primary}}
+                  {{else}}
+                  color:#78350f
+                  {{/if}}
+                  ;">{{success_stories.value.success_stories.navbarName}}</a>
               {{/unless}}
               {{/if}}
               {{#if faq.value.faq.items}}
               {{#unless faq.meta.hide}}
               <a href="#faq"
                 class="transition-colors"
-                style="color: {{color_palette.value.colorPalette.primary}};">{{faq.value.faq.navbarName}}</a>
+                style="
+                  {{#if color_palette.value.colorPalette.primary}}
+                  color: {{color_palette.value.colorPalette.primary}}
+                  {{else}}
+                  color:#78350f
+                  {{/if}}
+                  ;">{{faq.value.faq.navbarName}}</a>
               {{/unless}}
               {{/if}}
               {{#if contacts.value.contacts}}
@@ -128,7 +222,13 @@
               {{#unless contacts.meta.hide}}
               <a href="#contact"
                 class="transition-colors"
-                style="color: {{color_palette.value.colorPalette.primary}};">{{contacts.value.contacts.navbarName}}</a>
+                style="
+                  {{#if color_palette.value.colorPalette.primary}}
+                  color: {{color_palette.value.colorPalette.primary}}
+                  {{else}}
+                  color:#78350f
+                  {{/if}}
+                  ;">{{contacts.value.contacts.navbarName}}</a>
               {{/unless}}
               {{/if}}
               {{/if}}
@@ -138,18 +238,36 @@
       </header>
 
       <section class="py-12 lg:py-20"
-        style="background-color:{{color_palette.value.colorPalette.tertiary-bright}};">
+        style="
+        {{#if color_palette.value.colorPalette.tertiary-bright}}
+        background-color:{{color_palette.value.colorPalette.tertiary-bright}}
+        {{else}}
+        background-color:#e5e7eb
+        {{/if}}
+        ;">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
             class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div class="order-2 lg:order-1">
               <h1
                 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6"
-                style="color: {{color_palette.value.colorPalette.primary}};">
+                style="
+                  {{#if color_palette.value.colorPalette.primary}}
+                  color: {{color_palette.value.colorPalette.primary}}
+                  {{else}}
+                  color:#78350f
+                  {{/if}}
+                  ;">
                 {{personal_info.value.headline}}
               </h1>
               <p class="text-lg lg:text-xl mb-8"
-                style="color: {{color_palette.value.colorPalette.primary}};">
+                style="
+                  {{#if color_palette.value.colorPalette.primary}}
+                  color: {{color_palette.value.colorPalette.primary}}
+                  {{else}}
+                  color:#78350f
+                  {{/if}}
+                  ;">
                 {{personal_info.value.position}}
               </p>
               {{#if contacts.value.contacts}}
@@ -158,13 +276,37 @@
               <a href="{{contacts.value.contacts.booking.url}}"
                 target="_blank"
                 class="inline-block px-8 py-3 rounded-lg text-lg font-medium hover:bg-primary/90 transition-colors"
-                style="color: {{color_palette.value.colorPalette.quaternary}};background-color: {{color_palette.value.colorPalette.primary}};">
+                style="
+                {{#if color_palette.value.colorPalette.quaternary}}
+                color: {{color_palette.value.colorPalette.quaternary}}
+                {{else}}
+                color:#ffffff
+                {{/if}}
+                ;
+                {{#if color_palette.value.colorPalette.primary}}
+                background-color: {{color_palette.value.colorPalette.primary}}
+                {{else}}
+                background-color:#78350f
+                {{/if}}
+                ;">
                 {{contacts.value.contacts.booking.buttonText}}
               </a>
               {{else}}
               <a href="#contact"
                 class="inline-block px-8 py-3 rounded-lg text-lg font-medium transition-colors"
-                style="color: {{color_palette.value.colorPalette.quaternary}};background-color: {{color_palette.value.colorPalette.primary}};">
+                style="
+                {{#if color_palette.value.colorPalette.quaternary}}
+                color: {{color_palette.value.colorPalette.quaternary}}
+                {{else}}
+                color:#ffffff
+                {{/if}}
+                ;
+                {{#if color_palette.value.colorPalette.primary}}
+                background-color: {{color_palette.value.colorPalette.primary}}
+                {{else}}
+                background-color:#78350f
+                {{/if}}
+                ;">
                 {{contacts.value.contacts.buttonText}}
               </a>
               {{/if}}
@@ -184,7 +326,13 @@
       {{#if about.value.about.content}}
       {{#unless about.meta.hide}}
       <section id="about" class="py-12 lg:py-20" data-aos="fade-up"
-        style="background-color: {{color_palette.value.colorPalette.tertiary-bright}};">
+        style="
+        {{#if color_palette.value.colorPalette.tertiary-bright}}
+        background-color: {{color_palette.value.colorPalette.tertiary-bright}}
+        {{else}}
+        background-color:#e5e7eb
+        {{/if}}
+        ;">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
             class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -197,19 +345,37 @@
             <div>
               {{#if about.value.about.heading}}
               <h2 class="text-3xl lg:text-4xl font-bold mb-4"
-                style="color: {{color_palette.value.colorPalette.primary}};">
+                style="
+                {{#if color_palette.value.colorPalette.primary}}
+                color: {{color_palette.value.colorPalette.primary}}
+                {{else}}
+                color:#78350f
+                {{/if}}
+                ;">
                 {{about.value.about.heading}}
               </h2>
               {{/if}}
               {{#if about.value.about.subheading}}
               <p class="text-lg lg:text-xl mb-6"
-                style="color: {{color_palette.value.colorPalette.primary}};">
+                style="
+                {{#if color_palette.value.colorPalette.primary}}
+                color: {{color_palette.value.colorPalette.primary}}
+                {{else}}
+                color:#78350f
+                {{/if}}
+                ;">
                 {{about.value.about.subheading}}
               </p>
               {{/if}}
               <!-- About Content -->
               <p class="text-base  leading-relaxed"
-                style="color: {{color_palette.value.colorPalette.primary}};">
+                style="
+                {{#if color_palette.value.colorPalette.primary}}
+                color: {{color_palette.value.colorPalette.primary}}
+                {{else}}
+                color:#78350f
+                {{/if}}
+                ;">
                 {{about.value.about.content}}
               </p>
             </div>
@@ -223,26 +389,62 @@
       {{#unless services.meta.hide}}
       <section id="offerings" class="py-12 lg:py-20"
         data-aos="fade-up"
-        style="background-color: {{color_palette.value.colorPalette.tertiary-bright}};">
+        style="
+        {{#if color_palette.value.colorPalette.tertiary-bright}}
+        background-color: {{color_palette.value.colorPalette.tertiary-bright}}
+        {{else}}
+        background-color:#e5e7eb
+        {{/if}}
+        ;">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2
             class="text-3xl lg:text-4xl font-bold text-center mb-12"
-            style="color: {{color_palette.value.colorPalette.primary}};">
+            style="
+                {{#if color_palette.value.colorPalette.primary}}
+                color: {{color_palette.value.colorPalette.primary}}
+                {{else}}
+                color:#78350f
+                {{/if}}
+                ;">
             {{services.value.services.section_title}}
           </h2>
 
           <div class="space-y-8">
             {{#each services.value.services.items}}
             <div class="rounded-lg p-6 lg:p-8"
-              style="background-color: {{../color_palette.value.colorPalette.secondary}};">
+              style="
+              {{#if ../color_palette.value.colorPalette.secondary}}
+              background-color: {{../color_palette.value.colorPalette.secondary}}
+              {{else}}
+              background-color:#fffcee
+              {{/if}}
+              ;">
               <h3 class="text-2xl lg:text-3xl font-bold mb-2"
-                style="color: {{../color_palette.value.colorPalette.primary}};">
+                style="
+                {{#if ../color_palette.value.colorPalette.primary}}
+                color: {{../color_palette.value.colorPalette.primary}}
+                {{else}}
+                color:#78350f
+                {{/if}}
+                ;">
                 {{this.title}}
               </h3>
               <p class="text-lg lg:text-xl mb-4"
-                style="color: {{../color_palette.value.colorPalette.primary}};">{{this.subtitle}}</p>
+                style="
+                {{#if ../color_palette.value.colorPalette.primary}}
+                color: {{../color_palette.value.colorPalette.primary}}
+                {{else}}
+                color:#78350f
+                {{/if}}
+                ;">{{this.subtitle}}</p>
               <p class="text-base leading-relaxed"
-                style="color: {{../color_palette.value.colorPalette.primary}};">
+                style="
+                {{#if ../color_palette.value.colorPalette.primary}}
+                color: {{../color_palette.value.colorPalette.primary}}
+                {{else}}
+                color:#78350f
+                {{/if}}
+                ;">
                 {{this.description}}
               </p>
             </div>
@@ -257,11 +459,23 @@
       {{#unless success_stories.meta.hide}}
       <section id="casestudies" class="py-12 lg:py-20"
         data-aos="fade-up"
-        style="background-color: {{color_palette.value.colorPalette.quaternary}};">
+        style="
+        {{#if color_palette.value.colorPalette.quaternary}}
+        background-color: {{color_palette.value.colorPalette.quaternary}}
+        {{else}}
+        background-color:#ffffff
+        {{/if}}
+        ;">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2
             class="text-3xl lg:text-4xl font-bold text-center mb-12"
-            style="color: {{color_palette.value.colorPalette.primary}};">
+            style="
+                {{#if color_palette.value.colorPalette.primary}}
+                color: {{color_palette.value.colorPalette.primary}}
+                {{else}}
+                color:#78350f
+                {{/if}}
+                ;">
             {{success_stories.value.success_stories.section_title}}
           </h2>
 
@@ -271,27 +485,57 @@
             <div class="md:order-1">
               <p
                 class="text-sm font-bold tracking-wider"
-                style="color: {{../color_palette.value.colorPalette.primary-dim}};">{{this.client}}</p>
+                style="
+                {{#if ../color_palette.value.colorPalette.primary-dim}}
+                color: {{../color_palette.value.colorPalette.primary-dim}}
+                {{else}}
+                color:rgba(120, 53, 15, 0.7)
+                {{/if}}
+                ;">{{this.client}}</p>
               <h3 class="text-2xl lg:text-3xl font-bold mt-2 mb-4"
-                style="color: {{../color_palette.value.colorPalette.primary}};">
+                style="
+                {{#if ../color_palette.value.colorPalette.primary}}
+                color: {{../color_palette.value.colorPalette.primary}}
+                {{else}}
+                color:#78350f
+                {{/if}}
+                ;">
                 {{this.title}}
               </h3>
               <p class="text-base leading-relaxed mb-4"
-                style="color: {{../color_palette.value.colorPalette.primary}};">
+                style="
+                {{#if ../color_palette.value.colorPalette.primary}}
+                color: {{../color_palette.value.colorPalette.primary}}
+                {{else}}
+                color:#78350f
+                {{/if}}
+                ;">
                 {{this.description}}
               </p>
               <div class="flex space-x-8">
                 {{#each this.stats}}
                 <div>
                   <p class="text-2xl font-bold"
-                    style="color: {{../../color_palette.value.colorPalette.primary}};">{{this.number}}</p>
+                    style="
+                    {{#if ../../color_palette.value.colorPalette.primary}}
+                    color: {{../../color_palette.value.colorPalette.primary}}
+                    {{else}}
+                    color:#78350f
+                    {{/if}}
+                    ;">{{this.number}}</p>
                   <p class="text-sm"
-                    style="color: {{../../color_palette.value.colorPalette.primary}};">{{this.label}}</p>
+                    style="
+                    {{#if ../../color_palette.value.colorPalette.primary}}
+                    color: {{../../color_palette.value.colorPalette.primary}}
+                    {{else}}
+                    color:#78350f
+                    {{/if}}
+                    ;">{{this.label}}</p>
                 </div>
                 {{/each}}
               </div>
             </div>
-            <div class="">
+            <div>
               <img
                 src="{{this.image}}"
                 alt="Ecommerce business success"
@@ -307,23 +551,53 @@
       {{#if testimonials.value.testimonials.items}}
       {{#unless testimonials.meta.hide}}
       <section class="py-12 lg:py-20" data-aos="fade-up"
-        style="background-color: {{color_palette.value.colorPalette.tertiary-bright}};">
+        style="
+        {{#if color_palette.value.colorPalette.tertiary-bright}}
+        background-color: {{color_palette.value.colorPalette.tertiary-bright}}
+        {{else}}
+        background-color:#e5e7eb
+        {{/if}}
+        ;">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2
             class="text-3xl lg:text-4xl font-bold text-center mb-12"
-            style="color: {{color_palette.value.colorPalette.primary}};">
+            style="
+            {{#if color_palette.value.colorPalette.primary}}
+            color: {{color_palette.value.colorPalette.primary}}
+            {{else}}
+            color:#78350f
+            {{/if}}
+            ;">
             {{testimonials.value.testimonials.section_title}}
           </h2>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {{#each testimonials.value.testimonials.items}}
             <div class="rounded-lg p-6"
-              style="background-color: {{../color_palette.value.colorPalette.secondary}};">
+              style="
+              {{#if ../color_palette.value.colorPalette.secondary}}
+              background-color: {{../color_palette.value.colorPalette.secondary}}
+              {{else}}
+              background-color:#fffcee
+              {{/if}}
+              ;">
               <p class="text-base leading-relaxed mb-6"
-                style="color: {{../color_palette.value.colorPalette.primary}};">
+                style="
+                {{#if ../color_palette.value.colorPalette.primary}}
+                color: {{../color_palette.value.colorPalette.primary}}
+                {{else}}
+                color:#78350f
+                {{/if}}
+                ;">
                 "{{this.recommendationText}}"
               </p>
               <p class="text-lg font-medium"
-                style="color: {{../color_palette.value.colorPalette.primary}};">{{this.recommenderName}}{{#if
+                style="
+                {{#if ../color_palette.value.colorPalette.primary}}
+                color: {{../color_palette.value.colorPalette.primary}}
+                {{else}}
+                color:#78350f
+                {{/if}}
+                ;">{{this.recommenderName}}{{#if
                 this.recommenderDesignation}},
                 {{this.recommenderDesignation}}{{/if}}</p>
             </div>
@@ -338,18 +612,36 @@
       {{#unless client_logos.meta.hide}}
       <section id="trustedby" class="py-12 lg:py-20"
         data-aos="fade-up"
-        style="background-color: {{color_palette.value.colorPalette.tertiary-bright}};">
+        style="
+        {{#if color_palette.value.colorPalette.tertiary-bright}}
+        background-color: {{color_palette.value.colorPalette.tertiary-bright}}
+        {{else}}
+        background-color:#e5e7eb
+        {{/if}}
+        ;">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2
-            class="text-3xl lg:text-4xl font-bold text-primary mb-12 text-center"
-            style="color: {{color_palette.value.colorPalette.primary}};">
+            class="text-3xl lg:text-4xl font-bold mb-12 text-center"
+            style="
+                {{#if color_palette.value.colorPalette.primary}}
+                color: {{color_palette.value.colorPalette.primary}}
+                {{else}}
+                color:#78350f
+                {{/if}}
+                ;">
             {{client_logos.value.client_logos.section_title}}
           </h2>
           <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
             {{#each client_logos.value.client_logos.items}}
             <div class="p-6 flex items-center justify-center h-24"><span
                 class="text-2xl font-bold"
-                style="color: {{../color_palette.value.colorPalette.primary-dim}};">{{this.name}}</span>
+                style="
+                {{#if ../color_palette.value.colorPalette.primary-dim}}
+                color: {{../color_palette.value.colorPalette.primary-dim}}
+                {{else}}
+                color:rgba(120, 53, 15, 0.7)
+                {{/if}}
+                ;">{{this.name}}</span>
             </div>
             {{/each}}
           </div>
@@ -361,29 +653,65 @@
       {{#if faq.value.faq.items}}
       {{#unless faq.meta.hide}}
       <section id="faq" class="py-12 lg:py-20" data-aos="fade-up"
-        style="background-color: {{color_palette.value.colorPalette.quaternary}};">
+        style="
+        {{#if color_palette.value.colorPalette.quaternary}}
+        background-color: {{color_palette.value.colorPalette.quaternary}}
+        {{else}}
+        background-color:#ffffff
+        {{/if}}
+        ;">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2
             class="text-3xl lg:text-4xl font-bold text-center mb-12"
-            style="color: {{color_palette.value.colorPalette.primary}};">
+            style="
+            {{#if color_palette.value.colorPalette.primary}}
+            color: {{color_palette.value.colorPalette.primary}}
+            {{else}}
+            color:#78350f
+            {{/if}}
+            ;">
             {{faq.value.faq.section_title}}
           </h2>
           <div class="max-w-4xl mx-auto">
             {{#each faq.value.faq.items}}
             <div class="faq-item border-b py-4"
-              style="border-color: {{../color_palette.value.colorPalette.border-primary-dim}};">
+              style="
+              {{#if ../color_palette.value.colorPalette.border-primary-dim}}
+              border-color: {{../color_palette.value.colorPalette.border-primary-dim}}
+              {{else}}
+              border-color:rgba(120, 53, 15, 0.2)
+              {{/if}}
+              ;">
               <button
                 class="faq-question w-full flex justify-between items-center text-left focus:outline-none">
                 <h3 class="text-xl lg:text-2xl font-bold"
-                  style="color: {{../color_palette.value.colorPalette.primary}};">{{this.question}}</h3>
+                  style="
+            {{#if ../color_palette.value.colorPalette.primary}}
+            color: {{../color_palette.value.colorPalette.primary}}
+            {{else}}
+            color:#78350f
+            {{/if}}
+            ;">{{this.question}}</h3>
                 <span
                   class="faq-icon text-3xl font-light transform transition-transform duration-300"
-                  style="color: {{../color_palette.value.colorPalette.primary}};">&plus;</span>
+                  style="
+            {{#if ../color_palette.value.colorPalette.primary}}
+            color: {{../color_palette.value.colorPalette.primary}}
+            {{else}}
+            color:#78350f
+            {{/if}}
+            ;">&plus;</span>
               </button>
               <div
                 class="faq-answer max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
                 <p class="text-base leading-relaxed pt-4"
-                  style="color: {{../color_palette.value.colorPalette.primary}};">
+                  style="
+            {{#if ../color_palette.value.colorPalette.primary}}
+            color: {{../color_palette.value.colorPalette.primary}}
+            {{else}}
+            color:#78350f
+            {{/if}}
+            ;">
                   {{this.answer}}
                 </p>
               </div>
@@ -400,50 +728,116 @@
       {{#unless contacts.meta.hide}}
       <section id="contact" class="py-12 lg:py-20"
         data-aos="fade-up"
-        style="background-color: {{color_palette.value.colorPalette.primary}};">
+        style="
+        {{#if color_palette.value.colorPalette.primary}}
+        background-color: {{color_palette.value.colorPalette.primary}}
+        {{else}}
+        background-color:#78350f
+        {{/if}}
+        ;">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="rounded-lg p-6 lg:p-8"
-            style="background-color: {{color_palette.value.colorPalette.secondary}};">
+            style="
+              {{#if color_palette.value.colorPalette.secondary}}
+              background-color: {{color_palette.value.colorPalette.secondary}}
+              {{else}}
+              background-color:#fffcee
+              {{/if}}
+              ;">
             <h2
               class="text-2xl lg:text-3xl font-bold mb-4 text-center"
-              style="color: {{color_palette.value.colorPalette.primary}};">
+              style="
+              {{#if color_palette.value.colorPalette.primary}}
+              color: {{color_palette.value.colorPalette.primary}}
+              {{else}}
+              color:#78350f
+              {{/if}}
+              ;">
               {{contacts.value.contacts.heading}}
             </h2>
             {{#if contacts.value.contacts.description}}
             <p class="text-center mb-8"
-              style="color: {{color_palette.value.colorPalette.primary}};">{{contacts.value.contacts.description}}</p>
+              style="
+              {{#if color_palette.value.colorPalette.primary}}
+              color: {{color_palette.value.colorPalette.primary}}
+              {{else}}
+              color:#78350f
+              {{/if}}
+              ;">{{contacts.value.contacts.description}}</p>
             {{/if}}
             <form class="space-y-6" action="/api/contact" method="post"
               enctype="text/plain">
               <div>
                 <label for="name"
                   class="block text-sm font-medium mb-2"
-                  style="color: {{color_palette.value.colorPalette.primary}};">Name
+                  style="
+              {{#if color_palette.value.colorPalette.primary}}
+              color: {{color_palette.value.colorPalette.primary}}
+              {{else}}
+              color:#78350f
+              {{/if}}
+              ;">Name
                   *</label>
                 <input type="text" id="name" name="name" required
-                  class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[{{color_palette.value.colorPalette.border-primary-dim}}]"
-                  style="border-color: {{color_palette.value.colorPalette.primary}};">
+                  class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[{{#if color_palette.value.colorPalette.border-primary-dim}}{{color_palette.value.colorPalette.border-primary-dim}}{{else}}rgba(120, 53, 15, 0.2){{/if}}]"
+                  style="
+                  {{#if color_palette.value.colorPalette.primary}}
+                  border-color: {{color_palette.value.colorPalette.primary}}
+                  {{else}}
+                  border-color:#78350f
+                  {{/if}}
+                  ;">
               </div>
               <div>
                 <label for="email"
                   class="block text-sm font-medium mb-2"
-                  style="color: {{color_palette.value.colorPalette.primary}};">Email
+                  style="
+              {{#if color_palette.value.colorPalette.primary}}
+              color: {{color_palette.value.colorPalette.primary}}
+              {{else}}
+              color:#78350f
+              {{/if}}
+              ;">Email
                   *</label>
                 <input type="email" id="email" name="email" required
-                  class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[{{color_palette.value.colorPalette.border-primary-dim}}]"
-                  style="border-color: {{color_palette.value.colorPalette.primary}};">
+                  class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[{{#if color_palette.value.colorPalette.border-primary-dim}}{{color_palette.value.colorPalette.border-primary-dim}}{{else}}rgba(120, 53, 15, 0.2){{/if}}]"
+                  style="
+                  {{#if color_palette.value.colorPalette.primary}}
+                  border-color: {{color_palette.value.colorPalette.primary}}
+                  {{else}}
+                  border-color:#78350f
+                  {{/if}}
+                  ;">
               </div>
               <div>
                 <label for="message"
                   class="block text-sm font-medium mb-2"
-                  style="color: {{color_palette.value.colorPalette.primary}};">{{contacts.value.contacts.messageInputLabel}}</label>
+                  style="
+              {{#if color_palette.value.colorPalette.primary}}
+              color: {{color_palette.value.colorPalette.primary}}
+              {{else}}
+              color:#78350f
+              {{/if}}
+              ;">{{contacts.value.contacts.messageInputLabel}}</label>
                 <textarea id="message" name="message" rows="4"
                   class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[{{color_palette.value.colorPalette.border-primary-dim}}]"
-                  style="border-color: {{color_palette.value.colorPalette.primary}};"></textarea>
+                  style="
+                  {{#if color_palette.value.colorPalette.primary}}
+                  border-color: {{color_palette.value.colorPalette.primary}}
+                  {{else}}
+                  border-color:#78350f
+                  {{/if}}
+                  ;"></textarea>
               </div>
               <button type="submit"
                 class="w-full bg-transparent border-2 px-6 py-3 rounded-lg text-lg font-medium hover:bg-primary hover:text-white transition-colors"
-                style="border-color: {{color_palette.value.colorPalette.primary}};color: {{color_palette.value.colorPalette.primary}};">
+                style="
+                {{#if color_palette.value.colorPalette.primary}}
+                border-color: {{color_palette.value.colorPalette.primary}};color: {{color_palette.value.colorPalette.primary}};
+                {{else}}
+                border-color:#78350f;color:#78350f;
+                {{/if}}
+                ">
                 {{contacts.value.contacts.contactFormButtonText}}
               </button>
             </form>
@@ -455,22 +849,46 @@
       {{/if}}
 
       <footer class="py-12"
-        style="background-color: {{color_palette.value.colorPalette.primary}};">
+        style="
+        {{#if color_palette.value.colorPalette.primary}}
+        background-color: {{color_palette.value.colorPalette.primary}}
+        {{else}}
+        background-color:#78350f
+        {{/if}}
+        ;">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
             class="flex flex-col md:flex-row justify-between items-center space-y-8 md:space-y-0">
             <div class="flex items-center space-x-3">
               <div
                 class="w-12 h-12 rounded-full flex items-center justify-center"
-                style="background-color: {{color_palette.value.colorPalette.quaternary}};">
+                style="
+        {{#if color_palette.value.colorPalette.quaternary}}
+        background-color: {{color_palette.value.colorPalette.quaternary}}
+        {{else}}
+        background-color:#ffffff
+        {{/if}}
+        ;">
                 <span class="font-bold text-lg"
-                  style="color: {{color_palette.value.colorPalette.primary}};">{{firstChar
+                  style="
+                  {{#if color_palette.value.colorPalette.primary}}
+                  color: {{color_palette.value.colorPalette.primary}}
+                  {{else}}
+                  color:#78350f
+                  {{/if}}
+                  ;">{{firstChar
                   personal_info.value.firstName}}</span>
               </div>
               <h3 class="text-2xl font-bold"
-                style="color: {{color_palette.value.colorPalette.quaternary}};">{{personal_info.value.firstName}}
-                |
-                {{#if personal_info.value.role}} {{personal_info.value.role}}
+                style="
+                {{#if color_palette.value.colorPalette.quaternary}}
+                color: {{color_palette.value.colorPalette.quaternary}}
+                {{else}}
+                color:#ffffff
+                {{/if}}
+                ;">{{personal_info.value.firstName}}
+
+                {{#if personal_info.value.role}} | {{personal_info.value.role}}
                 {{/if}}</h3>
             </div>
             {{#if social.value.social.items}}
@@ -479,7 +897,13 @@
               {{#each social.value.social.items}}
               <a href="{{this.url}}"
                 class="hover:text-accent transition-colors"
-                style="color: {{color_palette.value.colorPalette.quaternary}};">
+                style="
+                {{#if color_palette.value.colorPalette.quaternary}}
+                color: {{color_palette.value.colorPalette.quaternary}}
+                {{else}}
+                color:#ffffff
+                {{/if}}
+                ;">
                 {{{socialIcon url=this.url
                 label=this.label size=40 className="size-12" }}}
               </a>
@@ -489,9 +913,21 @@
             {{/if}}
           </div>
           <div class="mt-8 pt-8 border-t text-center"
-            style="border-color: {{color_palette.value.colorPalette.border-quatenary-dim}};">
+            style="
+            {{#if color_palette.value.colorPalette.border-quatenary-dim}}
+            border-color: {{color_palette.value.colorPalette.border-quatenary-dim}}
+            {{else}}
+            border-color:rgba(255, 255, 255, 0.2)
+            {{/if}}
+            ;">
             <p class="text-sm"
-              style="color: {{color_palette.value.colorPalette.tertiary-bright}};">
+              style="
+              {{#if color_palette.value.colorPalette.tertiary-bright}}
+              color: {{color_palette.value.colorPalette.tertiary-bright}}
+              {{else}}
+              color:#e5e7eb
+              {{/if}}
+              ;">
               © {{currentYear}} {{personal_info.value.firstName}}. All Rights
               Reserved.
             </p>
