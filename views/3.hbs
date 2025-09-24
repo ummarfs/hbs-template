@@ -289,7 +289,7 @@
                 background-color:#78350f
                 {{/if}}
                 ;">
-                {{contacts.value.contacts.booking.buttonText}}
+                {{#if contacts.value.contacts.buttonText}} {{contacts.value.contacts.buttonText}} {{else}} Schedule a Consultation {{/if}}
               </a>
               {{else}}
               <a href="#contact"
@@ -307,7 +307,7 @@
                 background-color:#78350f
                 {{/if}}
                 ;">
-                {{contacts.value.contacts.buttonText}}
+                {{#if contacts.value.contacts.buttonText}} {{contacts.value.contacts.buttonText}} {{else}} Schedule a Consultation {{/if}}
               </a>
               {{/if}}
               {{/unless}}
@@ -338,7 +338,7 @@
             class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div>
               <img
-                src="{{about.value.about.image}}"
+                src="{{#if about.value.about.image}} {{about.value.about.image}} {{else}} https://c.animaapp.com/mfnpsvda9pPWxp/assets/88aac0_70dba72adce54eea9f53068b36a9e0e9~mv2.jpeg {{/if}}"
                 alt="{{personal_info.value.firstName}}"
                 class="w-full h-64 sm:h-80 lg:h-96 object-cover rounded-lg shadow-lg">
             </div>
@@ -598,8 +598,8 @@
                 color:#78350f
                 {{/if}}
                 ;">{{this.recommenderName}}{{#if
-                this.recommenderDesignation}},
-                {{this.recommenderDesignation}}{{/if}}</p>
+                this.designation}},
+                {{this.designation}}{{/if}}</p>
             </div>
             {{/each}}
           </div>

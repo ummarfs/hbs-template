@@ -247,7 +247,7 @@
             "date": "2025-09-09",
             "recommenderName": "John Smith",
             "recommendationText": "he is a good guy",
-            "recommenderDesignation": "COO of Google"
+            "designation": "COO of Google"
           }
         ],
         "heading": "What My Clients Say",
