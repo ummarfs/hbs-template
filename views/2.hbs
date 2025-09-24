@@ -1,1381 +1,393 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="UTF-8">
-    <title>Rayo - Digital Agency & Personal Portfolio HTML Template</title>
-    <link rel="icon" href="/2/img/favicon/favicon.ico" sizes="any">
-    <link rel="icon" href="/2/img/favicon/icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/2/img/favicon/apple-touch-icon.png">
-    <link rel="manifest" href="/2/img/favicon/manifest.webmanifest">
-    <link rel="stylesheet" type="text/css" href="/2/style.css">
-  </head>
+<html lang="en">
 
-  <body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L. Thompson | Strategic Consultant</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      content: [],
+      theme: {
+        extend: {
+          fontFamily: {
+            arial: [
+              'Arial'
+            ],
+            madefor_text: [
+              'madefor-text',
+              'helveticaneuew01-45ligh',
+              'helveticaneuew02-45ligh',
+              'helveticaneuew10-45ligh',
+              'sans-serif'
+            ],
+            poppins_semibold: [
+              'poppins-semibold',
+              'poppins',
+              'sans-serif'
+            ],
+            poppins_extralight: [
+              'poppins-extralight',
+              'poppins',
+              'sans-serif'
+            ]
+          }
+        }
+      }
+    };
+  </script>
 
-    <!-- Header Start -->
-    <header id="header" class="mxd-header">
-      <!-- header controls -->
-      <div class="mxd-header__controls loading__fade">
-        <a
-          class="btn btn-anim btn-default btn-mobile-icon btn-outline slide-right-up"
-          href="contact.html">
-          <span class="btn-caption">Say Hello</span>
-          <i class="ph-bold ph-arrow-up-right"></i>
-        </a>
+  <style>
+    @font-face {
+      font-family: 'poppins-semibold';
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'poppins-extralight';
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'madefor-text';
+      font-weight: 400;
+      font-style: normal;
+    }
+    
+    body {
+      font-family: 'madefor-text', sans-serif;
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-black font-arial overflow-x-hidden">
+
+  <div class="relative w-full">
+
+    <header class="sticky top-0 z-50 bg-black text-white">
+      <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <p class="text-lg font-madefor_text">
+          <a href="#" class="text-white">L. Thompson</a>
+        </p>
+        <div class="md:hidden">
+          <button id="hamburger-button" class="text-white focus:outline-none" aria-label="Toggle menu" aria-expanded="false">
+            <svg id="menu-open-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            <svg id="menu-close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+          </button>
+        </div>
+        <nav class="hidden md:flex">
+          <ul class="flex items-center gap-x-4">
+            <li><a href="#about" class="px-2 py-1 tracking-wider text-base hover:text-gray-300">About</a></li>
+            <li><a href="#services" class="px-2 py-1 tracking-wider text-base hover:text-gray-300">Services</a></li>
+            <li><a href="#process" class="px-2 py-1 tracking-wider text-base hover:text-gray-300">Process</a></li>
+            <li><a href="#contact" class="px-2 py-1 tracking-wider text-base hover:text-gray-300">Contact</a></li>
+          </ul>
+        </nav>
       </div>
+      <nav id="mobile-menu" class="hidden md:hidden bg-black absolute w-full">
+        <ul class="flex flex-col items-center py-4">
+          <li class="w-full text-center"><a href="#about" class="block py-3 tracking-wider text-base hover:bg-gray-800">About</a></li>
+          <li class="w-full text-center"><a href="#services" class="block py-3 tracking-wider text-base hover:bg-gray-800">Services</a></li>
+          <li class="w-full text-center"><a href="#process" class="block py-3 tracking-wider text-base hover:bg-gray-800">Process</a></li>
+          <li class="w-full text-center"><a href="#contact" class="block py-3 tracking-wider text-base hover:bg-gray-800">Contact</a></li>
+        </ul>
+      </nav>
     </header>
-    <!-- Header End -->
 
-    <!-- Page Content Start -->
-    <main id="mxd-page-content" class="mxd-page-content">
+    <main>
 
-      <!-- Hero Section Start -->
-      <div class="mxd-section">
-        <div class="mxd-hero-09">
-          <div class="mxd-hero-09__wrap loading-wrap">
-            <div class="mxd-hero-09__headline">
-              <div class="hero-09-headline__caption loading__item">
-                <p>Award-winning creative projects, over ten years of digital
-                  experience.</p>
+      <section class="w-full">
+        <div class="flex flex-col lg:flex-row min-h-[826px]">
+          <div class="w-full lg:w-2/5 h-[400px] lg:h-auto" data-aos="fade-in">
+            <img src="https://c.animaapp.com/mfxt594ljln94V/assets/88aac0_9bbdec62e24644caa9afa95a773336a9~mv2.jpeg" alt="Professional woman in a business setting" class="w-full h-full object-cover" />
+          </div>
+          <div class="w-full lg:w-3/5 flex items-center justify-center p-8 md:p-12">
+            <div class="max-w-xl text-center lg:text-left" data-aos="fade-in" data-aos-delay="200">
+              <h1 class="text-5xl md:text-6xl lg:text-[76px] font-bold font-poppins_semibold leading-tight">Strategic Consulting for High-Growth Companies</h1>
+              <div class="w-full border-t-2 border-neutral-800 my-8"></div>
+              <p class="text-xl font-madefor_text mb-8">I translate complex business challenges into actionable growth strategies, helping you scale effectively and achieve lasting success.</p>
+              <div class="flex justify-center lg:justify-end">
+                <a href="#contact" aria-label="Book a Free Consultation" class="bg-black text-white text-lg font-madefor_text py-3 px-10 rounded-full hover:bg-gray-800 transition-colors">Book a Free Consultation</a>
               </div>
-              <div class="hero-09-headline__title loading__item">
-                <h1 class="hero-09-headline__hidden">Alex Walker</h1>
-                <svg class="hero-09-svg-mobile"
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                  viewBox="0 0 153.2 74.1"
-                  style="enable-background:new 0 0 153.2 74.1;"
-                  xml:space="preserve">
-                  <path
-                    d="M9.7,34c-2.8,0-5-0.7-6.6-2c-1.6-1.4-2.4-3.2-2.4-5.4c0-2.3,0.8-4.2,2.4-5.4c1.6-1.3,3.9-1.9,7-1.9h7.3v-1
-                  c0-2.9-1.7-4.4-5.1-4.4c-2.9,0-4.7,1-5.2,3.1h-6c0.5-2.6,1.7-4.5,3.6-5.9c1.9-1.3,4.4-2,7.6-2c3.5,0,6.2,0.8,8,2.4
-                  c1.8,1.6,2.8,3.9,2.8,6.9v9.2H26v6h-6.1v-3.8h-1.7c-0.8,1.4-1.9,2.4-3.3,3.2S11.7,34,9.7,34z M10.6,29.4c1.3,0,2.5-0.2,3.5-0.7
-                  c1-0.5,1.9-1.2,2.5-2c0.6-0.8,0.9-1.8,0.9-2.8v-0.6h-7c-2.7,0-4,1-4,3c0,1,0.4,1.8,1.1,2.3C8.2,29.2,9.3,29.4,10.6,29.4z M30.6,33.6
-                  V0h6v33.6H30.6z M53.6,34.1c-2.6,0-4.8-0.5-6.7-1.5c-1.9-1-3.4-2.5-4.4-4.4c-1-1.9-1.5-4.1-1.5-6.7s0.5-4.8,1.5-6.6
-                  c1-1.9,2.5-3.3,4.3-4.3c1.9-1,4.1-1.5,6.6-1.5c2.5,0,4.6,0.5,6.3,1.4c1.8,0.9,3.1,2.3,4.1,4.1c1,1.8,1.4,3.9,1.4,6.3V23H46.7
-                  c0.2,2,1,3.6,2.1,4.7c1.2,1.1,2.8,1.6,4.7,1.6c1.5,0,2.7-0.3,3.6-0.8s1.6-1.4,1.9-2.5h6c-0.6,2.5-1.8,4.5-3.9,5.9
-                  C59.2,33.4,56.7,34.1,53.6,34.1z M46.8,19h12.6c-0.2-1.7-0.8-2.9-1.9-3.8c-1.1-0.9-2.5-1.3-4.2-1.3c-1.7,0-3.2,0.4-4.3,1.3
-                  S47.2,17.3,46.8,19z M66.2,33.6l9.4-12.3L66.7,9.6h6.6l5.8,7.6l5.8-7.6h6.6l-8.9,11.7l9.4,12.3h-6.7L79,25.4l-6.2,8.2H66.2z
-                  M7.7,73.6L0,49.6h6.1l5,16.6h0.2l5.9-16.6H23l5.9,16.6h0.2l5-16.6h6l-7.7,24h-6.4l-5.9-16.3H20l-5.9,16.3H7.7z M50.5,74
-                  c-2.8,0-5-0.7-6.6-2c-1.6-1.4-2.4-3.2-2.4-5.4c0-2.3,0.8-4.2,2.4-5.4c1.6-1.3,3.9-1.9,7-1.9h7.3v-1c0-2.9-1.7-4.4-5.1-4.4
-                  c-2.9,0-4.7,1-5.2,3.1h-6c0.5-2.6,1.7-4.5,3.6-5.9s4.4-2,7.6-2c3.5,0,6.2,0.8,8,2.4s2.8,3.9,2.8,6.9v9.2h2.8v6h-6.1v-3.8H59
-                  c-0.8,1.4-1.9,2.4-3.3,3.2S52.5,74,50.5,74z M51.4,69.4c1.3,0,2.5-0.2,3.5-0.7c1-0.5,1.9-1.2,2.5-2c0.6-0.8,0.9-1.8,0.9-2.8v-0.6h-7
-                  c-2.7,0-4,1-4,3c0,1,0.4,1.8,1.1,2.3C49.1,69.2,50.1,69.4,51.4,69.4z M71.4,73.6V40h6v33.6H71.4z M83.1,73.6V40h6v18.9h0.2l10.1-9.3
-                  h7.1L96,59l11.3,14.6h-7l-8.4-10.9L89.1,65v8.6H83.1z M120.7,74.1c-2.6,0-4.8-0.5-6.7-1.5c-1.9-1-3.4-2.5-4.4-4.4s-1.5-4.1-1.5-6.7
-                  c0-2.6,0.5-4.8,1.5-6.6c1-1.9,2.5-3.3,4.3-4.3c1.9-1,4.1-1.5,6.6-1.5c2.5,0,4.6,0.5,6.3,1.4s3.1,2.3,4.1,4.1c1,1.8,1.4,3.9,1.4,6.3
-                  V63h-18.5c0.2,2,1,3.6,2.1,4.7c1.2,1.1,2.8,1.6,4.7,1.6c1.5,0,2.7-0.3,3.6-0.8s1.6-1.4,1.9-2.5h6c-0.6,2.5-1.8,4.5-3.9,5.9
-                  C126.3,73.4,123.8,74.1,120.7,74.1z M114,59h12.6c-0.2-1.7-0.8-2.9-1.9-3.8c-1.1-0.9-2.5-1.3-4.2-1.3c-1.7,0-3.2,0.4-4.3,1.3
-                  C115.1,56.1,114.3,57.3,114,59z M138.5,73.6v-18h-3v-6h6.1v4.6h1.7c0.7-1.6,1.7-2.8,3.1-3.6c1.4-0.8,3-1.2,4.8-1.2h2v5.1h-2.3
-                  c-2.2,0-3.8,0.6-4.9,1.9c-1.1,1.3-1.6,2.9-1.6,5v12.2H138.5z" />
-                </svg>
-                <svg class="hero-09-svg-desktop"
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                  viewBox="0 0 257.3 34.1"
-                  style="enable-background:new 0 0 257.3 34.1;"
-                  xml:space="preserve">
-                  <path
-                    d="M9,34c-2.8,0-5-0.7-6.6-2C0.8,30.6,0,28.8,0,26.6c0-2.3,0.8-4.2,2.4-5.4c1.6-1.3,3.9-1.9,7-1.9h7.3v-1
-                  c0-2.9-1.7-4.4-5.1-4.4c-2.9,0-4.7,1-5.2,3.1h-6c0.5-2.6,1.7-4.5,3.6-5.9c1.9-1.3,4.4-2,7.6-2c3.5,0,6.2,0.8,8,2.4
-                  c1.8,1.6,2.8,3.9,2.8,6.9v9.2h2.8v6h-6.1v-3.8h-1.7c-0.8,1.4-1.9,2.4-3.3,3.2C12.7,33.7,11,34,9,34z M9.8,29.4
-                  c1.3,0,2.5-0.2,3.5-0.7c1-0.5,1.9-1.2,2.5-2c0.6-0.8,0.9-1.8,0.9-2.8v-0.6h-7c-2.7,0-4,1-4,3c0,1,0.4,1.8,1.1,2.3
-                  C7.5,29.2,8.5,29.4,9.8,29.4z M29.8,33.6V0h6v33.6H29.8z M52.9,34.1c-2.6,0-4.8-0.5-6.7-1.5c-1.9-1-3.4-2.5-4.4-4.4
-                  c-1-1.9-1.5-4.1-1.5-6.7s0.5-4.8,1.5-6.6c1-1.9,2.5-3.3,4.3-4.3c1.9-1,4.1-1.5,6.6-1.5c2.5,0,4.6,0.5,6.3,1.4
-                  c1.8,0.9,3.1,2.3,4.1,4.1c1,1.8,1.4,3.9,1.4,6.3V23H46c0.2,2,1,3.6,2.1,4.7s2.8,1.6,4.7,1.6c1.5,0,2.7-0.3,3.6-0.8
-                  c0.9-0.5,1.6-1.4,1.9-2.5h6c-0.6,2.5-1.8,4.5-3.9,5.9C58.5,33.4,55.9,34.1,52.9,34.1z M46.1,19h12.6c-0.2-1.7-0.8-2.9-1.9-3.8
-                  c-1.1-0.9-2.5-1.3-4.2-1.3c-1.7,0-3.2,0.4-4.3,1.3S46.5,17.3,46.1,19z M65.5,33.6l9.4-12.3L66,9.6h6.6l5.8,7.6l5.8-7.6h6.6
-                  l-8.9,11.7l9.4,12.3h-6.7l-6.2-8.2l-6.2,8.2H65.5z M111.9,33.6l-7.7-24h6.1l5,16.6h0.2l5.9-16.6h5.7l5.9,16.6h0.2l5-16.6h6l-7.7,24
-                  h-6.4l-5.9-16.3h-0.2l-5.9,16.3H111.9z M154.7,34c-2.8,0-5-0.7-6.6-2c-1.6-1.4-2.4-3.2-2.4-5.4c0-2.3,0.8-4.2,2.4-5.4
-                  c1.6-1.3,3.9-1.9,7-1.9h7.3v-1c0-2.9-1.7-4.4-5.1-4.4c-2.9,0-4.7,1-5.2,3.1h-6c0.5-2.6,1.7-4.5,3.6-5.9c1.9-1.3,4.4-2,7.6-2
-                  c3.5,0,6.2,0.8,8,2.4c1.8,1.6,2.8,3.9,2.8,6.9v9.2h2.8v6h-6.1v-3.8h-1.7c-0.8,1.4-1.9,2.4-3.3,3.2C158.4,33.7,156.7,34,154.7,34z
-                  M155.6,29.4c1.3,0,2.5-0.2,3.5-0.7c1-0.5,1.9-1.2,2.5-2c0.6-0.8,0.9-1.8,0.9-2.8v-0.6h-7c-2.7,0-4,1-4,3c0,1,0.4,1.8,1.1,2.3
-                  C153.2,29.2,154.3,29.4,155.6,29.4z M175.6,33.6V0h6v33.6H175.6z M187.3,33.6V0h6v18.9h0.2l10.1-9.3h7.1L200.2,19l11.3,14.6h-7
-                  L196,22.7l-2.8,2.3v8.6H187.3z M224.9,34.1c-2.6,0-4.8-0.5-6.7-1.5c-1.9-1-3.4-2.5-4.4-4.4s-1.5-4.1-1.5-6.7s0.5-4.8,1.5-6.6
-                  c1-1.9,2.5-3.3,4.3-4.3c1.9-1,4.1-1.5,6.6-1.5c2.5,0,4.6,0.5,6.3,1.4c1.8,0.9,3.1,2.3,4.1,4.1c1,1.8,1.4,3.9,1.4,6.3V23H218
-                  c0.2,2,1,3.6,2.1,4.7s2.8,1.6,4.7,1.6c1.5,0,2.7-0.3,3.6-0.8c0.9-0.5,1.6-1.4,1.9-2.5h6c-0.6,2.5-1.8,4.5-3.9,5.9
-                  C230.5,33.4,227.9,34.1,224.9,34.1z M218.1,19h12.6c-0.2-1.7-0.8-2.9-1.9-3.8c-1.1-0.9-2.5-1.3-4.2-1.3c-1.7,0-3.2,0.4-4.3,1.3
-                  C219.2,16.1,218.5,17.3,218.1,19z M242.7,33.6v-18h-3v-6h6.1v4.6h1.7c0.7-1.6,1.7-2.8,3.1-3.6c1.4-0.8,3-1.2,4.8-1.2h2v5.1H255
-                  c-2.2,0-3.8,0.6-4.9,1.9c-1.1,1.3-1.6,2.9-1.6,5v12.2H242.7z" />
-                </svg>
-              </div>
-              <div class="hero-09-headline__tags loading__fade">
-                <span class="tag tag-default tag-outline">Midjourney</span>
-                <span class="tag tag-default tag-outline">AI</span>
-                <span class="tag tag-default tag-outline">Editorial</span>
-                <span class="tag tag-default tag-outline">Interactive
-                  design</span>
-                <span class="tag tag-default tag-outline">Web experience</span>
-                <span class="tag tag-default tag-outline">Web design</span>
-                <span class="tag tag-default tag-outline">Branding</span>
-                <span class="tag tag-default tag-outline">UI</span>
-                <span class="tag tag-default tag-outline">UX</span>
-                <span class="tag tag-default tag-outline">HTML</span>
-                <span class="tag tag-default tag-outline">Frontend</span>
-                <span class="tag tag-default tag-outline">Motion design</span>
-                <span class="tag tag-default tag-outline">3d modeling</span>
-                <span class="tag tag-default tag-outline">Video editing</span>
-              </div>
+              <div class="w-full border-t-2 border-neutral-800 mt-8"></div>
             </div>
-            <div class="mxd-hero-09__objects">
-              <div class="hero-09-objects__image loading__item">
-                <img class="mxd-move" src="/2/img/hero/22_hero-img.webp"
-                  alt="Hero Image">
-              </div>
-              <div class="hero-09-objects__item item-01 loading__item">
-                <div class="mxd-counter horizontal">
-                  <p id="stats-counter-1"
-                    class="mxd-counter__number mxd-stats-number xsmall">0</p>
-                  <p class="mxd-counter__descr t-140 t-bright t-small">Years
-                    of<br>experience</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="w-full bg-black text-white py-16 md:py-24">
+        <div class="container mx-auto px-6 flex flex-col lg:flex-row items-center gap-10">
+          <div class="w-full lg:w-1/2 text-center lg:text-left" data-aos="fade-right">
+            <h2 class="text-4xl md:text-5xl lg:text-[64px] font-bold font-poppins_semibold leading-tight tracking-tighter">A Partner in Your Success</h2>
+            <p class="text-xl font-bold font-poppins_extralight mt-4 mb-8">Meet L. Thompson</p>
+            <p class="text-lg font-madefor_text max-w-md mx-auto lg:mx-0">
+              I'm a consultant based in Seattle, WA, with over a decade of experience helping businesses thrive. My expertise lies in cutting through the noise to identify core challenges and implementing practical, data-driven solutions. I partner with leaders like you to streamline processes, optimize finances, and unlock sustainable profitability. Your goals become my mission.
+            </p>
+          </div>
+          <div class="w-full lg:w-1/2 mt-8 lg:mt-0" data-aos="fade-left">
+            <img src="https://c.animaapp.com/mfxt594ljln94V/assets/88aac0_e3a74bda807a421cb13c1cfa99afa8f4~mv2.png" alt="Team members collaborating" class="w-full h-auto object-cover rounded-lg" />
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="w-full py-16 md:py-24">
+        <div class="container mx-auto px-6">
+          <h2 class="text-4xl md:text-5xl lg:text-[64px] font-bold font-poppins_semibold mb-12 tracking-tighter" data-aos="fade-up">How I Can Help</h2>
+          <div class="flex flex-col md:flex-row items-center gap-8 py-6 border-b" data-aos="fade-up">
+            <div class="w-full md:w-1/3">
+              <h3 class="text-3xl lg:text-4xl font-bold font-poppins_semibold tracking-tight">Custom Growth Strategy</h3>
+            </div>
+            <div class="w-full md:w-2/3">
+              <p class="text-xl font-medium mb-2">Operational Excellence</p>
+              <p class="text-lg">I provide tailored business strategy solutions to enhance your company's performance and achieve sustainable growth. My focus on operational excellence helps streamline processes and maximize profitability.</p>
+            </div>
+          </div>
+          <div class="flex flex-col md:flex-row items-center gap-8 py-6 border-b" data-aos="fade-up" data-aos-delay="100">
+            <div class="w-full md:w-1/3">
+              <h3 class="text-3xl lg:text-4xl font-bold font-poppins_semibold tracking-tight">Efficient Operations</h3>
+            </div>
+            <div class="w-full md:w-2/3">
+              <p class="text-xl font-medium mb-2">Strategic Guidance</p>
+              <p class="text-lg">Through meticulous planning and execution, I help optimize your resources for maximum productivity. I offer strategic guidance to elevate your business and achieve your long-term objectives.</p>
+            </div>
+          </div>
+          <div class="flex flex-col md:flex-row items-center gap-8 py-6 border-b" data-aos="fade-up" data-aos-delay="200">
+            <div class="w-full md:w-1/3">
+              <h3 class="text-3xl lg:text-4xl font-bold font-poppins_semibold tracking-tight">Financial Advisory</h3>
+            </div>
+            <div class="w-full md:w-2/3">
+              <p class="text-xl font-medium mb-2">Profitability Boost</p>
+              <p class="text-lg">My financial advisory services are designed to boost profitability and financial efficiency. From analysis to risk management, I empower your business to make informed decisions and grow sustainably.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="w-full py-16 md:py-24">
+        <div class="container mx-auto px-6">
+          <h2 class="text-4xl md:text-5xl lg:text-[64px] font-bold font-poppins_semibold mb-12 tracking-tighter" data-aos="fade-up">Proven Results & Experience</h2>
+          <div class="flex flex-col lg:flex-row items-stretch">
+            <div class="w-full lg:w-1/2" data-aos="fade-right">
+              <img src="https://c.animaapp.com/mfxt594ljln94V/assets/11062b_8241da7580d042fd9d45695b66b486be~mv2.jpg" alt="Business professionals in a meeting" class="w-full h-full object-cover min-h-[400px]">
+            </div>
+            <div class="w-full lg:w-1/2 flex flex-col justify-center items-start p-8 md:p-16" data-aos="fade-left">
+              <div class="mb-8" data-aos="fade-up">
+                <p class="text-6xl lg:text-7xl font-bold font-poppins_semibold">50+</p>
+                <div class="bg-black mt-2">
+                  <p class="text-white text-2xl font-bold font-poppins_extralight px-4 py-1">Successful Client Projects</p>
                 </div>
               </div>
-              <div class="hero-09-objects__item item-02 loading__item">
-                <div class="mxd-counter horizontal">
-                  <p id="stats-counter-2"
-                    class="mxd-counter__number mxd-stats-number xsmall">0</p>
-                  <p
-                    class="mxd-counter__descr t-140 t-bright t-small">Successful<br>projects</p>
+              <div class="mb-8" data-aos="fade-up" data-aos-delay="100">
+                <p class="text-6xl lg:text-7xl font-bold font-poppins_semibold">$10M+</p>
+                <div class="bg-black mt-2">
+                  <p class="text-white text-2xl font-bold font-poppins_extralight px-4 py-1">In Client Revenue Growth</p>
+                </div>
+              </div>
+              <div data-aos="fade-up" data-aos-delay="200">
+                <p class="text-6xl lg:text-7xl font-bold font-poppins_semibold">10+</p>
+                <div class="bg-black mt-2">
+                  <p class="text-white text-2xl font-bold font-poppins_extralight px-4 py-1">Years of Industry Experience</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <!-- Hero Section End -->
+      </section>
 
-      <!-- Section - Projects Pinned #02 Start -->
-      <div id="projects"
-        class="mxd-section padding-hero-09 padding-grid-pre-mtext">
-        <div class="mxd-container grid-container">
-
-          <!-- Block - Projects Pinned #01 with Section Title Start -->
-          <div class="mxd-block">
-            <div class="mxd-pinned-projects">
-              <div class="container-fluid px-0">
-                <div class="row gx-0">
-                  <div class="col-12 col-xl-5 mxd-pinned-projects__static">
-                    <div class="mxd-pinned-projects__static-inner no-margin">
-
-                      <!-- Section Title Start -->
-                      <div class="mxd-section-title no-margin-desktop">
-                        <div class="container-fluid p-0">
-                          <div class="row g-0">
-                            <div class="col-12 mxd-grid-item no-margin">
-                              <div class="mxd-section-title__title">
-                                <h2 class="h2-large reveal-type">Projects</h2>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- Section Title Start -->
-
-                    </div>
-                  </div>
-                  <div class="col-12 col-xl-7 mxd-pinned-projects__scroll">
-                    <div
-                      class="mxd-pinned-projects__scroll-inner mxd-grid-item no-margin">
-                      <!-- item -->
-                      <div class="mxd-project-item">
-                        <a class="mxd-project-item__media anim-uni-in-up"
-                          href="project-details.html">
-
-                          <img
-                            src="/2/img/works/preview/1400x1400_prv-01.webp"
-                            alt="Project preview"
-                            class="parallax-img-small mxd-project-item__preview ">
-
-                          <div class="mxd-project-item__tags">
-                            <span
-                              class="tag tag-default tag-permanent">UI/UX</span>
-                            <span class="tag tag-default tag-permanent">Web
-                              design</span>
-                            <span
-                              class="tag tag-default tag-permanent">Development</span>
-                          </div>
-                        </a>
-                        <div class="mxd-project-item__promo">
-                          <div class="mxd-project-item__name">
-                            <a class="anim-uni-in-up"
-                              href="project-details.html"><span>Rayo
-                                template</span> creative studio solution</a>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- item -->
-                      <div class="mxd-project-item">
-                        <a class="mxd-project-item__media anim-uni-in-up"
-                          href="project-details.html">
-                          <img
-                            src="/2/img/works/preview/1400x1400_prv-01.webp"
-                            alt="Project preview"
-                            class="parallax-img-small mxd-project-item__preview ">
-                          <div class="mxd-project-item__tags">
-                            <span
-                              class="tag tag-default tag-permanent">Midjourney</span>
-                            <span
-                              class="tag tag-default tag-permanent">Editorial</span>
-                          </div>
-                        </a>
-                        <div class="mxd-project-item__promo">
-                          <div class="mxd-project-item__name">
-                            <a class="anim-uni-in-up"
-                              href="project-details.html"><span>AI
-                                experiments</span> themed illustrations
-                              series</a>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- item -->
-                      <div class="mxd-project-item">
-                        <a class="mxd-project-item__media anim-uni-in-up"
-                          href="project-details.html">
-                          <img
-                            src="/2/img/works/preview/1400x1400_prv-01.webp"
-                            alt="Project preview"
-                            class="parallax-img-small mxd-project-item__preview ">
-                          <div class="mxd-project-item__tags">
-                            <span
-                              class="tag tag-default tag-permanent">UI/UX</span>
-                            <span
-                              class="tag tag-default tag-permanent">Mobile</span>
-                          </div>
-                        </a>
-                        <div class="mxd-project-item__promo">
-                          <div class="mxd-project-item__name">
-                            <a class="anim-uni-in-up"
-                              href="project-details.html"><span>Delivery
-                                service</span> mobile app design</a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+      <section id="process" class="w-full py-16 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-6">
+          <h2 class="text-4xl md:text-5xl lg:text-[64px] font-bold font-poppins_semibold mb-16 tracking-tighter text-center md:text-left" data-aos="fade-up">My Simple 4-Step Process</h2>
+          <div class="space-y-12">
+            <div class="flex flex-col md:flex-row items-center gap-8 text-center md:text-left" data-aos="fade-up">
+              <div class="bg-black text-white flex-shrink-0 w-32 h-32 flex items-center justify-center">
+                <p class="text-7xl font-poppins_semibold">1</p>
+              </div>
+              <div>
+                <h3 class="text-3xl lg:text-4xl font-bold font-poppins_semibold tracking-tight mb-2">Discovery Call</h3>
+                <p class="text-lg">We start with a deep dive into your business, vision, and challenges. This initial conversation is crucial for aligning on goals and ensuring a perfect fit.</p>
+              </div>
+            </div>
+            <div class="flex flex-col md:flex-row items-center gap-8 text-center md:text-left" data-aos="fade-up">
+              <div class="bg-black text-white flex-shrink-0 w-32 h-32 flex items-center justify-center">
+                <p class="text-7xl font-poppins_semibold">2</p>
+              </div>
+              <div>
+                <h3 class="text-3xl lg:text-4xl font-bold font-poppins_semibold tracking-tight mb-2">Strategic Blueprint</h3>
+                <p class="text-lg">Using insights from our discovery call, I develop a custom, data-driven action plan with clear milestones and deliverables for your team.</p>
+              </div>
+            </div>
+            <div class="flex flex-col md:flex-row items-center gap-8 text-center md:text-left" data-aos="fade-up">
+              <div class="bg-black text-white flex-shrink-0 w-32 h-32 flex items-center justify-center">
+                <p class="text-7xl font-poppins_semibold">3</p>
+              </div>
+              <div>
+                <h3 class="text-3xl lg:text-4xl font-bold font-poppins_semibold tracking-tight mb-2">Collaborative Implementation</h3>
+                <p class="text-lg">I work alongside you and your team as a strategic partner to execute the plan, providing hands-on guidance, feedback, and support at every stage.</p>
+              </div>
+            </div>
+            <div class="flex flex-col md:flex-row items-center gap-8 text-center md:text-left" data-aos="fade-up">
+              <div class="bg-black text-white flex-shrink-0 w-32 h-32 flex items-center justify-center">
+                <p class="text-7xl font-poppins_semibold">4</p>
+              </div>
+              <div>
+                <h3 class="text-3xl lg:text-4xl font-bold font-poppins_semibold tracking-tight mb-2">Measure & Refine</h3>
+                <p class="text-lg">Success is measured. We track key performance indicators against our goals, celebrate wins, and refine our approach to ensure sustainable, long-term growth.</p>
               </div>
             </div>
           </div>
-          <!-- Block - Projects Pinned #01 with Section Title Start -->
-
         </div>
-      </div>
-      <!-- Section - Projects Pinned #02 End -->
+      </section>
 
-      <!-- Section - Marquee Text One Line Start -->
-      <div class="mxd-section padding-mtext-pre-stack">
-        <div class="mxd-container fullwidth-container">
-
-          <!-- Block - Marquee Text One Line Start -->
-          <div class="mxd-block">
-            <div class="marquee marquee-right--gsap muted-extra">
-              <div class="marquee__toright">
-                <!-- single item -->
-                <div class="marquee__item one-line item-regular text">
-                  <p class="marquee__text">I Can Do Best</p>
-                  <div class="marquee__image">
-                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 80 80" fill="currentColor">
-                      <path fill="currentColor"
-                        d="M78.4,38.4c0,0-11.8,0-15.8,0c-1.6,0-4.8-0.2-7.1-0.8c-2.3-0.6-4.3-0.8-6.3-2.4c-2-1.2-3.5-3.2-4.7-4.8
-                        c-1.2-1.6-1.6-3.6-2-5.5c-0.3-1.5-0.7-4.3-0.8-5.9c-0.2-4.3,0-17.4,0-17.4C41.8,0.8,41,0,40.2,0s-1.6,0.8-1.6,1.6c0,0,0,13.1,0,17.4
-                        c0,1.6-0.6,4.3-0.8,5.9c-0.3,2-0.8,4-2,5.5c-1.2,2-2.8,3.6-4.7,4.8s-4,1.8-6.3,2.4c-1.9,0.5-4.7,0.6-6.7,0.8c-3.9,0.4-16.6,0-16.6,0
-                        C0.8,38.4,0,39.2,0,40c0,0.8,0.8,1.6,1.6,1.6c0,0,12.2,0,16.6,0c1.6,0,4.8,0.3,6.7,0.8c2.3,0.6,4.3,0.8,6.3,2.4
-                        c1.6,1.2,3.2,2.8,4.3,4.4c1.2,2,2.1,3.9,2.4,6.3c0.2,1.7,0.7,4.7,0.8,6.7c0.2,4,0,16.2,0,16.2c0,0.8,0.8,1.6,1.6,1.6
-                        s1.6-0.8,1.6-1.6c0,0,0-12.3,0-16.2c0-1.6,0.5-5.1,0.8-6.7c0.5-2.3,0.8-4.4,2.4-6.3c1.2-1.6,2.8-3.2,4.3-4.4c2-1.2,3.9-2,6.3-2.4
-                        c1.8-0.3,5.1-0.7,7.1-0.8c3.5-0.2,15.8,0,15.8,0c0.8,0,1.6-0.8,1.6-1.6C80,39.2,79.2,38.4,78.4,38.4C78.4,38.4,78.4,38.4,78.4,38.4z
-                        " />
-                    </svg>
-                  </div>
-                </div>
+      <section class="w-full py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-6">
+          <div data-aos="fade-up">
+            <h2 class="text-4xl md:text-5xl lg:text-[64px] font-bold font-poppins_semibold mb-4 tracking-tighter">Client Success Stories</h2>
+            <p class="text-xl mb-12 max-w-3xl">See the tangible results I've delivered for businesses like yours.</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-gray-50 border border-gray-200 p-8 flex flex-col justify-between" data-aos="fade-up">
+              <div>
+                <p class="text-sm font-semibold text-gray-500 uppercase tracking-wider">TechFlow Dynamics</p>
+                <h3 class="text-2xl font-bold font-poppins_semibold my-3">Operational Efficiency Overhaul</h3>
+                <p class="text-lg mb-6">"L. Thompson's insights transformed our workflow. Their strategic approach is second to none." - Mark J.</p>
               </div>
+              <a href="#" class="font-bold text-lg hover:underline">Read the Full Story &rarr;</a>
+            </div>
+            <div class="bg-gray-50 border border-gray-200 p-8 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+              <div>
+                <p class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Innovate Inc.</p>
+                <h3 class="text-2xl font-bold font-poppins_semibold my-3">Market Entry Strategy</h3>
+                <p class="text-lg mb-6">"We couldn't have navigated our expansion without them. Truly a game-changer for our business." - Emily A.</p>
+              </div>
+              <a href="#" class="font-bold text-lg hover:underline">Read the Full Story &rarr;</a>
+            </div>
+            <div class="bg-gray-50 border border-gray-200 p-8 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200">
+              <div>
+                <p class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Quantum Solutions</p>
+                <h3 class="text-2xl font-bold font-poppins_semibold my-3">Financial Restructuring</h3>
+                <p class="text-lg mb-6">"Their financial advisory boosted our profitability by 30% in the first year. The results speak for themselves." - Sarah B.</p>
+              </div>
+              <a href="#" class="font-bold text-lg hover:underline">Read the Full Story &rarr;</a>
             </div>
           </div>
-          <!-- Block - Marquee Text One Line End -->
         </div>
-      </div>
-      <!-- Section - Marquee Text One Line End -->
+      </section>
 
-      <!-- Section - Services/Features Stacking Cards Start -->
-      <div class="mxd-section padding-stacked-section">
-        <div class="mxd-container grid-container">
+      <section class="h-[400px] md:h-[500px] bg-cover bg-center bg-fixed relative flex items-center justify-center text-center" style="background-image: url('https://c.animaapp.com/mfxt594ljln94V/assets/88aac0_1823d75a0798461fb99c3166f430cb6c~mv2.jpeg');">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="relative z-10 p-8 text-white" data-aos="zoom-in">
+          <h2 class="text-4xl md:text-5xl font-bold font-poppins_semibold mb-4">Ready to Achieve Your Goals?</h2>
+          <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Let's have a conversation about how we can work together to create a strategy for your success.</p>
+          <a href="#contact" class="bg-white text-black text-lg font-madefor_text py-3 px-10 rounded-full hover:bg-gray-300 transition-colors">Schedule Your Free Consultation</a>
+        </div>
+      </section>
 
-          <!-- Block - Services/Features Stacking Cards Start -->
-          <div class="mxd-block mxd-grid-item no-margin">
-            <div class="content__block">
-              <div class="stack-wrapper">
-                <div class="stack-offset"></div>
-                <div class="services-stack">
-                  <!-- services stack single item -->
-                  <div class="stack-item">
-                    <div
-                      class="mxd-services-stack__inner justify-between bg-base-opp">
-                      <div class="mxd-services-stack__title width-60">
-                        <h3 class="opposite">Digital art and graphic design</h3>
-                      </div>
-                      <div class="mxd-services-stack__info width-60">
-                        <div class="mxd-services-cards__tags">
-                          <span
-                            class="tag tag-default tag-outline-opposite">UI/UX</span>
-                          <span class="tag tag-default tag-outline-opposite">Web
-                            design</span>
-                          <span
-                            class="tag tag-default tag-outline-opposite">Packaging</span>
-                          <span
-                            class="tag tag-default tag-outline-opposite">Motion</span>
-                          <span class="tag tag-default tag-outline-opposite">3D
-                            models</span>
-                        </div>
-                        <p class="t-opposite">We create visually compelling
-                          designs that enhance user experience.
-                          We make sure your brand's visuals resonate with your
-                          audience.</p>
-                      </div>
-                      <div class="services-stack__image">
-                        <img class="service-img service-img-s"
-                          src="/2/img/services/800x800_ser-01.webp"
-                          alt="Service/Feature Image">
-                        <img class="service-img service-img-m"
-                          src="/2/img/services/1000x1000_ser-01.webp"
-                          alt="Service/Feature Image">
-                      </div>
-                    </div>
-                  </div>
+      <section id="contact" class="w-full py-16 md:py-24 bg-black text-white">
+        <div class="container mx-auto px-6">
+          <div class="max-w-3xl mx-auto" data-aos="fade-up">
+            <h2 class="text-4xl md:text-5xl font-poppins_semibold font-bold mb-8">Let's Get Started</h2>
+            <form aria-label="Contact Form">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div>
+                  <label for="first-name" class="block text-lg mb-2">First name <span class="text-red-500">*</span></label>
+                  <input type="text" id="first-name" required class="w-full bg-transparent border border-gray-500 rounded-xl p-3 focus:border-white focus:outline-none">
+                </div>
+                <div>
+                  <label for="last-name" class="block text-lg mb-2">Last name <span class="text-red-500">*</span></label>
+                  <input type="text" id="last-name" required class="w-full bg-transparent border border-gray-500 rounded-xl p-3 focus:border-white focus:outline-none">
+                </div>
+                <div class="md:col-span-2">
+                  <label for="email" class="block text-lg mb-2">Email <span class="text-red-500">*</span></label>
+                  <input type="email" id="email" required class="w-full bg-transparent border border-gray-500 rounded-xl p-3 focus:border-white focus:outline-none">
+                </div>
+                <div class="md:col-span-2">
+                  <label for="interest" class="block text-lg mb-2">I'm interested in... <span class="text-red-500">*</span></label>
+                  <select id="interest" required class="w-full bg-transparent border border-gray-500 rounded-xl p-3 focus:border-white focus:outline-none appearance-none" style="background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'); background-repeat: no-repeat; background-position: right 1rem center; background-size: .8em;">
+                    <option class="bg-black" value="">Please select an option...</option>
+                    <option class="bg-black" value="strategy">Custom Growth Strategy</option>
+                    <option class="bg-black" value="operations">Efficient Operations</option>
+                    <option class="bg-black" value="advisory">Financial Advisory</option>
+                    <option class="bg-black" value="general">General Inquiry</option>
+                  </select>
                 </div>
               </div>
-            </div>
-          </div>
-          <!-- Block - Services/Features Stacking Cards End -->
-
-        </div>
-      </div>
-      <!-- Section - Services/Features Stacking Cards End -->
-
-      <!-- Section - About Start -->
-      <div class="mxd-section padding-default">
-        <div class="mxd-container grid-container">
-
-          <!-- Block - About Description with Manifest Start -->
-          <div class="mxd-block">
-            <div class="container-fluid px-0">
-              <div class="row gx-0 d-xl-flex justify-content-xl-center">
-                <div class="col-12 col-xl-8 mxd-grid-item no-margin">
-                  <div class="mxd-block__content">
-                    <div class="mxd-block__manifest centered anim-uni-in-up">
-                      <p class="mxd-manifest mxd-manifest-l reveal-type">Web
-                        design is evolving rapidly,
-                        and I strive to stay ahead. Emerging tools and
-                        technologies enable me to create
-                        visually stunning and seamlessly functional
-                        websites.</p>
-                      <div class="mxd-manifest__controls anim-uni-in-up">
-                        <div class="mxd-btngroup centered">
-                          <a
-                            class="btn btn-anim btn-default btn-accent slide-right-up"
-                            href="works-masonry.html">
-                            <span class="btn-caption">My Works</span>
-                            <i class="ph-bold ph-arrow-up-right"></i>
-                          </a>
-                          <a
-                            class="btn btn-anim btn-default btn-outline slide-down"
-                            href="index-personal-portfolio.html#0">
-                            <span class="btn-caption">Download CV</span>
-                            <i class="ph-bold ph-arrow-down"></i>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <div class="mb-6">
+                <label for="message" class="block text-lg mb-2">Message</label>
+                <textarea id="message" rows="4" class="w-full bg-transparent border border-gray-500 rounded-xl p-3 focus:border-white focus:outline-none"></textarea>
               </div>
-            </div>
-          </div>
-          <!-- Block - About Description with Manifest End -->
-
-        </div>
-      </div>
-      <!-- Section - About End -->
-
-      <!-- Section - Parallax Divider Start -->
-      <div class="mxd-section padding-pre-title">
-        <div class="mxd-container">
-          <div class="mxd-container__circle">
-            <a class="btn-rotating btn-rotating-blur-outline ver-02"
-              href="contact.html">
-              <!-- SVG rotating text -->
-              <svg version="1.1" id="scrollDown"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                viewBox="0 0 160 160" style="enable-background:new 0 0 160 160;"
-                xml:space="preserve"
-                class="btn-rotating__text animate-rotation" data-value="360">
-                <defs>
-                  <path id="textPath"
-                    d="M149.7,80c0,38.5-31.2,69.7-69.7,69.7S10.3,118.5,10.3,80S41.5,10.3,80,10.3S149.7,41.5,149.7,80z" />
-                </defs>
-                <g>
-                  <use xlink:href="#textPath" fill="none"></use>
-                  <text>
-                    <!-- button text here!!! -->
-                    <textpath xlink:href="#textPath">Let's start new project *
-                      Let's start new project * </textpath>
-                  </text>
-                </g>
-              </svg>
-              <!-- image -->
-              <img class="btn-rotating__image"
-                src="/2/img/icons/300x300_obj-btn-02.webp" alt="Object">
-            </a>
-          </div>
-          <div class="mxd-divider">
-            <div class="mxd-divider__image divider-image-6 parallax-img"></div>
-          </div>
-        </div>
-      </div>
-      <!-- Section - Parallax Divider End -->
-
-      <!-- Section - Experience Start -->
-      <div class="mxd-section padding-default">
-        <div class="mxd-container grid-container">
-
-          <!-- Block - Stack Universal Pinned Block with Section Title Start -->
-          <div class="mxd-block">
-            <div class="mxd-pinned-universal">
-              <div class="container-fluid px-0">
-                <div class="row gx-0">
-                  <div class="col-12 col-xl-5 mxd-pinned-universal__static">
-                    <div class="mxd-pinned-universal__static-inner no-margin">
-
-                      <!-- Section Title Start -->
-                      <div class="mxd-section-title h2-only no-margin-desktop">
-                        <div class="container-fluid p-0">
-                          <div class="row g-0">
-                            <div class="col-12 mxd-grid-item no-margin">
-                              <div
-                                class="mxd-section-title__title card-split-title">
-                                <h2 class="reveal-type">Work<br>experience</h2>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- Section Title Start -->
-
-                    </div>
-                  </div>
-                  <div class="col-12 col-xl-7 mxd-pinned-universal__scroll">
-                    <div
-                      class="mxd-pinned-universal__scroll-inner mxd-grid-item no-margin">
-                      <div class="mxd-res-list">
-                        <!-- item -->
-                        <div class="mxd-res-list__item">
-                          <div
-                            class="mxd-res-list__divider anim-uni-in-up"></div>
-                          <div class="mxd-res-list__content">
-                            <div class="mxd-res-list__data">
-                              <div class="mxd-res-list__title">
-                                <h4 class="anim-uni-in-up">Illustrator</h4>
-                                <p class="mxd-res-list__source anim-uni-in-up">
-                                  in the
-                                  <a href="about-me.html#0"
-                                    target="_blank">Creative Mind</a>
-                                  agency
-                                </p>
-                              </div>
-                              <div class="mxd-res-list__descr">
-                                <p class="anim-uni-in-up">I created original
-                                  images for a range of digital and printed
-                                  products.</p>
-                              </div>
-                            </div>
-                            <div class="mxd-res-list__year">
-                              <p class="anim-uni-in-up">2019 - 2021</p>
-                            </div>
-                          </div>
-                          <div
-                            class="mxd-res-list__divider anim-uni-in-up"></div>
-                        </div>
-                        <!-- item -->
-                        <div class="mxd-res-list__item">
-                          <div
-                            class="mxd-res-list__divider anim-uni-in-up"></div>
-                          <div class="mxd-res-list__content">
-                            <div class="mxd-res-list__data">
-                              <div class="mxd-res-list__title">
-                                <h4 class="anim-uni-in-up">Graphic designer</h4>
-                                <p class="mxd-res-list__source anim-uni-in-up">
-                                  in the
-                                  <a href="about-me.html#0" target="_blank">Moon
-                                    Light</a>
-                                  agency
-                                </p>
-                              </div>
-                              <div class="mxd-res-list__descr">
-                                <p class="anim-uni-in-up">My job was to create
-                                  adverts, branding, signage and other media
-                                  products.</p>
-                              </div>
-                            </div>
-                            <div class="mxd-res-list__year">
-                              <p class="anim-uni-in-up">2021 - 2024</p>
-                            </div>
-                          </div>
-                          <div
-                            class="mxd-res-list__divider anim-uni-in-up"></div>
-                        </div>
-                        <!-- item -->
-                        <div class="mxd-res-list__item">
-                          <div
-                            class="mxd-res-list__divider anim-uni-in-up"></div>
-                          <div class="mxd-res-list__content">
-                            <div class="mxd-res-list__data">
-                              <div class="mxd-res-list__title">
-                                <h4 class="anim-uni-in-up">UI/UX designer</h4>
-                                <p class="mxd-res-list__source anim-uni-in-up">
-                                  in the
-                                  <a href="about-me.html#0" target="_blank">Moon
-                                    Light</a>
-                                  agency
-                                </p>
-                              </div>
-                              <div class="mxd-res-list__descr">
-                                <p class="anim-uni-in-up">I am actively involved
-                                  in creating user interfaces for mobile apps
-                                  and websites.</p>
-                              </div>
-                            </div>
-                            <div class="mxd-res-list__year">
-                              <p class="anim-uni-in-up">2024 - now</p>
-                            </div>
-                          </div>
-                          <div
-                            class="mxd-res-list__divider anim-uni-in-up"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <div>
+                <button type="submit" class="w-full bg-white text-black text-lg py-3 rounded-full hover:bg-gray-300 transition-colors">Submit</button>
               </div>
-            </div>
+            </form>
           </div>
-          <!-- Block - Stack Universal Pinned Block with Section Title Start -->
-
         </div>
-      </div>
-      <!-- Section - Experience End -->
-
-      <!-- Section - Tech Stack Marquee One Line Start -->
-      <div class="mxd-section padding-grid-pre-pinned">
-        <div class="mxd-container fullwidth-container">
-
-          <!-- Block - Tech Stack Marquee One Line Start -->
-          <div class="mxd-block">
-            <!-- Marquee Divider Start -->
-            <div class="marquee marquee-right--gsap">
-              <div class="marquee__toright">
-                <!-- single item -->
-                <div class="marquee__item one-line item-regular">
-                  <div class="mxd-tech-stack-cards__item">
-                    <div class="mxd-tech-stack-cards__inner-v3">
-                      <div class="mxd-tech-stack-cards__icon">
-                        <img src="img/tech/icon-photoshop.svg"
-                          alt="Tech Stack Icon">
-                      </div>
-                      <div class="mxd-tech-stack-cards__title">
-                        <p class="t-bright t-caption">Photoshop</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- single item -->
-                <div class="marquee__item one-line item-regular">
-                  <div class="mxd-tech-stack-cards__item">
-                    <div class="mxd-tech-stack-cards__inner-v3">
-                      <div class="mxd-tech-stack-cards__icon">
-                        <img src="img/tech/icon-figma.svg"
-                          alt="Tech Stack Icon">
-                      </div>
-                      <div class="mxd-tech-stack-cards__title">
-                        <p class="t-bright t-caption">Figma</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- single item -->
-                <div class="marquee__item one-line item-regular">
-                  <div class="mxd-tech-stack-cards__item">
-                    <div class="mxd-tech-stack-cards__inner-v3">
-                      <div class="mxd-tech-stack-cards__icon">
-                        <img src="img/tech/icon-illustrator.svg"
-                          alt="Tech Stack Icon">
-                      </div>
-                      <div class="mxd-tech-stack-cards__title">
-                        <p class="t-bright t-caption">Illustrator</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- single item -->
-                <div class="marquee__item one-line item-regular">
-                  <div class="mxd-tech-stack-cards__item">
-                    <div class="mxd-tech-stack-cards__inner-v3">
-                      <div class="mxd-tech-stack-cards__icon">
-                        <img src="img/tech/icon-scketch.svg"
-                          alt="Tech Stack Icon">
-                      </div>
-                      <div class="mxd-tech-stack-cards__title">
-                        <p class="t-bright t-caption">Sketch</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- single item -->
-                <div class="marquee__item one-line item-regular">
-                  <div class="mxd-tech-stack-cards__item">
-                    <div class="mxd-tech-stack-cards__inner-v3">
-                      <div class="mxd-tech-stack-cards__icon">
-                        <img src="img/tech/icon-blender.svg"
-                          alt="Tech Stack Icon">
-                      </div>
-                      <div class="mxd-tech-stack-cards__title">
-                        <p class="t-bright t-caption">Blender</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- single item -->
-                <div class="marquee__item one-line item-regular">
-                  <div class="mxd-tech-stack-cards__item">
-                    <div class="mxd-tech-stack-cards__inner-v3">
-                      <div class="mxd-tech-stack-cards__icon">
-                        <img src="img/tech/icon-html.svg" alt="Tech Stack Icon">
-                      </div>
-                      <div class="mxd-tech-stack-cards__title">
-                        <p class="t-bright t-caption">HTML5</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- single item -->
-                <div class="marquee__item one-line item-regular">
-                  <div class="mxd-tech-stack-cards__item">
-                    <div class="mxd-tech-stack-cards__inner-v3">
-                      <div class="mxd-tech-stack-cards__icon">
-                        <img src="img/tech/icon-css.svg" alt="Tech Stack Icon">
-                      </div>
-                      <div class="mxd-tech-stack-cards__title">
-                        <p class="t-bright t-caption">CSS3</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- single item -->
-                <div class="marquee__item one-line item-regular">
-                  <div class="mxd-tech-stack-cards__item">
-                    <div class="mxd-tech-stack-cards__inner-v3">
-                      <div class="mxd-tech-stack-cards__icon">
-                        <img src="img/tech/icon-notion.svg"
-                          alt="Tech Stack Icon">
-                      </div>
-                      <div class="mxd-tech-stack-cards__title">
-                        <p class="t-bright t-caption">Notion</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-            <!-- Marquee Divider End -->
-          </div>
-          <!-- Block - Tech Stack Marquee One Line End -->
-
-        </div>
-      </div>
-      <!-- Section - Tech Stack Marquee One Line End -->
-
-      <!-- Section - Education Start -->
-      <div class="mxd-section padding-grid-pre-mtext">
-        <div class="mxd-container grid-container">
-
-          <!-- Block - Stack Universal Pinned Block with Section Title Start -->
-          <div class="mxd-block">
-            <div class="mxd-pinned-universal">
-              <div class="container-fluid px-0">
-                <div class="row gx-0">
-                  <div class="col-12 col-xl-5 mxd-pinned-universal__static">
-                    <div class="mxd-pinned-universal__static-inner no-margin">
-
-                      <!-- Section Title Start -->
-                      <div class="mxd-section-title h2-only no-margin-desktop">
-                        <div class="container-fluid p-0">
-                          <div class="row g-0">
-                            <div class="col-12 mxd-grid-item no-margin">
-                              <div
-                                class="mxd-section-title__title card-split-title">
-                                <h2 class="reveal-type">My<br>education</h2>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- Section Title Start -->
-
-                    </div>
-                  </div>
-                  <div class="col-12 col-xl-7 mxd-pinned-universal__scroll">
-                    <div
-                      class="mxd-pinned-universal__scroll-inner mxd-grid-item no-margin">
-                      <div class="mxd-res-list">
-                        <!-- item -->
-                        <div class="mxd-res-list__item">
-                          <div
-                            class="mxd-res-list__divider anim-uni-in-up"></div>
-                          <div class="mxd-res-list__content">
-                            <div class="mxd-res-list__data">
-                              <div class="mxd-res-list__title">
-                                <h4 class="anim-uni-in-up">Drawing
-                                  Concentration</h4>
-                                <p class="mxd-res-list__source anim-uni-in-up">
-                                  course by
-                                  <a href="about-me.html#0" target="_blank">New
-                                    York Academy of Art</a>
-                                </p>
-                              </div>
-                              <div class="mxd-res-list__descr">
-                                <p class="anim-uni-in-up">Intensive drawing
-                                  courses that present the
-                                  fundamental principles of drawing.</p>
-                              </div>
-                            </div>
-                            <div class="mxd-res-list__year">
-                              <p class="anim-uni-in-up">2015 - 2016</p>
-                            </div>
-                          </div>
-                          <div
-                            class="mxd-res-list__divider anim-uni-in-up"></div>
-                        </div>
-                        <!-- item -->
-                        <div class="mxd-res-list__item">
-                          <div
-                            class="mxd-res-list__divider anim-uni-in-up"></div>
-                          <div class="mxd-res-list__content">
-                            <div class="mxd-res-list__data">
-                              <div class="mxd-res-list__title">
-                                <h4 class="anim-uni-in-up">UI/UX Design
-                                  Specialization</h4>
-                                <p class="mxd-res-list__source anim-uni-in-up">
-                                  course by
-                                  <a href="about-me.html#0"
-                                    target="_blank">California Institute of
-                                    Arts</a>
-                                </p>
-                              </div>
-                              <div class="mxd-res-list__descr">
-                                <p class="anim-uni-in-up">Research, design, and
-                                  prototype effective,
-                                  visually-driven websites and apps.</p>
-                              </div>
-                            </div>
-                            <div class="mxd-res-list__year">
-                              <p class="anim-uni-in-up">2019 - 2021</p>
-                            </div>
-                          </div>
-                          <div
-                            class="mxd-res-list__divider anim-uni-in-up"></div>
-                        </div>
-                        <!-- item -->
-                        <div class="mxd-res-list__item">
-                          <div
-                            class="mxd-res-list__divider anim-uni-in-up"></div>
-                          <div class="mxd-res-list__content">
-                            <div class="mxd-res-list__data">
-                              <div class="mxd-res-list__title">
-                                <h4 class="anim-uni-in-up">UI/UX Designer</h4>
-                                <p class="mxd-res-list__source anim-uni-in-up">
-                                  course by
-                                  <a href="about-me.html#0"
-                                    target="_blank">Coursera</a>
-                                </p>
-                              </div>
-                              <div class="mxd-res-list__descr">
-                                <p class="anim-uni-in-up">This cource is about
-                                  how to complete the design
-                                  process from beginning to end.</p>
-                              </div>
-                            </div>
-                            <div class="mxd-res-list__year">
-                              <p class="anim-uni-in-up">2022</p>
-                            </div>
-                          </div>
-                          <div
-                            class="mxd-res-list__divider anim-uni-in-up"></div>
-                        </div>
-
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Block - Stack Universal Pinned Block with Section Title Start -->
-
-        </div>
-      </div>
-      <!-- Section - Education End -->
-
-      <!-- Section - Marquee Text One Line Start -->
-      <div class="mxd-section padding-mtext">
-        <div class="mxd-container fullwidth-container">
-          <!-- Block - Marquee Text One Line Start -->
-          <div class="mxd-block">
-            <div class="marquee marquee-right--gsap muted-extra">
-              <div class="marquee__toright">
-                <!-- single item -->
-                <div class="marquee__item one-line item-regular text">
-                  <p class="marquee__text">Clients Approve</p>
-                  <div class="marquee__image">
-                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 80 80" fill="currentColor">
-                      <path fill="currentColor"
-                        d="M78.4,38.4c0,0-11.8,0-15.8,0c-1.6,0-4.8-0.2-7.1-0.8c-2.3-0.6-4.3-0.8-6.3-2.4c-2-1.2-3.5-3.2-4.7-4.8
-                        c-1.2-1.6-1.6-3.6-2-5.5c-0.3-1.5-0.7-4.3-0.8-5.9c-0.2-4.3,0-17.4,0-17.4C41.8,0.8,41,0,40.2,0s-1.6,0.8-1.6,1.6c0,0,0,13.1,0,17.4
-                        c0,1.6-0.6,4.3-0.8,5.9c-0.3,2-0.8,4-2,5.5c-1.2,2-2.8,3.6-4.7,4.8s-4,1.8-6.3,2.4c-1.9,0.5-4.7,0.6-6.7,0.8c-3.9,0.4-16.6,0-16.6,0
-                        C0.8,38.4,0,39.2,0,40c0,0.8,0.8,1.6,1.6,1.6c0,0,12.2,0,16.6,0c1.6,0,4.8,0.3,6.7,0.8c2.3,0.6,4.3,0.8,6.3,2.4
-                        c1.6,1.2,3.2,2.8,4.3,4.4c1.2,2,2.1,3.9,2.4,6.3c0.2,1.7,0.7,4.7,0.8,6.7c0.2,4,0,16.2,0,16.2c0,0.8,0.8,1.6,1.6,1.6
-                        s1.6-0.8,1.6-1.6c0,0,0-12.3,0-16.2c0-1.6,0.5-5.1,0.8-6.7c0.5-2.3,0.8-4.4,2.4-6.3c1.2-1.6,2.8-3.2,4.3-4.4c2-1.2,3.9-2,6.3-2.4
-                        c1.8-0.3,5.1-0.7,7.1-0.8c3.5-0.2,15.8,0,15.8,0c0.8,0,1.6-0.8,1.6-1.6C80,39.2,79.2,38.4,78.4,38.4C78.4,38.4,78.4,38.4,78.4,38.4z
-                        " />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Block - Marquee Text One Line End -->
-        </div>
-      </div>
-      <!-- Section - Marquee Text One Line End -->
-
-      <!-- Section - Testimonials Slider #03 Start -->
-      <div id="testimonials"
-        class="mxd-section overflow-hidden padding-default">
-        <div class="mxd-container grid-container">
-          <!-- Block - Testimonials Slider #03 Start -->
-          <div class="mxd-block">
-            <div class="testimonials-slider-2 no-padding">
-              <!-- slider main container -->
-              <div class="swiper-testimonials-2 no-padding">
-                <!-- additional required wrapper -->
-                <div class="swiper-wrapper">
-                  <!-- single slide -->
-                  <div class="swiper-slide mxd-fullwidth-slide no-blur">
-                    <div class="mxd-testimonials-image">
-                      <div class="container-fluid p-0 fullheight-l">
-                        <div
-                          class="row g-0 d-flex align-items-stretch fullheight-l">
-                          <div
-                            class="col-12 col-xl-7 mxd-testimonials-image__content mxd-grid-item no-margin">
-                            <div class="mxd-testimonials-image__author"
-                              data-swiper-parallax-x="-50"
-                              data-swiper-parallax-opacity="0">
-                              <div class="mxd-testimonials-image__avatar">
-                                <img src="img/avatars/300x300_ava-03.webp"
-                                  alt="Review Author">
-                              </div>
-                              <div class="mxd-testimonials-image__info">
-
-                                <h5 class="mxd-testimonials-image__name">John
-                                  Lemon</h5>
-                                <p
-                                  class="mxd-testimonials-image__position t-small">Brand
-                                  Manager in
-                                  <a class="link-small-underline"
-                                    href="about-me.html#">Instant Design</a>
-                                </p>
-                                <div class="mxd-testimonials-image__rating">
-                                  <i class="ph-fill ph-star"></i>
-                                  <i class="ph-fill ph-star"></i>
-                                  <i class="ph-fill ph-star"></i>
-                                  <i class="ph-fill ph-star"></i>
-                                  <i class="ph-fill ph-star"></i>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="mxd-testimonials-image__text"
-                              data-swiper-parallax-x="-100"
-                              data-swiper-parallax-opacity="0">
-                              <p class="t-large">Working with Alex was an
-                                absolute pleasure! He took the time to
-                                understand our business
-                                needs and translated them into a beautifully
-                                designed, user-friendly website.</p>
-                              <a
-                                class="btn btn-anim btn-default btn-small btn-opposite slide-right-up"
-                                href="about-me.html#0">
-                                <span class="btn-caption">Project Page</span>
-                                <i class="ph ph-arrow-up-right"></i>
-                              </a>
-                            </div>
-                          </div>
-                          <div
-                            class="col-12 col-xl-5 mxd-testimonials-image__img mxd-grid-item no-margin"
-                            data-swiper-parallax-x="-50"
-                            data-swiper-parallax-opacity="0">
-                            <img
-                              src="img/illustrations/1400x1400_values-01.webp"
-                              alt>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- single slide -->
-                  <div class="swiper-slide mxd-fullwidth-slide no-blur">
-                    <div class="mxd-testimonials-image">
-                      <div class="container-fluid p-0 fullheight-l">
-                        <div
-                          class="row g-0 d-flex align-items-stretch fullheight-l">
-                          <div
-                            class="col-12 col-xl-7 mxd-testimonials-image__content mxd-grid-item no-margin">
-                            <div class="mxd-testimonials-image__author"
-                              data-swiper-parallax-x="-50"
-                              data-swiper-parallax-opacity="0">
-                              <div class="mxd-testimonials-image__avatar">
-                                <img src="img/avatars/300x300_ava-04.webp"
-                                  alt="Review Author">
-                              </div>
-                              <div class="mxd-testimonials-image__info">
-                                <h5 class="mxd-testimonials-image__name">Alex
-                                  Tomato</h5>
-                                <p
-                                  class="mxd-testimonials-image__position t-small">Brand
-                                  Manager in
-                                  <a class="link-small-underline"
-                                    href="about-me.html#">Instant Design</a>
-                                </p>
-                                <div class="mxd-testimonials-image__rating">
-                                  <i class="ph-fill ph-star"></i>
-                                  <i class="ph-fill ph-star"></i>
-                                  <i class="ph-fill ph-star"></i>
-                                  <i class="ph-fill ph-star"></i>
-                                  <i class="ph-fill ph-star"></i>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="mxd-testimonials-image__text"
-                              data-swiper-parallax-x="-100"
-                              data-swiper-parallax-opacity="0">
-                              <p class="t-large">Amazing job on our website!
-                                Alex understood exactly
-                                what we needed and made it look great and easy
-                                to use.</p>
-                              <a
-                                class="btn btn-anim btn-default btn-small btn-opposite slide-right-up"
-                                href="about-me.html#0">
-                                <span class="btn-caption">Project Page</span>
-                                <i class="ph ph-arrow-up-right"></i>
-                              </a>
-                            </div>
-                          </div>
-                          <div
-                            class="col-12 col-xl-5 mxd-testimonials-image__img mxd-grid-item no-margin"
-                            data-swiper-parallax-x="-50"
-                            data-swiper-parallax-opacity="0">
-                            <img
-                              src="img/illustrations/1400x1400_values-02.webp"
-                              alt>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- navigation buttons -->
-                <div class="swiper-testimonials__controls">
-                  <div
-                    class="swiper-button-prev mxd-slider-btn mxd-slider-btn-round-prev">
-                    <a
-                      class="btn btn-round btn-round-small btn-outline slide-left anim-no-delay"
-                      href="about-me.html#0">
-                      <i class="ph ph-arrow-left"></i>
-                    </a>
-                  </div>
-                  <div
-                    class="swiper-pagination mxd-swiper-pagination-fraction"></div>
-                  <div
-                    class="swiper-button-next mxd-slider-btn mxd-slider-btn-round-next">
-                    <a
-                      class="btn btn-round btn-round-small btn-outline slide-right anim-no-delay"
-                      href="about-me.html#0">
-                      <i class="ph ph-arrow-right"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Block - Testimonials Slider #03 End -->
-        </div>
-      </div>
-      <!-- Section - Testimonials Slider #03 End -->
-
-      <!-- Section - Inner Page Headline Start -->
-      <div
-        class="mxd-section mxd-section-inner-headline padding-s-text-pre-form overflow-hidden">
-        <div class="mxd-container grid-container">
-
-          <!-- Block - Inner Page Headline Start -->
-          <div class="mxd-block loading-wrap">
-            <div class="container-fluid px-0">
-              <div class="row gx-0">
-
-                <!-- Inner Headline Name Start -->
-                <div class="col-12 col-xl-2 mxd-grid-item no-margin">
-                  <div class="mxd-block__name name-inner-headline">
-                    <p class="mxd-point-subtitle">
-                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                        x="0px" y="0px" width="20px" height="20px"
-                        viewBox="0 0 20 20" fill="currentColor">
-                        <path fill="currentColor"
-                          d="M19.6,9.6c0,0-3,0-4,0c-0.4,0-1.8-0.2-1.8-0.2c-0.6-0.1-1.1-0.2-1.6-0.6c-0.5-0.3-0.9-0.8-1.2-1.2
-                          c-0.3-0.4-0.4-0.9-0.5-1.4c0,0-0.1-1.1-0.2-1.5c-0.1-1.1,0-4.4,0-4.4C10.4,0.2,10.2,0,10,0S9.6,0.2,9.6,0.4c0,0,0.1,3.3,0,4.4
-                          c0,0.4-0.2,1.5-0.2,1.5C9.4,6.7,9.2,7.2,9,7.6C8.7,8.1,8.2,8.5,7.8,8.9c-0.5,0.3-1,0.5-1.6,0.6c0,0-1.2,0.1-1.7,0.2
-                          c-1,0.1-4.2,0-4.2,0C0.2,9.6,0,9.8,0,10c0,0.2,0.2,0.4,0.4,0.4c0,0,3.1-0.1,4.2,0c0.4,0,1.7,0.2,1.7,0.2c0.6,0.1,1.1,0.2,1.6,0.6
-                          c0.4,0.3,0.8,0.7,1.1,1.1c0.3,0.5,0.5,1,0.6,1.6c0,0,0.1,1.3,0.2,1.7c0,1,0,4.1,0,4.1c0,0.2,0.2,0.4,0.4,0.4s0.4-0.2,0.4-0.4
-                          c0,0,0-3.1,0-4.1c0-0.4,0.2-1.7,0.2-1.7c0.1-0.6,0.2-1.1,0.6-1.6c0.3-0.4,0.7-0.8,1.1-1.1c0.5-0.3,1-0.5,1.6-0.6
-                          c0,0,1.3-0.1,1.8-0.2c1,0,4,0,4,0c0.2,0,0.4-0.2,0.4-0.4C20,9.8,19.8,9.6,19.6,9.6L19.6,9.6z" />
-                      </svg>
-                      <span>Contact</span>
-                    </p>
-                  </div>
-                </div>
-                <!-- Inner Headline Name Start -->
-
-                <!-- Inner Headline Content Start -->
-                <div class="col-12 col-xl-8 mxd-grid-item no-margin">
-
-                  <div class="mxd-block__content">
-                    <div class="mxd-block__inner-headline loading__item">
-                      <h1 class="inner-headline__title">
-                        Let's talk<br>about your project!
-                        <!-- <a class="btn btn-line-headline slide-right-up anim-no-delay" href="mailto:example@example.com?subject=Message%20from%20your%20site">
-                          <span class="btn-caption">hello@rayo.com</span>
-                          <i class="ph-bold ph-arrow-up-right"></i>
-                        </a> -->
-                      </h1>
-                      <a
-                        class="btn btn-line-headline slide-right-up anim-no-delay"
-                        href="mailto:example@example.com?subject=Message%20from%20your%20site">
-                        <span class="btn-caption">hello@rayo.com</span>
-                        <i class="ph-bold ph-arrow-up-right"></i>
-                      </a>
-                      <p
-                        class="inner-headline__text t-large t-bright loading__item">Have
-                        questions? We've got the answers!
-                        Here, you'll find clear and concise information about
-                        our services, process,
-                        and what to expect when working with us. If you need
-                        more details, feel free to
-                        reach out!</p>
-                    </div>
-                  </div>
-
-                </div>
-                <!-- Inner Headline Content End -->
-
-              </div>
-            </div>
-          </div>
-          <!-- Block - Inner Page Headline End -->
-
-        </div>
-      </div>
-      <!-- Section - Inner Page Headline End -->
-
-      <!-- Section - Inner Page Form Start -->
-      <div class="mxd-section mxd-section-inner-form padding-default">
-        <div class="mxd-container grid-container">
-
-          <!-- Block - Inner Page Headline Start -->
-          <div class="mxd-block">
-            <div class="container-fluid px-0">
-              <div class="row gx-0">
-
-                <!-- Inner Headline Name Start -->
-                <div class="col-12 col-xl-2 mxd-grid-item no-margin"></div>
-                <!-- Inner Headline Name Start -->
-
-                <!-- Inner Headline Content Start -->
-                <div class="col-12 col-xl-8">
-
-                  <div class="mxd-block__content contact">
-                    <div class="mxd-block__inner-form loading__fade">
-                      <div class="form-container">
-
-                        <!-- Reply Messages Start -->
-                        <div class="form__reply centered text-center">
-                          <i class="ph-fill ph-smiley-wink reply__icon"></i>
-                          <!-- <i class="ph-fill ph-smiley reply__icon"></i> -->
-                          <p class="reply__title">Done!</p>
-                          <span class="reply__text">Thanks for your message.
-                            We'll get back as soon as possible.</span>
-                        </div>
-                        <!-- Reply Messages End -->
-
-                        <!-- Contact Form Start -->
-                        <form class="form contact-form" id="contact-form">
-                          <!-- Hidden Required Fields -->
-                          <input type="hidden" name="project_name"
-                            value="Rayo Template">
-                          <input type="hidden" name="admin_email"
-                            value="support@mixdesign.dev">
-                          <input type="hidden" name="form_subject"
-                            value="Contact Form Message">
-                          <!-- END Hidden Required Fields-->
-                          <div class="container-fluid p-0">
-                            <div class="row gx-0">
-                              <div
-                                class="col-12 col-md-6 mxd-grid-item anim-uni-in-up">
-                                <input type="text" name="Name"
-                                  placeholder="Your name*" required>
-                              </div>
-                              <div
-                                class="col-12 col-md-6 mxd-grid-item anim-uni-in-up">
-                                <input type="text" name="Company"
-                                  placeholder="Company name">
-                              </div>
-                              <div
-                                class="col-12 col-md-6 mxd-grid-item anim-uni-in-up">
-                                <input type="email" name="E-mail"
-                                  placeholder="Email*" required>
-                              </div>
-                              <div
-                                class="col-12 col-md-6 mxd-grid-item anim-uni-in-up">
-                                <input type="tel" name="Phone"
-                                  placeholder="Phone">
-                              </div>
-                              <div class="col-12 mxd-grid-item anim-uni-in-up">
-                                <textarea name="Message"
-                                  placeholder="A few words about your project*"
-                                  required></textarea>
-                              </div>
-                              <div class="col-12 mxd-grid-item anim-uni-in-up">
-                                <button
-                                  class="btn btn-anim btn-default btn-large btn-opposite slide-right-up"
-                                  type="submit">
-                                  <span class="btn-caption">Submit</span>
-                                  <i class="ph-bold ph-arrow-up-right"></i>
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                        </form>
-                        <!-- Contact Form End -->
-
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-                <!-- Inner Headline Content End -->
-
-              </div>
-            </div>
-          </div>
-          <!-- Block - Inner Page Headline End -->
-        </div>
-      </div>
-      <!-- Section - Inner Page Form End -->
+      </section>
 
     </main>
-    <!-- Page Content End -->
 
-    <!-- Footer Start -->
-    <footer id="mxd-footer" class="mxd-footer">
-
-      <!-- Footer Block - Fullwidth Text Start -->
-      <div class="mxd-footer__text-wrap">
-        <div class="fullwidth-text__tl-trigger"></div>
-        <div class="mxd-footer__fullwidth-text personal anim-top-to-bottom">
-          <svg class="mxd-footer__svg-v2" version="1.1"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-            viewBox="0 0 518 72" style="enable-background:new 0 0 518 72;"
-            xml:space="preserve">
-            <path
-              d="M18.9,71.9C13,71.9,8.4,70.5,5,67.6c-3.4-2.9-5-6.7-5-11.4c0-5,1.7-8.8,5.1-11.5c3.4-2.7,8.3-4.1,14.8-4.1h15.5v-2
-            c0-6.2-3.6-9.3-10.8-9.3c-6.1,0-9.8,2.2-11.1,6.6H0.8c1.1-5.4,3.6-9.5,7.7-12.4c4.1-2.8,9.4-4.3,16-4.3c7.4,0,13.1,1.7,17,5
-            c3.9,3.4,5.8,8.2,5.8,14.7v19.4h6V71H40.4v-8.1h-3.6c-1.7,2.9-4.1,5.1-7.1,6.7C26.9,71.1,23.2,71.9,18.9,71.9z M20.8,62.2
-            c2.8,0,5.2-0.5,7.4-1.6c2.2-1,3.9-2.4,5.2-4.2c1.3-1.8,1.9-3.8,1.9-6v-1.2H20.6c-5.7,0-8.5,2.1-8.5,6.3c0,2.1,0.8,3.7,2.3,4.9
-            C15.9,61.6,18,62.2,20.8,62.2z M63.1,71V0h12.6v71H63.1z M111.8,72c-5.4,0-10.1-1.1-14.2-3.3c-4-2.2-7.1-5.2-9.3-9.2
-            c-2.2-4-3.3-8.7-3.3-14.1c0-5.4,1.1-10.1,3.2-14c2.1-3.9,5.2-6.9,9.1-9c3.9-2.1,8.6-3.2,13.9-3.2c5.2,0,9.6,1,13.4,3
-            c3.7,2,6.6,4.9,8.6,8.6c2,3.7,3,8.2,3,13.3v4.4H97.2c0.5,4.3,2,7.6,4.5,9.8c2.5,2.3,5.8,3.4,10,3.4c3.1,0,5.6-0.6,7.6-1.7
-            c1.9-1.2,3.3-2.9,4.1-5.2h12.7c-1.2,5.4-3.9,9.5-8.2,12.5C123.7,70.5,118.3,72,111.8,72z M97.5,40.1h26.7c-0.5-3.5-1.8-6.2-4-8
-            c-2.2-1.8-5.2-2.7-8.9-2.7c-3.7,0-6.7,0.9-9,2.8C99.9,34,98.3,36.6,97.5,40.1z M138.4,71L158.3,45l-18.9-24.8h14l12.2,16l12.3-16
-            h13.9L172.9,45L192.8,71h-14.1l-13.1-17.3L152.4,71H138.4z M210.5,71l-16.3-50.7h12.9l10.7,35.1h0.4l12.5-35.1h12.1l12.5,35.1h0.4
-            l10.7-35.1h12.8L262.9,71h-13.5l-12.5-34.4h-0.3L224,71H210.5z M301,71.9c-5.9,0-10.6-1.4-13.9-4.3c-3.4-2.9-5-6.7-5-11.4
-            c0-5,1.7-8.8,5.1-11.5c3.4-2.7,8.3-4.1,14.8-4.1h15.5v-2c0-6.2-3.6-9.3-10.8-9.3c-6.1,0-9.8,2.2-11.1,6.6h-12.6
-            c1.1-5.4,3.6-9.5,7.7-12.4c4.1-2.8,9.4-4.3,16-4.3c7.4,0,13.1,1.7,17,5c3.9,3.4,5.8,8.2,5.8,14.7v19.4h6V71h-12.9v-8.1h-3.6
-            c-1.7,2.9-4.1,5.1-7.1,6.7C308.9,71.1,305.3,71.9,301,71.9z M302.9,62.2c2.8,0,5.2-0.5,7.4-1.6c2.2-1,3.9-2.4,5.2-4.2
-            c1.3-1.8,1.9-3.8,1.9-6v-1.2h-14.8c-5.7,0-8.5,2.1-8.5,6.3c0,2.1,0.8,3.7,2.3,4.9C297.9,61.6,300.1,62.2,302.9,62.2z M345.1,71V0
-            h12.6v71H345.1z M369.9,71V0h12.6v39.9h0.3l21.4-19.6h15.1l-22.1,19.9L421.1,71h-14.9l-17.8-23.1l-5.9,4.8V71H369.9z M449.4,72
-            c-5.4,0-10.1-1.1-14.2-3.3c-4-2.2-7.1-5.2-9.3-9.2c-2.2-4-3.3-8.7-3.3-14.1c0-5.4,1.1-10.1,3.2-14c2.1-3.9,5.2-6.9,9.1-9
-            c3.9-2.1,8.6-3.2,13.9-3.2c5.2,0,9.6,1,13.4,3c3.7,2,6.6,4.9,8.6,8.6c2,3.7,3,8.2,3,13.3v4.4h-39.2c0.5,4.3,2,7.6,4.5,9.8
-            c2.5,2.3,5.8,3.4,10,3.4c3.1,0,5.6-0.6,7.6-1.7c1.9-1.2,3.3-2.9,4.1-5.2h12.7c-1.2,5.4-3.9,9.5-8.2,12.5
-            C461.3,70.5,455.9,72,449.4,72z M435.1,40.1h26.7c-0.5-3.5-1.8-6.2-4-8c-2.2-1.8-5.2-2.7-8.9-2.7c-3.7,0-6.7,0.9-9,2.8
-            C437.5,34,435.9,36.6,435.1,40.1z M487,71V32.9h-6.3V20.3h12.9v9.8h3.6c1.4-3.4,3.6-5.9,6.5-7.7c2.9-1.7,6.3-2.6,10.1-2.6h4.2v10.8
-            h-4.8c-4.6,0-8.1,1.3-10.3,4c-2.3,2.6-3.4,6.2-3.4,10.6V71H487z" />
-          </svg>
-        </div>
-      </div>
-      <!-- Footer Block - Fullwidth Text End -->
-
-      <!-- Footer Block - Info Columns Start -->
-      <div class="mxd-footer__footer-blocks">
-        <!-- single column -->
-        <div class="footer-blocks__column animate-card-3">
-          <!-- inner card -->
-          <div class="footer-blocks__card fullheight-card">
-            <!-- footer navigation -->
-            <div class="footer-blocks__nav">
-              <ul class="footer-nav">
-                <li class="footer-nav__item anim-uni-in-up">
-                  <a href="index-main.html" class="footer-nav__link btn-anim">
-                    <span class="btn-caption">Home</span>
-                  </a>
-                </li>
-                <li class="footer-nav__item anim-uni-in-up">
-                  <a href="about-me.html" class="footer-nav__link btn-anim">
-                    <span class="btn-caption">About me</span>
-                  </a>
-                </li>
-                <li class="footer-nav__item anim-uni-in-up">
-                  <a href="works-simple.html" class="footer-nav__link btn-anim">
-                    <span class="btn-caption">Works</span>
-                  </a>
-                  <p class="footer-nav__counter">
-                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                      x="0px" y="0px" width="20px" height="20px"
-                      viewBox="0 0 20 20" fill="currentColor">
-                      <path fill="currentColor"
-                        d="M19.6,9.6c0,0-3,0-4,0c-0.4,0-1.8-0.2-1.8-0.2c-0.6-0.1-1.1-0.2-1.6-0.6c-0.5-0.3-0.9-0.8-1.2-1.2
-                        c-0.3-0.4-0.4-0.9-0.5-1.4c0,0-0.1-1.1-0.2-1.5c-0.1-1.1,0-4.4,0-4.4C10.4,0.2,10.2,0,10,0S9.6,0.2,9.6,0.4c0,0,0.1,3.3,0,4.4
-                        c0,0.4-0.2,1.5-0.2,1.5C9.4,6.7,9.2,7.2,9,7.6C8.7,8.1,8.2,8.5,7.8,8.9c-0.5,0.3-1,0.5-1.6,0.6c0,0-1.2,0.1-1.7,0.2
-                        c-1,0.1-4.2,0-4.2,0C0.2,9.6,0,9.8,0,10c0,0.2,0.2,0.4,0.4,0.4c0,0,3.1-0.1,4.2,0c0.4,0,1.7,0.2,1.7,0.2c0.6,0.1,1.1,0.2,1.6,0.6
-                        c0.4,0.3,0.8,0.7,1.1,1.1c0.3,0.5,0.5,1,0.6,1.6c0,0,0.1,1.3,0.2,1.7c0,1,0,4.1,0,4.1c0,0.2,0.2,0.4,0.4,0.4s0.4-0.2,0.4-0.4
-                        c0,0,0-3.1,0-4.1c0-0.4,0.2-1.7,0.2-1.7c0.1-0.6,0.2-1.1,0.6-1.6c0.3-0.4,0.7-0.8,1.1-1.1c0.5-0.3,1-0.5,1.6-0.6
-                        c0,0,1.3-0.1,1.8-0.2c1,0,4,0,4,0c0.2,0,0.4-0.2,0.4-0.4C20,9.8,19.8,9.6,19.6,9.6L19.6,9.6z"></path>
-                    </svg>
-                    <span>10</span>
-                  </p>
-                </li>
-                <li class="footer-nav__item anim-uni-in-up">
-                  <a href="services.html" class="footer-nav__link btn-anim">
-                    <span class="btn-caption">Services</span>
-                  </a>
-                </li>
-                <li class="footer-nav__item anim-uni-in-up">
-                  <a href="blog-standard.html"
-                    class="footer-nav__link btn-anim">
-                    <span class="btn-caption">Insights</span>
-                  </a>
-                </li>
-                <li class="footer-nav__item anim-uni-in-up">
-                  <a href="contact.html" class="footer-nav__link btn-anim">
-                    <span class="btn-caption">Contact</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
+    <footer class="bg-white text-black py-16">
+      <div class="container mx-auto px-6">
+        <div class="border-t-2 border-neutral-800 mb-8"></div>
+        <div class="flex flex-col md:flex-row justify-between gap-8">
+          <div class="text-center md:text-left">
+            <p class="text-xl mb-4"><a href="#">L. Thompson</a></p>
+            <p class="text-base">&copy; 2025 by L. Thompson</p>
           </div>
-        </div>
-        <!-- single column -->
-        <div class="footer-blocks__column animate-card-3">
-          <!-- inner card -->
-          <div class="footer-blocks__card">
-            <p class="mxd-point-subtitle anim-uni-in-up">
-              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px"
-                y="0px" width="20px" height="20px" viewBox="0 0 20 20"
-                fill="currentColor">
-                <path fill="currentColor"
-                  d="M19.6,9.6c0,0-3,0-4,0c-0.4,0-1.8-0.2-1.8-0.2c-0.6-0.1-1.1-0.2-1.6-0.6c-0.5-0.3-0.9-0.8-1.2-1.2
-                  c-0.3-0.4-0.4-0.9-0.5-1.4c0,0-0.1-1.1-0.2-1.5c-0.1-1.1,0-4.4,0-4.4C10.4,0.2,10.2,0,10,0S9.6,0.2,9.6,0.4c0,0,0.1,3.3,0,4.4
-                  c0,0.4-0.2,1.5-0.2,1.5C9.4,6.7,9.2,7.2,9,7.6C8.7,8.1,8.2,8.5,7.8,8.9c-0.5,0.3-1,0.5-1.6,0.6c0,0-1.2,0.1-1.7,0.2
-                  c-1,0.1-4.2,0-4.2,0C0.2,9.6,0,9.8,0,10c0,0.2,0.2,0.4,0.4,0.4c0,0,3.1-0.1,4.2,0c0.4,0,1.7,0.2,1.7,0.2c0.6,0.1,1.1,0.2,1.6,0.6
-                  c0.4,0.3,0.8,0.7,1.1,1.1c0.3,0.5,0.5,1,0.6,1.6c0,0,0.1,1.3,0.2,1.7c0,1,0,4.1,0,4.1c0,0.2,0.2,0.4,0.4,0.4s0.4-0.2,0.4-0.4
-                  c0,0,0-3.1,0-4.1c0-0.4,0.2-1.7,0.2-1.7c0.1-0.6,0.2-1.1,0.6-1.6c0.3-0.4,0.7-0.8,1.1-1.1c0.5-0.3,1-0.5,1.6-0.6
-                  c0,0,1.3-0.1,1.8-0.2c1,0,4,0,4,0c0.2,0,0.4-0.2,0.4-0.4C20,9.8,19.8,9.6,19.6,9.6L19.6,9.6z"></path>
-              </svg>
-              <a
-                href="mailto:example@example.com?subject=Message%20from%20your%20site">hello@rayostudio.com</a>
-            </p>
-          </div>
-          <!-- inner card -->
-          <div class="footer-blocks__card">
-            <p class="mxd-point-subtitle anim-uni-in-up">
-              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px"
-                y="0px" width="20px" height="20px" viewBox="0 0 20 20"
-                fill="currentColor">
-                <path fill="currentColor"
-                  d="M19.6,9.6c0,0-3,0-4,0c-0.4,0-1.8-0.2-1.8-0.2c-0.6-0.1-1.1-0.2-1.6-0.6c-0.5-0.3-0.9-0.8-1.2-1.2
-                  c-0.3-0.4-0.4-0.9-0.5-1.4c0,0-0.1-1.1-0.2-1.5c-0.1-1.1,0-4.4,0-4.4C10.4,0.2,10.2,0,10,0S9.6,0.2,9.6,0.4c0,0,0.1,3.3,0,4.4
-                  c0,0.4-0.2,1.5-0.2,1.5C9.4,6.7,9.2,7.2,9,7.6C8.7,8.1,8.2,8.5,7.8,8.9c-0.5,0.3-1,0.5-1.6,0.6c0,0-1.2,0.1-1.7,0.2
-                  c-1,0.1-4.2,0-4.2,0C0.2,9.6,0,9.8,0,10c0,0.2,0.2,0.4,0.4,0.4c0,0,3.1-0.1,4.2,0c0.4,0,1.7,0.2,1.7,0.2c0.6,0.1,1.1,0.2,1.6,0.6
-                  c0.4,0.3,0.8,0.7,1.1,1.1c0.3,0.5,0.5,1,0.6,1.6c0,0,0.1,1.3,0.2,1.7c0,1,0,4.1,0,4.1c0,0.2,0.2,0.4,0.4,0.4s0.4-0.2,0.4-0.4
-                  c0,0,0-3.1,0-4.1c0-0.4,0.2-1.7,0.2-1.7c0.1-0.6,0.2-1.1,0.6-1.6c0.3-0.4,0.7-0.8,1.1-1.1c0.5-0.3,1-0.5,1.6-0.6
-                  c0,0,1.3-0.1,1.8-0.2c1,0,4,0,4,0c0.2,0,0.4-0.2,0.4-0.4C20,9.8,19.8,9.6,19.6,9.6L19.6,9.6z"></path>
-              </svg>
-              <a href="tel:+12127089400">+1 212-708-9400</a>
-            </p>
-          </div>
-
-        </div>
-        <!-- single column -->
-        <div class="footer-blocks__column animate-card-3">
-          <!-- inner card -->
-          <div class="footer-blocks__card fullheight-card">
-            <!-- nav block -->
-            <div class="footer-blocks__block">
-              <!-- card title -->
-              <div class="footer-blocks__title anim-uni-in-up">
-                <p class="footer-blocks__title-l">Ecosystem</p>
-              </div>
-              <!-- footer socials -->
-              <div class="footer-blocks__socials">
-                <ul class="footer-socials">
-                  <li class="footer-socials__item anim-uni-in-up"><a
-                      href="https://dribbble.com/" class="footer-socials__link"
-                      target="_blank">Dribbble</a></li>
-                  <li class="footer-socials__item anim-uni-in-up"><a
-                      href="https://www.behance.net/"
-                      class="footer-socials__link"
-                      target="_blank">Behance</a></li>
-                  <li class="footer-socials__item anim-uni-in-up"><a
-                      href="https://www.instagram.com/"
-                      class="footer-socials__link"
-                      target="_blank">Instagram</a></li>
-                  <li class="footer-socials__item anim-uni-in-up"><a
-                      href="https://github.com/" class="footer-socials__link"
-                      target="_blank">Github</a></li>
-                  <li class="footer-socials__item anim-uni-in-up"><a
-                      href="https://codepen.io/" class="footer-socials__link"
-                      target="_blank">Codepen</a></li>
-                  <li class="footer-socials__item anim-uni-in-up"><a
-                      href="https://www.figma.com/community"
-                      class="footer-socials__link" target="_blank">Figma
-                      Community</a></li>
-                </ul>
-              </div>
+          <div class="bg-black text-white p-8 max-w-md mx-auto md:mx-0 text-center md:text-left">
+            <p class="text-lg mb-4">123-456-7800</p>
+            <p class="text-lg mb-4"><a href="mailto:info@mysite.com">info@mysite.com</a></p>
+            <p class="text-lg mb-6">500 Terry Francine St. San Francisco, CA 94158</p>
+            <div class="flex justify-center md:justify-start space-x-4 mb-6">
+              <a href="#" aria-label="LinkedIn Profile">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" /></svg>
+              </a>
+              <a href="#" aria-label="Twitter Profile">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616v.064c0 2.298 1.634 4.212 3.793 4.649-.65.177-1.354.23-2.06.088.621 1.956 2.423 3.379 4.565 3.419-1.77 1.39-3.995 2.215-6.42 2.215-.42 0-.835-.025-1.243-.073 2.289 1.474 5.021 2.34 8.001 2.34 9.497 0 14.694-7.857 14.694-14.695 0-.224-.005-.447-.015-.668.987-.71 1.852-1.6 2.541-2.638z" /></svg>
+              </a>
             </div>
           </div>
         </div>
       </div>
-      <!-- Footer Block - Info Columns End -->
-
     </footer>
-    <!-- Footer End -->
+  </div>
 
-  </body>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 800, // Animation duration in milliseconds
+      once: true,    // Whether animation should happen only once
+    });
 
+    // JavaScript for Hamburger Menu Toggle
+    const hamburgerButton = document.getElementById('hamburger-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const openIcon = document.getElementById('menu-open-icon');
+    const closeIcon = document.getElementById('menu-close-icon');
+
+    hamburgerButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      openIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+      const isExpanded = hamburgerButton.getAttribute('aria-expanded') === 'true';
+      hamburgerButton.setAttribute('aria-expanded', !isExpanded);
+    });
+
+    // Close mobile menu when a link is clicked
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        openIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+        hamburgerButton.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
+
+</body>
 </html>
