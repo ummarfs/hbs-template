@@ -22,7 +22,7 @@
       "headline": "Driving Sustainable Growth for Ambitious Businesses",
       "profilePicureUrl": "https://d1xwrlfgrqppfv.cloudfront.net/profile/cmfb2lyfz0006mq2objw37464-1757392827008-image.jpeg",
       "location": "india",
-      "coverImage": "https://d1xwrlfgrqppfv.cloudfront.net/coverimage/cmfb2lyfz0006mq2objw37464-1757392828958-image.jpeg",
+      "coverImage": "https://picsum.photos/id/119/800/1200",
       "position": "Strategic insights and actionable roadmaps to scale your operations and maximize profitability.",
       "role": "Consultant"
     }
@@ -158,9 +158,9 @@
         "content": "As an accomplished Full-Stack Developer, I specialize in designing and delivering scalable applications that drive innovation. My strong grasp of both frontend and backend technologies enables me to create solutions that resonate with users. I thrive in dynamic environments, continuously embracing new technologies to enhance application quality and functionality.",
         "section_title": "About Me",
         "heading": "From Corporate Strategy to Your Strategic Partner",
-        "subheading": "My journey from corporate strategy to consulting",
+        "subheading": "An Introduction",
         "image": "https://c.animaapp.com/mfnpsvda9pPWxp/assets/88aac0_70dba72adce54eea9f53068b36a9e0e9~mv2.jpeg",
-        "navbarName":"About"
+        "navbarName": "About"
       }
     }
   },
@@ -197,8 +197,8 @@
           }
         ],
         "heading": "Empowering growth for you and your business",
-        "section_title": "Consulting Offerings",
-        "navbarName":"Offerings"
+        "section_title": "Core Services",
+        "navbarName": "Offerings"
       }
     }
   },
@@ -231,8 +231,8 @@
         "section_title": "GET IN TOUCH",
         "contactFormHeading": "Send Me a Message",
         "contactFormButtonText": "Send Message",
-        "messageInputLabel":"What's your biggest business challenge right now?",
-        "navbarName":"Work With Me"
+        "messageInputLabel": "What's your biggest business challenge right now?",
+        "navbarName": "Work With Me"
       }
     }
   },
@@ -290,7 +290,7 @@
             "name": "IDMS"
           }
         ],
-        "section_title": "Trusted by amazing clients"
+        "section_title": "Proud to have worked with amazing businesses"
       }
     }
   },
@@ -393,7 +393,9 @@
             "number": "10K+",
             "label": "Lines of Code Written"
           }
-        ]
+        ],
+        "section_title":"Experience & Results",
+        "image":"https://picsum.photos/id/431/800/800"
       }
     }
   },
@@ -471,7 +473,7 @@
           }
         ],
         "section_title": "Client Success Stories",
-        "navbarName":"Success"
+        "navbarName": "Success"
       }
     }
   },
@@ -486,12 +488,41 @@
           {
             "question": "Who is your ideal client?",
             "answer": "I primarily work with established small to medium-sized businesses (typically $1M - $10M in annual revenue) that are poised for growth but lack the internal strategic clarity to get to the next level. My ideal clients are ambitious founders and leaders who are open to new ideas and ready to take decisive action."
-          }, {
+          },
+          {
             "question": "Who is your ideal client?",
             "answer": "I primarily work with established small to medium-sized businesses (typically $1M - $10M in annual revenue) that are poised for growth but lack the internal strategic clarity to get to the next level. My ideal clients are ambitious founders and leaders who are open to new ideas and ready to take decisive action."
           }
         ],
-        "navbarName":"FAQ"
+        "navbarName": "FAQ"
+      }
+    }
+  },
+  "process": {
+    "meta": {
+      "hide": false
+    },
+    "value": {
+      "process": {
+        "section_title":"Our Collaborative Process",
+        "items": [
+          {
+            "title": "Discovery & Alignment",
+            "description": "We begin with a deep dive to understand your unique vision, challenges, and objectives, ensuring we are perfectly aligned from day one."
+          },
+           {
+             "title": "Discovery & Alignment",
+             "description": "We begin with a deep dive to understand your unique vision, challenges, and objectives, ensuring we are perfectly aligned from day one."
+           },
+            {
+              "title": "Discovery & Alignment",
+              "description": "We begin with a deep dive to understand your unique vision, challenges, and objectives, ensuring we are perfectly aligned from day one."
+            },
+             {
+               "title": "Discovery & Alignment",
+               "description": "We begin with a deep dive to understand your unique vision, challenges, and objectives, ensuring we are perfectly aligned from day one."
+             }
+        ]
       }
     }
   }

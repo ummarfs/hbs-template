@@ -37,7 +37,9 @@
         <div
           class="container mx-auto px-6 py-4 flex justify-between items-center">
           <p class="text-lg ">
-            <a href="#" class="text-white">L. Thompson</a>
+            <a href="#"
+              class="text-white">{{personal_info.value.firstName}}
+              {{personal_info.value.lastName}}</a>
           </p>
           <div class="md:hidden">
             <button id="hamburger-button" class="text-white focus:outline-none"
@@ -56,14 +58,35 @@
           </div>
           <nav class="hidden md:flex">
             <ul class="flex items-center gap-x-4 ">
+              {{#if about.value.about.content}}
+              {{#unless about.meta.hide}}
               <li><a href="#about"
-                  class="px-2 py-1 tracking-wider text-base hover:text-gray-300">About</a></li>
+                  class="px-2 py-1 tracking-wider text-base hover:text-gray-300">{{default
+                  about.value.about.navbarName 'About'}}</a></li>
+              {{/unless}}
+              {{/if}}
+              {{#if services.value.services.items}}
+              {{#unless services.meta.hide}}
               <li><a href="#services"
-                  class="px-2 py-1 tracking-wider text-base hover:text-gray-300">Services</a></li>
+                  class="px-2 py-1 tracking-wider text-base hover:text-gray-300">{{default
+                  services.value.services.navbarName 'Services'}}</a></li>
+              {{/unless}}
+              {{/if}}
+              {{#if process.value.process.items}}
+              {{#unless process.meta.hide}}
               <li><a href="#process"
-                  class="px-2 py-1 tracking-wider text-base hover:text-gray-300">Process</a></li>
+                  class="px-2 py-1 tracking-wider text-base hover:text-gray-300">{{default
+                  process.value.process.navbarName 'Process'}}</a></li>
+              {{/unless}}
+              {{/if}}
+              {{#if
+              contacts.value.contacts.contactForm}}
+              {{#unless contacts.meta.hide}}
               <li><a href="#contact"
-                  class="px-2 py-1 tracking-wider text-base hover:text-gray-300">Contact</a></li>
+                  class="px-2 py-1 tracking-wider text-base hover:text-gray-300">{{default
+                  contacts.value.contacts.navbarName 'Contact'}}</a></li>
+              {{/unless}}
+              {{/if}}
             </ul>
           </nav>
         </div>
@@ -71,24 +94,48 @@
           class="hidden md:hidden absolute w-full"
           style="background-color:{{default colorPalette.value.colorPalette.primary '#0E172A'}};">
           <ul class="flex flex-col items-center py-4 ">
+            {{#if about.value.about.content}}
+            {{#unless about.meta.hide}}
             <li class="w-full text-center"><a href="#about"
-                class="block py-3 tracking-wider text-base hover:bg-gray-800">About</a></li>
+                class="block py-3 tracking-wider text-base hover:bg-gray-800">{{default
+                about.value.about.navbarName 'About'}}</a></li>
+            {{/unless}}
+            {{/if}}
+            {{#if services.value.services.items}}
+            {{#unless services.meta.hide}}
             <li class="w-full text-center"><a href="#services"
-                class="block py-3 tracking-wider text-base hover:bg-gray-800">Services</a></li>
+                class="block py-3 tracking-wider text-base hover:bg-gray-800">{{default
+                services.value.services.navbarName 'Services'}}</a></li>
+            {{/unless}}
+            {{/if}}
+            {{#if process.value.process.items}}
+            {{#unless process.meta.hide}}
             <li class="w-full text-center"><a href="#process"
-                class="block py-3 tracking-wider text-base hover:bg-gray-800">Process</a></li>
+                class="block py-3 tracking-wider text-base hover:bg-gray-800">{{default
+                process.value.process.navbarName 'Process'}}</a></li>
+            {{/unless}}
+            {{/if}}
+            {{#if
+            contacts.value.contacts.contactForm}}
+            {{#unless contacts.meta.hide}}
             <li class="w-full text-center"><a href="#contact"
-                class="block py-3 tracking-wider text-base hover:bg-gray-800">Contact</a></li>
+                class="block py-3 tracking-wider text-base hover:bg-gray-800">{{default
+                contacts.value.contacts.navbarName 'Contact'}}</a></li>
+            {{/unless}}
+            {{/if}}
           </ul>
         </nav>
       </header>
 
       <main>
 
-        <section class="w-full">
+        <section class="w-full" data-edit-section="personal_info"
+          data-section="personal_info"
+          data-title="Personal Info">
           <div class="flex flex-col lg:flex-row min-h-[826px]">
             <div class="w-full lg:w-2/5 h-[400px] lg:h-auto" data-aos="fade-in">
-              <img src="https://picsum.photos/id/119/800/1200"
+              <img
+                src="{{default personal_info.value.coverImage 'https://picsum.photos/id/119/800/1200'}}"
                 alt="Consultant in a modern business setting"
                 class="w-full h-full object-cover" />
             </div>
@@ -97,25 +144,48 @@
               <div class="max-w-xl text-center lg:text-left" data-aos="fade-in"
                 data-aos-delay="200">
                 <h1
-                  class="text-5xl md:text-6xl lg:text-[76px] font-bold font-poppins leading-tight">Unlocking
-                  Your Business Potential</h1>
+                  class="text-5xl md:text-6xl lg:text-[76px] font-bold font-poppins leading-tight">{{personal_info.value.headline}}</h1>
                 <div class="w-full border-t-2 border-neutral-800 my-8"></div>
-                <p class="text-xl  mb-8">Data-driven strategies to navigate
-                  challenges, optimize performance, and accelerate your growth
-                  journey.</p>
+                {{#if personal_info.value.position}}
+                <p class="text-xl  mb-8">{{personal_info.value.position}}</p>
+                {{/if}}
+
                 <div class="flex justify-center lg:justify-end">
+                  {{#if contacts.value.contacts}}
+                  {{#unless contacts.meta.hide}}
+                  {{#if contacts.value.contacts.bookingUrl}}
+                  <a href="{{contacts.value.contacts.bookingUrl}}"
+                    aria-label="Book a Free Consultation"
+                    class="text-white text-lg  py-3 px-10 rounded-full hover:bg-gray-800 transition-colors"
+                    style="background-color:{{default colorPalette.value.colorPalette.primary '#0E172A'}};">
+                    {{#if contacts.value.contacts.buttonText}}
+                    {{contacts.value.contacts.buttonText}} {{else}} Book
+                    a Free Consultation {{/if}}
+                  </a>
+                  {{else}}
                   <a href="#contact" aria-label="Book a Free Consultation"
                     class="text-white text-lg  py-3 px-10 rounded-full hover:bg-gray-800 transition-colors"
-                    style="background-color:{{default colorPalette.value.colorPalette.primary '#0E172A'}};">Book
-                    a Free Consultation</a>
+                    style="background-color:{{default colorPalette.value.colorPalette.primary '#0E172A'}};">{{#if
+                    contacts.value.contacts.buttonText}}
+                    {{contacts.value.contacts.buttonText}} {{else}} Book
+                    a Free Consultation {{/if}}</a>
+                  {{/if}}
+                  {{/unless}}
+                  {{/if}}
                 </div>
+
                 <div class="w-full border-t-2 border-neutral-800 mt-8"></div>
               </div>
             </div>
           </div>
         </section>
 
+        {{#if about.value.about.content}}
+        {{#unless about.meta.hide}}
         <section id="about"
+          data-edit-section="about"
+          data-section="about"
+          data-title="About"
           class="w-full text-white py-16 md:py-24"
           style="background-color:{{default colorPalette.value.colorPalette.primary '#0E172A'}};">
           <div
@@ -123,241 +193,156 @@
             <div class="w-full lg:w-1/2 text-center lg:text-left"
               data-aos="fade-right">
               <h2
-                class="text-4xl md:text-5xl lg:text-[64px] font-bold font-poppins leading-tight tracking-tighter">Your
-                Dedicated Growth Partner</h2>
-              <p class="text-xl font-semibold font-poppins mt-4 mb-8">An
-                Introduction</p>
+                class="text-4xl md:text-5xl lg:text-[64px] font-bold font-poppins leading-tight tracking-tighter">{{default
+                about.value.about.heading "Your
+                Dedicated Growth Partner"}}</h2>
+              {{#if about.value.about.subheading}}
+              <p
+                class="text-xl font-semibold font-poppins mt-4 mb-8">{{about.value.about.subheading}}</p>
+              {{/if}}
               <p class="text-lg  max-w-md mx-auto lg:mx-0">
-                With a decade of experience in strategic consulting, I help
-                founders and executives find clarity in complexity. My approach
-                is simple: I listen, analyze, and co-create practical roadmaps
-                that deliver tangible results. I'm not just a consultant; I'm an
-                extension of your team, fully invested in your mission.
+                {{about.value.about.content}}
               </p>
             </div>
+            {{#if personal_info.value.profilePicureUrl}}
             <div class="w-full lg:w-1/2 mt-8 lg:mt-0" data-aos="fade-left">
-              <img src="https://picsum.photos/id/237/800/800"
+              <img src="{{personal_info.value.profilePicureUrl}}"
                 alt="Professional headshot"
                 class="w-full h-auto object-cover rounded-lg" />
             </div>
+            {{/if}}
           </div>
         </section>
+        {{/unless}}
+        {{/if}}
 
-        <section id="services" class="w-full py-16 md:py-24">
+        {{#if services.value.services.items}}
+        {{#unless services.meta.hide}}
+        <section id="services" class="w-full py-16 md:py-24"
+          data-edit-section="services"
+          data-section="services"
+          data-title="Services">
           <div class="container mx-auto px-6">
             <h2
               class="text-4xl md:text-5xl lg:text-[64px] font-bold font-poppins mb-12 tracking-tighter"
-              data-aos="fade-up">Core Services</h2>
+              data-aos="fade-up">{{default services.value.services.section_title
+              'Core Services'}}</h2>
+            {{#each services.value.services.items}}
             <div
               class="flex flex-col md:flex-row items-center gap-8 py-6 border-b"
               data-aos="fade-up">
               <div class="w-full md:w-1/3">
                 <h3
-                  class="text-3xl lg:text-4xl font-bold font-poppins tracking-tight">Market
-                  Growth Strategy</h3>
+                  class="text-3xl lg:text-4xl font-bold font-poppins tracking-tight">{{this.title}}</h3>
               </div>
               <div class="w-full md:w-2/3">
-                <p class="text-xl font-medium mb-2">Sustainable Scaling</p>
-                <p class="text-lg ">I design bespoke strategies to help your
-                  business capture new market segments, enhance performance, and
-                  build a foundation for long-term, sustainable growth.</p>
+                {{#if this.subtitle}}
+                <p class="text-xl font-medium mb-2">{{this.subtitle}}</p>
+                {{/if}}
+                <p class="text-lg ">{{this.description}}</p>
               </div>
             </div>
-            <div
-              class="flex flex-col md:flex-row items-center gap-8 py-6 border-b"
-              data-aos="fade-up" data-aos-delay="100">
-              <div class="w-full md:w-1/3">
-                <h3
-                  class="text-3xl lg:text-4xl font-bold font-poppins tracking-tight">Operational
-                  Efficiency</h3>
-              </div>
-              <div class="w-full md:w-2/3">
-                <p class="text-xl font-medium mb-2">Process Optimization</p>
-                <p class="text-lg ">By auditing your current workflows, I
-                  identify key bottlenecks and implement streamlined processes
-                  that boost productivity and reduce operational costs.</p>
-              </div>
-            </div>
-            <div
-              class="flex flex-col md:flex-row items-center gap-8 py-6 border-b"
-              data-aos="fade-up" data-aos-delay="200">
-              <div class="w-full md:w-1/3">
-                <h3
-                  class="text-3xl lg:text-4xl font-bold font-poppins tracking-tight">Financial
-                  Roadmapping</h3>
-              </div>
-              <div class="w-full md:w-2/3">
-                <p class="text-xl font-medium mb-2">Enhanced Profitability</p>
-                <p class="text-lg ">From financial modeling to risk management,
-                  I provide the insights you need to improve profitability and
-                  make confident, data-backed business decisions.</p>
-              </div>
-            </div>
+            {{/each}}
           </div>
         </section>
+        {{/unless}}
+        {{/if}}
 
-        <section class="bg-gray-50 py-16">
+        {{#if client_logos.value.client_logos.items}}
+        {{#unless client_logos.meta.hide}}
+        <section class="bg-gray-50 py-16" data-edit-section="client_logos"
+          data-section="client_logos"
+          data-title="Client Logos">
           <div class="container mx-auto px-6 text-center">
             <h2
               class="text-sm font-semibold text-gray-500 uppercase tracking-wider"
               data-aos="fade-up">
-              Proud to have worked with amazing businesses
+              {{default client_logos.value.client_logos.section_title
+              'Proud to have worked with amazing businesses'}}
             </h2>
             <div
               class="mt-8 flex flex-wrap justify-center items-center gap-x-12 gap-y-8 md:gap-x-16 lg:gap-x-20">
+              {{#each client_logos.value.client_logos.items}}
               <img
-                src="https://placehold.co/150x50/cccccc/FFFFFF/png?text=Client+A"
+                src="https://placehold.co/150x50/cccccc/FFFFFF/png?text={{this.name}}"
                 alt="Client Logo A"
                 class="h-8 md:h-10 filter grayscale hover:filter-none transition duration-300 ease-in-out opacity-70 hover:opacity-100"
                 data-aos="fade-up" data-aos-delay="100">
-              <img
-                src="https://placehold.co/150x50/cccccc/FFFFFF/png?text=Client+B"
-                alt="Client Logo B"
-                class="h-8 md:h-10 filter grayscale hover:filter-none transition duration-300 ease-in-out opacity-70 hover:opacity-100"
-                data-aos="fade-up" data-aos-delay="200">
-              <img
-                src="https://placehold.co/150x50/cccccc/FFFFFF/png?text=Client+C"
-                alt="Client Logo C"
-                class="h-8 md:h-10 filter grayscale hover:filter-none transition duration-300 ease-in-out opacity-70 hover:opacity-100"
-                data-aos="fade-up" data-aos-delay="300">
-              <img
-                src="https://placehold.co/150x50/cccccc/FFFFFF/png?text=Client+D"
-                alt="Client Logo D"
-                class="h-8 md:h-10 filter grayscale hover:filter-none transition duration-300 ease-in-out opacity-70 hover:opacity-100"
-                data-aos="fade-up" data-aos-delay="400">
-              <img
-                src="https://placehold.co/150x50/cccccc/FFFFFF/png?text=Client+E"
-                alt="Client Logo E"
-                class="h-8 md:h-10 filter grayscale hover:filter-none transition duration-300 ease-in-out opacity-70 hover:opacity-100"
-                data-aos="fade-up" data-aos-delay="500">
+              {{/each}}
             </div>
           </div>
         </section>
+        {{/unless}}
+        {{/if}}
 
-        <section class="w-full py-16 md:py-24">
+        {{#if stats.value.stats.items}}
+        {{#unless stats.meta.hide}}
+        <section class="w-full py-16 md:py-24" data-edit-section="stats"
+          data-section="stats"
+          data-title="Stats">
           <div class="container mx-auto px-6">
             <h2
               class="text-4xl md:text-5xl lg:text-[64px] font-bold font-poppins mb-12 tracking-tighter"
-              data-aos="fade-up">Experience & Results</h2>
+              data-aos="fade-up">{{default stats.value.stats.section_title
+              'Experience & Results'}}</h2>
             <div class="flex flex-col lg:flex-row items-stretch">
               <div class="w-full lg:w-1/2" data-aos="fade-right">
-                <img src="https://picsum.photos/id/431/800/800"
+                <img
+                  src="{{default stats.value.stats.image 'https://picsum.photos/id/431/800/800'}}"
                   alt="Business professionals in a meeting"
                   class="w-full h-full object-cover min-h-[400px]">
               </div>
               <div
                 class="w-full lg:w-1/2 flex flex-col justify-center items-start p-8 md:p-16"
                 data-aos="fade-left">
+                {{#each stats.value.stats.items}}
                 <div class="mb-8" data-aos="fade-up">
-                  <p class="text-6xl lg:text-7xl font-bold font-poppins">50+</p>
-                  <div class="mt-2"
-                    style="background-color:{{default colorPalette.value.colorPalette.primary '#0E172A'}};">
-                    <p
-                      class="text-white text-2xl font-semibold font-poppins px-4 py-1">Successful
-                      Client Projects</p>
-                  </div>
-                </div>
-                <div class="mb-8" data-aos="fade-up" data-aos-delay="100">
                   <p
-                    class="text-6xl lg:text-7xl font-bold font-poppins">$10M+</p>
+                    class="text-6xl lg:text-7xl font-bold font-poppins">{{this.number}}</p>
                   <div class="mt-2"
                     style="background-color:{{default colorPalette.value.colorPalette.primary '#0E172A'}};">
                     <p
-                      class="text-white text-2xl font-semibold font-poppins px-4 py-1">In
-                      Client Revenue Growth</p>
+                      class="text-white text-2xl font-semibold font-poppins px-4 py-1">{{this.label}}</p>
                   </div>
                 </div>
-                <div data-aos="fade-up" data-aos-delay="200">
-                  <p class="text-6xl lg:text-7xl font-bold font-poppins">10+</p>
-                  <div class="mt-2"
-                    style="background-color:{{default colorPalette.value.colorPalette.primary '#0E172A'}};">
-                    <p
-                      class="text-white text-2xl font-semibold font-poppins px-4 py-1">Years
-                      of Industry Experience</p>
-                  </div>
-                </div>
+                {{/each}}
               </div>
             </div>
           </div>
         </section>
+        {{/unless}}
+        {{/if}}
 
+        {{#if process.value.process.items}}
+        {{#unless process.meta.hide}}
         <section id="process" class="w-full py-16 md:py-24 bg-gray-50">
           <div class="container mx-auto px-6">
             <h2
               class="text-4xl md:text-5xl lg:text-[64px] font-bold font-poppins mb-16 tracking-tighter text-center md:text-left"
-              data-aos="fade-up">Our Collaborative Process</h2>
+              data-aos="fade-up">{{default process.value.process.section_title
+              'Our Collaborative Process'}}</h2>
             <div class="space-y-12">
+              {{#each process.value.process.items}}
               <div
                 class="flex flex-col md:flex-row items-center gap-8 text-center md:text-left"
                 data-aos="fade-up">
                 <div
                   class="text-white flex-shrink-0 w-32 h-32 flex items-center justify-center"
                   style="background-color:{{default colorPalette.value.colorPalette.primary '#0E172A'}};">
-                  <p class="text-7xl font-poppins font-bold">1</p>
+                  <p class="text-7xl font-poppins font-bold">{{inc @index}}</p>
                 </div>
                 <div>
                   <h3
-                    class="text-3xl lg:text-4xl font-bold font-poppins tracking-tight mb-2">Discovery
-                    & Alignment</h3>
-                  <p class="text-lg ">We begin with a deep dive to understand
-                    your unique vision, challenges, and objectives, ensuring we
-                    are perfectly aligned from day one.</p>
+                    class="text-3xl lg:text-4xl font-bold font-poppins tracking-tight mb-2">{{this.title}}</h3>
+                  <p class="text-lg ">{{this.description}}</p>
                 </div>
               </div>
-              <div
-                class="flex flex-col md:flex-row items-center gap-8 text-center md:text-left"
-                data-aos="fade-up">
-                <div
-                  class="text-white flex-shrink-0 w-32 h-32 flex items-center justify-center"
-                  style="background-color:{{default colorPalette.value.colorPalette.primary '#0E172A'}};">
-                  <p class="text-7xl font-poppins font-bold">2</p>
-                </div>
-                <div>
-                  <h3
-                    class="text-3xl lg:text-4xl font-bold font-poppins tracking-tight mb-2">Strategy
-                    & Blueprint</h3>
-                  <p class="text-lg ">I craft a custom, data-driven action plan
-                    that provides a clear roadmap with actionable steps and
-                    measurable milestones for your team.</p>
-                </div>
-              </div>
-              <div
-                class="flex flex-col md:flex-row items-center gap-8 text-center md:text-left"
-                data-aos="fade-up">
-                <div
-                  class="text-white flex-shrink-0 w-32 h-32 flex items-center justify-center"
-                  style="background-color:{{default colorPalette.value.colorPalette.primary '#0E172A'}};">
-                  <p class="text-7xl font-poppins font-bold">3</p>
-                </div>
-                <div>
-                  <h3
-                    class="text-3xl lg:text-4xl font-bold font-poppins tracking-tight mb-2">Implementation
-                    & Support</h3>
-                  <p class="text-lg ">I work alongside you as a strategic
-                    partner to execute the plan, providing hands-on guidance,
-                    feedback, and support at every stage.</p>
-                </div>
-              </div>
-              <div
-                class="flex flex-col md:flex-row items-center gap-8 text-center md:text-left"
-                data-aos="fade-up">
-                <div
-                  class="text-white flex-shrink-0 w-32 h-32 flex items-center justify-center"
-                  style="background-color:{{default colorPalette.value.colorPalette.primary '#0E172A'}};">
-                  <p class="text-7xl font-poppins font-bold">4</p>
-                </div>
-                <div>
-                  <h3
-                    class="text-3xl lg:text-4xl font-bold font-poppins tracking-tight mb-2">Review
-                    & Scale</h3>
-                  <p class="text-lg ">We track key metrics against our goals,
-                    celebrating wins and refining our approach to ensure your
-                    business achieves sustainable, long-term growth.</p>
-                </div>
-              </div>
+              {{/each}}
             </div>
           </div>
         </section>
+        {{/unless}}
+        {{/if}}
 
         <section class="w-full py-16 md:py-24 bg-white">
           <div class="container mx-auto px-6">

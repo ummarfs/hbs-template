@@ -21,6 +21,10 @@ hbs.registerHelper("default", (v, fb) =>
   v === undefined || v === null || v === "" ? fb : v
 );
 
+hbs.registerHelper("inc", function (value) {
+  return parseInt(value) + 1;
+});
+
 app.get("/", (req, res) => {
   res.redirect("/3");
 });
