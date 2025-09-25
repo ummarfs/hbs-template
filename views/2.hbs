@@ -157,8 +157,8 @@
               </p>
               {{#if contacts.value.contacts}}
               {{#unless contacts.meta.hide}}
-              {{#if contacts.value.contacts.booking.enabled}}
-              <a href="{{contacts.value.contacts.booking.url}}"
+              {{#if contacts.value.contacts.bookingUrl}}
+              <a href="{{contacts.value.contacts.bookingUrl}}"
                 target="_blank"
                 class="inline-block px-8 py-3 rounded-lg text-lg font-medium hover:bg-primary/90 transition-colors"
                 style="color: {{default colorPalette.value.colorPalette.quaternary '#ffffff'}}; background-color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">
@@ -178,12 +178,14 @@
               {{/unless}}
               {{/if}}
             </div>
+            {{#if personal_info.value.profilePicureUrl}}
             <div class="order-1 lg:order-2">
               <img
                 src="{{personal_info.value.profilePicureUrl}}"
                 alt="Consultant working on a business strategy"
                 class="w-full h-80 sm:h-96 lg:h-[500px] xl:h-[600px] object-cover rounded-lg shadow-lg">
             </div>
+            {{/if}}
           </div>
         </div>
       </section>
@@ -269,49 +271,50 @@
       {{#if success_stories.value.success_stories.items}}
       {{#unless success_stories.meta.hide}}
       <section id="casestudies" class="py-12 lg:py-20 section-wrapper"
-        data-aos="fade-up"
-        data-edit-section="success_stories"
-        data-section="success_stories"
-        data-title="Success Stories"
         style="background-color: {{default colorPalette.value.colorPalette.quaternary '#ffffff'}};">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2
-            class="text-3xl lg:text-4xl font-bold text-center mb-12"
+          <h2 class="text-3xl lg:text-4xl font-bold text-center mb-12 lg:mb-16"
             style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">
             {{success_stories.value.success_stories.section_title}}
           </h2>
 
-          <div
-            class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div class="space-y-16 lg:space-y-20">
             {{#each success_stories.value.success_stories.items}}
-            <div class="md:order-1">
-              <p
-                class="text-sm font-bold tracking-wider"
-                style="color: {{default ../colorPalette.value.colorPalette.primary-dim 'rgba(120, 53, 15, 0.7)'}};">{{this.client}}</p>
-              <h3 class="text-2xl lg:text-3xl font-bold mt-2 mb-4"
-                style="color: {{default ../colorPalette.value.colorPalette.primary '#78350f'}};">
-                {{this.title}}
-              </h3>
-              <p class="text-base leading-relaxed mb-4"
-                style="color: {{default ../colorPalette.value.colorPalette.primary '#78350f'}};">
-                {{this.description}}
-              </p>
-              <div class="flex space-x-8">
-                {{#each this.stats}}
-                <div>
-                  <p class="text-2xl font-bold"
-                    style="color: {{default ../../colorPalette.value.colorPalette.primary '#78350f'}};">{{this.number}}</p>
-                  <p class="text-sm"
-                    style="color: {{default ../../colorPalette.value.colorPalette.primary '#78350f'}};">{{this.label}}</p>
-                </div>
-                {{/each}}
+            <div
+              class="flex flex-col md:flex-row items-center gap-8 lg:gap-12 even:md:flex-row-reverse">
+
+              {{#if this.image}}
+              <div class="w-full md:w-1/2">
+                <img src="{{this.image}}" alt="{{this.title}}"
+                  class="w-full h-80 object-cover rounded-lg shadow-lg">
               </div>
-            </div>
-            <div>
-              <img
-                src="{{this.image}}"
-                alt="Ecommerce business success"
-                class="w-full h-80 object-cover rounded-lg shadow-lg">
+              {{/if}}
+
+              <div class="w-full md:w-1/2">
+                <p class="text-sm font-bold tracking-wider"
+                  style="color: {{default ../colorPalette.value.colorPalette.primary-dim 'rgba(120, 53, 15, 0.7)'}};">
+                  {{this.client}}</p>
+                <h3 class="text-2xl lg:text-3xl font-bold mt-2 mb-4"
+                  style="color: {{default ../colorPalette.value.colorPalette.primary '#78350f'}};">
+                  {{this.title}}
+                </h3>
+                <p class="text-base leading-relaxed mb-4"
+                  style="color: {{default ../colorPalette.value.colorPalette.primary '#78350f'}};">
+                  {{this.description}}
+                </p>
+                <div class="flex space-x-8">
+                  {{#each this.stats}}
+                  <div>
+                    <p class="text-2xl font-bold"
+                      style="color: {{default ../../colorPalette.value.colorPalette.primary '#78350f'}};">
+                      {{this.number}}</p>
+                    <p class="text-sm"
+                      style="color: {{default ../../colorPalette.value.colorPalette.primary '#78350f'}};">
+                      {{this.label}}</p>
+                  </div>
+                  {{/each}}
+                </div>
+              </div>
             </div>
             {{/each}}
           </div>
@@ -473,7 +476,7 @@
               <button type="submit"
                 class="w-full bg-transparent border-2 px-6 py-3 rounded-lg text-lg font-medium hover:bg-primary hover:text-white transition-colors"
                 style="border-color: {{default colorPalette.value.colorPalette.primary '#78350f'}}; color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">
-                {{contacts.value.contacts.contactFormButtonText}}
+                {{default contacts.value.contacts.contactFormButtonText 'Send Message'}}
               </button>
             </form>
           </div>

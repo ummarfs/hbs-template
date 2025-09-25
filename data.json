@@ -453,6 +453,21 @@
               }
             ],
             "image": "https://images.unsplash.com/photo-1517048676732-d65bc937f952"
+          },
+          {
+            "title": "Boosted E-commerce Sales by 30%",
+            "description": "By optimizing supply chain logistics and enhancing customer experience, we achieved a 30% increase in sales within six months.",
+            "client": "ECOMMERCE CO",
+            "stats": [
+              {
+                "number": "40%",
+                "label": "Revenue Increase"
+              },
+              {
+                "number": "25%",
+                "label": "Reduction in Ad Spend"
+              }
+            ]
           }
         ],
         "section_title": "Client Success Stories",
