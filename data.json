@@ -217,6 +217,7 @@
           "country": "India",
           "postalCode": "616301"
         },
+        "bookingUrl": "https://mycalandy.com",
         "booking": {
           "url": "https://mycalandy.com",
           "enabled": true,
@@ -247,10 +248,18 @@
             "date": "2025-09-09",
             "recommenderName": "John Smith",
             "recommendationText": "he is a good guy",
+            "designation": "COO of Google",
+            "companyName": "Floges Software Solutions (P) Ltd",
+            "title": "Operational Efficiency Overhaul"
+          },
+          {
+            "date": "2025-09-09",
+            "recommenderName": "John Smith",
+            "recommendationText": "he is a good guy",
             "designation": "COO of Google"
           }
         ],
-        "heading": "What My Clients Say",
+        "heading": "Client Impact Stories",
         "description": "Don't just take my word for it. Here's what leaders and organizations have to say about our work together.",
         "section_title": "CLIENT TESTIMONIALS"
       }
@@ -394,8 +403,8 @@
             "label": "Lines of Code Written"
           }
         ],
-        "section_title":"Experience & Results",
-        "image":"https://picsum.photos/id/431/800/800"
+        "section_title": "Experience & Results",
+        "image": "https://picsum.photos/id/431/800/800"
       }
     }
   },
@@ -504,25 +513,37 @@
     },
     "value": {
       "process": {
-        "section_title":"Our Collaborative Process",
+        "section_title": "Our Collaborative Process",
         "items": [
           {
             "title": "Discovery & Alignment",
             "description": "We begin with a deep dive to understand your unique vision, challenges, and objectives, ensuring we are perfectly aligned from day one."
           },
-           {
-             "title": "Discovery & Alignment",
-             "description": "We begin with a deep dive to understand your unique vision, challenges, and objectives, ensuring we are perfectly aligned from day one."
-           },
-            {
-              "title": "Discovery & Alignment",
-              "description": "We begin with a deep dive to understand your unique vision, challenges, and objectives, ensuring we are perfectly aligned from day one."
-            },
-             {
-               "title": "Discovery & Alignment",
-               "description": "We begin with a deep dive to understand your unique vision, challenges, and objectives, ensuring we are perfectly aligned from day one."
-             }
+          {
+            "title": "Discovery & Alignment",
+            "description": "We begin with a deep dive to understand your unique vision, challenges, and objectives, ensuring we are perfectly aligned from day one."
+          },
+          {
+            "title": "Discovery & Alignment",
+            "description": "We begin with a deep dive to understand your unique vision, challenges, and objectives, ensuring we are perfectly aligned from day one."
+          },
+          {
+            "title": "Discovery & Alignment",
+            "description": "We begin with a deep dive to understand your unique vision, challenges, and objectives, ensuring we are perfectly aligned from day one."
+          }
         ]
+      }
+    }
+  },
+  "cta": {
+    "meta": {
+      "hide": false
+    },
+    "value": {
+      "cta": {
+        "bgImage": "https://picsum.photos/id/12/1200/800",
+        "title": "Let's Build Your Future, Together.",
+        "subtitle": "Ready to discuss how we can work together? Let's start the conversation."
       }
     }
   }

@@ -129,7 +129,8 @@
 
       <main>
 
-        <section class="w-full" data-edit-section="personal_info"
+        <section class="w-full section-wrapper"
+          data-edit-section="personal_info"
           data-section="personal_info"
           data-title="Personal Info">
           <div class="flex flex-col lg:flex-row min-h-[826px]">
@@ -155,6 +156,7 @@
                   {{#unless contacts.meta.hide}}
                   {{#if contacts.value.contacts.bookingUrl}}
                   <a href="{{contacts.value.contacts.bookingUrl}}"
+                    target="_blank"
                     aria-label="Book a Free Consultation"
                     class="text-white text-lg  py-3 px-10 rounded-full hover:bg-gray-800 transition-colors"
                     style="background-color:{{default colorPalette.value.colorPalette.primary '#0E172A'}};">
@@ -186,7 +188,7 @@
           data-edit-section="about"
           data-section="about"
           data-title="About"
-          class="w-full text-white py-16 md:py-24"
+          class="w-full text-white py-16 md:py-24 section-wrapper"
           style="background-color:{{default colorPalette.value.colorPalette.primary '#0E172A'}};">
           <div
             class="container mx-auto px-6 flex flex-col lg:flex-row items-center gap-10">
@@ -218,7 +220,7 @@
 
         {{#if services.value.services.items}}
         {{#unless services.meta.hide}}
-        <section id="services" class="w-full py-16 md:py-24"
+        <section id="services" class="w-full py-16 md:py-24 section-wrapper"
           data-edit-section="services"
           data-section="services"
           data-title="Services">
@@ -250,7 +252,8 @@
 
         {{#if client_logos.value.client_logos.items}}
         {{#unless client_logos.meta.hide}}
-        <section class="bg-gray-50 py-16" data-edit-section="client_logos"
+        <section class="bg-gray-50 py-16 section-wrapper"
+          data-edit-section="client_logos"
           data-section="client_logos"
           data-title="Client Logos">
           <div class="container mx-auto px-6 text-center">
@@ -277,7 +280,8 @@
 
         {{#if stats.value.stats.items}}
         {{#unless stats.meta.hide}}
-        <section class="w-full py-16 md:py-24" data-edit-section="stats"
+        <section class="w-full py-16 md:py-24 section-wrapper"
+          data-edit-section="stats"
           data-section="stats"
           data-title="Stats">
           <div class="container mx-auto px-6">
@@ -315,7 +319,11 @@
 
         {{#if process.value.process.items}}
         {{#unless process.meta.hide}}
-        <section id="process" class="w-full py-16 md:py-24 bg-gray-50">
+        <section id="process"
+          class="w-full py-16 md:py-24 bg-gray-50 section-wrapper"
+          data-edit-section="process"
+          data-section="process"
+          data-title="Process">
           <div class="container mx-auto px-6">
             <h2
               class="text-4xl md:text-5xl lg:text-[64px] font-bold font-poppins mb-16 tracking-tighter text-center md:text-left"
@@ -344,85 +352,91 @@
         {{/unless}}
         {{/if}}
 
-        <section class="w-full py-16 md:py-24 bg-white">
+        {{#if testimonials.value.testimonials.items}}
+        {{#unless testimonials.meta.hide}}
+        <section class="w-full py-16 md:py-24 bg-white section-wrapper"
+          data-edit-section="testimonials"
+          data-section="testimonials"
+          data-title="Testimonials">
           <div class="container mx-auto px-6">
             <div data-aos="fade-up">
               <h2
-                class="text-4xl md:text-5xl lg:text-[64px] font-bold font-poppins mb-4 tracking-tighter">Client
-                Impact Stories</h2>
-              <p class="text-xl mb-12 max-w-3xl">Tangible results and
-                transformations delivered for businesses like yours.</p>
+                class="text-4xl md:text-5xl lg:text-[64px] font-bold font-poppins mb-4 tracking-tighter">{{default
+                testimonials.value.testimonials.heading 'Client
+                Impact Stories'}}</h2>
+              {{#if testimonials.value.testimonials.description}}
+              <p
+                class="text-xl mb-12 max-w-3xl">{{testimonials.value.testimonials.description}}</p>
+              {{/if}}
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {{#each testimonials.value.testimonials.items}}
               <div
                 class="bg-gray-50 border border-gray-200 p-8 flex flex-col justify-between"
                 data-aos="fade-up">
                 <div>
                   <p
-                    class="text-sm font-semibold text-gray-500 uppercase tracking-wider">TechFlow
-                    Dynamics</p>
-                  <h3 class="text-2xl font-bold font-poppins my-3">Operational
-                    Efficiency Overhaul</h3>
+                    class="text-sm font-semibold text-gray-500 uppercase tracking-wider">{{this.companyName}}</p>
+                  <h3
+                    class="text-2xl font-bold font-poppins my-3">{{this.title}}</h3>
                   <p
-                    class="text-lg mb-6 ">"The insights transformed our workflow. The strategic approach is second to none."
-                    - Mark J.</p>
+                    class="text-lg mb-6">"{{this.recommendationText}}"
+                    - {{this.recommenderName}}.</p>
                 </div>
-                <a href="#" class="font-bold text-lg hover:underline ">Read the
-                  Full Story &rarr;</a>
               </div>
-              <div
-                class="bg-gray-50 border border-gray-200 p-8 flex flex-col justify-between"
-                data-aos="fade-up" data-aos-delay="100">
-                <div>
-                  <p
-                    class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Innovate
-                    Inc.</p>
-                  <h3 class="text-2xl font-bold font-poppins my-3">Market Entry
-                    Strategy</h3>
-                  <p
-                    class="text-lg mb-6 ">"We couldn't have navigated our expansion without them. Truly a game-changer."
-                    - Emily A.</p>
-                </div>
-                <a href="#" class="font-bold text-lg hover:underline ">Read the
-                  Full Story &rarr;</a>
-              </div>
-              <div
-                class="bg-gray-50 border border-gray-200 p-8 flex flex-col justify-between"
-                data-aos="fade-up" data-aos-delay="200">
-                <div>
-                  <p
-                    class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Quantum
-                    Solutions</p>
-                  <h3 class="text-2xl font-bold font-poppins my-3">Financial
-                    Restructuring</h3>
-                  <p
-                    class="text-lg mb-6 ">"Their financial advisory boosted our profitability by 30% in the first year. The results speak for themselves."
-                    - Sarah B.</p>
-                </div>
-                <a href="#" class="font-bold text-lg hover:underline ">Read the
-                  Full Story &rarr;</a>
-              </div>
+              {{/each}}
             </div>
           </div>
         </section>
+        {{/unless}}
+        {{/if}}
 
+        {{#if cta.value.cta}}
+        {{#unless cta.meta.hide}}
         <section
-          class="h-[400px] md:h-[500px] bg-cover bg-center bg-fixed relative flex items-center justify-center text-center"
-          style="background-image: url('https://picsum.photos/id/12/1200/800');">
+          data-edit-section="cta"
+          data-section="cta"
+          data-title="CTA Section"
+          class="h-[400px] md:h-[500px] bg-cover bg-center bg-fixed relative flex items-center justify-center text-center section-wrapper"
+          style="background-image: url({{default cta.value.cta.bgImage 'https://picsum.photos/id/12/1200/800'}});">
           <div class="absolute inset-0 opacity-60"
             style="background-color:{{default colorPalette.value.colorPalette.primary '#0E172A'}};"></div>
           <div class="relative z-10 p-8 text-white" data-aos="zoom-in">
-            <h2 class="text-4xl md:text-5xl font-bold font-poppins mb-4">Let's
-              Build Your Future, Together.</h2>
-            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto ">Ready to
+            <h2
+              class="text-4xl md:text-5xl font-bold font-poppins mb-4">{{default
+              cta.value.cta.title "Let's Build Your Future, Together."}}</h2>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto ">{{default
+              cta.value.cta.subtitle "Ready to
               discuss how we can work together? Let's start the
-              conversation.</p>
-            <a href="#contact"
+              conversation."}}</p>
+
+            {{#if contacts.value.contacts}}
+            {{#unless contacts.meta.hide}}
+            {{#if contacts.value.contacts.bookingUrl}}
+            <a href="{{contacts.value.contacts.bookingUrl}}"
+              target="_blank"
+              aria-label="Book a Free Consultation"
               class="bg-white text-lg  font-semibold py-3 px-10 rounded-full hover:bg-gray-200 transition-colors"
-              style="color:{{default colorPalette.value.colorPalette.primary '#0E172A'}};">Schedule
-              Your Free Consultation</a>
+              style="color:{{default colorPalette.value.colorPalette.primary '#0E172A'}};">
+              {{#if contacts.value.contacts.buttonText}}
+              {{contacts.value.contacts.buttonText}} {{else}} Schedule Your Free
+              Consultation {{/if}}
+            </a>
+            {{else}}
+            <a href="#contact" aria-label="Book a Free Consultation"
+              class="bg-white text-lg  font-semibold py-3 px-10 rounded-full hover:bg-gray-200 transition-colors"
+              style="color:{{default colorPalette.value.colorPalette.primary '#0E172A'}};">{{#if
+              contacts.value.contacts.buttonText}}
+              {{contacts.value.contacts.buttonText}} {{else}} Schedule Your Free
+              Consultation {{/if}}</a>
+            {{/if}}
+            {{/unless}}
+            {{/if}}
+
           </div>
         </section>
+        {{/unless}}
+        {{/if}}
 
         <section id="contact"
           class="w-full py-16 md:py-24 text-white"
