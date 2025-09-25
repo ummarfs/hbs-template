@@ -271,6 +271,9 @@
       {{#if success_stories.value.success_stories.items}}
       {{#unless success_stories.meta.hide}}
       <section id="casestudies" class="py-12 lg:py-20 section-wrapper"
+        data-edit-section="success_stories"
+        data-section="success_stories"
+        data-title="Success Stories"
         style="background-color: {{default colorPalette.value.colorPalette.quaternary '#ffffff'}};">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 class="text-3xl lg:text-4xl font-bold text-center mb-12 lg:mb-16"
@@ -468,7 +471,9 @@
               <div>
                 <label for="message"
                   class="block text-sm font-medium mb-2"
-                  style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">{{default contacts.value.contacts.messageInputLabel "Send Message"}}</label>
+                  style="color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">{{default
+                  contacts.value.contacts.messageInputLabel
+                  "Send Message"}}</label>
                 <textarea id="message" name="message" rows="4"
                   class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[{{colorPalette.value.colorPalette.border-primary-dim}}]"
                   style="border-color: {{default colorPalette.value.colorPalette.primary '#78350f'}};"></textarea>
@@ -476,7 +481,8 @@
               <button type="submit"
                 class="w-full bg-transparent border-2 px-6 py-3 rounded-lg text-lg font-medium hover:bg-primary hover:text-white transition-colors"
                 style="border-color: {{default colorPalette.value.colorPalette.primary '#78350f'}}; color: {{default colorPalette.value.colorPalette.primary '#78350f'}};">
-                {{default contacts.value.contacts.contactFormButtonText 'Send Message'}}
+                {{default contacts.value.contacts.contactFormButtonText
+                'Send Message'}}
               </button>
             </form>
           </div>
