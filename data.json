@@ -233,7 +233,8 @@
         "contactFormHeading": "Send Me a Message",
         "contactFormButtonText": "Send Message",
         "messageInputLabel": "What's your biggest business challenge right now?",
-        "navbarName": "Work With Me"
+        "navbarName": "Work With Me",
+        "addressText": "00 Terry Francine St. San Francisco, CA 94158"
       }
     }
   },
