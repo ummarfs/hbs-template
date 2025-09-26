@@ -41,14 +41,6 @@ app.get("/3", (req, res) => {
   res.render("3", data);
 });
 
-app.get("/4", (req, res) => {
-  res.render("4", data);
-});
-
-app.get("/5", (req, res) => {
-  res.render("5", data);
-});
-
 app.listen(3001, () =>
   console.log("👉 Server running at http://localhost:3001")
 );
