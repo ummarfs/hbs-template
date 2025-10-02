@@ -1,0 +1,987 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>John Doe | Business Consultant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script>
+      tailwind.config = { content: [], theme: { extend: { fontFamily: { sans:
+      ['Lato', 'sans-serif'], display: ['Montserrat', 'sans-serif'], }, colors:
+      { 'brand-dark': '#1e293b', 'brand-light': '#f3f4f6', } }, }, };
+    </script>
+  </head>
+  <body class="font-sans text-gray-800 overflow-x-hidden">
+    <div class="relative w-full">
+      <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex items-center justify-between h-20">
+            <div class="flex-shrink-0">
+              <a
+                href="#"
+                class="flex items-center space-x-2"
+                aria-label="John Doe Home"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-8 h-8 text-brand-dark"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"
+                  />
+                </svg>
+                <span
+                  class="text-xl font-display font-semibold text-brand-dark"
+                >John Doe | Business Consultant</span>
+              </a>
+            </div>
+
+            <nav class="hidden lg:flex lg:space-x-4">
+              <a
+                href="#"
+                class="text-base text-brand-dark hover:text-orange-600 px-3 py-2 rounded-md"
+              >About Me</a>
+              <a
+                href="#"
+                class="text-base text-brand-dark hover:text-orange-600 px-3 py-2 rounded-md"
+              >Services</a>
+              <a
+                href="#"
+                class="text-base text-brand-dark hover:text-orange-600 px-3 py-2 rounded-md"
+              >Case Studies</a>
+              <a
+                href="#"
+                class="text-base text-brand-dark hover:text-orange-600 px-3 py-2 rounded-md"
+              >Packages</a>
+              <a
+                href="#"
+                class="text-base text-brand-dark hover:text-orange-600 px-3 py-2 rounded-md"
+              >Contact</a>
+            </nav>
+
+            <div class="lg:hidden">
+              <button
+                id="menu-btn"
+                type="button"
+                class="text-brand-dark hover:text-orange-600 focus:outline-none"
+                aria-label="Open main menu"
+              >
+                <svg
+                  class="h-6 w-6"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div id="mobile-menu" class="lg:hidden hidden">
+          <nav class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white">
+            <a
+              href="#"
+              class="block text-base text-brand-dark hover:bg-gray-100 px-3 py-2 rounded-md"
+            >About Me</a>
+            <a
+              href="#"
+              class="block text-base text-brand-dark hover:bg-gray-100 px-3 py-2 rounded-md"
+            >Services</a>
+            <a
+              href="#"
+              class="block text-base text-brand-dark hover:bg-gray-100 px-3 py-2 rounded-md"
+            >Case Studies</a>
+            <a
+              href="#"
+              class="block text-base text-brand-dark hover:bg-gray-100 px-3 py-2 rounded-md"
+            >Packages</a>
+            <a
+              href="#"
+              class="block text-base text-brand-dark hover:bg-gray-100 px-3 py-2 rounded-md"
+            >Contact</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="relative w-full h-[780px]">
+          <img
+            src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+            alt="Modern business office interior"
+            class="absolute inset-0 w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-black/30"></div>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div
+              class="relative w-11/12 max-w-screen-lg p-8 md:p-16 backdrop-blur-sm bg-gray-500/20 text-white"
+              data-aos="fade-up"
+            >
+              <h1
+                class="text-5xl sm:text-7xl md:text-8xl lg:text-[95px] font-display font-bold tracking-tight leading-tight"
+              >
+                Your Partner in Growth & Strategy
+              </h1>
+              <h2
+                class="text-2xl md:text-3xl lg:text-[32px] font-display tracking-tight leading-snug mt-6"
+              >
+                Personalized consulting to guide your business to its next stage
+                of success.
+              </h2>
+              <a
+                href="#"
+                aria-label="Book a Free Consultation"
+                class="inline-block mt-8 bg-white text-brand-dark text-xl font-sans px-8 py-4 rounded-full border border-solid border-black hover:bg-gray-200 transition-colors"
+              >Book a Free Consultation</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="py-20 bg-white">
+          <div class="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+              <h2
+                class="text-black text-4xl sm:text-5xl lg:text-[65px] font-display font-bold tracking-tight leading-tight"
+              >About Me</h2>
+              <p
+                class="mt-4 text-black text-lg sm:text-xl lg:text-[32px] font-display tracking-tight leading-snug max-w-4xl mx-auto"
+              >
+                I am a dedicated business consultant committed to empowering
+                organizations with strategic insights and solutions. My mission
+                is to enhance your operational efficiency, drive growth, and
+                maximize profitability.
+              </p>
+            </div>
+            <div
+              class="flex flex-col lg:flex-row items-center gap-10 lg:gap-16"
+            >
+              <div class="w-full lg:w-1/3" data-aos="fade-right">
+                <img
+                  src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+                  alt="Portrait of a confident business consultant"
+                  class="w-full h-auto object-cover rounded-lg shadow-lg"
+                />
+              </div>
+              <div class="w-full lg:w-2/3" data-aos="fade-left">
+                <p
+                  class="text-black text-lg lg:text-xl font-sans leading-relaxed"
+                >
+                  With over a decade of experience across diverse industries, I
+                  specialize in delivering exceptional results by deeply
+                  understanding your unique challenges and goals. I craft
+                  customized strategies and implement effective solutions that
+                  propel your business forward, ensuring you're not just meeting
+                  but exceeding your targets. I believe in a partnership
+                  approach, working alongside you to achieve sustainable
+                  success.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="py-20 bg-brand-dark text-white">
+          <div class="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div data-aos="fade-up">
+              <h2
+                class="text-4xl sm:text-5xl lg:text-[65px] font-display font-bold tracking-tight leading-tight"
+              >
+                How I Can Help
+              </h2>
+              <p
+                class="mt-4 text-lg sm:text-xl lg:text-[32px] font-display tracking-tight leading-snug max-w-4xl mx-auto"
+              >
+                Explore my range of consulting services designed to address your
+                specific business needs and drive sustainable growth.
+              </p>
+            </div>
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div
+                class="bg-brand-light rounded-xl p-8 text-left text-brand-dark"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-20 h-20 mb-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M10.5 6a7.5 7.5 0 100 15 7.5 7.5 0 000-15zM21 21l-5.69-5.69"
+                  />
+                </svg>
+                <h3
+                  class="text-2xl font-display font-bold leading-7 mb-2"
+                >Strategic Growth Planning</h3>
+                <p class="text-lg font-sans leading-snug">
+                  I develop robust, data-driven strategies that align with your
+                  business objectives, ensuring long-term success and a strong
+                  competitive advantage.
+                </p>
+              </div>
+              <div
+                class="bg-brand-light rounded-xl p-8 text-left text-brand-dark"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-20 h-20 mb-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414-.336.75-.75.75h-.75m0-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                </svg>
+                <h3
+                  class="text-2xl font-display font-bold leading-7 mb-2"
+                >Financial Optimization</h3>
+                <p class="text-lg font-sans leading-snug">
+                  From financial planning to risk management, I provide the
+                  insights and guidance needed to make informed decisions and
+                  improve your bottom line.
+                </p>
+              </div>
+              <div
+                class="bg-brand-light rounded-xl p-8 text-left text-brand-dark"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-20 h-20 mb-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.472-2.472a3.375 3.375 0 00-4.773-4.773L6.75 11.42m5.877 5.877l-5.877-5.877m0 0a3.375 3.375 0 01-4.773-4.773l2.472 2.472"
+                  />
+                </svg>
+                <h3
+                  class="text-2xl font-display font-bold leading-7 mb-2"
+                >Operational Excellence</h3>
+                <p class="text-lg font-sans leading-snug">
+                  Achieve operational excellence with tailored solutions that
+                  streamline processes, enhance productivity, and drive cost
+                  efficiencies.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="py-20 bg-white">
+          <div class="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div data-aos="fade-up">
+              <h2
+                class="text-4xl sm:text-5xl lg:text-[65px] font-display font-bold tracking-tight leading-tight mb-4"
+              >
+                My Approach
+              </h2>
+              <p
+                class="mt-4 text-lg sm:text-xl lg:text-[32px] font-display tracking-tight leading-snug max-w-3xl mx-auto mb-16"
+              >
+                I follow a proven four-step process to ensure clarity,
+                alignment, and impactful results for every client.
+              </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-left">
+              <div
+                class="border-t-4 border-brand-dark pt-6"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <p
+                  class="text-5xl font-display font-extrabold text-gray-200 mb-4"
+                >01</p>
+                <h3 class="text-2xl font-display font-bold mb-2">Discovery</h3>
+                <p class="font-sans">We begin with a deep dive into your
+                  business to understand your vision, challenges, and goals.</p>
+              </div>
+              <div
+                class="border-t-4 border-brand-dark pt-6"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <p
+                  class="text-5xl font-display font-extrabold text-gray-200 mb-4"
+                >02</p>
+                <h3 class="text-2xl font-display font-bold mb-2">Strategy</h3>
+                <p class="font-sans">I develop a bespoke, actionable strategy
+                  tailored specifically to your unique market position and
+                  objectives.</p>
+              </div>
+              <div
+                class="border-t-4 border-brand-dark pt-6"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
+                <p
+                  class="text-5xl font-display font-extrabold text-gray-200 mb-4"
+                >03</p>
+                <h3
+                  class="text-2xl font-display font-bold mb-2"
+                >Implementation</h3>
+                <p class="font-sans">I guide you through the execution phase,
+                  providing hands-on support to ensure a smooth and successful
+                  rollout.</p>
+              </div>
+              <div
+                class="border-t-4 border-brand-dark pt-6"
+                data-aos="fade-up"
+                data-aos-delay="400"
+              >
+                <p
+                  class="text-5xl font-display font-extrabold text-gray-200 mb-4"
+                >04</p>
+                <h3 class="text-2xl font-display font-bold mb-2">Review & Scale</h3>
+                <p class="font-sans">We track progress against key metrics,
+                  making adjustments to optimize performance and scale your
+                  success.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="py-20 bg-brand-light">
+          <div class="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2
+              class="text-4xl sm:text-5xl lg:text-[65px] font-display font-bold tracking-tight leading-tight"
+              data-aos="fade-up"
+            >Proven Results</h2>
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div
+                class="bg-brand-dark text-white rounded-xl p-8 flex flex-col justify-center items-center h-80"
+                data-aos="zoom-in"
+                data-aos-delay="100"
+              >
+                <p
+                  class="text-7xl lg:text-8xl font-display font-extrabold"
+                >+40%</p>
+                <p class="mt-4 text-xl font-sans">Average Revenue Growth</p>
+              </div>
+              <div
+                class="bg-brand-dark text-white rounded-xl p-8 flex flex-col justify-center items-center h-80"
+                data-aos="zoom-in"
+                data-aos-delay="200"
+              >
+                <p
+                  class="text-7xl lg:text-8xl font-display font-extrabold"
+                >-25%</p>
+                <p class="mt-4 text-xl font-sans">Operational Cost Reduction</p>
+              </div>
+              <div
+                class="bg-brand-dark text-white rounded-xl p-8 flex flex-col justify-center items-center h-80"
+                data-aos="zoom-in"
+                data-aos-delay="300"
+              >
+                <p
+                  class="text-7xl lg:text-8xl font-display font-extrabold"
+                >3x</p>
+                <p class="mt-4 text-xl font-sans">Increase in Market Share</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="py-20 bg-white">
+          <div class="max-w-screen-md mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2
+              class="text-4xl sm:text-5xl lg:text-[65px] font-display font-bold tracking-tight leading-tight mb-16"
+              data-aos="fade-up"
+            >
+              What My Clients Say
+            </h2>
+            <div class="space-y-12">
+              <blockquote class="text-left" data-aos="fade-up">
+                <p
+                  class="text-xl lg:text-2xl font-display leading-snug text-black"
+                >
+                  "Working with John was a game-changer. His strategic insights
+                  directly led to a 50% increase in our quarterly profits. I
+                  cannot recommend him highly enough."
+                </p>
+                <footer class="mt-6">
+                  <p class="text-lg font-display font-bold text-brand-dark">Jane
+                    Smith</p>
+                  <p class="font-sans text-gray-700">CEO, Tech Innovators Inc.</p>
+                </footer>
+              </blockquote>
+              <blockquote
+                class="text-left"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <p
+                  class="text-xl lg:text-2xl font-display leading-snug text-black"
+                >
+                  "The operational efficiencies John identified have saved us
+                  thousands. He's not just a consultant; he's a true partner who
+                  is invested in your success."
+                </p>
+                <footer class="mt-6">
+                  <p class="text-lg font-display font-bold text-brand-dark">Mark
+                    Williams</p>
+                  <p class="font-sans text-gray-700">COO, Creative Solutions</p>
+                </footer>
+              </blockquote>
+            </div>
+          </div>
+        </section>
+
+        <section class="py-20 bg-brand-light">
+          <div class="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+              <h2
+                class="text-4xl sm:text-5xl lg:text-[65px] font-display font-bold tracking-tight leading-tight"
+              >In-Depth Case Studies</h2>
+              <p
+                class="mt-4 text-lg sm:text-xl lg:text-[32px] font-display tracking-tight leading-snug max-w-3xl mx-auto"
+              >
+                Discover the real-world impact of my strategic consulting.
+              </p>
+            </div>
+            <div class="space-y-20">
+              <div class="grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
+                <div class="order-2 md:order-1" data-aos="fade-right">
+                  <h3
+                    class="text-3xl font-display font-bold text-brand-dark"
+                  >Client: Global Logistics Firm</h3>
+                  <p class="mt-4 text-xl font-sans text-gray-700">Improving
+                    Supply Chain Efficiency</p>
+                  <div class="mt-6 space-y-4">
+                    <div>
+                      <h4 class="text-xl font-display font-bold">The Challenge</h4>
+                      <p class="mt-1 font-sans">The client was facing
+                        significant delays and rising costs in their
+                        international supply chain due to outdated processes and
+                        lack of data visibility.</p>
+                    </div>
+                    <div>
+                      <h4 class="text-xl font-display font-bold">My Solution</h4>
+                      <p class="mt-1 font-sans">I conducted a full audit of
+                        their operations and implemented a new data analytics
+                        platform. I then redesigned their core logistics
+                        workflows to prioritize automation and real-time
+                        tracking.</p>
+                    </div>
+                    <div>
+                      <h4 class="text-xl font-display font-bold">The Result</h4>
+                      <div class="mt-2 bg-white p-4 rounded-lg shadow">
+                        <p
+                          class="text-4xl font-display font-extrabold text-brand-dark"
+                        >35% Reduction</p>
+                        <p class="font-sans text-gray-600">in operational
+                          overhead within six months.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="order-1 md:order-2" data-aos="fade-left">
+                  <img
+                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+                    alt="Business analytics chart"
+                    class="rounded-lg shadow-lg w-full h-auto object-cover"
+                  />
+                </div>
+              </div>
+              <div class="grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
+                <div data-aos="fade-right">
+                  <img
+                    src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+                    alt="Stock market graph"
+                    class="rounded-lg shadow-lg w-full h-auto object-cover"
+                  />
+                </div>
+                <div data-aos="fade-left">
+                  <h3
+                    class="text-3xl font-display font-bold text-brand-dark"
+                  >Client: FinTech Startup</h3>
+                  <p class="mt-4 text-xl font-sans text-gray-700">Scaling for
+                    Market Entry</p>
+                  <div class="mt-6 space-y-4">
+                    <div>
+                      <h4 class="text-xl font-display font-bold">The Challenge</h4>
+                      <p class="mt-1 font-sans">A promising FinTech startup
+                        needed a robust financial model and go-to-market
+                        strategy to secure Series A funding and launch in a
+                        competitive landscape.</p>
+                    </div>
+                    <div>
+                      <h4 class="text-xl font-display font-bold">My Solution</h4>
+                      <p class="mt-1 font-sans">I developed a comprehensive
+                        financial forecast, refined their pitch deck for
+                        investors, and created a phased market entry plan
+                        focusing on key customer segments.</p>
+                    </div>
+                    <div>
+                      <h4 class="text-xl font-display font-bold">The Result</h4>
+                      <div class="mt-2 bg-white p-4 rounded-lg shadow">
+                        <p
+                          class="text-4xl font-display font-extrabold text-brand-dark"
+                        >$15 Million</p>
+                        <p class="font-sans text-gray-600">in Series A funding
+                          secured ahead of schedule.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="py-20 bg-white">
+          <div class="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+              <h2
+                class="text-4xl sm:text-5xl lg:text-[65px] font-display font-bold tracking-tight leading-tight"
+              >Service Packages</h2>
+              <p
+                class="mt-4 text-lg sm:text-xl lg:text-[32px] font-display tracking-tight leading-snug max-w-3xl mx-auto"
+              >
+                Choose a package that aligns with your business goals.
+              </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div
+                class="border border-gray-200 rounded-lg p-8 text-center shadow-lg flex flex-col"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <h3 class="text-2xl font-display font-bold">Strategy Session</h3>
+                <p class="mt-2 font-sans text-gray-600 flex-grow">A 90-minute
+                  deep-dive session to tackle your most pressing challenge.</p>
+                <ul class="mt-6 space-y-2 text-left font-sans flex-grow">
+                  <li class="flex items-center"><svg
+                      class="w-5 h-5 text-green-500 mr-2"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    ><path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 13l4 4L19 7"
+                      ></path></svg>Pre-call analysis</li>
+                  <li class="flex items-center"><svg
+                      class="w-5 h-5 text-green-500 mr-2"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    ><path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 13l4 4L19 7"
+                      ></path></svg>Intensive 90-min call</li>
+                  <li class="flex items-center"><svg
+                      class="w-5 h-5 text-green-500 mr-2"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    ><path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 13l4 4L19 7"
+                      ></path></svg>Actionable summary report</li>
+                </ul>
+                <a
+                  href="#"
+                  class="mt-8 bg-brand-dark text-white text-lg font-sans px-8 py-3 rounded-full hover:bg-orange-600 transition-colors"
+                >Book a Session</a>
+              </div>
+              <div
+                class="border-2 border-brand-dark rounded-lg p-8 text-center shadow-2xl flex flex-col relative"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <span
+                  class="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-brand-dark text-white text-sm font-bold px-3 py-1 rounded-full"
+                >MOST POPULAR</span>
+                <h3 class="text-2xl font-display font-bold">Project-Based
+                  Consulting</h3>
+                <p class="mt-2 font-sans text-gray-600 flex-grow">Comprehensive
+                  support for a specific project, from planning to execution.</p>
+                <ul class="mt-6 space-y-2 text-left font-sans flex-grow">
+                  <li class="flex items-center"><svg
+                      class="w-5 h-5 text-green-500 mr-2"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    ><path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 13l4 4L19 7"
+                      ></path></svg>Full project scope & roadmap</li>
+                  <li class="flex items-center"><svg
+                      class="w-5 h-5 text-green-500 mr-2"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    ><path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 13l4 4L19 7"
+                      ></path></svg>Dedicated weekly meetings</li>
+                  <li class="flex items-center"><svg
+                      class="w-5 h-5 text-green-500 mr-2"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    ><path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 13l4 4L19 7"
+                      ></path></svg>Implementation support</li>
+                  <li class="flex items-center"><svg
+                      class="w-5 h-5 text-green-500 mr-2"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    ><path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 13l4 4L19 7"
+                      ></path></svg>Final performance review</li>
+                </ul>
+                <a
+                  href="#"
+                  class="mt-8 bg-brand-dark text-white text-lg font-sans px-8 py-3 rounded-full hover:bg-orange-600 transition-colors"
+                >Discuss a Project</a>
+              </div>
+              <div
+                class="border border-gray-200 rounded-lg p-8 text-center shadow-lg flex flex-col"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
+                <h3 class="text-2xl font-display font-bold">Monthly Retainer</h3>
+                <p class="mt-2 font-sans text-gray-600 flex-grow">Ongoing
+                  strategic guidance to ensure long-term growth and success.</p>
+                <ul class="mt-6 space-y-2 text-left font-sans flex-grow">
+                  <li class="flex items-center"><svg
+                      class="w-5 h-5 text-green-500 mr-2"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    ><path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 13l4 4L19 7"
+                      ></path></svg>Priority access & support</li>
+                  <li class="flex items-center"><svg
+                      class="w-5 h-5 text-green-500 mr-2"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    ><path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 13l4 4L19 7"
+                      ></path></svg>Bi-weekly strategy calls</li>
+                  <li class="flex items-center"><svg
+                      class="w-5 h-5 text-green-500 mr-2"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    ><path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 13l4 4L19 7"
+                      ></path></svg>Continuous performance monitoring</li>
+                </ul>
+                <a
+                  href="#"
+                  class="mt-8 bg-brand-dark text-white text-lg font-sans px-8 py-3 rounded-full hover:bg-orange-600 transition-colors"
+                >Enquire Now</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="py-20 bg-brand-light">
+          <div
+            class="max-w-screen-md mx-auto px-4 sm:px-6 lg:px-8"
+            data-aos="fade-up"
+          >
+            <div class="text-center mb-12">
+              <h2
+                class="text-4xl sm:text-5xl lg:text-[65px] font-display font-bold tracking-tight leading-tight"
+              >Frequently Asked Questions</h2>
+            </div>
+            <div class="space-y-4">
+              <div class="border-b border-gray-300 pb-4">
+                <button
+                  class="faq-question flex justify-between items-center w-full text-left"
+                >
+                  <h4 class="text-xl font-display font-bold">What kind of
+                    clients do you typically work with?</h4>
+                  <svg
+                    class="faq-icon w-6 h-6 transform transition-transform duration-300 flex-shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  ><path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    ></path></svg>
+                </button>
+                <div
+                  class="faq-answer overflow-hidden max-h-0 transition-all duration-500 ease-in-out"
+                >
+                  <p class="pt-4 font-sans text-gray-700">
+                    I work with a diverse range of clients, from high-growth
+                    startups to established enterprises in the technology,
+                    logistics, and finance sectors. The common thread is a
+                    desire for strategic, data-driven growth.
+                  </p>
+                </div>
+              </div>
+              <div class="border-b border-gray-300 pb-4">
+                <button
+                  class="faq-question flex justify-between items-center w-full text-left"
+                >
+                  <h4 class="text-xl font-display font-bold">How do you measure
+                    the success of a project?</h4>
+                  <svg
+                    class="faq-icon w-6 h-6 transform transition-transform duration-300 flex-shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  ><path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    ></path></svg>
+                </button>
+                <div
+                  class="faq-answer overflow-hidden max-h-0 transition-all duration-500 ease-in-out"
+                >
+                  <p class="pt-4 font-sans text-gray-700">
+                    Success is measured against the key performance indicators
+                    (KPIs) we establish together at the start of the project.
+                    This could be anything from revenue growth and cost
+                    reduction to market share and operational efficiency.
+                  </p>
+                </div>
+              </div>
+              <div class="border-b border-gray-300 pb-4">
+                <button
+                  class="faq-question flex justify-between items-center w-full text-left"
+                >
+                  <h4 class="text-xl font-display font-bold">What is your
+                    process for starting a new project?</h4>
+                  <svg
+                    class="faq-icon w-6 h-6 transform transition-transform duration-300 flex-shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  ><path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    ></path></svg>
+                </button>
+                <div
+                  class="faq-answer overflow-hidden max-h-0 transition-all duration-500 ease-in-out"
+                >
+                  <p class="pt-4 font-sans text-gray-700">
+                    We begin with a complimentary discovery call to understand
+                    your needs. If we're a good fit, we move to the "Discovery"
+                    phase of my approach, which involves a deep dive into your
+                    business before any strategic work begins.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="relative h-96 bg-fixed bg-cover bg-center"
+          style="background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80');"
+        >
+          <div class="absolute inset-0 bg-black opacity-40"></div>
+        </section>
+
+        <section class="py-20 bg-brand-light">
+          <div
+            class="max-w-screen-md mx-auto px-4 sm:px-6 lg:px-8 text-center"
+            data-aos="fade-up"
+          >
+            <h2
+              class="text-4xl sm:text-5xl lg:text-[65px] font-display font-bold tracking-tight leading-tight mb-4"
+            >
+              Ready to Grow Your Business?
+            </h2>
+            <p
+              class="mt-4 text-lg sm:text-xl lg:text-[24px] font-display tracking-tight leading-snug max-w-3xl mx-auto mb-16"
+            >
+              Let's connect. Fill out the form below, and I'll get back to you
+              within 24 hours to schedule a complimentary discovery call.
+            </p>
+            <form
+              aria-label="Contact Form"
+              class="space-y-8 text-left"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                  <label
+                    for="first-name"
+                    class="text-xl font-sans block mb-2"
+                  >First name *</label>
+                  <input
+                    type="text"
+                    id="first-name"
+                    class="w-full bg-transparent border-b border-gray-400 py-2 px-1 text-xl focus:outline-none focus:border-brand-dark"
+                  />
+                </div>
+                <div>
+                  <label
+                    for="last-name"
+                    class="text-xl font-sans block mb-2"
+                  >Last name *</label>
+                  <input
+                    type="text"
+                    id="last-name"
+                    class="w-full bg-transparent border-b border-gray-400 py-2 px-1 text-xl focus:outline-none focus:border-brand-dark"
+                  />
+                </div>
+              </div>
+              <div>
+                <label for="phone" class="text-xl font-sans block mb-2">Phone *</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  class="w-full bg-transparent border-b border-gray-400 py-2 px-1 text-xl focus:outline-none focus:border-brand-dark"
+                />
+              </div>
+              <div>
+                <label for="email" class="text-xl font-sans block mb-2">Email *</label>
+                <input
+                  type="email"
+                  id="email"
+                  class="w-full bg-transparent border-b border-gray-400 py-2 px-1 text-xl focus:outline-none focus:border-brand-dark"
+                />
+              </div>
+              <div>
+                <label for="message" class="text-xl font-sans block mb-2">Tell
+                  me about your project *</label>
+                <textarea
+                  id="message"
+                  rows="4"
+                  class="w-full bg-transparent border-b border-gray-400 py-2 px-1 text-xl focus:outline-none focus:border-brand-dark resize-none"
+                ></textarea>
+              </div>
+              <div>
+                <button
+                  type="button"
+                  class="bg-brand-dark text-white text-xl font-sans px-10 py-3 rounded-full hover:bg-orange-600 transition-colors"
+                >
+                  Send Message
+                </button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+      </main>
+
+      <footer class="bg-brand-dark text-white">
+        <div class="max-w-screen-lg mx-auto py-12 px-4 sm:px-6 lg:px-8">
+          <div
+            class="flex flex-col md:flex-row justify-between items-center gap-10"
+          >
+            <div class="text-center md:text-left">
+              <h3 class="text-4xl font-display font-bold mb-4">John Doe</h3>
+              <a
+                href="#"
+                class="inline-block text-base font-sans px-6 py-2 rounded-full border border-white hover:bg-white hover:text-brand-dark transition-colors"
+              >
+                Schedule a Discovery Call
+              </a>
+            </div>
+            <div class="text-center md:text-left text-sm font-sans space-y-2">
+              <p>123-456-7890</p>
+              <p><a
+                  href="mailto:john.doe@mysite.com"
+                  class="hover:underline"
+                >john.doe@mysite.com</a></p>
+              <p>500 Terry Francine St. San Francisco, CA 94158</p>
+            </div>
+          </div>
+          <div
+            class="mt-10 pt-8 border-t border-slate-600 text-center text-sm font-sans space-y-2 md:space-y-0 md:flex md:justify-center md:space-x-4"
+          >
+            <p>&copy; 2025 by John Doe. All rights reserved.</p>
+            <a href="#" class="underline">Privacy Policy</a>
+            <a href="#" class="underline">Accessibility Statement</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <script>
+      AOS.init({ duration: 800, once: true, }); const menuBtn =
+      document.getElementById("menu-btn"); const mobileMenu =
+      document.getElementById("mobile-menu"); menuBtn.addEventListener("click",
+      () => { mobileMenu.classList.toggle("hidden"); }); const faqQuestions =
+      document.querySelectorAll('.faq-question'); faqQuestions.forEach(question
+      => { question.addEventListener('click', () => { const answer =
+      question.nextElementSibling; const icon =
+      question.querySelector('.faq-icon'); if (answer.style.maxHeight) {
+      answer.style.maxHeight = null; icon.classList.remove('rotate-180'); } else
+      { answer.style.maxHeight = answer.scrollHeight + 'px';
+      icon.classList.add('rotate-180'); } }); });
+    </script>
+  </body>
+</html>
