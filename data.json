@@ -22,7 +22,7 @@
       "headline": "Fueling Growth with Purpose",
       "profilePicureUrl": "https://d1xwrlfgrqppfv.cloudfront.net/profile/cmfb2lyfz0006mq2objw37464-1757392827008-image.jpeg",
       "location": "india",
-      "coverImage": "https://picsum.photos/id/119/800/1200",
+      "coverImage": "https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
       "position": "Strategic insights and actionable roadmaps to scale your operations and maximize profitability.",
       "role": "Consultant"
     }
@@ -198,7 +198,7 @@
         ],
         "heading": "Empowering growth for you and your business",
         "section_title": "Core Services",
-        "navbarName": "Offerings"
+        "navbarName": "Services"
       }
     }
   },
@@ -415,15 +415,12 @@
     },
     "value": {
       "colorPalette": {
-        "primary": "#0E172A",
-        "secondary": "#fffcee",
-        "accent": "#d6d3d1",
-        "tertiary": "#f3f4f6",
-        "quaternary": "#ffffff",
-        "tertiary-bright": "#e5e7eb",
-        "primary-dim": "rgba(120, 53, 15, 0.7)",
-        "border-primary-dim": "rgba(120, 53, 15, 0.2)",
-        "border-quatenary-dim": "rgba(255, 255, 255, 0.2)"
+        "primary": "#1e293b",
+        "secondary": "#f3f4f6",
+        "accent": "#ea580c",
+        "textOnPrimary": "#ffffff",
+        "textOnSecondary": "#1e293b",
+        "textSubtle": "#4b5563"
       }
     }
   },
@@ -545,6 +542,69 @@
         "bgImage": "https://picsum.photos/id/12/1200/800",
         "title": "Let's Build Your Future, Together.",
         "subtitle": "Ready to discuss how we can work together? Let's start the conversation."
+      }
+    }
+  },
+  "caseStudy": {
+    "meta": {
+      "hide": false
+    },
+    "value": {
+      "caseStudy": {
+        "items": [
+          {
+            "title": "E-commerce Growth Strategy",
+            "description": "Developed a comprehensive growth strategy for a mid-sized e-commerce company, resulting in a 30% increase in revenue within six months.",
+            "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d",
+            "client": "ShopEase",
+            "results": [
+              {
+                "number": "30%",
+                "label": "Revenue Growth"
+              },
+              {
+                "number": "20%",
+                "label": "Customer Retention Increase"
+              }
+            ]
+          }
+        ],
+        "section_title": "Case Studies",
+        "navbarName": "Case Studies"
+      }
+    }
+  },
+  "packages": {
+    "meta": {
+      "hide": false
+    },
+    "value": {
+      "packages": {
+        "items": [
+          {
+            "title": "Basic Strategy Session",
+            "price": "$500",
+            "features": [
+              "60-minute consultation",
+              "Pre-session questionnaire",
+              "Post-session summary"
+            ],
+            "buttonText": "Book Now"
+          },
+          {
+            "title": "Comprehensive Strategy Package",
+            "price": "$2000",
+            "features": [
+              "4-hour deep-dive session",
+              "Detailed business analysis",
+              "Customized strategic roadmap",
+              "Follow-up support"
+            ],
+            "buttonText": "Book Now"
+          }
+        ],
+        "section_title": "Packages",
+        "navbarName": "Packages"
       }
     }
   }
