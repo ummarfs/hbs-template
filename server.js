@@ -25,6 +25,19 @@ hbs.registerHelper("inc", function (value) {
   return parseInt(value) + 1;
 });
 
+hbs.registerHelper("splitText", function (text, options) {
+  if (!text) return "";
+
+  const words = text.split(" ");
+  const half = Math.ceil(words.length / 2);
+
+  const firstHalf = words.slice(0, half).join(" ");
+  const secondHalf = words.slice(half).join(" ");
+
+  return options.fn({ firstHalf, secondHalf });
+});
+
+
 app.get("/", (req, res) => {
   res.redirect("/4");
 });

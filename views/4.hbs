@@ -48,11 +48,6 @@
             <a href="#"
               class="flex items-center space-x-2 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--accent)]"
               aria-label="{{personal_info.value.firstName}} {{personal_info.value.lastName}}">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                stroke="currentColor" class="w-8 h-8 text-[var(--primary)]">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
-              </svg>
               <span class="text-xl font-display font-semibold text-[var(--primary)]">
                 {{personal_info.value.firstName}} {{personal_info.value.lastName}}
                 {{#if personal_info.value.role}}
@@ -155,373 +150,266 @@
             data-aos="fade-up">
             <h1
               class="text-4xl sm:text-6xl md:text-8xl lg:text-[95px] font-display font-bold tracking-tight leading-tight">
-              Your Partner in Growth & Strategy
+              {{default personal_info.value.headline 'Your Partner in Growth & Strategy'}}
             </h1>
             <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-[32px] font-display tracking-tight leading-snug mt-6">
-              Personalized consulting to guide your business to its next stage of success.
+              {{default personal_info.value.position 'Strategic insights and actionable roadmaps to scale your operations and maximize profitability.'}}
             </h2>
-            <a href="#" aria-label="Book a Free Consultation"
-              class="inline-block mt-8 bg-white text-[var(--text-on-secondary)] text-lg sm:text-xl font-sans px-8 py-4 rounded-full border border-solid border-black hover:bg-gray-200 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--accent)]">Book
-              a Free Consultation</a>
+             {{#if contacts.value.contacts}}
+                {{#unless contacts.meta.hide}}
+                {{#if contacts.value.contacts.bookingUrl}}
+            <a href="{{contacts.value.contacts.bookingUrl}}" target="_blank" aria-label="Book a Free Consultation"
+              class="inline-block mt-8 bg-white text-[var(--text-on-secondary)] text-lg sm:text-xl font-sans px-8 py-4 rounded-full border border-solid border-black hover:bg-gray-200 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--accent)]">{{#if contacts.value.contacts.buttonText}}
+                  {{contacts.value.contacts.buttonText}} {{else}} Book
+                  a Free Consultation {{/if}}</a>
+                  {{else}}
+                  <a href="#contact" aria-label="Book a Free Consultation"
+              class="inline-block mt-8 bg-white text-[var(--text-on-secondary)] text-lg sm:text-xl font-sans px-8 py-4 rounded-full border border-solid border-black hover:bg-gray-200 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--accent)]">{{#if contacts.value.contacts.buttonText}}
+                  {{contacts.value.contacts.buttonText}} {{else}} Book
+                  a Free Consultation {{/if}}</a>
+                   {{/if}}
+                {{/unless}}
+                {{/if}}
           </div>
         </div>
       </section>
 
-      <section class="py-16 md:py-20 bg-white">
+     {{#splitText about.value.about.content}}
+      {{#unless about.meta.hide}}
+      <section class="py-16 md:py-20 bg-white" id="about">
         <div class="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center mb-12 md:mb-16" data-aos="fade-up">
             <h2 class="text-4xl md:text-5xl lg:text-[65px] font-display font-bold tracking-tight leading-tight">
-              About Me</h2>
+              {{default about.value.about.section_title 'About Me'}}</h2>
             <p class="mt-4 text-lg md:text-xl lg:text-[24px] font-display tracking-tight leading-snug max-w-4xl mx-auto">
-              I am a dedicated business consultant committed to empowering organizations with strategic insights and
-              solutions. My mission is to enhance your operational efficiency, drive growth, and maximize profitability.
+              {{firstHalf}}
             </p>
           </div>
           <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
             <div class="w-full lg:w-1/3" data-aos="fade-right">
               <img
-                src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+                src="{{default about.value.about.image 'https://c.animaapp.com/mfnpsvda9pPWxp/assets/88aac0_70dba72adce54eea9f53068b36a9e0e9~mv2.jpeg'}}"
                 alt="Portrait of a confident business consultant"
                 class="w-full h-auto object-cover rounded-lg shadow-lg" />
             </div>
             <div class="w-full lg:w-2/3" data-aos="fade-left">
               <p class="text-base sm:text-lg lg:text-xl font-sans leading-relaxed">
-                With over a decade of experience across diverse industries, I specialize in delivering exceptional
-                results by deeply understanding your unique challenges and goals. I craft customized strategies and
-                implement effective solutions that propel your business forward, ensuring you're not just meeting but
-                exceeding your targets. I believe in a partnership approach, working alongside you to achieve
-                sustainable success.
+                {{secondHalf}}
               </p>
             </div>
           </div>
         </div>
       </section>
+       {{/unless}}
+      {{/splitText}}
 
-      <section class="py-16 md:py-20 bg-[var(--primary)] text-[var(--text-on-primary)]">
+ {{#if services.value.services.items}}
+      {{#unless services.meta.hide}}
+      <section class="py-16 md:py-20 bg-[var(--primary)] text-[var(--text-on-primary)]" id="services">
         <div class="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div data-aos="fade-up">
             <h2 class="text-4xl md:text-5xl lg:text-[65px] font-display font-bold tracking-tight leading-tight">
-              How I Can Help
+              {{default services.value.services.section_title
+            'How I Can Help'}}
             </h2>
+            {{#if services.value.services.description}}
             <p
               class="mt-4 text-lg md:text-xl lg:text-[24px] font-display tracking-tight leading-snug max-w-4xl mx-auto">
-              Explore my range of consulting services designed to address your specific business needs and drive
-              sustainable growth.
+              {{services.value.services.description}}
             </p>
+            {{/if}}
           </div>
           <div class="mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+            {{#each services.value.services.items}}
             <div class="bg-[var(--secondary)] rounded-xl p-8 text-left text-[var(--text-on-secondary)]"
               data-aos="fade-up" data-aos-delay="100">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                stroke="currentColor" class="w-16 h-16 sm:w-20 sm:h-20 mb-6">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M10.5 6a7.5 7.5 0 100 15 7.5 7.5 0 000-15zM21 21l-5.69-5.69" />
-              </svg>
-              <h3 class="text-2xl font-display font-bold leading-7 mb-2">Strategic Growth Planning</h3>
+              <h3 class="text-2xl font-display font-bold leading-7 mb-2">{{this.title}}</h3>
               <p class="text-base sm:text-lg font-sans leading-snug">
-                I develop robust, data-driven strategies that align with your business objectives, ensuring long-term
-                success and a strong competitive advantage.
+                {{this.description}}
               </p>
             </div>
-            <div class="bg-[var(--secondary)] rounded-xl p-8 text-left text-[var(--text-on-secondary)]"
-              data-aos="fade-up" data-aos-delay="200">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                stroke="currentColor" class="w-16 h-16 sm:w-20 sm:h-20 mb-6">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414-.336.75-.75.75h-.75m0-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-              </svg>
-              <h3 class="text-2xl font-display font-bold leading-7 mb-2">Financial Optimization</h3>
-              <p class="text-base sm:text-lg font-sans leading-snug">
-                From financial planning to risk management, I provide the insights and guidance needed to make informed
-                decisions and improve your bottom line.
-              </p>
-            </div>
-            <div class="bg-[var(--secondary)] rounded-xl p-8 text-left text-[var(--text-on-secondary)]"
-              data-aos="fade-up" data-aos-delay="300">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                stroke="currentColor" class="w-16 h-16 sm:w-20 sm:h-20 mb-6">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.472-2.472a3.375 3.375 0 00-4.773-4.773L6.75 11.42m5.877 5.877l-5.877-5.877m0 0a3.375 3.375 0 01-4.773-4.773l2.472 2.472" />
-              </svg>
-              <h3 class="text-2xl font-display font-bold leading-7 mb-2">Operational Excellence</h3>
-              <p class="text-base sm:text-lg font-sans leading-snug">
-                Achieve operational excellence with tailored solutions that streamline processes, enhance productivity,
-                and drive cost efficiencies.
-              </p>
-            </div>
+            {{/each}}
           </div>
         </div>
       </section>
+       {{/unless}}
+      {{/if}}
 
-      <section class="py-16 md:py-20 bg-white">
+      {{#if process.value.process.items}}
+      {{#unless process.meta.hide}}
+      <section class="py-16 md:py-20 bg-white" id="process">
         <div class="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div data-aos="fade-up">
             <h2 class="text-4xl md:text-5xl lg:text-[65px] font-display font-bold tracking-tight leading-tight mb-4">
-              My Approach
+              {{default process.value.process.section_title 'My Proven Process'}}
             </h2>
+            {{#if process.value.process.description}}
             <p
               class="mt-4 text-lg md:text-xl lg:text-[24px] font-display tracking-tight leading-snug max-w-3xl mx-auto mb-12 md:mb-16">
-              I follow a proven four-step process to ensure clarity, alignment, and impactful results for every client.
+              {{process.value.process.description}}
             </p>
+            {{/if}}
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-left">
+            {{#each process.value.process.items}}
             <div class="border-t-4 border-[var(--primary)] pt-6" data-aos="fade-up" data-aos-delay="100">
-              <p class="text-5xl font-display font-extrabold text-gray-200 mb-4">01</p>
-              <h3 class="text-xl sm:text-2xl font-display font-bold mb-2">Discovery</h3>
-              <p class="font-sans">We begin with a deep dive into your business to understand your vision, challenges,
-                and goals.</p>
+              <p class="text-5xl font-display font-extrabold text-gray-200 mb-4">{{inc @index}}</p>
+              <h3 class="text-xl sm:text-2xl font-display font-bold mb-2">{{this.title}}</h3>
+              <p class="font-sans">{{this.description}}</p>
             </div>
-            <div class="border-t-4 border-[var(--primary)] pt-6" data-aos="fade-up" data-aos-delay="200">
-              <p class="text-5xl font-display font-extrabold text-gray-200 mb-4">02</p>
-              <h3 class="text-xl sm:text-2xl font-display font-bold mb-2">Strategy</h3>
-              <p class="font-sans">I develop a bespoke, actionable strategy tailored specifically to your unique market
-                position and objectives.</p>
-            </div>
-            <div class="border-t-4 border-[var(--primary)] pt-6" data-aos="fade-up" data-aos-delay="300">
-              <p class="text-5xl font-display font-extrabold text-gray-200 mb-4">03</p>
-              <h3 class="text-xl sm:text-2xl font-display font-bold mb-2">Implementation</h3>
-              <p class="font-sans">I guide you through the execution phase, providing hands-on support to ensure a
-                smooth and successful rollout.</p>
-            </div>
-            <div class="border-t-4 border-[var(--primary)] pt-6" data-aos="fade-up" data-aos-delay="400">
-              <p class="text-5xl font-display font-extrabold text-gray-200 mb-4">04</p>
-              <h3 class="text-xl sm:text-2xl font-display font-bold mb-2">Review & Scale</h3>
-              <p class="font-sans">We track progress against key metrics, making adjustments to optimize performance and
-                scale your success.</p>
-            </div>
+            {{/each}}
           </div>
         </div>
       </section>
-
+        {{/unless}}
+        {{/if}}
+      
+      {{#if stats.value.stats.items}}
+      {{#unless stats.meta.hide}}
       <section class="py-16 md:py-20 bg-[var(--secondary)]">
         <div class="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 class="text-4xl md:text-5xl lg:text-[65px] font-display font-bold tracking-tight leading-tight"
-            data-aos="fade-up">Proven Results</h2>
+            data-aos="fade-up">{{default stats.value.stats.section_title
+            'Proven Results'}}</h2>
           <div class="mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+             {{#each stats.value.stats.items}}
             <div
               class="bg-[var(--primary)] text-[var(--text-on-primary)] rounded-xl p-8 flex flex-col justify-center items-center min-h-[280px]"
               data-aos="zoom-in" data-aos-delay="100">
-              <p class="text-6xl md:text-7xl lg:text-8xl font-display font-extrabold">+40%</p>
-              <p class="mt-4 text-lg sm:text-xl font-sans">Average Revenue Growth</p>
+              <p class="text-6xl md:text-7xl lg:text-8xl font-display font-extrabold">{{this.number}}</p>
+              <p class="mt-4 text-lg sm:text-xl font-sans">{{this.label}}</p>
             </div>
-            <div
-              class="bg-[var(--primary)] text-[var(--text-on-primary)] rounded-xl p-8 flex flex-col justify-center items-center min-h-[280px]"
-              data-aos="zoom-in" data-aos-delay="200">
-              <p class="text-6xl md:text-7xl lg:text-8xl font-display font-extrabold">-25%</p>
-              <p class="mt-4 text-lg sm:text-xl font-sans">Operational Cost Reduction</p>
-            </div>
-            <div
-              class="bg-[var(--primary)] text-[var(--text-on-primary)] rounded-xl p-8 flex flex-col justify-center items-center min-h-[280px]"
-              data-aos="zoom-in" data-aos-delay="300">
-              <p class="text-6xl md:text-7xl lg:text-8xl font-display font-extrabold">3x</p>
-              <p class="mt-4 text-lg sm:text-xl font-sans">Increase in Market Share</p>
-            </div>
+            {{/each}}
           </div>
         </div>
       </section>
+        {{/unless}}
+        {{/if}}
 
+       {{#if testimonials.value.testimonials.items}}
+      {{#unless testimonials.meta.hide}}
       <section class="py-16 md:py-20 bg-white">
         <div class="max-w-screen-md mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2
             class="text-4xl md:text-5xl lg:text-[65px] font-display font-bold tracking-tight leading-tight mb-12 md:mb-16"
             data-aos="fade-up">
-            What My Clients Say
+            {{default
+              testimonials.value.testimonials.heading 'What My Clients Say'}}
           </h2>
           <div class="space-y-12">
+            {{#each testimonials.value.testimonials.items}}
             <blockquote class="text-left" data-aos="fade-up">
               <p class="text-lg sm:text-xl lg:text-2xl font-display leading-snug">
-                "Working with John was a game-changer. His strategic insights directly led to a 50% increase in our
-                quarterly profits. I cannot recommend him highly enough."
+                "{{this.recommendationText}}"
               </p>
               <footer class="mt-6">
-                <p class="text-lg font-display font-bold text-[var(--primary)]">Jane Smith</p>
-                <p class="font-sans text-[var(--text-subtle)]">CEO, Tech Innovators Inc.</p>
+                <p class="text-lg font-display font-bold text-[var(--primary)]">{{this.recommenderName}}</p>
+                <p class="font-sans text-[var(--text-subtle)]">{{this.designation}}</p>
               </footer>
             </blockquote>
-            <blockquote class="text-left" data-aos="fade-up" data-aos-delay="100">
-              <p class="text-lg sm:text-xl lg:text-2xl font-display leading-snug">
-                "The operational efficiencies John identified have saved us thousands. He's not just a consultant; he's
-                a true partner who is invested in your success."
-              </p>
-              <footer class="mt-6">
-                <p class="text-lg font-display font-bold text-[var(--primary)]">Mark Williams</p>
-                <p class="font-sans text-[var(--text-subtle)]">COO, Creative Solutions</p>
-              </footer>
-            </blockquote>
+            {{/each}}
           </div>
         </div>
       </section>
+        {{/unless}}
+        {{/if}}
 
+      {{#if caseStudy.value.caseStudy.items}}
+      {{#unless caseStudy.meta.hide}}
       <section class="py-16 md:py-20 bg-[var(--secondary)]">
         <div class="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center mb-12 md:mb-16" data-aos="fade-up">
-            <h2 class="text-4xl md:text-5xl lg:text-[65px] font-display font-bold tracking-tight leading-tight">In-Depth
-              Case Studies</h2>
+            <h2 class="text-4xl md:text-5xl lg:text-[65px] font-display font-bold tracking-tight leading-tight">{{default caseStudy.value.caseStudy.section_title 'In-Depth Case Studies'}}</h2>
+            {{#if caseStudy.value.caseStudy.description}}
             <p
               class="mt-4 text-lg md:text-xl lg:text-[24px] font-display tracking-tight leading-snug max-w-3xl mx-auto">
-              Discover the real-world impact of my strategic consulting.
+              {{caseStudy.value.caseStudy.description}}
             </p>
+            {{/if}}
           </div>
           <div class="space-y-16 md:space-y-20">
+            {{#each caseStudy.value.caseStudy.items}}
             <div class="grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
               <div class="order-2 md:order-1" data-aos="fade-right">
-                <h3 class="text-3xl font-display font-bold text-[var(--primary)]">Client: Global Logistics Firm</h3>
-                <p class="mt-4 text-lg sm:text-xl font-sans text-[var(--text-subtle)]">Improving Supply Chain Efficiency
+                <h3 class="text-3xl font-display font-bold text-[var(--primary)]">Client: {{this.client}}</h3>
+                <p class="mt-4 text-lg sm:text-xl font-sans text-[var(--text-subtle)]">{{this.title}}
                 </p>
                 <div class="mt-6 space-y-4">
                   <div>
                     <h4 class="text-lg sm:text-xl font-display font-bold">The Challenge</h4>
-                    <p class="mt-1 font-sans">The client was facing significant delays and rising costs in their
-                      international supply chain due to outdated processes and lack of data visibility.</p>
+                    <p class="mt-1 font-sans">{{this.challenge}}</p>
                   </div>
                   <div>
                     <h4 class="text-lg sm:text-xl font-display font-bold">My Solution</h4>
-                    <p class="mt-1 font-sans">I conducted a full audit of their operations and implemented a new data
-                      analytics platform. I then redesigned their core logistics workflows to prioritize automation and
-                      real-time tracking.</p>
+                    <p class="mt-1 font-sans">{{this.solution}}</p>
                   </div>
                   <div>
                     <h4 class="text-lg sm:text-xl font-display font-bold">The Result</h4>
+                    {{#each this.results}}
                     <div class="mt-2 bg-white p-4 rounded-lg shadow">
-                      <p class="text-3xl sm:text-4xl font-display font-extrabold text-[var(--primary)]">35% Reduction</p>
-                      <p class="font-sans text-[var(--text-subtle)]">in operational overhead within six months.</p>
+                      <p class="text-3xl sm:text-4xl font-display font-extrabold text-[var(--primary)]">{{this.title}}</p>
+                      <p class="font-sans text-[var(--text-subtle)]">{{this.description}}</p>
                     </div>
+                    {{/each}}
                   </div>
                 </div>
               </div>
               <div class="order-1 md:order-2" data-aos="fade-left">
                 <img
-                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+                  src="{{default this.image 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80'}}"
                   alt="Business analytics chart" class="rounded-lg shadow-lg w-full h-auto object-cover">
               </div>
             </div>
-            <div class="grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
-              <div data-aos="fade-right">
-                <img
-                  src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
-                  alt="Stock market graph" class="rounded-lg shadow-lg w-full h-auto object-cover">
-              </div>
-              <div data-aos="fade-left">
-                <h3 class="text-3xl font-display font-bold text-[var(--primary)]">Client: FinTech Startup</h3>
-                <p class="mt-4 text-lg sm:text-xl font-sans text-[var(--text-subtle)]">Scaling for Market Entry</p>
-                <div class="mt-6 space-y-4">
-                  <div>
-                    <h4 class="text-lg sm:text-xl font-display font-bold">The Challenge</h4>
-                    <p class="mt-1 font-sans">A promising FinTech startup needed a robust financial model and
-                      go-to-market strategy to secure Series A funding and launch in a competitive landscape.</p>
-                  </div>
-                  <div>
-                    <h4 class="text-lg sm:text-xl font-display font-bold">My Solution</h4>
-                    <p class="mt-1 font-sans">I developed a comprehensive financial forecast, refined their pitch deck
-                      for investors, and created a phased market entry plan focusing on key customer segments.</p>
-                  </div>
-                  <div>
-                    <h4 class="text-lg sm:text-xl font-display font-bold">The Result</h4>
-                    <div class="mt-2 bg-white p-4 rounded-lg shadow">
-                      <p class="text-3xl sm:text-4xl font-display font-extrabold text-[var(--primary)]">$15 Million</p>
-                      <p class="font-sans text-[var(--text-subtle)]">in Series A funding secured ahead of schedule.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            {{/each}}
           </div>
         </div>
       </section>
-
+        {{/unless}}
+        {{/if}}
+  
+      {{#if packages.value.packages.items}}
+      {{#unless packages.meta.hide}}
       <section class="py-16 md:py-20 bg-white">
         <div class="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center mb-12 md:mb-16" data-aos="fade-up">
-            <h2 class="text-4xl md:text-5xl lg:text-[65px] font-display font-bold tracking-tight leading-tight">Service
-              Packages</h2>
+            <h2 class="text-4xl md:text-5xl lg:text-[65px] font-display font-bold tracking-tight leading-tight">{{default packages.value.packages.section_title 'Service Packages'}}</h2>
+            {{#if packages.value.packages.description}}
             <p
               class="mt-4 text-lg md:text-xl lg:text-[24px] font-display tracking-tight leading-snug max-w-3xl mx-auto">
-              Choose a package that aligns with your business goals.
+              {{packages.value.packages.description}}
             </p>
+            {{/if}}
           </div>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {{#each packages.value.packages.items}}
             <div class="border border-gray-200 rounded-lg p-6 sm:p-8 text-center shadow-lg flex flex-col"
               data-aos="fade-up" data-aos-delay="100">
-              <h3 class="text-2xl font-display font-bold">Strategy Session</h3>
-              <p class="mt-2 font-sans text-[var(--text-subtle)] flex-grow">A 90-minute deep-dive session to tackle your
-                most
-                pressing challenge.</p>
+              {{#if this.badge}}
+               <span class="mb-4 inline-block bg-[var(--primary)] text-[var(--text-on-primary)] text-sm font-bold px-3 py-1 rounded-full">
+                {{this.badge}}
+               </span>
+               {{/if}}
+              <h3 class="text-2xl font-display font-bold">{{this.title}}</h3>
+              {{#if this.description}}
+              <p class="mt-2 font-sans text-[var(--text-subtle)] flex-grow">{{this.description}}</p>
+              {{/if}}
               <ul class="mt-6 space-y-2 text-left font-sans flex-grow">
+                {{#each this.features}}
                 <li class="flex items-center"><svg class="w-5 h-5 text-[var(--accent)] mr-2 flex-shrink-0" fill="none"
                     stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>Pre-call analysis</li>
-                <li class="flex items-center"><svg class="w-5 h-5 text-[var(--accent)] mr-2 flex-shrink-0" fill="none"
-                    stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>Intensive 90-min call</li>
-                <li class="flex items-center"><svg class="w-5 h-5 text-[var(--accent)] mr-2 flex-shrink-0" fill="none"
-                    stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>Actionable summary report</li>
+                  </svg>{{this}}</li>
+                {{/each}}
               </ul>
-              <a href="#"
-                class="mt-8 bg-[var(--primary)] text-[var(--text-on-primary)] text-lg font-sans px-8 py-3 rounded-full hover:bg-[var(--accent)] transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--accent)]">Book
-                a Session</a>
+              <a href="#contact"
+                class="mt-8 bg-[var(--primary)] text-[var(--text-on-primary)] text-lg font-sans px-8 py-3 rounded-full hover:bg-[var(--accent)] transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--accent)]">{{default this.buttonText 'Book a Session'}}</a>
             </div>
-            <div class="border-2 border-[var(--primary)] rounded-lg p-6 sm:p-8 text-center shadow-2xl flex flex-col relative"
-              data-aos="fade-up" data-aos-delay="200">
-              <span
-                class="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-[var(--primary)] text-[var(--text-on-primary)] text-sm font-bold px-3 py-1 rounded-full">MOST
-                POPULAR</span>
-              <h3 class="text-2xl font-display font-bold">Project-Based Consulting</h3>
-              <p class="mt-2 font-sans text-[var(--text-subtle)] flex-grow">Comprehensive support for a specific
-                project, from
-                planning to execution.</p>
-              <ul class="mt-6 space-y-2 text-left font-sans flex-grow">
-                <li class="flex items-center"><svg class="w-5 h-5 text-[var(--accent)] mr-2 flex-shrink-0" fill="none"
-                    stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>Full project scope & roadmap</li>
-                <li class="flex items-center"><svg class="w-5 h-5 text-[var(--accent)] mr-2 flex-shrink-0" fill="none"
-                    stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>Dedicated weekly meetings</li>
-                <li class="flex items-center"><svg class="w-5 h-5 text-[var(--accent)] mr-2 flex-shrink-0" fill="none"
-                    stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>Implementation support</li>
-                <li class="flex items-center"><svg class="w-5 h-5 text-[var(--accent)] mr-2 flex-shrink-0" fill="none"
-                    stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>Final performance review</li>
-              </ul>
-              <a href="#"
-                class="mt-8 bg-[var(--primary)] text-[var(--text-on-primary)] text-lg font-sans px-8 py-3 rounded-full hover:bg-[var(--accent)] transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--accent)]">Discuss
-                a Project</a>
-            </div>
-            <div class="border border-gray-200 rounded-lg p-6 sm:p-8 text-center shadow-lg flex flex-col"
-              data-aos="fade-up" data-aos-delay="300">
-              <h3 class="text-2xl font-display font-bold">Monthly Retainer</h3>
-              <p class="mt-2 font-sans text-[var(--text-subtle)] flex-grow">Ongoing strategic guidance to ensure
-                long-term growth
-                and success.</p>
-              <ul class="mt-6 space-y-2 text-left font-sans flex-grow">
-                <li class="flex items-center"><svg class="w-5 h-5 text-[var(--accent)] mr-2 flex-shrink-0" fill="none"
-                    stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>Priority access & support</li>
-                <li class="flex items-center"><svg class="w-5 h-5 text-[var(--accent)] mr-2 flex-shrink-0" fill="none"
-                    stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>Bi-weekly strategy calls</li>
-                <li class="flex items-center"><svg class="w-5 h-5 text-[var(--accent)] mr-2 flex-shrink-0" fill="none"
-                    stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>Continuous performance monitoring</li>
-              </ul>
-              <a href="#"
-                class="mt-8 bg-[var(--primary)] text-[var(--text-on-primary)] text-lg font-sans px-8 py-3 rounded-full hover:bg-[var(--accent)] transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--accent)]">Enquire
-                Now</a>
-            </div>
+            {{/each}}
           </div>
         </div>
       </section>
+        {{/unless}}
+        {{/if}}
 
       <section class="py-16 md:py-20 bg-[var(--secondary)]">
         <div class="max-w-screen-md mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up">

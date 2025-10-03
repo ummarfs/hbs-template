@@ -198,7 +198,8 @@
         ],
         "heading": "Empowering growth for you and your business",
         "section_title": "Core Services",
-        "navbarName": "Services"
+        "navbarName": "Services",
+        "description": "I offer a range of services designed to help businesses like yours overcome challenges and achieve their goals. Here's how I can support your success:"
       }
     }
   },
@@ -511,7 +512,8 @@
     },
     "value": {
       "process": {
-        "section_title": "Our Collaborative Process",
+        "section_title": "My Proven Process",
+        "description": "A clear, collaborative approach to driving your business forward.",
         "items": [
           {
             "title": "Discovery & Alignment",
@@ -554,23 +556,34 @@
         "items": [
           {
             "title": "E-commerce Growth Strategy",
-            "description": "Developed a comprehensive growth strategy for a mid-sized e-commerce company, resulting in a 30% increase in revenue within six months.",
-            "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d",
-            "client": "ShopEase",
+            "client": "Global Logistics Firm",
+            "challenge": "The client was facing declining market share due to inefficient supply chain operations and rising competition.",
+            "solution": "Conducted a comprehensive market analysis, restructured supply chain processes, and implemented a new logistics software system.",
+            "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
             "results": [
               {
-                "number": "30%",
-                "label": "Revenue Growth"
-              },
+                "title": "35% Reduction",
+                "description": "in operational overhead within six months."
+              }
+            ]
+          },
+          {
+            "title": "E-commerce Growth Strategy",
+            "client": "Global Logistics Firm",
+            "challenge": "The client was facing declining market share due to inefficient supply chain operations and rising competition.",
+            "solution": "Conducted a comprehensive market analysis, restructured supply chain processes, and implemented a new logistics software system.",
+            "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+            "results": [
               {
-                "number": "20%",
-                "label": "Customer Retention Increase"
+                "title": "35% Reduction",
+                "description": "in operational overhead within six months."
               }
             ]
           }
         ],
-        "section_title": "Case Studies",
-        "navbarName": "Case Studies"
+        "section_title": "In-Depth Case Studies",
+        "navbarName": "Case Studies",
+        "description": "Explore detailed case studies showcasing how I've helped businesses like yours achieve significant growth and operational excellence."
       }
     }
   },
@@ -583,28 +596,30 @@
         "items": [
           {
             "title": "Basic Strategy Session",
-            "price": "$500",
+            "description": "A focused 30-minute session to address a specific challenge or opportunity.",
             "features": [
               "60-minute consultation",
               "Pre-session questionnaire",
               "Post-session summary"
             ],
-            "buttonText": "Book Now"
+            "buttonText": "Book Now",
+            "badge":"MOST POPULAR"
           },
           {
-            "title": "Comprehensive Strategy Package",
-            "price": "$2000",
+            "title": "Executive Advisory Package",
+            "description": "Ongoing monthly advisory services for continuous strategic support and guidance.",
             "features": [
-              "4-hour deep-dive session",
-              "Detailed business analysis",
-              "Customized strategic roadmap",
-              "Follow-up support"
+              "Monthly 60-minute strategy sessions",
+              "Quarterly business reviews",
+              "Priority email support",
+              "Access to exclusive resources"
             ],
             "buttonText": "Book Now"
           }
         ],
-        "section_title": "Packages",
-        "navbarName": "Packages"
+        "section_title": "Service Packages",
+        "navbarName": "Packages",
+        "description": "Choose a package that aligns with your business goals."
       }
     }
   }
