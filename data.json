@@ -623,5 +623,24 @@
         "description": "Choose a package that aligns with your business goals."
       }
     }
+  },
+  "fontPicker": {
+    "meta": {
+      "hide": false
+    },
+    "value": {
+      "fontPicker": {
+        "primary": {
+          "url": "https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap",
+          "family": "Lato",
+          "category": "sans-serif"
+        },
+        "secondary": {
+          "url": "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap",
+          "family": "Montserrat",
+          "category": "sans-serif"
+        }
+      }
+    }
   }
 }
