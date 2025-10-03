@@ -288,7 +288,7 @@
 
        {{#if testimonials.value.testimonials.items}}
       {{#unless testimonials.meta.hide}}
-      <section class="py-16 md:py-20 bg-white">
+      <section class="py-16 md:py-20 bg-white" id="testimonials">
         <div class="max-w-screen-md mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2
             class="text-4xl md:text-5xl lg:text-[65px] font-display font-bold tracking-tight leading-tight mb-12 md:mb-16"
@@ -316,7 +316,7 @@
 
       {{#if caseStudy.value.caseStudy.items}}
       {{#unless caseStudy.meta.hide}}
-      <section class="py-16 md:py-20 bg-[var(--secondary)]">
+      <section class="py-16 md:py-20 bg-[var(--secondary)]" id="casestudy">
         <div class="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center mb-12 md:mb-16" data-aos="fade-up">
             <h2 class="text-4xl md:text-5xl lg:text-[65px] font-display font-bold tracking-tight leading-tight">{{default caseStudy.value.caseStudy.section_title 'In-Depth Case Studies'}}</h2>
@@ -369,7 +369,7 @@
   
       {{#if packages.value.packages.items}}
       {{#unless packages.meta.hide}}
-      <section class="py-16 md:py-20 bg-white">
+      <section class="py-16 md:py-20 bg-white" id="packages">
         <div class="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center mb-12 md:mb-16" data-aos="fade-up">
             <h2 class="text-4xl md:text-5xl lg:text-[65px] font-display font-bold tracking-tight leading-tight">{{default packages.value.packages.section_title 'Service Packages'}}</h2>
@@ -410,18 +410,21 @@
       </section>
         {{/unless}}
         {{/if}}
-
-      <section class="py-16 md:py-20 bg-[var(--secondary)]">
+      
+       {{#if faq.value.faq.items}}
+    {{#unless faq.meta.hide}}
+      <section class="py-16 md:py-20 bg-[var(--secondary)]" id="faq">
         <div class="max-w-screen-md mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up">
           <div class="text-center mb-12">
             <h2 class="text-4xl md:text-5xl lg:text-[65px] font-display font-bold tracking-tight leading-tight">
-              Frequently Asked Questions</h2>
+              {{default faq.value.faq.section_title 'Frequently Asked Questions'}}</h2>
           </div>
           <div class="space-y-4">
+            {{#each faq.value.faq.items}}
             <div class="border-b border-[var(--text-subtle)]/50 pb-4">
               <button
                 class="faq-question flex justify-between items-center w-full text-left p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--accent)]">
-                <h4 class="text-lg sm:text-xl font-display font-bold">What kind of clients do you typically work with?
+                <h4 class="text-lg sm:text-xl font-display font-bold"> {{this.question}}
                 </h4>
                 <svg class="faq-icon w-6 h-6 transform transition-transform duration-300 flex-shrink-0" fill="none"
                   stroke="currentColor" viewBox="0 0 24 24">
@@ -430,133 +433,145 @@
               </button>
               <div class="faq-answer overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
                 <p class="pt-4 px-2 font-sans text-[var(--text-subtle)]">
-                  I work with a diverse range of clients, from high-growth startups to established enterprises in the
-                  technology, logistics, and finance sectors. The common thread is a desire for strategic, data-driven
-                  growth.
+                 {{this.answer}}
                 </p>
               </div>
             </div>
-            <div class="border-b border-[var(--text-subtle)]/50 pb-4">
-              <button
-                class="faq-question flex justify-between items-center w-full text-left p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--accent)]">
-                <h4 class="text-lg sm:text-xl font-display font-bold">How do you measure the success of a project?</h4>
-                <svg class="faq-icon w-6 h-6 transform transition-transform duration-300 flex-shrink-0" fill="none"
-                  stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-              </button>
-              <div class="faq-answer overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
-                <p class="pt-4 px-2 font-sans text-[var(--text-subtle)]">
-                  Success is measured against the key performance indicators (KPIs) we establish together at the start
-                  of the project. This could be anything from revenue growth and cost reduction to market share and
-                  operational efficiency.
-                </p>
-              </div>
-            </div>
-            <div class="border-b border-[var(--text-subtle)]/50 pb-4">
-              <button
-                class="faq-question flex justify-between items-center w-full text-left p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--accent)]">
-                <h4 class="text-lg sm:text-xl font-display font-bold">What is your process for starting a new project?
-                </h4>
-                <svg class="faq-icon w-6 h-6 transform transition-transform duration-300 flex-shrink-0" fill="none"
-                  stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-              </button>
-              <div class="faq-answer overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
-                <p class="pt-4 px-2 font-sans text-[var(--text-subtle)]">
-                  We begin with a complimentary discovery call to understand your needs. If we're a good fit, we move to
-                  the "Discovery" phase of my approach, which involves a deep dive into your business before any
-                  strategic work begins.
-                </p>
-              </div>
-            </div>
+            {{/each}}
           </div>
         </div>
       </section>
+      {{/unless}}
+      {{/if}}
 
-      <section class="relative h-72 sm:h-96 bg-fixed bg-cover bg-center"
-        style="background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80');">
+      {{#if contacts.value.contacts}}
+      {{#unless contacts.meta.hide}}
+      <section class="relative h-72 sm:h-96 bg-fixed bg-cover bg-center" 
+        style="background-image: url('{{default contacts.value.contacts.bgImage 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80'}}');">
         <div class="absolute inset-0 bg-black opacity-40"></div>
       </section>
+      {{/unless}}
+      {{/if}}
 
-      <section class="py-16 md:py-20 bg-[var(--secondary)]">
+      {{#if contacts.value.contacts.contactForm}}
+      {{#unless contacts.meta.hide}}
+      <section class="py-16 md:py-20 bg-[var(--secondary)]" id="contact">
         <div class="max-w-screen-md mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
           <h2 class="text-4xl md:text-5xl lg:text-[65px] font-display font-bold tracking-tight leading-tight mb-4">
-            Ready to Grow Your Business?
+           {{default contacts.value.contacts.section_title ' Ready to Grow Your Business?'}}
           </h2>
+          {{#if contacts.value.contacts.description}}
           <p
             class="mt-4 text-lg md:text-xl lg:text-[24px] font-display tracking-tight leading-snug max-w-3xl mx-auto mb-12 md:mb-16">
-            Let's connect. Fill out the form below, and I'll get back to you within 24 hours to schedule a complimentary
-            discovery call.
+            {{contacts.value.contacts.description}}
           </p>
-          <form aria-label="Contact Form" class="space-y-8 text-left" data-aos="fade-up" data-aos-delay="100">
+          {{/if}}
+          <form action="/api/contact" method="post" enctype="text/plain" aria-label="Contact Form" class="space-y-8 text-left" data-aos="fade-up" data-aos-delay="100">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
                 <label for="first-name" class="text-lg sm:text-xl font-sans block mb-2">First name *</label>
                 <input type="text" id="first-name"
+                name="firstName"
                   class="w-full bg-transparent border-b border-[var(--text-subtle)] py-2 px-1 text-lg sm:text-xl focus:outline-none focus:border-[var(--primary)] focus:ring-0 rounded-none" />
               </div>
               <div>
                 <label for="last-name" class="text-lg sm:text-xl font-sans block mb-2">Last name *</label>
                 <input type="text" id="last-name"
+                name="lastName"
                   class="w-full bg-transparent border-b border-[var(--text-subtle)] py-2 px-1 text-lg sm:text-xl focus:outline-none focus:border-[var(--primary)] focus:ring-0 rounded-none" />
               </div>
             </div>
             <div>
               <label for="phone" class="text-lg sm:text-xl font-sans block mb-2">Phone *</label>
               <input type="tel" id="phone"
+              name="phone"
                 class="w-full bg-transparent border-b border-[var(--text-subtle)] py-2 px-1 text-lg sm:text-xl focus:outline-none focus:border-[var(--primary)] focus:ring-0 rounded-none" />
             </div>
             <div>
               <label for="email" class="text-lg sm:text-xl font-sans block mb-2">Email *</label>
               <input type="email" id="email"
+              name="email"
                 class="w-full bg-transparent border-b border-[var(--text-subtle)] py-2 px-1 text-lg sm:text-xl focus:outline-none focus:border-[var(--primary)] focus:ring-0 rounded-none" />
             </div>
             <div>
-              <label for="message" class="text-lg sm:text-xl font-sans block mb-2">Tell me about your project *</label>
+              <label for="message" class="text-lg sm:text-xl font-sans block mb-2">{{default contacts.value.contacts.messageInputLabel
+                  "Tell me about your project *"}}</label>
               <textarea id="message" rows="4"
+              name="message"
                 class="w-full bg-transparent border-b border-[var(--text-subtle)] py-2 px-1 text-lg sm:text-xl focus:outline-none focus:border-[var(--primary)] focus:ring-0 resize-none rounded-none"></textarea>
             </div>
             <div>
-              <button type="button"
+              <button type="submit"
                 class="bg-[var(--primary)] text-[var(--text-on-primary)] text-lg sm:text-xl font-sans px-10 py-3 rounded-full hover:bg-[var(--accent)] transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-[var(--secondary)] focus:ring-[var(--accent)]">
-                Send Message
+                {{default
+                  contacts.value.contacts.contactFormButtonText 'Send Message'}}
               </button>
             </div>
           </form>
         </div>
       </section>
+      {{/unless}}
+      {{/if}}
 
     </main>
 
     <footer class="bg-[var(--primary)] text-[var(--text-on-primary)]">
       <div class="max-w-screen-lg mx-auto py-12 px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col md:flex-row justify-between items-center gap-10">
-          <div class="text-center md:text-left">
-            <h3 class="text-3xl sm:text-4xl font-display font-bold mb-4">John Doe</h3>
-            <a href="#"
-              class="inline-block text-base font-sans px-6 py-2 rounded-full border border-white hover:bg-white hover:text-[var(--primary)] transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-[var(--primary)] focus:ring-white">
-              Schedule a Discovery Call
-            </a>
-          </div>
-          <div class="text-center md:text-left text-sm font-sans space-y-2">
-            <p>123-456-7890</p>
-            <p><a href="mailto:john.doe@mysite.com"
-                class="hover:underline focus:outline-none focus:ring-2 focus:ring-white rounded-sm">john.doe@mysite.com</a>
-            </p>
-            <p>500 Terry Francine St. San Francisco, CA 94158</p>
-          </div>
+      <div class="flex flex-col md:flex-row justify-between items-center gap-10">
+        <div class="text-center md:text-left">
+        <h3 class="text-3xl sm:text-4xl font-display font-bold mb-4">{{personal_info.value.firstName}} {{personal_info.value.lastName}}</h3>
+        {{#if contacts.value.contacts}}
+          {{#unless contacts.meta.hide}}
+          {{#if contacts.value.contacts.bookingUrl}}
+        <a href="{{contacts.value.contacts.bookingUrl}}"
+        target="_blank"
+          class="inline-block text-base font-sans px-6 py-2 rounded-full border border-white hover:bg-white hover:text-[var(--primary)] transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-[var(--primary)] focus:ring-white">
+         {{#if contacts.value.contacts.buttonText}}
+            {{contacts.value.contacts.buttonText}} {{else}} Schedule a Discovery Call {{/if}} 
+        </a>
+        {{else}}
+         <a href="#contact"
+          class="inline-block text-base font-sans px-6 py-2 rounded-full border border-white hover:bg-white hover:text-[var(--primary)] transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-[var(--primary)] focus:ring-white">
+         {{#if contacts.value.contacts.buttonText}}
+            {{contacts.value.contacts.buttonText}} {{else}} Schedule a Discovery Call {{/if}} 
+        </a>
+        {{/if}}
+          {{/unless}}
+          {{/if}}
         </div>
-        <div
-          class="mt-10 pt-8 border-t border-slate-600 text-center text-sm font-sans space-y-2 md:space-y-0 md:flex md:justify-center md:space-x-4">
-          <p>&copy; 2025 by John Doe. All rights reserved.</p>
-          <a href="#" class="underline focus:outline-none focus:ring-2 focus:ring-white rounded-sm">Privacy Policy</a>
-          <a href="#" class="underline focus:outline-none focus:ring-2 focus:ring-white rounded-sm">Accessibility
-            Statement</a>
+        <div class="text-center md:text-left text-sm font-sans space-y-2">
+        {{#if personal_info.value.phone}}
+        <p>{{personal_info.value.phone}}</p>
+        {{/if}}
+        {{#if personal_info.value.email}}
+        <p><a href="mailto:{{personal_info.value.email}}"
+          class="hover:underline focus:outline-none focus:ring-2 focus:ring-white rounded-sm">{{personal_info.value.email}}</a>
+        </p>
+        {{/if}}
+        {{#if personal_info.value.addressText}}
+        <p>{{personal_info.value.addressText}}</p>
+        {{/if}}
         </div>
       </div>
-    </footer>
+      {{#if social.value.social.items}}
+      {{#unless social.meta.hide}}
+      <div class="mt-8 flex justify-center space-x-6">
+        {{#each social.value.social.items}}
+         <a href="{{this.url}}" aria-label="{{this.label}}" class="hover:text-[var(--accent)] transition-colors">
+                {{{socialIcon url=this.url
+                label=this.label size=40 className="size-12" }}}
+              </a>
+        {{/each}}
+      </div>
+      {{/unless}}
+      {{/if}}
+      <div
+        class="mt-8 pt-8 border-t border-slate-600 text-center text-sm font-sans space-y-2 md:space-y-0 md:flex md:justify-center md:space-x-4">
+        <p>© {{currentYear}} {{personal_info.value.firstName}} {{personal_info.value.lastName}}. All Rights
+        Reserved.</p>
+      </div>
+      </div>
+    </footer></svg>
   </div>
 
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
