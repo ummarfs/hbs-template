@@ -157,7 +157,8 @@
     </header>
 
     <main>
-      <section class="relative w-full h-[700px] sm:h-[780px]">
+      <section class="relative w-full h-[700px] sm:h-[780px] section-wrapper" data-edit-section="personal_info" data-section="personal_info"
+        data-title="Personal Info">
         <img
           src="{{default personal_info.value.coverImage 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80'}}"
           alt="Modern business office interior" class="absolute inset-0 w-full h-full object-cover" />
@@ -193,7 +194,7 @@
 
      {{#splitText about.value.about.content}}
       {{#unless about.meta.hide}}
-      <section class="py-16 md:py-20 bg-white" id="about">
+      <section class="py-16 md:py-20 bg-white section-wrapper" id="about" data-edit-section="about" data-section="about" data-title="About">
         <div class="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center mb-12 md:mb-16" data-aos="fade-up">
             <h2 class="text-4xl md:text-5xl lg:text-[65px] font-secondary font-bold tracking-tight leading-tight">
@@ -220,9 +221,9 @@
        {{/unless}}
       {{/splitText}}
 
- {{#if services.value.services.items}}
+     {{#if services.value.services.items}}
       {{#unless services.meta.hide}}
-      <section class="py-16 md:py-20 bg-[var(--primary)] text-[var(--text-on-primary)]" id="services">
+      <section class="py-16 md:py-20 bg-[var(--primary)] text-[var(--text-on-primary)] section-wrapper" id="services" data-edit-section="services" data-section="services" data-title="Services">
         <div class="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div data-aos="fade-up">
             <h2 class="text-4xl md:text-5xl lg:text-[65px] font-secondary font-bold tracking-tight leading-tight">
@@ -254,7 +255,7 @@
 
       {{#if process.value.process.items}}
       {{#unless process.meta.hide}}
-      <section class="py-16 md:py-20 bg-white" id="process">
+      <section class="py-16 md:py-20 bg-white section-wrapper" id="process" data-edit-section="process" data-section="process" data-title="Process">
         <div class="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div data-aos="fade-up">
             <h2 class="text-4xl md:text-5xl lg:text-[65px] font-secondary font-bold tracking-tight leading-tight mb-4">
@@ -283,7 +284,7 @@
       
       {{#if stats.value.stats.items}}
       {{#unless stats.meta.hide}}
-      <section class="py-16 md:py-20 bg-[var(--secondary)]">
+      <section class="py-16 md:py-20 bg-[var(--secondary)] section-wrapper" data-edit-section="stats" data-section="stats" data-title="Stats">
         <div class="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 class="text-4xl md:text-5xl lg:text-[65px] font-secondary font-bold tracking-tight leading-tight"
             data-aos="fade-up">{{default stats.value.stats.section_title
@@ -305,7 +306,7 @@
 
        {{#if testimonials.value.testimonials.items}}
       {{#unless testimonials.meta.hide}}
-      <section class="py-16 md:py-20 bg-white" id="testimonials">
+      <section class="py-16 md:py-20 bg-white section-wrapper" id="testimonials" data-edit-section="testimonials" data-section="testimonials" data-title="Testimonials">
         <div class="max-w-screen-md mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2
             class="text-4xl md:text-5xl lg:text-[65px] font-secondary font-bold tracking-tight leading-tight mb-12 md:mb-16"
@@ -333,7 +334,7 @@
 
       {{#if caseStudy.value.caseStudy.items}}
       {{#unless caseStudy.meta.hide}}
-      <section class="py-16 md:py-20 bg-[var(--secondary)]" id="casestudy">
+      <section class="py-16 md:py-20 bg-[var(--secondary)] section-wrapper" id="casestudy" data-edit-section="caseStudy" data-section="caseStudy" data-title="Case Studies">
         <div class="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center mb-12 md:mb-16" data-aos="fade-up">
             <h2 class="text-4xl md:text-5xl lg:text-[65px] font-secondary font-bold tracking-tight leading-tight">{{default caseStudy.value.caseStudy.section_title 'In-Depth Case Studies'}}</h2>
@@ -386,7 +387,7 @@
   
       {{#if packages.value.packages.items}}
       {{#unless packages.meta.hide}}
-      <section class="py-16 md:py-20 bg-white" id="packages">
+      <section class="py-16 md:py-20 bg-white section-wrapper" id="packages" data-edit-section="packages" data-section="packages" data-title="Packages">
         <div class="max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center mb-12 md:mb-16" data-aos="fade-up">
             <h2 class="text-4xl md:text-5xl lg:text-[65px] font-secondary font-bold tracking-tight leading-tight">{{default packages.value.packages.section_title 'Service Packages'}}</h2>
@@ -430,7 +431,7 @@
       
        {{#if faq.value.faq.items}}
     {{#unless faq.meta.hide}}
-      <section class="py-16 md:py-20 bg-[var(--secondary)]" id="faq">
+      <section class="py-16 md:py-20 bg-[var(--secondary)] section-wrapper" id="faq" data-edit-section="faq" data-section="faq" data-title="FAQ">
         <div class="max-w-screen-md mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up">
           <div class="text-center mb-12">
             <h2 class="text-4xl md:text-5xl lg:text-[65px] font-secondary font-bold tracking-tight leading-tight">
@@ -463,7 +464,8 @@
 
       {{#if contacts.value.contacts}}
       {{#unless contacts.meta.hide}}
-      <section class="relative h-72 sm:h-96 bg-fixed bg-cover bg-center" 
+      <section class="relative h-72 sm:h-96 bg-fixed bg-cover bg-center section-wrapper" 
+      data-edit-section="contacts" data-section="contacts" data-title="Contact Background"
         style="background-image: url('{{default contacts.value.contacts.bgImage 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80'}}');">
         <div class="absolute inset-0 bg-black opacity-40"></div>
       </section>
@@ -472,7 +474,7 @@
 
       {{#if contacts.value.contacts.contactForm}}
       {{#unless contacts.meta.hide}}
-      <section class="py-16 md:py-20 bg-[var(--secondary)]" id="contact">
+      <section class="py-16 md:py-20 bg-[var(--secondary)] section-wrapper" id="contact" data-edit-section="contacts" data-section="contacts" data-title="Contact Form">
         <div class="max-w-screen-md mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
           <h2 class="text-4xl md:text-5xl lg:text-[65px] font-secondary font-bold tracking-tight leading-tight mb-4">
            {{default contacts.value.contacts.section_title ' Ready to Grow Your Business?'}}
@@ -572,7 +574,7 @@
       </div>
       {{#if social.value.social.items}}
       {{#unless social.meta.hide}}
-      <div class="mt-8 flex justify-center space-x-6">
+      <div class="mt-8 flex justify-center space-x-6 section-wrapper" data-edit-section="social" data-section="social" data-title="Social Links">
         {{#each social.value.social.items}}
          <a href="{{this.url}}" aria-label="{{this.label}}" class="hover:text-[var(--accent)] transition-colors">
                 {{{socialIcon url=this.url
