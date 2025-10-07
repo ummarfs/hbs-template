@@ -205,10 +205,23 @@
           </div>
           <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
             <div class="w-full lg:w-1/3" data-aos="fade-right">
-              <img
-                src="{{default about.value.about.image 'https://c.animaapp.com/mfnpsvda9pPWxp/assets/88aac0_70dba72adce54eea9f53068b36a9e0e9~mv2.jpeg'}}"
-                alt="Portrait of a confident business consultant"
-                class="w-full h-auto object-cover rounded-lg shadow-lg" />
+             {{#if ../about.value.about.image}}
+    <img
+      src="{{../about.value.about.image}}"
+      alt="Portrait from about section"
+      class="w-full h-auto object-cover rounded-lg shadow-lg" />
+  {{else if ../personal_info.value.profilePicureUrl}}
+    <img
+      src="{{../personal_info.value.profilePicureUrl}}"
+      alt="Portrait of a confident business consultant"
+      class="w-full h-auto object-cover rounded-lg shadow-lg" />
+  {{else}}
+    <img
+      src="https://c.animaapp.com/mfnpsvda9pPWxp/assets/88aac0_70dba72adce54eea9f53068b36a9e0e9~mv2.jpeg"
+      alt="Default portrait placeholder"
+      class="w-full h-auto object-cover rounded-lg shadow-lg" />
+  {{/if}}
+
             </div>
             <div class="w-full lg:w-2/3" data-aos="fade-left">
               <p class="text-base sm:text-lg lg:text-xl font-primary leading-relaxed">
