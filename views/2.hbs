@@ -14,12 +14,20 @@
     .font-questrial {
       font-family: 'Questrial', sans-serif;
     }
+     #about,
+  #offerings,
+  #casestudies,
+  #faq,
+  #contact {
+    /* Adjust 100px to be slightly more than your header's total height */
+    scroll-margin-top: 100px !important;
+  }
   </style>
 </head>
 
 <body>
   <div class="font-questrial" style="background-color: {{default colorPalette.value.colorPalette.tertiary '#f3f4f6'}};">
-    <header class="sticky top-0 z-50 shadow-sm py-2"
+    <header class="shadow-sm py-2"
       style="background-color: {{default colorPalette.value.colorPalette.tertiary-bright '#e5e7eb'}};">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16 lg:h-20">

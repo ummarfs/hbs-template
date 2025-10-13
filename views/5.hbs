@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Nathan Personal Website</title>
+        <link rel="icon" href="1/images/icon.webp" type="image/gif"
+            sizes="16x16">
+        <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content name="description">
+        <meta content name="keywords">
+        <meta content name="author">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <link rel="stylesheet" href="/5/style.css">
+    </head>
+
+    <body>
+        <div id="wrapper">
+            <div class="section-dark no-bottom no-top" id="content">
+
+                <div id="top"></div>
+
+                <!-- Modern Minimal Header -->
+                <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
+                    <div class="container mx-auto px-6 py-5">
+                        <div class="flex items-center justify-between">
+                            <!-- Logo - First Letters of Name -->
+                            <a href="#top" class="text-2xl font-bold text-gray-900 hover:text-gray-600 transition-colors duration-300">
+                               <div class="flex items-center justify-center text-white bg-gray-900 inline-block rounded-full p-2 w-9 h-9 text-xs md:text-sm">
+                                {{personal_info.value.firstName.[0]}}{{personal_info.value.lastName.[0]}}
+                                </div>
+                            </a>
+
+                            <!-- Hamburger Menu Button -->
+                            <button id="menuToggle" class="w-10 h-10 flex flex-col items-center justify-center space-y-1.5 hover:bg-gray-100 rounded-lg transition-all duration-300" aria-label="Toggle menu">
+                                <span class="w-6 h-0.5 bg-gray-900 transition-all duration-300 ease-in-out" id="line1"></span>
+                                <span class="w-6 h-0.5 bg-gray-900 transition-all duration-300 ease-in-out" id="line2"></span>
+                                <span class="w-6 h-0.5 bg-gray-900 transition-all duration-300 ease-in-out" id="line3"></span>
+                            </button>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- Full Screen Menu -->
+                <nav id="fullscreenMenu" class="fixed inset-0 bg-gray-900 z-40 transform -translate-y-full transition-transform duration-700 ease-in-out overflow-hidden">
+                    <div class="container mx-auto px-6 h-full flex items-center justify-center">
+                        <ul class="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-6 lg:gap-y-8 text-center lg:text-left max-w-5xl w-full">
+                            <li class="opacity-0 transform translate-y-8 transition-all duration-500 menu-item" style="transition-delay: 0ms;">
+                                <a href="#top" class="menu-link text-2xl lg:text-5xl font-bold text-white hover:text-gray-400 transition-colors duration-300">Home</a>
+                            </li>
+
+                            {{#if about.value.about.content}}
+                            {{#unless about.meta.hide}}
+                            <li class="opacity-0 transform translate-y-8 transition-all duration-500 menu-item" style="transition-delay: 100ms;">
+                                <a href="#about" class="menu-link text-2xl lg:text-5xl font-bold text-white hover:text-gray-400 transition-colors duration-300">
+                                    {{#if about.value.about.navbarName}}{{about.value.about.navbarName}}{{else}}{{about.value.about.section_title}}{{/if}}
+                                </a>
+                            </li>
+                            {{/unless}}
+                            {{/if}}
+
+                            {{#if services.value.services.items}}
+                            {{#unless services.meta.hide}}
+                            <li class="opacity-0 transform translate-y-8 transition-all duration-500 menu-item" style="transition-delay: 200ms;">
+                                <a href="#services" class="menu-link text-2xl lg:text-5xl font-bold text-white hover:text-gray-400 transition-colors duration-300">
+                                    {{#if services.value.services.navbarName}}{{services.value.services.navbarName}}{{else}}{{services.value.services.section_title}}{{/if}}
+                                </a>
+                            </li>
+                            {{/unless}}
+                            {{/if}}
+
+                            {{#if why_choose_me.value.why_choose_me.benefits}}
+                            {{#unless why_choose_me.meta.hide}}
+                            <li class="opacity-0 transform translate-y-8 transition-all duration-500 menu-item" style="transition-delay: 300ms;">
+                                <a href="#why-choose-me" class="menu-link text-2xl lg:text-5xl font-bold text-white hover:text-gray-400 transition-colors duration-300">
+                                    {{#if why_choose_me.value.why_choose_me.navbarName}}{{why_choose_me.value.why_choose_me.navbarName}}{{else}}{{why_choose_me.value.why_choose_me.section_title}}{{/if}}
+                                </a>
+                            </li>
+                            {{/unless}}
+                            {{/if}}
+
+                            {{#if projects.value.projects.items}}
+                            {{#unless projects.meta.hide}}
+                            <li class="opacity-0 transform translate-y-8 transition-all duration-500 menu-item" style="transition-delay: 400ms;">
+                                <a href="#works" class="menu-link text-2xl lg:text-5xl font-bold text-white hover:text-gray-400 transition-colors duration-300">
+                                    {{#if projects.value.projects.navbarName}}{{projects.value.projects.navbarName}}{{else}}{{projects.value.projects.section_title}}{{/if}}
+                                </a>
+                            </li>
+                            {{/unless}}
+                            {{/if}}
+
+                            {{#if testimonials.value.testimonials.items}}
+                            {{#unless testimonials.meta.hide}}
+                            <li class="opacity-0 transform translate-y-8 transition-all duration-500 menu-item" style="transition-delay: 500ms;">
+                                <a href="#testimonials" class="menu-link text-2xl lg:text-5xl font-bold text-white hover:text-gray-400 transition-colors duration-300">
+                                    {{#if testimonials.value.testimonials.navbarName}}{{testimonials.value.testimonials.navbarName}}{{else}}{{testimonials.value.testimonials.section_title}}{{/if}}
+                                </a>
+                            </li>
+                            {{/unless}}
+                            {{/if}}
+
+                            {{#if success_stories.value.success_stories.items}}
+                            {{#unless success_stories.meta.hide}}
+                            <li class="opacity-0 transform translate-y-8 transition-all duration-500 menu-item" style="transition-delay: 600ms;">
+                                <a href="#success" class="menu-link text-2xl lg:text-5xl font-bold text-white hover:text-gray-400 transition-colors duration-300">
+                                    {{#if success_stories.value.success_stories.navbarName}}{{success_stories.value.success_stories.navbarName}}{{else}}{{success_stories.value.success_stories.section_title}}{{/if}}
+                                </a>
+                            </li>
+                            {{/unless}}
+                            {{/if}}
+
+                            {{#if faq.value.faq.items}}
+                            {{#unless faq.meta.hide}}
+                            <li class="opacity-0 transform translate-y-8 transition-all duration-500 menu-item" style="transition-delay: 700ms;">
+                                <a href="#faq" class="menu-link text-2xl lg:text-5xl font-bold text-white hover:text-gray-400 transition-colors duration-300">
+                                    {{#if faq.value.faq.navbarName}}{{faq.value.faq.navbarName}}{{else}}{{faq.value.faq.section_title}}{{/if}}
+                                </a>
+                            </li>
+                            {{/unless}}
+                            {{/if}}
+
+                            {{#if contacts.value.contacts.contactForm}}
+                            {{#unless contacts.meta.hide}}
+                            <li class="opacity-0 transform translate-y-8 transition-all duration-500 menu-item" style="transition-delay: 800ms;">
+                                <a href="#contact" class="menu-link text-2xl lg:text-5xl font-bold text-white hover:text-gray-400 transition-colors duration-300">
+                                    {{#if contacts.value.contacts.navbarName}}{{contacts.value.contacts.navbarName}}{{else}}{{contacts.value.contacts.section_title}}{{/if}}
+                                </a>
+                            </li>
+                            {{/unless}}
+                            {{/if}}
+                        </ul>
+                    </div>
+                </nav>
+
+                <section class="relative section-wrapper pt-24"
+                    data-edit-section="personal_info"
+                    data-section="personal_info"
+                    data-title="Personal Info">
+                    <div class="container mx-auto px-4 pt-16 md:pt-28">
+                        <div class="flex flex-wrap justify-center">
+                            <div class="w-full text-center" data-aos="fade-up">
+                                <h1 class="text-5xl font-bold md:text-9xl leading-tight mb-4">{{personal_info.value.firstName}} {{personal_info.value.lastName}}</h1>
+                                {{#if personal_info.value.headline}}
+                                <h4 class="text-white bg-gray-900 inline-block rounded-full py-1.5 md:py-2 px-3 md:px-5 text-sm md:text-base">
+                                    {{personal_info.value.headline}}
+                                </h4>
+                                {{/if}}
+
+                                <div class="spacer-single"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="no-top px-4 section-wrapper"
+                    data-edit-section="personal_info"
+                    data-section="personal_info"
+                    data-title="Personal Info">
+                    <div class="container mx-auto px-4">
+                        <div class="flex flex-wrap gap-4 mb-4">
+
+                            {{#if personal_info.value.profilePicureUrl}}
+                            <div class="w-full xl:w-[calc(50%-0.5rem)]" data-aos="fade-right">
+                                <div
+                                    class="relative jarallax h-full rounded overflow-hidden">
+                                    <img
+                                        src="{{personal_info.value.profilePicureUrl}}"
+                                        class="jarallax-img"
+                                        alt="{{personal_info.value.headline}}">
+                                </div>
+                            </div>
+                            <div class="w-full xl:w-[calc(50%-0.5rem)]" data-aos="fade-left">
+                                <div
+                                    class="relative rounded-xl overflow-hidden p-8 lg:p-12 bg-color h-full">
+                                    <h2 class="about text-xl md:text-3xl md:text-4xl flex items-center h-full">{{personal_info.value.position}}</h2>
+                                </div>
+                            </div>
+
+                            {{else}}
+                            <div class="w-full xl:w-1/2 xl:mx-auto" data-aos="fade-up">
+                                <div
+                                    class="relative rounded overflow-hidden p-8 lg:p-12 pb-5 bg-color h-full">
+                                    <h2
+                                        class="pb-4 mb-5 lg:mb-0">{{personal_info.value.position}}</h3>
+                                </div>
+                            </div>
+
+                            {{/if}}
+
+                        </div>
+
+                        <!-- stats section -->
+                        {{#if stats.value.stats.items}}
+                        {{#unless stats.meta.hide}}
+                        <div class="flex flex-wrap gap-4 section-wrapper w-auto"
+                            data-edit-section="stats"
+                            data-section="stats"
+                            data-title="Stats">
+                            {{#each stats.value.stats.items}}
+                            <div class="w-full md:w-[calc(25%-0.75rem)] sm:w-[calc(50%-0.5rem)] mb-sm-30" data-aos="fade-up" data-aos-delay="{{@index}}00">
+                                <div
+                                    class="de_count bg-gray-100 py-10 rounded-lg text-center text-base">
+                                    <h3 class="text-4xl !mb-2"><span class="timer"
+                                            data-to="8240"
+                                            data-speed="3000">{{this.number}}</span>
+                                    </h3>
+                                    <div class="text-lg text-center">{{this.label}}</div>
+                                </div>
+                            </div>
+                            {{/each}}
+                        </div>
+                        {{/unless}}
+                        {{/if}}
+                    </div>
+                </section>
+
+                {{#if about.value.about.content}}
+                {{#unless about.meta.hide}}
+                <section id="about" class="bg-white py-16 sm:py-24 section-wrapper"
+                    data-edit-section="about"
+                    data-section="about"
+                    data-title="About Me">
+                    <div class="container mx-auto px-4 sm:px-6">
+                        <div class="grid lg:grid-cols-5 gap-12 items-start">
+                            <!-- Left: About Content -->
+                            <div class="lg:col-span-3 space-y-8" data-aos="fade-up">
+                                <div>
+                                    <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                                        {{#if about.value.about.section_title}}
+                                        {{about.value.about.section_title}}
+                                        {{else}}About Me{{/if}}
+                                    </h2>
+                                </div>
+
+                                <div class="space-y-6">
+                                    <p class="text-lg leading-relaxed text-gray-600">
+                                        {{about.value.about.content}}
+                                    </p>
+                                </div>
+
+                                <!-- Key Metrics -->
+                                {{#if stats.value.stats.items}}
+                                {{#unless stats.meta.hide}}
+                                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 border-t border-gray-200 section-wrapper"
+                                  data-edit-section="stats"
+                                  data-section="stats"
+                                  data-title="Stats"
+                                >
+                                    {{#each stats.value.stats.items}}
+                                    <div class="text-center">
+                                        <div class="text-2xl font-bold text-gray-900">{{this.number}}</div>
+                                        <div class="text-xs text-gray-500 mt-1">{{this.label}}</div>
+                                    </div>
+                                    {{/each}}
+                                </div>
+                                {{/unless}}
+                                {{/if}}
+                            </div>
+
+                            <!-- Right: Personal Info & Skills -->
+                            <div class="lg:col-span-2 space-y-8 section-wrapper" data-aos="fade-up" data-aos-delay="200"
+                              data-edit-section="skills"
+                              data-section="skills"
+                              data-title="Skills"
+                            >
+                                <div class="bg-gray-50 rounded-2xl p-8">
+                                    <h3 class="text-3xl font-bold text-gray-900 mb-8">
+                                            {{#if skills.value.skills.section_title}}
+                                            {{skills.value.skills.section_title}}
+                                            {{else}}Skills{{/if}}
+                                        </h3>
+
+                                    <!-- Skills if available -->
+                                    {{#if skills.value.skills.items}}
+                                    {{#unless skills.meta.hide}}
+                                    <div class="space-y-6">
+                                       
+                                        <div class="space-y-3">
+                                            {{#each skills.value.skills.items}}
+                                            <div class="flex items-center">
+                                                <div class="w-2 h-2 bg-gray-900 rounded-full mr-3"></div>
+                                                <span class="text-base text-gray-700">{{this}}</span>
+                                            </div>
+                                            {{/each}}
+                                        </div>
+                                    </div>
+                                    {{/unless}}
+                                    {{/if}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                {{/unless}}
+                {{/if}}
+
+                <!-- why choose me section -->
+                {{#if why_choose_me.value.why_choose_me.benefits}}
+                {{#unless why_choose_me.meta.hide}}
+                <section id="why-choose-me" class="bg-gray-50 py-16 sm:py-32 section-wrapper"
+                    data-edit-section="why_choose_me"
+                    data-section="why_choose_me"
+                    data-title="Why Choose Me">
+                    <div class="container mx-auto px-4 sm:px-6">
+                        <div class="text-center mb-16">
+                            <h2 class="font-semibold mb-6 leading-tight text-3xl md:text-5xl">
+                                {{#if why_choose_me.value.why_choose_me.section_title}}
+                                {{why_choose_me.value.why_choose_me.section_title}}
+                                {{else}}Why Choose Me{{/if}}
+                            </h2>
+                            {{#if why_choose_me.value.why_choose_me.description}}
+                            <p class="text-gray-600 text-lg max-w-3xl mx-auto">{{why_choose_me.value.why_choose_me.description}}</p>
+                            {{/if}}
+                        </div>
+
+                        <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                            {{#each why_choose_me.value.why_choose_me.benefits}}
+                            <div class="bg-white p-8 rounded-2xl border border-gray-200 hover:shadow-lg hover:border-gray-300 transition-all duration-300" data-aos="fade-up" data-aos-delay="{{@index}}00">
+                                <div class="w-12 h-12 bg-gray-900 rounded-xl flex items-center justify-center mb-6">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-4">{{this.title}}</h3>
+                                <p class="text-gray-600 text-base leading-relaxed">{{this.description}}</p>
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div>
+                </section>
+                {{/unless}}
+                {{/if}}
+
+                <!-- client logos -->
+                {{#if client_logos.value.client_logos.items}}
+                {{#unless client_logos.meta.hide}}
+                <section id="client_logo" class="bg-white pb-12 py-16 sm:pb-32 section-wrapper"
+                    data-edit-section="client_logos"
+                    data-section="client_logos"
+                    data-title="Client Logos">
+                    <div class="container mx-auto px-4 sm:px-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="items-center">
+                            <div>
+                                <h3 class="font-bold mb-10 sm:mb-12 text-center sm:text-center text-xl mb-10">
+                                    {{#if client_logos.value.client_logos.section_title}}
+                                    {{client_logos.value.client_logos.section_title}}
+                                    {{else}}Clients{{/if}}
+                                </h3>
+                            </div>
+
+                            <div class="marquee-container" aria-label="Trusted clients">
+                                <div class="marquee" aria-hidden="true">
+                                    <div class="marquee-wrapper">
+                                        {{#each client_logos.value.client_logos.items}}
+                                        <img src="{{this.url}}" loading="lazy" alt="{{this.name}}" />
+                                        {{/each}}
+                                        <!-- Duplicate set for seamless looping -->
+                                        {{#each client_logos.value.client_logos.items}}
+                                        <img src="{{this.url}}" loading="lazy" alt="{{this.name}}" aria-hidden="true" />
+                                        {{/each}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                {{/unless}}
+                {{/if}}
+
+                <!-- testimonials section -->
+                {{#if testimonials.value.testimonials.items}}
+                {{#unless testimonials.meta.hide}}
+                <section id="testimonials" class="bg-white py-16 sm:py-32 section-wrapper"
+                    data-edit-section="testimonials"
+                    data-section="testimonials"
+                    data-title="Testimonials">
+                    <div class="container mx-auto px-4 sm:px-6">
+                        <div class="mb-16 text-center">
+                            <h2 class="font-semibold mb-6 leading-tight text-3xl md:text-5xl">
+                                {{#if testimonials.value.testimonials.section_title}}
+                                {{testimonials.value.testimonials.section_title}}
+                                {{else}}Testimonials{{/if}}
+                            </h2>
+                            {{#if testimonials.value.testimonials.description}}
+                            <p class="text-gray-600 text-lg max-w-3xl mx-auto">{{testimonials.value.testimonials.description}}</p>
+                            {{/if}}
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                            {{#each testimonials.value.testimonials.items}}
+                            <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100 hover:shadow-lg transition-all duration-300" data-aos="fade-up" data-aos-delay="{{@index}}00">
+                                <div class="mb-6">
+                                    <svg class="w-10 h-10 text-gray-300" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                                    </svg>
+                                </div>
+                                <p class="text-gray-700 text-base leading-relaxed mb-6">{{this.recommendationText}}</p>
+                                <div class="flex items-center">
+                                    <div class="w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                                        {{this.recommenderName.[0]}}
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold text-gray-900">{{this.recommenderName}}</div>
+                                        <div class="text-sm text-gray-600">{{this.designation}}{{#if this.companyName}}, {{this.companyName}}{{/if}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div>
+                </section>
+                {{/unless}}
+                {{/if}}
+
+                <!-- services -->
+                {{#if services.value.services.items}}
+                {{#unless services.meta.hide}}
+                <section id="services" class="bg-gray-50 py-16 sm:py-32 section-wrapper"
+                    data-edit-section="services"
+                    data-section="services"
+                    data-title="Services">
+                    <div class="container mx-auto px-4 sm:px-6">
+                        <div class="mb-12">
+                            <h3 class="font-semibold mb-8 leading-tight text-3xl md:text-5xl">
+                                {{#if services.value.services.section_title}}
+                                {{services.value.services.section_title}}
+                                {{else}}What I Do{{/if}}
+                            </h3>
+                            {{#if services.value.services.description}}
+                            <p class="text-gray-600 max-w-3xl text-xl md:text-xl">{{services.value.services.description}}</p>
+                            {{/if}}
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6 sm:gap-8">
+                            {{#each services.value.services.items}}
+                            <div class="bg-white p-6 sm:p-8 rounded-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="{{@index}}00">
+                                {{#if this.image}}
+                                <div class="w-full h-[200px] bg-gray-900 rounded-xl flex items-center justify-center mb-8 relative">
+                                    <div class="inset-0 absolute bg-gray-700 opacity-50 rounded-xl"></div>
+                                    <img src="{{this.image}}" alt="{{this.title}}" class="w-full h-full object-cover rounded-lg">
+                                </div>
+                                {{/if}}
+                                <h3 class="font-bold mb-6 text-gray-900 text-2xl">{{this.title}}</h3>
+                                <p class="text-gray-600 leading-relaxed mb-6 text-lg">{{this.description}}</p>
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div>
+                </section>
+                {{/unless}}
+                {{/if}}
+
+                {{!-- experience section --}}
+                {{#if experiences.value.experiences.items }}
+                {{#unless experiences.meta.hide}}
+                <section id="experience" class="bg-white py-16 sm:py-32 section-wrapper"
+                    data-edit-section="experiences"
+                    data-section="experiences"
+                    data-title="Experience">
+                    <div class="container mx-auto px-6">
+                        <div class="grid lg:grid-cols-2 gap-2 sm:gap-4">
+                            <div class="lg:mr-20 mb-10 lg:mb-0" data-aos="fade-up">
+                                <h3 class="font-semibold mb-8 leading-tight text-3xl md:text-5xl">
+                                    {{#if experiences.value.experiences.section_title}}
+                                    {{experiences.value.experiences.section_title}}
+                                    {{else}}Experience{{/if}}
+                                </h3>
+                                {{#if experiences.value.experiences.description}}
+                                <p class="text-gray-600 max-w-3xl text-base md:text-lg">{{experiences.value.experiences.description}}</p>
+                                {{/if}}
+                            </div>
+
+                            <div class="space-y-8 sm:space-y-4" data-aos="fade-in">
+                                {{#each experiences.value.experiences.items}}
+                                <div class="bg-white border-b border-gray-200 transition-all duration-300 experience-item {{#if @index}}{{#unless (lt @index 4)}}hidden{{/unless}}{{/if}}" data-index="{{@index}}">
+                                    <div class="justify-between flex items-start mb-4">
+                                        {{#if this.logo}}
+                                        <div class="w-16 h-16 p-1 border rounded-xl flex items-center justify-center overflow-hidden mr-4">
+                                            <img src="{{this.logo}}" alt="{{this.companyName}}" class="max-w-full max-h-full object-contain">
+                                        </div>
+                                        {{/if}}
+                                        <div class="flex-1">
+                                            <h5 class="font-semibold text-xl text-gray-900">{{this.title}}</h5>
+                                            <p class="text-gray-600 text-base leading-relaxed max-w-xl">{{this.companyName}}{{#if this.description}} — {{this.description}}{{/if}}</p>
+                                        </div>
+                                        <div class="text-sm text-gray-500">{{this.startDate.year}} - {{#if this.endDate}}{{this.endDate.year}}{{else}}Present{{/if}}</div>
+                                    </div>
+                                </div>
+                                {{/each}}
+
+                                {{#if (gt experiences.value.experiences.items.length 4)}}
+                                <button onclick="toggleExperiences(this)" class="flex items-center justify-center py-4 border-b border-slate-200 hover:bg-slate-50 transition-colors duration-200 w-full">
+                                    <span class="text-sm text-slate-700 font-medium view-more-text">View More</span>
+                                    <span class="text-sm text-slate-700 font-medium view-less-text hidden">View Less</span>
+                                </button>
+                                {{/if}}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                {{/unless}}
+                {{/if}}
+
+
+                 <!-- education section -->
+                {{#if personal_info.value.coverImage }}
+                <section id="banner" class="p-0">
+                    <img class="w-full h-[250px] md:h-[400px] object-cover" src={{personal_info.value.coverImage}}>
+                    </div>
+                </section>
+                {{/if}}
+
+                <!-- education section -->
+                {{#if educations.value.educations.items }}
+                {{#unless educations.meta.hide}}
+                <section class="bg-gray-50 py-16 sm:py-24 section-wrapper"
+                    data-edit-section="educations"
+                    data-section="educations"
+                    data-title="Education">
+                    <div class="container mx-auto px-4 sm:px-6">
+                        <div class="mb-16">
+                            <h2 class="font-semibold mb-6 leading-tight text-3xl md:text-5xl">
+                                {{#if educations.value.educations.section_title}}
+                                {{educations.value.educations.section_title}}
+                                {{else}}Education{{/if}}
+                            </h2>
+                            {{#if educations.value.educations.description}}
+                            <p class="text-gray-600 text-lg">{{educations.value.educations.description}}</p>
+                            {{/if}}
+                        </div>
+
+                        <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+                            {{#each educations.value.educations.items}}
+                            <div class="bg-white border border-gray-100 rounded-lg p-6 hover:shadow-sm transition-all duration-300 education-item {{#if @index}}{{#unless (lt @index 4)}}hidden{{/unless}}{{/if}}" data-aos="fade-up" data-aos-delay="{{@index}}00" data-index="{{@index}}">
+                                <div class="mb-4">
+                                    <span class="inline-block px-4 py-2 bg-gray-100 text-gray-900 rounded-full text-sm font-medium">
+                                        {{this.startDate.year}} - {{#if this.endDate}}{{this.endDate.year}}{{else}}Present{{/if}}
+                                    </span>
+                                </div>
+                                <h4 class="text-lg font-semibold text-gray-900 mt-2 mb-3">{{this.degreeName}}</h4>
+                                <p class="text-gray-600 font-medium mb-2">{{this.schoolName}}</p>
+                                {{#if this.description}}
+                                <p class="text-gray-600 text-sm leading-relaxed">{{this.description}}</p>
+                                {{/if}}
+                            </div>
+                            {{/each}}
+                        </div>
+
+                        {{#if (gt educations.value.educations.items.length 4)}}
+                        <div class="w-full text-center mt-8">
+                            <button onclick="toggleEducations(this)" class="px-8 py-3 border border-gray-300 rounded-lg font-medium hover:bg-gray-100 transition-colors duration-300">
+                                <span class="view-more-text text-gray-700">View More</span>
+                                <span class="view-less-text hidden text-gray-700">View Less</span>
+                            </button>
+                        </div>
+                        {{/if}}
+                    </div>
+                </section>
+                {{/unless}}
+                {{/if}}
+
+               
+
+                <!-- projects -->
+                {{#if projects.value.projects.items}}
+                {{#unless projects.meta.hide}}
+                <section id="works" class="bg-gray-50 py-16 sm:py-24 section-wrapper"
+                    data-edit-section="projects"
+                    data-section="projects"
+                    data-title="Projects">
+                    <div class="container mx-auto px-4 sm:px-6">
+                        <div class="mb-16">
+                            <h2 class="font-semibold mb-6 leading-tight text-3xl md:text-5xl">
+                                {{#if projects.value.projects.section_title}}
+                                {{projects.value.projects.section_title}}
+                                {{else}}Featured Projects{{/if}}
+                            </h2>
+                            {{#if projects.value.projects.description}}
+                            <p class="text-gray-600 text-lg">{{projects.value.projects.description}}</p>
+                            {{/if}}
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-8">
+                            {{#each projects.value.projects.items}}
+                            <div class="bg-white border border-gray-100 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300" data-aos="fade-up" data-aos-delay="{{@index}}00">
+                                <img src="{{#if this.image}}{{this.image}}{{else}}https://api.dicebear.com/9.x/glass/svg{{/if}}"
+                                     alt="{{this.title}}"
+                                     class="w-full h-48 object-cover"
+                                     loading="lazy">
+                                <div class="p-6">
+                                    {{#if this.category}}
+                                    <span class="text-xs font-medium text-gray-500 uppercase tracking-wide">{{this.category}}</span>
+                                    {{/if}}
+                                    <h4 class="text-lg font-semibold text-gray-900 mt-2 mb-3">{{this.title}}</h4>
+                                    {{#if this.subtitle}}
+                                    <p class="text-gray-600 text-sm leading-relaxed mb-4">{{this.subtitle}}</p>
+                                    {{/if}}
+                                    {{#if this.url}}
+                                    <a href="{{this.url}}" class="text-sm text-blue-600 hover:text-blue-800 font-medium">View Project →</a>
+                                    {{/if}}
+                                </div>
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div>
+                </section>
+                {{/unless}}
+                {{/if}}
+
+                <!-- success stories section -->
+                {{#if success_stories.value.success_stories.items}}
+                {{#unless success_stories.meta.hide}}
+                <section id="success" class="bg-white py-16 sm:py-32 section-wrapper"
+                    data-edit-section="success_stories"
+                    data-section="success_stories"
+                    data-title="Success Stories">
+                    <div class="container mx-auto px-4 sm:px-6">
+                        <div class="mb-16">
+                            <h2 class="font-semibold mb-6 leading-tight text-3xl md:text-5xl">
+                                {{#if success_stories.value.success_stories.section_title}}
+                                {{success_stories.value.success_stories.section_title}}
+                                {{else}}Client Success Stories{{/if}}
+                            </h2>
+                            {{#if success_stories.value.success_stories.description}}
+                            <p class="text-gray-600 text-lg max-w-3xl">{{success_stories.value.success_stories.description}}</p>
+                            {{/if}}
+                        </div>
+
+                        <div class="space-y-12">
+                            {{#each success_stories.value.success_stories.items}}
+                            <div class="bg-gray-50 rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300" data-aos="fade-up" data-aos-delay="{{@index}}00">
+                                <div class="grid md:grid-cols-2 gap-0">
+                                    {{#if this.image}}
+                                    <div class="h-64 md:h-auto">
+                                        <img src="{{this.image}}" alt="{{this.title}}" class="w-full h-full object-cover">
+                                    </div>
+                                    {{/if}}
+                                    <div class="p-8 md:p-12">
+                                        {{#if this.client}}
+                                        <div class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-4">{{this.client}}</div>
+                                        {{/if}}
+                                        <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">{{this.title}}</h3>
+                                        <p class="text-gray-600 text-base leading-relaxed mb-6">{{this.description}}</p>
+
+                                        {{#if this.stats}}
+                                        <div class="grid grid-cols-2 gap-6 pt-6 border-t border-gray-200">
+                                            {{#each this.stats}}
+                                            <div>
+                                                <div class="text-3xl font-bold text-gray-900">{{this.number}}</div>
+                                                <div class="text-sm text-gray-600 mt-1">{{this.label}}</div>
+                                            </div>
+                                            {{/each}}
+                                        </div>
+                                        {{/if}}
+                                    </div>
+                                </div>
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div>
+                </section>
+                {{/unless}}
+                {{/if}}
+
+                <!-- faq section -->
+                {{#if faq.value.faq.items}}
+                {{#unless faq.meta.hide}}
+                <section id="faq" class="bg-gray-50 py-16 sm:py-32 section-wrapper"
+                    data-edit-section="faq"
+                    data-section="faq"
+                    data-title="FAQ">
+                    <div class="container mx-auto px-4 sm:px-6">
+                        <div class="mb-16 text-center">
+                            <h2 class="font-semibold mb-6 leading-tight text-3xl md:text-5xl">
+                                {{#if faq.value.faq.section_title}}
+                                {{faq.value.faq.section_title}}
+                                {{else}}FAQ{{/if}}
+                            </h2>
+                            {{#if faq.value.faq.description}}
+                            <p class="text-gray-600 text-lg max-w-3xl mx-auto">{{faq.value.faq.description}}</p>
+                            {{/if}}
+                        </div>
+
+                        <div class="max-w-3xl mx-auto space-y-4">
+                            {{#each faq.value.faq.items}}
+                            <div class="bg-white rounded-xl border border-gray-200 overflow-hidden" data-aos="fade-up" data-aos-delay="{{@index}}00">
+                                <button class="w-full text-left p-6 flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 faq-button" onclick="toggleFaq(this)">
+                                    <h3 class="text-lg font-semibold text-gray-900 pr-8">{{this.question}}</h3>
+                                    <svg class="w-5 h-5 text-gray-500 flex-shrink-0 transition-transform duration-200 faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </button>
+                                <div class="faq-answer hidden px-6 pb-6">
+                                    <p class="text-gray-600 text-base leading-relaxed">{{this.answer}}</p>
+                                </div>
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div>
+                </section>
+                {{/unless}}
+                {{/if}}
+
+                {{!-- contact section --}}
+                {{#if contacts.value.contacts}}
+                {{#if contacts.value.contacts.contactForm}}
+                {{#unless contacts.meta.hide}}
+                <section id="contact" class="py-16 bg-gray-900 text-white section-wrapper"
+                    data-edit-section="contacts"
+                    data-section="contacts"
+                    data-title="Contact">
+                    <div class="container mx-auto px-6">
+                        <div class="grid md:grid-cols-2 gap-10 items-start">
+
+                            <!-- Left: Contact Info -->
+                            <div class="space-y-8" data-aos="fade-up" data-aos-delay="100">
+                                <h3 class="text-2xl text-white text-5xl font-semibold my-10">
+                                    {{#if contacts.value.contacts.section_title}}
+                                    {{contacts.value.contacts.section_title}}
+                                    {{else}}Get In Touch{{/if}}
+                                </h3>
+                                {{#if contacts.value.contacts.description}}
+                                <p class="text-base text-white/90 max-w-lg">{{contacts.value.contacts.description}}</p>
+                                {{/if}}
+
+                                <div class="mt-4 space-y-3">
+                                    {{#if contacts.value.contacts.phone}}
+                                    <div class="flex items-center">
+                                        <div class="flex-shrink-0 bg-white/5 p-3 rounded-xl mr-4">
+                                            <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <div class="text-xs text-white/80">Phone</div>
+                                            <a href="tel:{{contacts.value.contacts.phone}}" class="text-base text-white/95 underline">{{contacts.value.contacts.phone}}</a>
+                                        </div>
+                                    </div>
+                                    {{/if}}
+
+                                    {{#if contacts.value.contacts.email}}
+                                    <div class="flex items-center">
+                                        <div class="flex-shrink-0 bg-white/5 p-3 rounded-xl mr-4">
+                                            <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <div class="text-xs text-white/80">Email</div>
+                                            <a href="mailto:{{contacts.value.contacts.email}}" class="text-base text-white/95 underline">{{contacts.value.contacts.email}}</a>
+                                        </div>
+                                    </div>
+                                    {{/if}}
+                                </div>
+
+                                <!-- Social Media Links -->
+                                {{#if social.value.social.items}}
+                                {{#unless social.meta.hide}}
+                                <div class="mt-8 pt-8 border-t border-white/10 section-wrapper"   data-edit-section="social"
+                    data-section="social"
+                    data-title="Social Links">
+                                    <h4 class="text-white font-semibold mb-4 text-lg">Connect With Me</h4>
+                                    <div class="flex gap-4">
+                                        {{#each social.value.social.items}}
+                                        <a href="{{this.url}}" target="_blank" rel="noopener noreferrer" class="rounded-lg flex items-center justify-center text-white transition-all duration-300 hover:scale-105" aria-label="{{this.label}}">
+                                            <span class="text-sm font-medium">{{this.label}}</span>
+                                        </a>
+                                        {{/each}}
+                                    </div>
+                                </div>
+                                {{/unless}}
+                                {{/if}}
+                            </div>
+
+                            <!-- Right: Contact Form -->
+                            <div class="bg-gray-800 text-white rounded-2xl p-6 shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                                <form  action="/api/contact" method="post" enctype="text/plain" class="space-y-3" novalidate id="contact_form">
+                                    <div>
+                                        <label for="name" class="text-xs font-medium text-white">Name *</label>
+                                        <input id="name" name="name" required class="mt-1 block w-full text-base px-3 py-3 rounded-lg bg-gray-900 text-white border border-gray-700" placeholder="Full Name" />
+                                    </div>
+
+                                    <div>
+                                        <label for="email" class="text-xs font-medium text-white">Email *</label>
+                                        <input id="email" name="email" type="email" required class="mt-1 block w-full text-base px-3 py-3 rounded-lg bg-gray-900 text-white border border-gray-700" placeholder="you@example.com" />
+                                    </div>
+
+                                    <div>
+                                        <label for="subject" class="text-xs font-medium text-white">Subject</label>
+                                        <input id="subject" name="subject" class="mt-1 block w-full text-base px-3 py-3 rounded-lg bg-gray-900 text-white border border-gray-700" placeholder="Subject" />
+                                    </div>
+
+                                    <div>
+                                        <label for="message" class="text-xs font-medium text-white">Message *</label>
+                                        <textarea id="message" name="message" rows="4" required class="mt-1 block w-full text-base px-3 py-3 rounded-lg bg-gray-900 text-white border border-gray-700" placeholder="Your message"></textarea>
+                                    </div>
+
+                                    <div class="flex items-center justify-between gap-4">
+                                        <button type="submit" class="bg-gray-900 hover:bg-gray-950 px-4 py-3 rounded-lg text-md text-white font-semibold" id="send_message">
+                                            Send Message
+                                        </button>
+                                    </div>
+
+                                    <div id="success_message" class="hidden text-green-400 text-sm mt-4">
+                                        Your message has been sent successfully!
+                                    </div>
+                                    <div id="error_message" class="hidden text-red-400 text-sm mt-4">
+                                        Sorry, there was an error sending your form.
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+                {{/unless}}
+                {{/if}}
+                {{/if}}
+
+            </div>
+            <footer class="py-8 bg-gray-900 border-t-2 border-gray-800">
+                <div class="container mx-auto px-4 sm:px-6">
+                    <div class="text-center">
+                        <p class="text-gray-400 text-sm">&copy; 2025 {{personal_info.value.firstName}} {{personal_info.value.lastName}}. All rights reserved.</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init({
+                duration: 1000,
+                once: true
+            });
+
+            // Hamburger Menu Toggle
+            const menuToggle = document.getElementById('menuToggle');
+            const fullscreenMenu = document.getElementById('fullscreenMenu');
+            const line1 = document.getElementById('line1');
+            const line2 = document.getElementById('line2');
+            const line3 = document.getElementById('line3');
+            const menuItems = document.querySelectorAll('.menu-item');
+            const menuLinks = document.querySelectorAll('.menu-link');
+            let isMenuOpen = false;
+
+            menuToggle.addEventListener('click', () => {
+                isMenuOpen = !isMenuOpen;
+
+                if (isMenuOpen) {
+                    // Open menu
+                    fullscreenMenu.classList.remove('-translate-y-full');
+                    fullscreenMenu.classList.add('translate-y-0');
+
+                    // Animate hamburger to X
+                    line1.classList.add('rotate-45', 'translate-y-2');
+                    line2.classList.add('opacity-0');
+                    line3.classList.add('-rotate-45', '-translate-y-2');
+
+                    // Animate menu items
+                    setTimeout(() => {
+                        menuItems.forEach(item => {
+                            item.classList.remove('opacity-0', 'translate-y-8');
+                            item.classList.add('opacity-100', 'translate-y-0');
+                        });
+                    }, 100);
+
+                    // Prevent body scroll
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    // Close menu
+                    fullscreenMenu.classList.add('-translate-y-full');
+                    fullscreenMenu.classList.remove('translate-y-0');
+
+                    // Animate X back to hamburger
+                    line1.classList.remove('rotate-45', 'translate-y-2');
+                    line2.classList.remove('opacity-0');
+                    line3.classList.remove('-rotate-45', '-translate-y-2');
+
+                    // Reset menu items
+                    menuItems.forEach(item => {
+                        item.classList.add('opacity-0', 'translate-y-8');
+                        item.classList.remove('opacity-100', 'translate-y-0');
+                    });
+
+                    // Re-enable body scroll
+                    document.body.style.overflow = 'auto';
+                }
+            });
+
+            // Close menu when clicking on a link
+            menuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (isMenuOpen) {
+                        menuToggle.click();
+                    }
+                });
+            });
+
+            // Toggle experiences
+            function toggleExperiences(button) {
+                const items = document.querySelectorAll('.experience-item');
+                const viewMoreText = button.querySelector('.view-more-text');
+                const viewLessText = button.querySelector('.view-less-text');
+                const isExpanded = viewMoreText.classList.contains('hidden');
+
+                items.forEach((item, index) => {
+                    if (index >= 4) {
+                        if (isExpanded) {
+                            item.classList.add('hidden');
+                        } else {
+                            item.classList.remove('hidden');
+                        }
+                    }
+                });
+
+                viewMoreText.classList.toggle('hidden');
+                viewLessText.classList.toggle('hidden');
+            }
+
+            // Toggle educations
+            function toggleEducations(button) {
+                const items = document.querySelectorAll('.education-item');
+                const viewMoreText = button.querySelector('.view-more-text');
+                const viewLessText = button.querySelector('.view-less-text');
+                const isExpanded = viewMoreText.classList.contains('hidden');
+
+                items.forEach((item, index) => {
+                    if (index >= 4) {
+                        if (isExpanded) {
+                            item.classList.add('hidden');
+                        } else {
+                            item.classList.remove('hidden');
+                        }
+                    }
+                });
+
+                viewMoreText.classList.toggle('hidden');
+                viewLessText.classList.toggle('hidden');
+            }
+
+            // Toggle FAQ
+            function toggleFaq(button) {
+                const answer = button.nextElementSibling;
+                const icon = button.querySelector('.faq-icon');
+                const isOpen = !answer.classList.contains('hidden');
+
+                if (isOpen) {
+                    answer.classList.add('hidden');
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    answer.classList.remove('hidden');
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            }
+        </script>
+    </body>
+</html>

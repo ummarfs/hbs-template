@@ -153,24 +153,26 @@
                         </div>
 
                         <!-- stats section -->
-                        {{#if stats.value.stats.items}}
+                       {{#if stats.value.stats.items}}
                         {{#unless stats.meta.hide}}
-                        <div class="row g-4 section-wrapper w-auto"
+                        <div class="section-wrapper"
                             data-edit-section="stats"
                             data-section="stats"
                             data-title="Stats">
-                            {{#each stats.value.stats.items}}
-                            <div class="col-md-3 col-sm-6 mb-sm-30">
-                                <div
-                                    class="de_count bg-light py-4 rounded-1 text-center fs-15 fadeInRight">
-                                    <h3 class="fs-48 mb-1"><span class="timer"
-                                            data-to="8240"
-                                            data-speed="3000">{{this.number}}</span>
-                                    </h3>
-                                    <div class="fs-15">{{this.label}}</div>
+                            <div class="row g-4">
+                                {{#each stats.value.stats.items}}
+                                <div class="col-md-3 col-sm-6 mb-sm-30">
+                                    <div
+                                        class="de_count bg-light py-4 rounded-1 text-center fs-15 fadeInRight">
+                                        <h3 class="fs-48 mb-1"><span class="timer"
+                                                data-to="8240"
+                                                data-speed="3000">{{this.number}}</span>
+                                        </h3>
+                                        <div class="fs-15">{{this.label}}</div>
+                                    </div>
                                 </div>
+                                {{/each}}
                             </div>
-                            {{/each}}
                         </div>
                         {{/unless}}
                         {{/if}}

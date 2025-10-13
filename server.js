@@ -37,6 +37,13 @@ hbs.registerHelper("splitText", function (text, options) {
   return options.fn({ firstHalf, secondHalf });
 });
 
+hbs.registerHelper("lt", function (a, b) {
+  return a < b;
+});
+
+hbs.registerHelper("gt", function (a, b) {
+  return a > b;
+});
 
 app.get("/", (req, res) => {
   res.redirect("/4");
@@ -56,6 +63,10 @@ app.get("/3", (req, res) => {
 
 app.get("/4", (req, res) => {
   res.render("4", data);
+});
+
+app.get("/5", (req, res) => {
+  res.render("5", data);
 });
 
 app.listen(3001, () =>
