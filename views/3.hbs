@@ -188,6 +188,18 @@
             <img src="{{about.value.about.image}}" alt="Professional headshot"
               class="w-full h-auto object-cover rounded-lg" />
           </div>
+          {{else}}
+          {{#if personal_info.value.profilePicureUrl}}
+          <div class="w-full lg:w-1/2 mt-8 lg:mt-0" data-aos="fade-left">
+            <img src="{{personal_info.value.profilePicureUrl}}" alt="Professional headshot"
+              class="w-full h-auto object-cover rounded-lg" />
+          </div>
+          {{else}}
+           <div class="w-full lg:w-1/2 mt-8 lg:mt-0" data-aos="fade-left">
+            <img src="https://vise-page.s3.us-east-1.amazonaws.com/asset/image-1760421874209-faceless-male-silhouette-in-suit--t3chat--1.png" alt="Professional headshot"
+              class="w-full h-auto object-cover rounded-lg" />
+          </div>
+          {{/if}}
           {{/if}}
         </div>
       </section>

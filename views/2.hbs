@@ -166,12 +166,10 @@
             {{/unless}}
             {{/if}}
           </div>
-          {{#if personal_info.value.profilePicureUrl}}
           <div class="order-1 lg:order-2">
-            <img src="{{personal_info.value.profilePicureUrl}}" alt="Consultant working on a business strategy"
+            <img src="{{default personal_info.value.profilePicureUrl 'https://vise-page.s3.us-east-1.amazonaws.com/asset/image-1760421874209-faceless-male-silhouette-in-suit--t3chat--1.png'}}" alt="Consultant working on a business strategy"
               class="w-full h-80 sm:h-96 lg:h-[500px] xl:h-[600px] object-cover rounded-lg shadow-lg">
           </div>
-          {{/if}}
         </div>
       </div>
     </section>

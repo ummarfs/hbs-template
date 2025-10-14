@@ -210,17 +210,19 @@
       src="{{../about.value.about.image}}"
       alt="Portrait from about section"
       class="w-full h-auto object-cover rounded-lg shadow-lg" />
-  {{else if ../personal_info.value.profilePicureUrl}}
+  {{else}}
+  {{#if ../personal_info.value.profilePicureUrl}}
     <img
       src="{{../personal_info.value.profilePicureUrl}}"
       alt="Portrait of a confident business consultant"
       class="w-full h-auto object-cover rounded-lg shadow-lg" />
   {{else}}
     <img
-      src="https://c.animaapp.com/mfnpsvda9pPWxp/assets/88aac0_70dba72adce54eea9f53068b36a9e0e9~mv2.jpeg"
+      src="https://vise-page.s3.us-east-1.amazonaws.com/asset/image-1760421874209-faceless-male-silhouette-in-suit--t3chat--1.png"
       alt="Default portrait placeholder"
       class="w-full h-auto object-cover rounded-lg shadow-lg" />
   {{/if}}
+   {{/if}}
 
             </div>
             <div class="w-full lg:w-2/3" data-aos="fade-left">
