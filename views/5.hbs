@@ -440,56 +440,59 @@
                 {{/unless}}
                 {{/if}}
 
-                {{!-- experience section --}}
-                {{#if experiences.value.experiences.items }}
-                {{#unless experiences.meta.hide}}
-                <section id="experience" class="bg-white py-16 sm:py-32 section-wrapper"
-                    data-edit-section="experiences"
-                    data-section="experiences"
-                    data-title="Experience">
-                    <div class="container mx-auto px-6">
-                        <div class="grid lg:grid-cols-2 gap-2 sm:gap-4">
-                            <div class="lg:mr-20 mb-10 lg:mb-0" data-aos="fade-up">
-                                <h3 class="font-semibold mb-8 leading-tight text-3xl md:text-5xl">
-                                    {{#if experiences.value.experiences.section_title}}
-                                    {{experiences.value.experiences.section_title}}
-                                    {{else}}Experience{{/if}}
-                                </h3>
-                                {{#if experiences.value.experiences.description}}
-                                <p class="text-gray-600 max-w-3xl text-base md:text-lg">{{experiences.value.experiences.description}}</p>
-                                {{/if}}
-                            </div>
-
-                            <div class="space-y-8 sm:space-y-4" data-aos="fade-in">
-                                {{#each experiences.value.experiences.items}}
-                                <div class="bg-white border-b border-gray-200 transition-all duration-300 experience-item {{#if @index}}{{#unless (lt @index 4)}}hidden{{/unless}}{{/if}}" data-index="{{@index}}">
-                                    <div class="justify-between flex items-start mb-4">
-                                        {{#if this.logo}}
-                                        <div class="w-16 h-16 p-1 border rounded-xl flex items-center justify-center overflow-hidden mr-4">
-                                            <img src="{{this.logo}}" alt="{{this.companyName}}" class="max-w-full max-h-full object-contain">
-                                        </div>
-                                        {{/if}}
-                                        <div class="flex-1">
-                                            <h5 class="font-semibold text-xl text-gray-900">{{this.title}}</h5>
-                                            <p class="text-gray-600 text-base leading-relaxed max-w-xl">{{this.companyName}}{{#if this.description}} — {{this.description}}{{/if}}</p>
-                                        </div>
-                                        <div class="text-sm text-gray-500">{{this.startDate.year}} - {{#if this.endDate}}{{this.endDate.year}}{{else}}Present{{/if}}</div>
-                                    </div>
-                                </div>
-                                {{/each}}
-
-                                {{#if (gt experiences.value.experiences.items.length 4)}}
-                                <button onclick="toggleExperiences(this)" class="flex items-center justify-center py-4 border-b border-slate-200 hover:bg-slate-50 transition-colors duration-200 w-full">
-                                    <span class="text-sm text-slate-700 font-medium view-more-text">View More</span>
-                                    <span class="text-sm text-slate-700 font-medium view-less-text hidden">View Less</span>
-                                </button>
-                                {{/if}}
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                {{/unless}}
+              {{!-- experience section --}}
+{{#if experiences.value.experiences.items }}
+{{#unless experiences.meta.hide}}
+<section id="experience" class="bg-white py-16 sm:py-32 section-wrapper"
+    data-edit-section="experiences"
+    data-section="experiences"
+    data-title="Experience">
+    <div class="container mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-2 sm:gap-4">
+            <div class="lg:mr-20 mb-10 lg:mb-0" data-aos="fade-up">
+                <h3 class="font-semibold mb-8 leading-tight text-3xl md:text-5xl">
+                    {{#if experiences.value.experiences.section_title}}
+                    {{experiences.value.experiences.section_title}}
+                    {{else}}Experience{{/if}}
+                </h3>
+                {{#if experiences.value.experiences.description}}
+                <p class="text-gray-600 max-w-3xl text-base md:text-lg">{{experiences.value.experiences.description}}</p>
                 {{/if}}
+            </div>
+
+            <div class="space-y-8 sm:space-y-4" data-aos="fade-in">
+                {{#each experiences.value.experiences.items}}
+                <div class="bg-white border-b border-gray-200 transition-all duration-300 experience-item {{#if @index}}{{#unless (lt @index 4)}}hidden{{/unless}}{{/if}}" data-index="{{@index}}">
+                    <div class="justify-between flex items-start mb-4">
+                        {{#if this.logo}}
+                        <div class="w-16 h-16 p-1 border rounded-xl flex items-center justify-center overflow-hidden mr-4">
+                            <img src="{{this.logo}}" alt="{{this.companyName}}" class="max-w-full max-h-full object-contain">
+                        </div>
+                        {{/if}}
+                        <div class="flex-1">
+                            <h5 class="font-semibold text-xl text-gray-900">{{this.title}}</h5>
+                            <p class="text-gray-600 text-base leading-relaxed max-w-xl">{{this.companyName}}</p>
+                            {{#if this.description}}
+                            <p class="text-gray-600 text-base leading-relaxed max-w-xl mt-1 experience-description">{{this.description}}</p>
+                            {{/if}}
+                        </div>
+                        <div class="text-sm text-gray-500">{{this.startDate.year}} - {{#if this.endDate}}{{this.endDate.year}}{{else}}Present{{/if}}</div>
+                    </div>
+                </div>
+                {{/each}}
+
+                {{#if (gt experiences.value.experiences.items.length 4)}}
+                <button onclick="toggleExperiences(this)" class="flex items-center justify-center py-4 border-b border-slate-200 hover:bg-slate-50 transition-colors duration-200 w-full">
+                    <span class="text-sm text-slate-700 font-medium view-more-text">View More</span>
+                    <span class="text-sm text-slate-700 font-medium view-less-text hidden">View Less</span>
+                </button>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</section>
+{{/unless}}
+{{/if}}
 
   
                 <section id="banner" class="p-0 section-wrapper" data-edit-section="personal_info"
@@ -816,131 +819,187 @@
             </footer>
         </div>
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        <script>
-            AOS.init({
-                duration: 1000,
-                once: true
-            });
+       <script>
+    AOS.init({
+        duration: 1000,
+        once: true
+    });
 
-            // Hamburger Menu Toggle
-            const menuToggle = document.getElementById('menuToggle');
-            const fullscreenMenu = document.getElementById('fullscreenMenu');
-            const line1 = document.getElementById('line1');
-            const line2 = document.getElementById('line2');
-            const line3 = document.getElementById('line3');
-            const menuItems = document.querySelectorAll('.menu-item');
-            const menuLinks = document.querySelectorAll('.menu-link');
-            let isMenuOpen = false;
+    // Hamburger Menu Toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const fullscreenMenu = document.getElementById('fullscreenMenu');
+    const line1 = document.getElementById('line1');
+    const line2 = document.getElementById('line2');
+    const line3 = document.getElementById('line3');
+    const menuItems = document.querySelectorAll('.menu-item');
+    const menuLinks = document.querySelectorAll('.menu-link');
+    let isMenuOpen = false;
 
-            menuToggle.addEventListener('click', () => {
-                isMenuOpen = !isMenuOpen;
+    menuToggle.addEventListener('click', () => {
+        isMenuOpen = !isMenuOpen;
 
-                if (isMenuOpen) {
-                    // Open menu
-                    fullscreenMenu.classList.remove('-translate-y-full');
-                    fullscreenMenu.classList.add('translate-y-0');
+        if (isMenuOpen) {
+            // Open menu
+            fullscreenMenu.classList.remove('-translate-y-full');
+            fullscreenMenu.classList.add('translate-y-0');
 
-                    // Animate hamburger to X
-                    line1.classList.add('rotate-45', 'translate-y-2');
-                    line2.classList.add('opacity-0');
-                    line3.classList.add('-rotate-45', '-translate-y-2');
+            // Animate hamburger to X
+            line1.classList.add('rotate-45', 'translate-y-2');
+            line2.classList.add('opacity-0');
+            line3.classList.add('-rotate-45', '-translate-y-2');
 
-                    // Animate menu items
-                    setTimeout(() => {
-                        menuItems.forEach(item => {
-                            item.classList.remove('opacity-0', 'translate-y-8');
-                            item.classList.add('opacity-100', 'translate-y-0');
-                        });
-                    }, 100);
-
-                    // Prevent body scroll
-                    document.body.style.overflow = 'hidden';
-                } else {
-                    // Close menu
-                    fullscreenMenu.classList.add('-translate-y-full');
-                    fullscreenMenu.classList.remove('translate-y-0');
-
-                    // Animate X back to hamburger
-                    line1.classList.remove('rotate-45', 'translate-y-2');
-                    line2.classList.remove('opacity-0');
-                    line3.classList.remove('-rotate-45', '-translate-y-2');
-
-                    // Reset menu items
-                    menuItems.forEach(item => {
-                        item.classList.add('opacity-0', 'translate-y-8');
-                        item.classList.remove('opacity-100', 'translate-y-0');
-                    });
-
-                    // Re-enable body scroll
-                    document.body.style.overflow = 'auto';
-                }
-            });
-
-            // Close menu when clicking on a link
-            menuLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    if (isMenuOpen) {
-                        menuToggle.click();
-                    }
+            // Animate menu items
+            setTimeout(() => {
+                menuItems.forEach(item => {
+                    item.classList.remove('opacity-0', 'translate-y-8');
+                    item.classList.add('opacity-100', 'translate-y-0');
                 });
+            }, 100);
+
+            // Prevent body scroll
+            document.body.style.overflow = 'hidden';
+        } else {
+            // Close menu
+            fullscreenMenu.classList.add('-translate-y-full');
+            fullscreenMenu.classList.remove('translate-y-0');
+
+            // Animate X back to hamburger
+            line1.classList.remove('rotate-45', 'translate-y-2');
+            line2.classList.remove('opacity-0');
+            line3.classList.remove('-rotate-45', '-translate-y-2');
+
+            // Reset menu items
+            menuItems.forEach(item => {
+                item.classList.add('opacity-0', 'translate-y-8');
+                item.classList.remove('opacity-100', 'translate-y-0');
             });
 
-            // Toggle experiences
-            function toggleExperiences(button) {
-                const items = document.querySelectorAll('.experience-item');
-                const viewMoreText = button.querySelector('.view-more-text');
-                const viewLessText = button.querySelector('.view-less-text');
-                const isExpanded = viewMoreText.classList.contains('hidden');
+            // Re-enable body scroll
+            document.body.style.overflow = 'auto';
+        }
+    });
 
-                items.forEach((item, index) => {
-                    if (index >= 4) {
-                        if (isExpanded) {
-                            item.classList.add('hidden');
-                        } else {
-                            item.classList.remove('hidden');
-                        }
-                    }
-                });
-
-                viewMoreText.classList.toggle('hidden');
-                viewLessText.classList.toggle('hidden');
+    // Close menu when clicking on a link
+    menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (isMenuOpen) {
+                menuToggle.click();
             }
+        });
+    });
 
-            // Toggle educations
-            function toggleEducations(button) {
-                const items = document.querySelectorAll('.education-item');
-                const viewMoreText = button.querySelector('.view-more-text');
-                const viewLessText = button.querySelector('.view-less-text');
-                const isExpanded = viewMoreText.classList.contains('hidden');
+    // Toggle experiences
+    function toggleExperiences(button) {
+        const items = document.querySelectorAll('.experience-item');
+        const viewMoreText = button.querySelector('.view-more-text');
+        const viewLessText = button.querySelector('.view-less-text');
+        const isExpanded = viewMoreText.classList.contains('hidden');
 
-                items.forEach((item, index) => {
-                    if (index >= 4) {
-                        if (isExpanded) {
-                            item.classList.add('hidden');
-                        } else {
-                            item.classList.remove('hidden');
-                        }
-                    }
-                });
-
-                viewMoreText.classList.toggle('hidden');
-                viewLessText.classList.toggle('hidden');
-            }
-
-            // Toggle FAQ
-            function toggleFaq(button) {
-                const answer = button.nextElementSibling;
-                const icon = button.querySelector('.faq-icon');
-                const isOpen = !answer.classList.contains('hidden');
-
-                if (isOpen) {
-                    answer.classList.add('hidden');
-                    icon.style.transform = 'rotate(0deg)';
+        items.forEach((item, index) => {
+            if (index >= 4) {
+                if (isExpanded) {
+                    item.classList.add('hidden');
                 } else {
-                    answer.classList.remove('hidden');
-                    icon.style.transform = 'rotate(180deg)';
+                    item.classList.remove('hidden');
                 }
             }
-        </script>
+        });
+
+        viewMoreText.classList.toggle('hidden');
+        viewLessText.classList.toggle('hidden');
+    }
+
+    // Toggle educations
+    function toggleEducations(button) {
+        const items = document.querySelectorAll('.education-item');
+        const viewMoreText = button.querySelector('.view-more-text');
+        const viewLessText = button.querySelector('.view-less-text');
+        const isExpanded = viewMoreText.classList.contains('hidden');
+
+        items.forEach((item, index) => {
+            if (index >= 4) {
+                if (isExpanded) {
+                    item.classList.add('hidden');
+                } else {
+                    item.classList.remove('hidden');
+                }
+            }
+        });
+
+        viewMoreText.classList.toggle('hidden');
+        viewLessText.classList.toggle('hidden');
+    }
+
+    // Toggle FAQ
+    function toggleFaq(button) {
+        const answer = button.nextElementSibling;
+        const icon = button.querySelector('.faq-icon');
+        const isOpen = !answer.classList.contains('hidden');
+
+        if (isOpen) {
+            answer.classList.add('hidden');
+            icon.style.transform = 'rotate(0deg)';
+        } else {
+            answer.classList.remove('hidden');
+            icon.style.transform = 'rotate(180deg)';
+        }
+    }
+
+    // NEW: Function to add "Read More" to long experience descriptions
+    function setupExperienceReadMore() {
+        const descriptions = document.querySelectorAll('.experience-description');
+        const maxLength = 150; // Character limit before truncating
+
+        descriptions.forEach(desc => {
+            // Use textContent for accurate length calculation
+            const fullText = desc.textContent.trim();
+
+            if (fullText.length > maxLength) {
+                const shortText = fullText.substring(0, maxLength) + '...';
+                
+                // Store the full text in a data attribute for later retrieval
+                desc.setAttribute('data-fulltext', fullText);
+                
+                // Clear the original content and build the new structure
+                desc.innerHTML = '';
+                
+                const textSpan = document.createElement('span');
+                textSpan.textContent = shortText;
+                
+                const button = document.createElement('button');
+                // Use Tailwind classes for styling
+                button.className = 'text-blue-600 hover:underline text-sm font-medium ml-1';
+                button.textContent = 'Read More';
+                
+                desc.appendChild(textSpan);
+                desc.appendChild(button);
+                
+                // Add an event listener to the new button
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const parentPara = this.parentElement;
+                    const textContainer = parentPara.querySelector('span');
+                    const isExpanded = parentPara.classList.contains('expanded');
+                    
+                    if (isExpanded) {
+                        // If expanded, collapse the text
+                        textContainer.textContent = shortText;
+                        this.textContent = 'Read More';
+                        parentPara.classList.remove('expanded');
+                    } else {
+                        // If collapsed, expand the text
+                        textContainer.textContent = parentPara.getAttribute('data-fulltext');
+                        this.textContent = 'Read Less';
+                        parentPara.classList.add('expanded');
+                    }
+                });
+            }
+        });
+    }
+    
+    // Run the "Read More" setup function when the DOM is fully loaded
+    document.addEventListener('DOMContentLoaded', setupExperienceReadMore);
+</script>
     </body>
 </html>
