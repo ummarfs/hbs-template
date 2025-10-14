@@ -438,28 +438,47 @@
             <p class="text-base">&copy; {{currentYear}} by {{personal_info.value.firstName}}
               {{personal_info.value.lastName}}</p>
           </div>
-          <div class="text-white p-8 max-w-md mx-auto md:mx-0 text-center md:text-left"
-            style="background-color:{{default colorPalette.value.colorPalette.primary '#0E172A'}};">
-            {{#if contacts.value.contacts.phone}}
-            <p class="text-lg mb-4">{{contacts.value.contacts.phone}}</p>
-            {{/if}}
-            {{#if contacts.value.contacts.email}}
-            <p class="text-lg mb-4"><a
-                href="mailto:{{contacts.value.contacts.email}}">{{contacts.value.contacts.email}}</a></p>
-            {{/if}}
-            {{#if contacts.value.contacts.addressText}}
-            <p class="text-lg mb-6">{{contacts.value.contacts.addressText}}</p>
-            {{/if}}
-            <section class="flex justify-center md:justify-start space-x-4 mb-6 section-wrapper"
-              data-edit-section="social" data-section="social" data-title="Social Links">
-              {{#each social.value.social.items}}
-              <a href="{{this.url}}" aria-label="{{this.label}}">
-                {{{socialIcon url=this.url
-                label=this.label size=40 className="size-12" }}}
-              </a>
-              {{/each}}
-            </section>
-          </div>
+         {{!-- Check if phone, email, or addressText exists --}}
+{{#if contacts.value.contacts.phone}}
+  <div class="text-white p-8 max-w-md mx-auto md:mx-0 text-center md:text-left"
+       style="background-color:{{default colorPalette.value.colorPalette.primary '#0E172A'}};">
+{{else if contacts.value.contacts.email}}
+  <div class="text-white p-8 max-w-md mx-auto md:mx-0 text-center md:text-left"
+       style="background-color:{{default colorPalette.value.colorPalette.primary '#0E172A'}};">
+{{else if contacts.value.contacts.addressText}}
+  <div class="text-white p-8 max-w-md mx-auto md:mx-0 text-center md:text-left"
+       style="background-color:{{default colorPalette.value.colorPalette.primary '#0E172A'}};">
+{{else}}
+  <div class="p-8 max-w-md mx-auto md:mx-0 text-center md:text-left"
+       style="color:{{default colorPalette.value.colorPalette.primary '#0E172A'}};">
+{{/if}}
+
+    {{#if contacts.value.contacts.phone}}
+      <p class="text-lg mb-4">{{contacts.value.contacts.phone}}</p>
+    {{/if}}
+
+    {{#if contacts.value.contacts.email}}
+      <p class="text-lg mb-4">
+        <a href="mailto:{{contacts.value.contacts.email}}">
+          {{contacts.value.contacts.email}}
+        </a>
+      </p>
+    {{/if}}
+
+    {{#if contacts.value.contacts.addressText}}
+      <p class="text-lg mb-6">{{contacts.value.contacts.addressText}}</p>
+    {{/if}}
+
+    <section class="flex justify-center md:justify-start space-x-4 mb-6 section-wrapper"
+             data-edit-section="social" data-section="social" data-title="Social Links">
+      {{#each social.value.social.items}}
+        <a href="{{this.url}}" aria-label="{{this.label}}">
+          {{{socialIcon url=this.url label=this.label size=40 className="size-12"}}}
+        </a>
+      {{/each}}
+    </section>
+  </div>
+
         </div>
       </div>
     </footer>
