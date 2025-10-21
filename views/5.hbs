@@ -16,7 +16,7 @@
     </head>
 
     <body>
-        <div id="wrapper">
+         <div id="wrapper">
             <div class="section-dark no-bottom no-top" id="content">
 
                 <div id="top"></div>
@@ -230,36 +230,35 @@
                             </div>
 
                             <!-- Right: Personal Info & Skills -->
-                            <div class="lg:col-span-2 space-y-8 section-wrapper" data-aos="fade-up" data-aos-delay="200"
-                              data-edit-section="skills"
-                              data-section="skills"
-                              data-title="Skills"
-                            >
-                                <div class="bg-gray-50 rounded-2xl p-8">
-                                    <h3 class="text-3xl font-bold text-gray-900 mb-8">
-                                            {{#if skills.value.skills.section_title}}
-                                            {{skills.value.skills.section_title}}
-                                            {{else}}Skills{{/if}}
-                                        </h3>
+                            {{#if skills.value.skills.items.[0]}}
+<div class="lg:col-span-2 space-y-8 section-wrapper" data-aos="fade-up" data-aos-delay="200"
+  data-edit-section="skills"
+  data-section="skills"
+  data-title="Skills"
+>
+  <div class="bg-gray-50 rounded-2xl p-8">
+    <h3 class="text-3xl font-bold text-gray-900 mb-8">
+      {{#if skills.value.skills.section_title}}
+        {{skills.value.skills.section_title}}
+      {{else}}Skills{{/if}}
+    </h3>
 
-                                    <!-- Skills if available -->
-                                    {{#if skills.value.skills.items}}
-                                    {{#unless skills.meta.hide}}
-                                    <div class="space-y-6">
-                                       
-                                        <div class="space-y-3">
-                                            {{#each skills.value.skills.items}}
-                                            <div class="flex items-center">
-                                                <div class="w-2 h-2 bg-gray-900 rounded-full mr-3"></div>
-                                                <span class="text-base text-gray-700">{{this}}</span>
-                                            </div>
-                                            {{/each}}
-                                        </div>
-                                    </div>
-                                    {{/unless}}
-                                    {{/if}}
-                                </div>
-                            </div>
+    {{#unless skills.meta.hide}}
+    <div class="space-y-6">
+      <div class="space-y-3">
+        {{#each skills.value.skills.items}}
+        <div class="flex items-center">
+          <div class="w-2 h-2 bg-gray-900 rounded-full mr-3"></div>
+          <span class="text-base text-gray-700">{{this}}</span>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+    {{/unless}}
+  </div>
+</div>
+{{/if}}
+
                         </div>
                     </div>
                 </section>
@@ -327,6 +326,42 @@
                                         <img src="{{this.url}}" loading="lazy" alt="{{this.name}}" />
                                         {{/each}}
                                         <!-- Duplicate set for seamless looping -->
+                                        {{#each client_logos.value.client_logos.items}}
+                                        <img src="{{this.url}}" loading="lazy" alt="{{this.name}}" aria-hidden="true" />
+                                        {{/each}}
+                                        {{#each client_logos.value.client_logos.items}}
+                                        <img src="{{this.url}}" loading="lazy" alt="{{this.name}}" aria-hidden="true" />
+                                        {{/each}}
+                                        {{#each client_logos.value.client_logos.items}}
+                                        <img src="{{this.url}}" loading="lazy" alt="{{this.name}}" aria-hidden="true" />
+                                        {{/each}}
+                                        {{#each client_logos.value.client_logos.items}}
+                                        <img src="{{this.url}}" loading="lazy" alt="{{this.name}}" aria-hidden="true" />
+                                        {{/each}}
+                                        {{#each client_logos.value.client_logos.items}}
+                                        <img src="{{this.url}}" loading="lazy" alt="{{this.name}}" aria-hidden="true" />
+                                        {{/each}}
+                                        {{#each client_logos.value.client_logos.items}}
+                                        <img src="{{this.url}}" loading="lazy" alt="{{this.name}}" aria-hidden="true" />
+                                        {{/each}}
+                                        {{#each client_logos.value.client_logos.items}}
+                                        <img src="{{this.url}}" loading="lazy" alt="{{this.name}}" aria-hidden="true" />
+                                        {{/each}}
+                                        {{#each client_logos.value.client_logos.items}}
+                                        <img src="{{this.url}}" loading="lazy" alt="{{this.name}}" aria-hidden="true" />
+                                        {{/each}}
+                                        {{#each client_logos.value.client_logos.items}}
+                                        <img src="{{this.url}}" loading="lazy" alt="{{this.name}}" aria-hidden="true" />
+                                        {{/each}}
+                                        {{#each client_logos.value.client_logos.items}}
+                                        <img src="{{this.url}}" loading="lazy" alt="{{this.name}}" aria-hidden="true" />
+                                        {{/each}}
+                                        {{#each client_logos.value.client_logos.items}}
+                                        <img src="{{this.url}}" loading="lazy" alt="{{this.name}}" aria-hidden="true" />
+                                        {{/each}}
+                                        {{#each client_logos.value.client_logos.items}}
+                                        <img src="{{this.url}}" loading="lazy" alt="{{this.name}}" aria-hidden="true" />
+                                        {{/each}}
                                         {{#each client_logos.value.client_logos.items}}
                                         <img src="{{this.url}}" loading="lazy" alt="{{this.name}}" aria-hidden="true" />
                                         {{/each}}
@@ -475,7 +510,6 @@
 </section>
 {{/unless}}
 {{/if}}
-
   
                 <section id="banner" class="p-0 section-wrapper" data-edit-section="personal_info"
                     data-section="personal_info"
