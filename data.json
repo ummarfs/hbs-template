@@ -22,9 +22,10 @@
       "headline": "Fueling Growth with Purpose",
       "profilePicureUrl": "https://d1xwrlfgrqppfv.cloudfront.net/profile/cmfb2lyfz0006mq2objw37464-1757392827008-image.jpeg",
       "location": "india",
-      "coverImage": "https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+      "coverImage": "https://images.unsplash.com/photo-1706801484143-9cc962a0e033?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1374",
       "position": "Strategic insights and actionable roadmaps to scale your operations and maximize profitability.",
-      "role": "Consultant"
+      "role": "Consultant",
+      "logoText": "TED"
     }
   },
   "social": {
@@ -160,7 +161,8 @@
         "heading": "From Corporate Strategy to Your Strategic Partner",
         "subheading": "An Introduction",
         "navbarName": "About",
-        "image": "https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+        "image": "https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+        "summary": "With over 30 years of experience in corporate strategy and business transformation, I bring a wealth of knowledge to help businesses navigate complex challenges and seize growth opportunities."
       }
     }
   },
@@ -293,6 +295,14 @@
     "value": {
       "client_logos": {
         "items": [
+          {
+            "url": "https://d1xwrlfgrqppfv.cloudfront.net/clientlogo/cmfb2lyfz0006mq2objw37464-1757393005859-image.jpeg",
+            "name": "Sinyar"
+          },
+          {
+            "url": "https://d1xwrlfgrqppfv.cloudfront.net/clientlogo/cmfb2lyfz0006mq2objw37464-1757393007334-image.jpeg",
+            "name": "IDMS"
+          },
           {
             "url": "https://d1xwrlfgrqppfv.cloudfront.net/clientlogo/cmfb2lyfz0006mq2objw37464-1757393005859-image.jpeg",
             "name": "Sinyar"
@@ -642,6 +652,34 @@
           "family": "Manrope",
           "category": "sans-serif"
         }
+      }
+    }
+  },
+  "achievements": {
+    "meta": {
+      "hide": false
+    },
+    "value": {
+      "achievements": {
+        "items": [
+          {
+           "label": "Banks & Conglomerates Built",
+           "number": "5"
+          },
+          {
+           "label": "Successful Startups Advised",
+           "number": "10"
+          },
+          {
+           "label": "Years of Industry Experience",
+           "number": "15"
+          },
+          {
+           "label": "Countries Served",
+           "number": "8"
+          }
+        ],
+        "section_title": "Professional Achievements"
       }
     }
   }

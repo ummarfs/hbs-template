@@ -304,9 +304,8 @@
         <section class="min-h-screen flex flex-col justify-center relative py-10 px-4 sm:px-6 md:px-10 overflow-hidden"
             role="banner">
             <!-- Background Image -->
-            <img src="/6/assets/ted_bg.jpg" alt="Ted Pietka Background"
+            <img src="{{default personal_info.value.coverImage 'https://images.unsplash.com/photo-1706801484143-9cc962a0e033?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1374'}}" alt="Ted Pietka Background"
                 class="absolute inset-0 w-full h-full object-cover object-[80%_center] -z-10" />
-
             <!-- Header -->
             <header
                 class="fixed top-0 left-0 right-0 z-[1000] py-2 sm:py-2.5 bg-transparent transition-all duration-300"
@@ -316,17 +315,23 @@
                     <div class="flex items-center gap-3">
                         <span
                         id="header-logo-badge"
-                            class="h-[35px] leading-[35px] w-[35px] bg-[var(--color-primary)] text-center rounded-full font-secondary font-semibold text-base tracking-tight">TED</span>
+                            class="h-[35px] leading-[35px] w-[35px] bg-[var(--color-primary)] text-center rounded-full font-secondary font-semibold text-base tracking-tight">
+                            {{#if personal_info.value.logoText}}
+                            {{ personal_info.value.logoText }}
+                            {{else}}
+                            {{firstChar personal_info.value.firstName}}{{firstChar personal_info.value.lastName}}
+                            {{/if}}
+                            </span>
                     </div>
                     <a href="#contact"
                     id="header-contact-link"
                         class="relative flex items-center gap-1 px-4 py-1 bg-transparent rounded-lg font-semibold text-sm text-[var(--color-primary)] backdrop-blur-[10px] overflow-hidden transition-all duration-300 uppercase tracking-wider hover:text-white hover:border-[var(--color-primary)] hover:-translate-y-0.5 active:translate-y-0 group"
-                        aria-label="Contact Ted Pietka">
+                        aria-label="Contact Me">
                         <div
                             class="absolute inset-0 bg-[#535353] opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-[1]">
                         </div>
                         <div class="relative z-[2] flex items-center gap-2 ">
-                            <span>Contact</span> 
+                            <span>{{default contacts.value.contacts.navbarName 'Contact'}}</span> 
                         </div>
                     </a>
                 </nav>
@@ -344,69 +349,70 @@
                     <h1
                         class="mb-8 opacity-0 animate-[fadeInUp_1s_ease_0.4s_forwards] font-secondary font-bold text-4xl sm:text-5xl md:text-7xl lg:text-8xl tracking-tight leading-tight">
                         <span
-                            class="block text-[var(--color-primary)] animate-[slideInUp_0.8s_cubic-bezier(0.4,0,0.2,1)_0.6s_forwards] translate-y-5">Tadeusz
-                            Pietka</span>
+                            class="block text-[var(--color-primary)] animate-[slideInUp_0.8s_cubic-bezier(0.4,0,0.2,1)_0.6s_forwards] translate-y-5">{{personal_info.value.firstName}} {{personal_info.value.lastName}}</span>
                     </h1>
+                    {{#if personal_info.value.headline}}
                     <div class="flex items-center gap-4 mb-5 opacity-0 animate-[fadeInUp_1s_ease_0.2s_forwards]">
                         <span
-                            class="text-xs sm:text-sm font-medium uppercase tracking-[0.05em] sm:tracking-[0.1em] text-[#e5dfda] leading-relaxed">C-Level
-                            Executive | Operating Partner | Strategic Growth Expert</span>
+                            class="text-xs sm:text-sm font-medium uppercase tracking-[0.05em] sm:tracking-[0.1em] text-[#e5dfda] leading-relaxed">{{personal_info.value.headline}}</span>
                     </div>
+                    {{/if}}
+                    
+                    {{#if personal_info.value.position}}
+                    <p class="text-base text-gray-400 mb-12 opacity-0 animate-[fadeInUp_1s_ease_0.9s_forwards]">{{personal_info.value.position}}</p>
+                    {{/if}}
 
-                    <p class="text-base text-gray-400 mb-12 opacity-0 animate-[fadeInUp_1s_ease_0.9s_forwards]">30+
-                        years delivering growth, capital markets execution and strategic transformation across banks,
-                        financial services and industry in Europe, GCC and North America.</p>
+                    {{!-- Key Stats --}}
+                    {{#if stats.value.stats.items}}
+                    {{#unless stats.meta.hide}}
                     <div class="flex items-center gap-6 opacity-0 animate-[fadeInUp_1s_ease_1.1s_forwards]">
+                        {{#each stats.value.stats.items}}
                         <div class="flex flex-col items-center">
-                            <span class="font-secondary text-2xl font-medium text-[var(--color-primary)] leading-none">30+</span>
-                            <span class="text-xs text-gray-400 uppercase tracking-wider mt-1">Years</span>
+                            <span class="font-secondary text-2xl font-medium text-[var(--color-primary)] leading-none">{{this.number}}</span>
+                            <span class="text-xs text-gray-400 uppercase tracking-wider mt-1">{{this.label}}</span>
                         </div>
                         <div class="w-px h-[30px] bg-white/30"></div>
-                        <div class="flex flex-col items-center">
-                            <span class="font-secondary text-2xl font-medium text-[var(--color-primary)] leading-none">60+</span>
-                            <span class="text-xs text-gray-400 uppercase tracking-wider mt-1">Firms</span>
-                        </div>
-                        <div class="w-px h-[30px] bg-gray-200"></div>
-                        <div class="flex flex-col items-center">
-                            <span class="font-secondary text-2xl font-medium text-[var(--color-primary)] leading-none">$1B+</span>
-                            <span class="text-xs text-gray-400 uppercase tracking-wider mt-1">Deals</span>
-                        </div>
+                        {{/each}}
                     </div>
+                    {{/unless}}
+                    {{/if}}
                 </div>
             </div>
         </section>
 
         <!-- About Section -->
+        {{#if about.value.about.content}}
+        {{#unless about.meta.hide}}
         <section class="py-16 sm:py-20 md:py-24 lg:py-[120px] px-4 sm:px-6 md:px-10 relative bg-white" id="about">
             <div
                 class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[350px_1fr] gap-4 sm:gap-12 md:gap-16 items-start">
                 <div class="lg:sticky lg:top-[140px]">
                     <h2
                         class="font-secondary font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-none">
-                        About</h2>
+                        {{default about.value.about.section_title 'About'}}</h2>
                 </div>
                 <div class="max-w-[800px]">
                     <!-- Profile Photo -->
-
-
                     <div class="mb-10">
-                        <p class="text-lg sm:text-xl md:text-2xl font-medium text-[var(--color-dark)] mb-8 leading-snug">I build
-                            businesses, connect capital with opportunity, and help leaders navigate complexity with
-                            confidence.</p>
-                        <p class="text-lg text-gray-600 mb-6">Over the past three decades, I have partnered with family
-                            offices, boards, and global institutions to scale banks, launch fintechs, and transform
-                            investment groups across transitional and emerging markets.</p>
-                        <p class="text-lg text-gray-600 mb-6">Based in Dubai, I advise on cross-border transactions,
-                            tokenisation, and the future of finance. What drives me is simple: turning ambitious ideas
-                            into lasting impact.</p>
+                        {{#if about.value.about.summary}}
+                        <p class="text-lg sm:text-xl md:text-2xl font-medium text-[var(--color-dark)] mb-8 leading-snug">{{about.value.about.summary}}</p>
+                        {{/if}}
+                        <p class="text-lg text-gray-600 mb-6">{{about.value.about.content}}</p>
                     </div>
 
                     <div class="mb-12">
                         <div class="relative">
                             <div
                                 class="relative w-full md:w-96 md:h-96 rounded-2xl overflow-hidden border-4 border-white shadow-xl">
-                                <img src="https://media.licdn.com/dms/image/v2/C4E03AQFXNlTN-_hegg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516178712587?e=1762992000&v=beta&t=bk5Cm9pDqdRczsUcPXTeqgV8oNlbsuao1rILe-WpJbU"
-                                    alt="Tadeusz Pietka" class="w-full h-full object-cover" />
+                                {{#if about.value.about.image}}
+                                <img src="{{about.value.about.image}}" class="w-full h-full object-cover" />
+                                {{else}}
+                                {{#if personal_info.value.profilePicureUrl}}
+                                <img src="{{personal_info.value.profilePicureUrl}}" class="w-full h-full object-cover" />
+                                {{else}}
+                                <img src="https://vise-page.s3.us-east-1.amazonaws.com/asset/image-1760421874209-faceless-male-silhouette-in-suit--t3chat--1.png"  class="w-full h-full object-cover" />
+                                {{/if}}
+                                {{/if}}
                             </div>
                             <!-- Decorative accent -->
                             <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-[var(--color-primary)/10] rounded-2xl -z-10"></div>
@@ -415,8 +421,12 @@
                 </div>
             </div>
         </section>
+        {{/unless}}
+        {{/if}}
 
         <!-- Services Section -->
+        {{#if services.value.services.items}}
+        {{#unless services.meta.hide}}
         <section class="py-16 sm:py-20 md:py-24 lg:py-[120px] px-4 sm:px-6 md:px-10 relative bg-[var(--color-primary-light)]"
             id="value">
             <div
@@ -424,85 +434,90 @@
                 <div class="lg:sticky lg:top-[140px]">
                     <h2
                         class="font-secondary font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-none">
-                        Expertise</h2>
+                        {{default services.value.services.section_title 'Expertise'}}</h2>
                 </div>
                 <div class="max-w-[800px]">
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-8">
-                        <div class="p-6 sm:p-8 md:p-10 border border-gray-200 rounded-[20px] bg-white transition-all duration-[400ms] hover:-translate-y-2 hover:border-[var(--color-accent)/20] relative overflow-hidden group"
-                            data-category="growth">
-                            <div
-                                class="absolute top-0 left-0 w-full h-0.5 bg-[var(--color-primary)] -translate-x-full group-hover:translate-x-0 transition-transform duration-[400ms]">
-                            </div>
-                            <h3 class="text-xl md:text-2xl font-medium text-[var(--color-dark)] mb-4">Value Creation & Growth</h3>
-                            <p class="text-gray-600 leading-relaxed m-0">Driving sustainable business expansion through
-                                strategy, innovation, and disciplined execution.</p>
+                        {{#each services.value.services.items}}
+                        <div class="p-6 sm:p-8 md:p-10 border border-gray-200 rounded-[20px] bg-white transition-all duration-[400ms] hover:-translate-y-2 hover:border-[var(--color-accent)/20] relative overflow-hidden group">
+                            <h3 class="text-xl md:text-2xl font-medium text-[var(--color-dark)] mb-4">{{this.title}}</h3>
+                            <p class="text-gray-600 leading-relaxed m-0">{{this.description}}</p>
                         </div>
+                        {{/each}}
                     </div>
                 </div>
             </div>
         </section>
+        {{/unless}}
+        {{/if}}
 
-        <!-- Projects/Case Studies Section -->
+        <!-- Projects-->
+        {{#if projects.value.projects.items}}
+        {{#unless projects.meta.hide}}
         <section class="py-16 sm:py-20 md:py-24 lg:py-[120px] px-4 sm:px-6 md:px-10 relative bg-white" id="projects">
             <div
                 class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[350px_1fr] gap-8 sm:gap-12 md:gap-16 lg:gap-20 items-start">
                 <div class="lg:sticky lg:top-[140px]">
                     <h2
                         class="font-secondary font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-none">
-                        Projects</h2>
+                        {{default projects.value.projects.section_title 'Projects'}}</h2>
                 </div>
                 <div class="max-w-[900px]">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <!-- Project Card 1 -->
+                        {{#each projects.value.projects.items}}
                         <div
                             class="group relative bg-white border border-gray-200 rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                             <div class="aspect-video overflow-hidden bg-gray-100">
-                                <img src="https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&cs=tinysrgb&w=800&h=450"
-                                    alt="Yes Finance Platform"
+                                <img src="{{default this.image 'https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&cs=tinysrgb&w=800&h=450'}}"
                                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                             </div>
                             <div class="p-4 sm:p-5 md:p-6">
                                 <h3
                                     class="text-xl font-semibold text-[var(--color-dark)] mb-3 group-hover:text-[var(--color-primary-dark)] transition-colors duration-300">
-                                    Yes Finance Platform</h3>
-                                <p class="text-gray-600 text-sm leading-relaxed mb-4">Built and scaled a digital lending
-                                    platform from zero to 1M+ users across CEE markets with automated credit
-                                    decisioning.</p>
-                                <a href="#"
+                                    {{this.title}}</h3>
+                                <p class="text-gray-600 text-sm leading-relaxed mb-4">{{this.description}}</p>
+                                {{#if this.url}}
+                                <a href="{{this.url}}" target="_blank" rel="noopener noreferrer"
                                     class="inline-flex items-center gap-2 text-[var(--color-primary-dark)] font-medium text-sm hover:gap-3 transition-all duration-300">
-                                    <span>View Case Study</span>
+                                    <span>{{default this.buttonText 'View Case Study'}}</span>
                                 </a>
+                                {{/if}}
                             </div>
                         </div>
+                        {{/each}}
                     </div>
                 </div>
             </div>
         </section>
+        {{/unless}}
+        {{/if}}
 
         <!-- Achievements Section -->
+        {{#if achievements.value.achievements.items}}
+        {{#unless achievements.meta.hide}}
         <section class="py-[120px] bg-[var(--color-primary-light)] px-10 relative" id="achievements">
             <div class="max-w-7xl mx-auto px-10 relative z-[1]">
                 <div class="text-center mb-20">
                     <h2
                         class="font-secondary font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-none">
-                        Key Achievements</h2>
+                        {{default achievements.value.achievements.section_title 'Key Achievements'}}</h2>
                 </div>
                 <div class="flex flex-wrap justify-center gap-6 mb-20">
+                    {{#each achievements.value.achievements.items}}
                     <div
                         class="flex flex-col items-center text-center p-10 bg-white border border-[var(--color-primary)] rounded-xl relative transition-all duration-[400ms] shadow-sm hover:-translate-y-1 hover:border-gray-300 group w-full sm:w-[calc(50%-1rem)] md:w-[calc(33.333%-1.333rem)] lg:w-[calc(25%-1.5rem)]">
-                        <div
-                            class="absolute top-0 left-0 right-0 h-0.5 bg-[var(--color-primary)] rounded-t-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        </div>
-                        <span class="font-secondary text-5xl font-bold text-[var(--color-primary-dark)] leading-none mb-3">5</span>
-                        <span class="text-md text-gray-600 font-medium leading-relaxed">Banks & Conglomerates
-                            Built</span>
+                        <span class="font-secondary text-5xl font-bold text-[var(--color-primary-dark)] leading-none mb-3">{{this.number}}</span>
+                        <span class="text-md text-gray-600 font-medium leading-relaxed">{{this.label}}</span>
                     </div>
+                    {{/each}}
                 </div>
 
-                <!-- Client Logos with Infinite Scroll -->
+                <!-- Client Logos -->
+                {{#if client_logos.value.client_logos.items}}
+                {{#unless client_logos.meta.hide}}
                 <div class="pt-20 relative border-t border-gray-200">
-                    <div class="text-sm text-gray-600 font-medium uppercase tracking-[0.1em] mb-12 text-center">Trusted
-                        By</div>
+                    <div class="text-sm text-gray-600 font-medium uppercase tracking-[0.1em] mb-12 text-center">{{default client_logos.value.client_logos.section_title 'Trusted
+                    By'}}</div>
                     <div class="overflow-hidden relative">
                         <div
                             class="absolute top-0 bottom-0 left-0 w-[100px] bg-gradient-to-r from-[var(--color-primary-light)] to-transparent z-[2] pointer-events-none">
@@ -511,25 +526,31 @@
                             class="absolute top-0 bottom-0 right-0 w-[100px] bg-gradient-to-l from-[var(--color-primary-light)] to-transparent z-[2] pointer-events-none">
                         </div>
                         <div class="flex gap-12 animate-[marquee_30s_linear_infinite] w-max" id="partnersTrack">
+                            {{#each client_logos.value.client_logos.items}}
                             <div
                                 class="py-3 px-5 bg-white border border-gray-200 rounded-md transition-all duration-300 hover:bg-gray-50 hover:-translate-y-0.5 hover:shadow-md flex-shrink-0">
-                                <img src="https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=200&h=60"
-                                    alt="GE"
+                                <img src="{{this.url}}"
                                     class="h-7 w-auto opacity-70 grayscale hover:opacity-90 hover:grayscale-0 transition-all duration-300" />
                             </div>
+                            {{/each}}
                            
                             <!-- Duplicate for seamless loop -->
+                            {{#each client_logos.value.client_logos.items}}
                             <div
                                 class="py-3 px-5 bg-white border border-gray-200 rounded-md transition-all duration-300 hover:bg-gray-50 hover:-translate-y-0.5 hover:shadow-md flex-shrink-0">
-                                <img src="https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=200&h=60"
-                                    alt="GE"
+                                <img src="{{this.url}}"
                                     class="h-7 w-auto opacity-70 grayscale hover:opacity-90 hover:grayscale-0 transition-all duration-300" />
                             </div>
+                            {{/each}}
                         </div>
                     </div>
                 </div>
+                {{/unless}}
+                {{/if}}
             </div>
         </section>
+        {{/unless}}
+        {{/if}}
 
         <!-- Timeline Section -->
         <section class="py-16 sm:py-20 md:py-24 lg:py-[120px] px-4 sm:px-6 md:px-10 relative bg-white" id="timeline">
