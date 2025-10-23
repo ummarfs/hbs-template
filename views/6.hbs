@@ -22,69 +22,14 @@
 
     <style>
         :root {
-            --font-primary: {
-                    {
-                    default fontPicker.value.fontPicker.primary.family 'Inter'
-                }
-            }
-
-            ;
-
-            --font-secondary: {
-                    {
-                    default fontPicker.value.fontPicker.secondary.family 'Manrope'
-                }
-            }
-
-            ;
-
-            --color-primary: {
-                    {
-                    default colorPicker.value.colorPicker.primary '#EDE8D0'
-                }
-            }
-
-            ;
-
-            --color-primary-dark: {
-                    {
-                    default colorPicker.value.colorPicker.primary-dark '#aca47d'
-                }
-            }
-
-            ;
-
-            --color-primary-light: {
-                    {
-                    default colorPicker.value.colorPicker.primary-light '#f4f3ec'
-                }
-            }
-
-            ;
-
-            --color-dark: {
-                    {
-                    default colorPicker.value.colorPicker.dark '#2E2E2E'
-                }
-            }
-
-            ;
-
-            --color-accent: {
-                    {
-                    default colorPicker.value.colorPicker.accent '#1E56A0'
-                }
-            }
-
-            ;
-
-            --color-cursor: {
-                    {
-                    default colorPicker.value.colorPicker.cursor '#c9a802'
-                }
-            }
-
-            ;
+        --font-primary: {{ default fontPicker.value.fontPicker.primary.family 'Inter' }};
+        --font-secondary: {{ default fontPicker.value.fontPicker.secondary.family 'Manrope' }};
+        --color-primary: {{ default colorPicker.value.colorPicker.primary '#ede8d0' }};
+        --color-primary-dark: {{ default colorPicker.value.colorPicker.primary-dark '#aca47d' }};
+        --color-primary-light: {{ default colorPicker.value.colorPicker.primary-light '#f4f3ec' }};
+        --color-dark: {{ default colorPicker.value.colorPicker.dark '#2E2E2E' }};
+        --color-accent: {{ default colorPicker.value.colorPicker.accent '#1E56A0' }};
+        --color-cursor: {{ default colorPicker.value.colorPicker.cursor '#c9a802' }};
         }
 
         html {
@@ -370,10 +315,10 @@
                     aria-label="Main navigation">
                     <div class="flex items-center gap-3">
                         <span
-                            class="h-[35px] leading-[35px] w-[35px] bg-[var(--)] text-center rounded-full font-secondary font-semibold text-base tracking-tight">TED</span>
+                            class="h-[35px] leading-[35px] w-[35px] bg-[var(--color-primary)] text-center rounded-full font-secondary font-semibold text-base tracking-tight">TED</span>
                     </div>
                     <a href="#contact"
-                        class="relative flex items-center gap-1 px-4 py-1 bg-transparent rounded-lg font-semibold text-sm text-primary backdrop-blur-[10px] overflow-hidden transition-all duration-300 uppercase tracking-wider hover:text-white hover:border-primary hover:-translate-y-0.5 active:translate-y-0 group"
+                        class="relative flex items-center gap-1 px-4 py-1 bg-transparent rounded-lg font-semibold text-sm text-[var(--color-primary)] backdrop-blur-[10px] overflow-hidden transition-all duration-300 uppercase tracking-wider hover:text-white hover:border-[var(--color-primary)] hover:-translate-y-0.5 active:translate-y-0 group"
                         aria-label="Contact Ted Pietka">
                         <div
                             class="absolute inset-0 bg-[#535353] opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-[1]">
@@ -399,7 +344,7 @@
                     <h1
                         class="mb-8 opacity-0 animate-[fadeInUp_1s_ease_0.4s_forwards] font-secondary font-bold text-4xl sm:text-5xl md:text-7xl lg:text-8xl tracking-tight leading-tight">
                         <span
-                            class="block text-primary animate-[slideInUp_0.8s_cubic-bezier(0.4,0,0.2,1)_0.6s_forwards] translate-y-5">Tadeusz
+                            class="block text-[var(--color-primary)] animate-[slideInUp_0.8s_cubic-bezier(0.4,0,0.2,1)_0.6s_forwards] translate-y-5">Tadeusz
                             Pietka</span>
                     </h1>
                     <div class="flex items-center gap-4 mb-5 opacity-0 animate-[fadeInUp_1s_ease_0.2s_forwards]">
@@ -413,17 +358,17 @@
                         financial services and industry in Europe, GCC and North America.</p>
                     <div class="flex items-center gap-6 opacity-0 animate-[fadeInUp_1s_ease_1.1s_forwards]">
                         <div class="flex flex-col items-center">
-                            <span class="font-secondary text-2xl font-medium text-primary leading-none">30+</span>
+                            <span class="font-secondary text-2xl font-medium text-[var(--color-primary)] leading-none">30+</span>
                             <span class="text-xs text-gray-400 uppercase tracking-wider mt-1">Years</span>
                         </div>
                         <div class="w-px h-[30px] bg-white/30"></div>
                         <div class="flex flex-col items-center">
-                            <span class="font-secondary text-2xl font-medium text-primary leading-none">60+</span>
+                            <span class="font-secondary text-2xl font-medium text-[var(--color-primary)] leading-none">60+</span>
                             <span class="text-xs text-gray-400 uppercase tracking-wider mt-1">Firms</span>
                         </div>
                         <div class="w-px h-[30px] bg-gray-200"></div>
                         <div class="flex flex-col items-center">
-                            <span class="font-secondary text-2xl font-medium text-primary leading-none">$1B+</span>
+                            <span class="font-secondary text-2xl font-medium text-[var(--color-primary)] leading-none">$1B+</span>
                             <span class="text-xs text-gray-400 uppercase tracking-wider mt-1">Deals</span>
                         </div>
                     </div>
@@ -445,7 +390,7 @@
 
 
                     <div class="mb-10">
-                        <p class="text-lg sm:text-xl md:text-2xl font-medium text-dark mb-8 leading-snug">I build
+                        <p class="text-lg sm:text-xl md:text-2xl font-medium text-[var(--color-dark)] mb-8 leading-snug">I build
                             businesses, connect capital with opportunity, and help leaders navigate complexity with
                             confidence.</p>
                         <p class="text-lg text-gray-600 mb-6">Over the past three decades, I have partnered with family
@@ -464,7 +409,7 @@
                                     alt="Tadeusz Pietka" class="w-full h-full object-cover" />
                             </div>
                             <!-- Decorative accent -->
-                            <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-primary/10 rounded-2xl -z-10"></div>
+                            <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-[var(--color-primary)/10] rounded-2xl -z-10"></div>
                         </div>
                     </div>
                 </div>
@@ -472,7 +417,7 @@
         </section>
 
         <!-- Services Section -->
-        <section class="py-16 sm:py-20 md:py-24 lg:py-[120px] px-4 sm:px-6 md:px-10 relative bg-primaryLight"
+        <section class="py-16 sm:py-20 md:py-24 lg:py-[120px] px-4 sm:px-6 md:px-10 relative bg-[var(--color-primary-light)]"
             id="value">
             <div
                 class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[350px_1fr] gap-8 sm:gap-12 md:gap-16 lg:gap-20 items-start">
@@ -483,66 +428,30 @@
                 </div>
                 <div class="max-w-[800px]">
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-8">
-                        <div class="p-6 sm:p-8 md:p-10 border border-gray-200 rounded-[20px] bg-white transition-all duration-[400ms] hover:-translate-y-2 hover:border-accent/20 relative overflow-hidden group"
+                        <div class="p-6 sm:p-8 md:p-10 border border-gray-200 rounded-[20px] bg-white transition-all duration-[400ms] hover:-translate-y-2 hover:border-[var(--color-accent)/20] relative overflow-hidden group"
                             data-category="growth">
                             <div
-                                class="absolute top-0 left-0 w-full h-0.5 bg-primary -translate-x-full group-hover:translate-x-0 transition-transform duration-[400ms]">
+                                class="absolute top-0 left-0 w-full h-0.5 bg-[var(--color-primary)] -translate-x-full group-hover:translate-x-0 transition-transform duration-[400ms]">
                             </div>
                             <div class="flex items-center gap-4 mb-6">
-                                <i data-feather="trending-up" class="w-8 h-8 text-primaryDark"></i>
+                                <i data-feather="trending-up" class="w-8 h-8 text-[var(--color-primary-dark)]"></i>
                             </div>
-                            <h3 class="text-xl md:text-2xl font-medium text-dark mb-4">Value Creation & Growth</h3>
+                            <h3 class="text-xl md:text-2xl font-medium text-[var(--color-dark)] mb-4">Value Creation & Growth</h3>
                             <p class="text-gray-600 leading-relaxed m-0">Driving sustainable business expansion through
                                 strategy, innovation, and disciplined execution.</p>
                         </div>
-                        <div class="p-6 sm:p-8 md:p-10 border border-gray-200 rounded-[20px] bg-white transition-all duration-[400ms] hover:-translate-y-2 hover:border-accent/20 relative overflow-hidden group"
+                        <div class="p-6 sm:p-8 md:p-10 border border-gray-200 rounded-[20px] bg-white transition-all duration-[400ms] hover:-translate-y-2 hover:border-[var(--color-accent)/20] relative overflow-hidden group"
                             data-category="capital">
                             <div
-                                class="absolute top-0 left-0 w-full h-0.5 bg-primary -translate-x-full group-hover:translate-x-0 transition-transform duration-[400ms]">
+                                class="absolute top-0 left-0 w-full h-0.5 bg-[var(--color-primary)] -translate-x-full group-hover:translate-x-0 transition-transform duration-[400ms]">
                             </div>
                             <div class="flex items-center gap-4 mb-6">
-                                <i data-feather="dollar-sign" class="w-8 h-8 text-primaryDark"></i>
+                                <i data-feather="dollar-sign" class="w-8 h-8 text-[var(--color-primary-dark)]"></i>
                             </div>
-                            <h3 class="text-xl md:text-2xl font-medium text-dark mb-4">Capital Raising & Investor Access
+                            <h3 class="text-xl md:text-2xl font-medium text-[var(--color-dark)] mb-4">Capital Raising & Investor Access
                             </h3>
                             <p class="text-gray-600 leading-relaxed m-0">Connecting businesses with global investors and
                                 structuring high-value funding rounds.</p>
-                        </div>
-                        <div class="p-6 sm:p-8 md:p-10 border border-gray-200 rounded-[20px] bg-white transition-all duration-[400ms] hover:-translate-y-2 hover:border-accent/20 relative overflow-hidden group"
-                            data-category="fintech">
-                            <div
-                                class="absolute top-0 left-0 w-full h-0.5 bg-primary -translate-x-full group-hover:translate-x-0 transition-transform duration-[400ms]">
-                            </div>
-                            <div class="flex items-center gap-4 mb-6">
-                                <i data-feather="smartphone" class="w-8 h-8 text-primaryDark"></i>
-                            </div>
-                            <h3 class="text-xl md:text-2xl font-medium text-dark mb-4">Banking & FinTech Innovation</h3>
-                            <p class="text-gray-600 leading-relaxed m-0">Advising on digital transformation, emerging
-                                tech, and new financial models.</p>
-                        </div>
-                        <div class="p-6 sm:p-8 md:p-10 border border-gray-200 rounded-[20px] bg-white transition-all duration-[400ms] hover:-translate-y-2 hover:border-accent/20 relative overflow-hidden group"
-                            data-category="advisory">
-                            <div
-                                class="absolute top-0 left-0 w-full h-0.5 bg-primary -translate-x-full group-hover:translate-x-0 transition-transform duration-[400ms]">
-                            </div>
-                            <div class="flex items-center gap-4 mb-6">
-                                <i data-feather="globe" class="w-8 h-8 text-primaryDark"></i>
-                            </div>
-                            <h3 class="text-xl md:text-2xl font-medium text-dark mb-4">Cross-Border Advisory</h3>
-                            <p class="text-gray-600 leading-relaxed m-0">Supporting cross-border partnerships, M&A, and
-                                market entry strategies.</p>
-                        </div>
-                        <div class="p-6 sm:p-8 md:p-10 border border-gray-200 rounded-[20px] bg-white transition-all duration-[400ms] hover:-translate-y-2 hover:border-accent/20 relative overflow-hidden group"
-                            data-category="realestate">
-                            <div
-                                class="absolute top-0 left-0 w-full h-0.5 bg-primary -translate-x-full group-hover:translate-x-0 transition-transform duration-[400ms]">
-                            </div>
-                            <div class="flex items-center gap-4 mb-6">
-                                <i data-feather="home" class="w-8 h-8 text-primaryDark"></i>
-                            </div>
-                            <h3 class="text-xl md:text-2xl font-medium text-dark mb-4">Real Estate & Tokenisation</h3>
-                            <p class="text-gray-600 leading-relaxed m-0">Bridging traditional assets with digital
-                                innovation and global investment flows.</p>
                         </div>
                     </div>
                 </div>
@@ -570,81 +479,13 @@
                             </div>
                             <div class="p-4 sm:p-5 md:p-6">
                                 <h3
-                                    class="text-xl font-semibold text-dark mb-3 group-hover:text-primaryDark transition-colors duration-300">
+                                    class="text-xl font-semibold text-[var(--color-dark)] mb-3 group-hover:text-[var(--color-primary-dark)] transition-colors duration-300">
                                     Yes Finance Platform</h3>
                                 <p class="text-gray-600 text-sm leading-relaxed mb-4">Built and scaled a digital lending
                                     platform from zero to 1M+ users across CEE markets with automated credit
                                     decisioning.</p>
                                 <a href="#"
-                                    class="inline-flex items-center gap-2 text-primaryDark font-medium text-sm hover:gap-3 transition-all duration-300">
-                                    <span>View Case Study</span>
-                                    <i data-feather="arrow-right" class="w-4 h-4"></i>
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- Project Card 2 -->
-                        <div
-                            class="group relative bg-white border border-gray-200 rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
-                            <div class="aspect-video overflow-hidden bg-gray-100">
-                                <img src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=800&h=450"
-                                    alt="Getin Holding IPO"
-                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                            </div>
-                            <div class="p-4 sm:p-5 md:p-6">
-                                <h3
-                                    class="text-xl font-semibold text-dark mb-3 group-hover:text-primaryDark transition-colors duration-300">
-                                    Getin Holding IPO</h3>
-                                <p class="text-gray-600 text-sm leading-relaxed mb-4">Led strategic expansion and market
-                                    positioning, scaling market cap from $200M to $3B and executing London Stock
-                                    Exchange IPO.</p>
-                                <a href="#"
-                                    class="inline-flex items-center gap-2 text-primaryDark font-medium text-sm hover:gap-3 transition-all duration-300">
-                                    <span>View Case Study</span>
-                                    <i data-feather="arrow-right" class="w-4 h-4"></i>
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- Project Card 3 -->
-                        <div
-                            class="group relative bg-white border border-gray-200 rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
-                            <div class="aspect-video overflow-hidden bg-gray-100">
-                                <img src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=800&h=450"
-                                    alt="GE Capital Market Entry"
-                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                            </div>
-                            <div class="p-4 sm:p-5 md:p-6">
-                                <h3
-                                    class="text-xl font-semibold text-dark mb-3 group-hover:text-primaryDark transition-colors duration-300">
-                                    GE Capital Market Entry</h3>
-                                <p class="text-gray-600 text-sm leading-relaxed mb-4">Directed market entry strategies
-                                    and operational setup for GE Capital across Central European markets.</p>
-                                <a href="#"
-                                    class="inline-flex items-center gap-2 text-primaryDark font-medium text-sm hover:gap-3 transition-all duration-300">
-                                    <span>View Case Study</span>
-                                    <i data-feather="arrow-right" class="w-4 h-4"></i>
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- Project Card 4 -->
-                        <div
-                            class="group relative bg-white border border-gray-200 rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
-                            <div class="aspect-video overflow-hidden bg-gray-100">
-                                <img src="https://images.pexels.com/photos/3184639/pexels-photo-3184639.jpeg?auto=compress&cs=tinysrgb&w=800&h=450"
-                                    alt="Real Estate Tokenization"
-                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                            </div>
-                            <div class="p-4 sm:p-5 md:p-6">
-                                <h3
-                                    class="text-xl font-semibold text-dark mb-3 group-hover:text-primaryDark transition-colors duration-300">
-                                    Real Estate Tokenization</h3>
-                                <p class="text-gray-600 text-sm leading-relaxed mb-4">Pioneering blockchain-based real
-                                    estate tokenization platform connecting investors with premium property
-                                    opportunities in the GCC.</p>
-                                <a href="#"
-                                    class="inline-flex items-center gap-2 text-primaryDark font-medium text-sm hover:gap-3 transition-all duration-300">
+                                    class="inline-flex items-center gap-2 text-[var(--color-primary-dark)] font-medium text-sm hover:gap-3 transition-all duration-300">
                                     <span>View Case Study</span>
                                     <i data-feather="arrow-right" class="w-4 h-4"></i>
                                 </a>
@@ -656,56 +497,22 @@
         </section>
 
         <!-- Achievements Section -->
-        <section class="py-[120px] bg-primaryLight px-10 relative" id="achievements">
+        <section class="py-[120px] bg-[var(--color-primary-light)] px-10 relative" id="achievements">
             <div class="max-w-7xl mx-auto px-10 relative z-[1]">
                 <div class="text-center mb-20">
                     <h2
                         class="font-secondary font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-none">
                         Key Achievements</h2>
                 </div>
-                <!-- Static Grid for Achievements -->
                 <div class="flex flex-wrap justify-center gap-6 mb-20">
                     <div
-                        class="flex flex-col items-center text-center p-10 bg-white border border-primary rounded-xl relative transition-all duration-[400ms] shadow-sm hover:-translate-y-1 hover:border-gray-300 group w-full sm:w-[calc(50%-1rem)] md:w-[calc(33.333%-1.333rem)] lg:w-[calc(25%-1.5rem)]">
+                        class="flex flex-col items-center text-center p-10 bg-white border border-[var(--color-primary)] rounded-xl relative transition-all duration-[400ms] shadow-sm hover:-translate-y-1 hover:border-gray-300 group w-full sm:w-[calc(50%-1rem)] md:w-[calc(33.333%-1.333rem)] lg:w-[calc(25%-1.5rem)]">
                         <div
-                            class="absolute top-0 left-0 right-0 h-0.5 bg-primary rounded-t-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            class="absolute top-0 left-0 right-0 h-0.5 bg-[var(--color-primary)] rounded-t-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         </div>
-                        <span class="font-secondary text-5xl font-bold text-primaryDark leading-none mb-3">5</span>
+                        <span class="font-secondary text-5xl font-bold text-[var(--color-primary-dark)] leading-none mb-3">5</span>
                         <span class="text-md text-gray-600 font-medium leading-relaxed">Banks & Conglomerates
                             Built</span>
-                    </div>
-                    <div
-                        class="flex flex-col items-center text-center p-10 bg-white border border-primary rounded-xl relative transition-all duration-[400ms] shadow-sm hover:-translate-y-1 hover:border-gray-300 group w-full sm:w-[calc(50%-1rem)] md:w-[calc(33.333%-1.333rem)] lg:w-[calc(25%-1.5rem)]">
-                        <div
-                            class="absolute top-0 left-0 right-0 h-0.5 bg-primary rounded-t-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        </div>
-                        <span class="font-secondary text-5xl font-bold text-primaryDark leading-none mb-3">$1B</span>
-                        <span class="text-md text-gray-600 font-medium leading-relaxed">IPO on London Stock
-                            Exchange</span>
-                    </div>
-                    <div
-                        class="flex flex-col items-center text-center p-10 bg-white border border-primary rounded-xl relative transition-all duration-[400ms] shadow-sm hover:-translate-y-1 hover:border-gray-300 group w-full sm:w-[calc(50%-1rem)] md:w-[calc(33.333%-1.333rem)] lg:w-[calc(25%-1.5rem)]">
-                        <div
-                            class="absolute top-0 left-0 right-0 h-0.5 bg-primary rounded-t-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        </div>
-                        <span class="font-secondary text-5xl font-bold text-primaryDark leading-none mb-3">1M+</span>
-                        <span class="text-md text-gray-600 font-medium leading-relaxed">FinTech Users Scaled</span>
-                    </div>
-                    <div
-                        class="flex flex-col items-center text-center p-10 bg-white border border-primary rounded-xl relative transition-all duration-[400ms] shadow-sm hover:-translate-y-1 hover:border-gray-300 group w-full sm:w-[calc(50%-1rem)] md:w-[calc(33.333%-1.333rem)] lg:w-[calc(25%-1.5rem)]">
-                        <div
-                            class="absolute top-0 left-0 right-0 h-0.5 bg-primary rounded-t-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        </div>
-                        <span class="font-secondary text-5xl font-bold text-primaryDark leading-none mb-3">70</span>
-                        <span class="text-md text-gray-600 font-medium leading-relaxed">Bank Branches in 7 Months</span>
-                    </div>
-                    <div
-                        class="flex flex-col items-center text-center p-10 bg-white border border-primary rounded-xl relative transition-all duration-[400ms] shadow-sm hover:-translate-y-1 hover:border-gray-300 group w-full sm:w-[calc(50%-1rem)] md:w-[calc(33.333%-1.333rem)] lg:w-[calc(25%-1.5rem)]">
-                        <div
-                            class="absolute top-0 left-0 right-0 h-0.5 bg-primary rounded-t-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        </div>
-                        <span class="font-secondary text-5xl font-bold text-primaryDark leading-none mb-3">60+</span>
-                        <span class="text-md text-gray-600 font-medium leading-relaxed">Financial Services Firms</span>
                     </div>
                 </div>
 
@@ -715,10 +522,10 @@
                         By</div>
                     <div class="overflow-hidden relative">
                         <div
-                            class="absolute top-0 bottom-0 left-0 w-[100px] bg-gradient-to-r from-primaryLight to-transparent z-[2] pointer-events-none">
+                            class="absolute top-0 bottom-0 left-0 w-[100px] bg-gradient-to-r from-[var(--color-primary-light)] to-transparent z-[2] pointer-events-none">
                         </div>
                         <div
-                            class="absolute top-0 bottom-0 right-0 w-[100px] bg-gradient-to-l from-primaryLight to-transparent z-[2] pointer-events-none">
+                            class="absolute top-0 bottom-0 right-0 w-[100px] bg-gradient-to-l from-[var(--color-primary-light)] to-transparent z-[2] pointer-events-none">
                         </div>
                         <div class="flex gap-12 animate-[marquee_30s_linear_infinite] w-max" id="partnersTrack">
                             <div
@@ -727,71 +534,12 @@
                                     alt="GE"
                                     class="h-7 w-auto opacity-70 grayscale hover:opacity-90 hover:grayscale-0 transition-all duration-300" />
                             </div>
-                            <div
-                                class="py-3 px-5 bg-white border border-gray-200 rounded-md transition-all duration-300 hover:bg-gray-50 hover:-translate-y-0.5 hover:shadow-md flex-shrink-0">
-                                <img src="https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=200&h=60"
-                                    alt="Allianz"
-                                    class="h-7 w-auto opacity-70 grayscale hover:opacity-90 hover:grayscale-0 transition-all duration-300" />
-                            </div>
-                            <div
-                                class="py-3 px-5 bg-white border border-gray-200 rounded-md transition-all duration-300 hover:bg-gray-50 hover:-translate-y-0.5 hover:shadow-md flex-shrink-0">
-                                <img src="https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=200&h=60"
-                                    alt="CFA Institute"
-                                    class="h-7 w-auto opacity-70 grayscale hover:opacity-90 hover:grayscale-0 transition-all duration-300" />
-                            </div>
-                            <div
-                                class="py-3 px-5 bg-white border border-gray-200 rounded-md transition-all duration-300 hover:bg-gray-50 hover:-translate-y-0.5 hover:shadow-md flex-shrink-0">
-                                <img src="https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=200&h=60"
-                                    alt="London Business School"
-                                    class="h-7 w-auto opacity-70 grayscale hover:opacity-90 hover:grayscale-0 transition-all duration-300" />
-                            </div>
-                            <div
-                                class="py-3 px-5 bg-white border border-gray-200 rounded-md transition-all duration-300 hover:bg-gray-50 hover:-translate-y-0.5 hover:shadow-md flex-shrink-0">
-                                <img src="https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=200&h=60"
-                                    alt="Inventity"
-                                    class="h-7 w-auto opacity-70 grayscale hover:opacity-90 hover:grayscale-0 transition-all duration-300" />
-                            </div>
-                            <div
-                                class="py-3 px-5 bg-white border border-gray-200 rounded-md transition-all duration-300 hover:bg-gray-50 hover:-translate-y-0.5 hover:shadow-md flex-shrink-0">
-                                <img src="https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=200&h=60"
-                                    alt="CICC"
-                                    class="h-7 w-auto opacity-70 grayscale hover:opacity-90 hover:grayscale-0 transition-all duration-300" />
-                            </div>
+                           
                             <!-- Duplicate for seamless loop -->
                             <div
                                 class="py-3 px-5 bg-white border border-gray-200 rounded-md transition-all duration-300 hover:bg-gray-50 hover:-translate-y-0.5 hover:shadow-md flex-shrink-0">
                                 <img src="https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=200&h=60"
                                     alt="GE"
-                                    class="h-7 w-auto opacity-70 grayscale hover:opacity-90 hover:grayscale-0 transition-all duration-300" />
-                            </div>
-                            <div
-                                class="py-3 px-5 bg-white border border-gray-200 rounded-md transition-all duration-300 hover:bg-gray-50 hover:-translate-y-0.5 hover:shadow-md flex-shrink-0">
-                                <img src="https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=200&h=60"
-                                    alt="Allianz"
-                                    class="h-7 w-auto opacity-70 grayscale hover:opacity-90 hover:grayscale-0 transition-all duration-300" />
-                            </div>
-                            <div
-                                class="py-3 px-5 bg-white border border-gray-200 rounded-md transition-all duration-300 hover:bg-gray-50 hover:-translate-y-0.5 hover:shadow-md flex-shrink-0">
-                                <img src="https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=200&h=60"
-                                    alt="CFA Institute"
-                                    class="h-7 w-auto opacity-70 grayscale hover:opacity-90 hover:grayscale-0 transition-all duration-300" />
-                            </div>
-                            <div
-                                class="py-3 px-5 bg-white border border-gray-200 rounded-md transition-all duration-300 hover:bg-gray-50 hover:-translate-y-0.5 hover:shadow-md flex-shrink-0">
-                                <img src="https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=200&h=60"
-                                    alt="London Business School"
-                                    class="h-7 w-auto opacity-70 grayscale hover:opacity-90 hover:grayscale-0 transition-all duration-300" />
-                            </div>
-                            <div
-                                class="py-3 px-5 bg-white border border-gray-200 rounded-md transition-all duration-300 hover:bg-gray-50 hover:-translate-y-0.5 hover:shadow-md flex-shrink-0">
-                                <img src="https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=200&h=60"
-                                    alt="Inventity"
-                                    class="h-7 w-auto opacity-70 grayscale hover:opacity-90 hover:grayscale-0 transition-all duration-300" />
-                            </div>
-                            <div
-                                class="py-3 px-5 bg-white border border-gray-200 rounded-md transition-all duration-300 hover:bg-gray-50 hover:-translate-y-0.5 hover:shadow-md flex-shrink-0">
-                                <img src="https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=200&h=60"
-                                    alt="CICC"
                                     class="h-7 w-auto opacity-70 grayscale hover:opacity-90 hover:grayscale-0 transition-all duration-300" />
                             </div>
                         </div>
