@@ -1,0 +1,191 @@
+/* Custom Styles for Tailwind CSS Site */
+
+/* CSS Variables for consistent theming */
+:root {
+    --color-primary: #EDE8D0;
+    --color-primary-dark: #aca47d;
+    --color-primary-light: #f4f3ec;
+    --color-dark: #2E2E2E;
+    --color-dark-light: #535353;
+    --color-accent: #1E56A0;
+    --color-accent-light: rgba(30, 86, 160, 0.3);
+    --color-cursor: #c9a802;
+    --color-white: #ffffff;
+    --color-white-alpha: rgba(255, 255, 255, 0.98);
+    --color-black-alpha: rgba(0, 0, 0, 0.1);
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Custom Cursor */
+.cursor {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background: var(--color-cursor);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.1s ease;
+}
+
+.cursor-follower {
+    position: fixed;
+    width: 32px;
+    height: 32px;
+    border: 1px solid var(--color-accent-light);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transition: all 0.15s ease;
+}
+
+@media (max-width: 768px) {
+    .cursor,
+    .cursor-follower {
+        display: none;
+    }
+
+    body {
+        cursor: auto !important;
+    }
+}
+
+/* Custom Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleInUp {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@keyframes timelineProgress {
+    to { height: 100%; }
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes philosophyShimmer {
+    0%, 100% {
+        opacity: 0.3;
+        transform: translateX(-100px);
+    }
+    50% {
+        opacity: 0.6;
+        transform: translateX(100px);
+    }
+}
+
+/* Scroll Reveal */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Contact card active/pressed state */
+.contact-card:active,
+a.contact-card:active {
+    transform: translateY(0) !important;
+    transition-duration: 0.1s;
+}
+
+/* Focus states for accessibility */
+*:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+button:focus,
+a:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .value-card,
+    .contact-card,
+    .achievement-item {
+        border-width: 2px;
+    }
+}
+
+/* Print styles */
+@media print {
+    .header,
+    .cursor,
+    .cursor-follower {
+        display: none;
+    }
+
+    section {
+        padding: 40px 0;
+        break-inside: avoid;
+    }
+}

@@ -1,0 +1,1611 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ted Pietka - Operating Partner & Strategic Advisor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.tailwindcss.com"></script>
+    {{#if fontPicker.value.fontPicker.primary}}
+    <link href="{{fontPicker.value.fontPicker.primary.url}}" rel="stylesheet">
+    {{else}}
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    {{/if}}
+    {{#if fontPicker.value.fontPicker.secondary}}
+    <link href="{{fontPicker.value.fontPicker.secondary.url}}" rel="stylesheet">
+    {{else}}
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    {{/if}}
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <style>
+        :root {
+            --font-primary: {
+                    {
+                    default fontPicker.value.fontPicker.primary.family 'Inter'
+                }
+            }
+
+            ;
+
+            --font-secondary: {
+                    {
+                    default fontPicker.value.fontPicker.secondary.family 'Manrope'
+                }
+            }
+
+            ;
+
+            --color-primary: {
+                    {
+                    default colorPicker.value.colorPicker.primary '#EDE8D0'
+                }
+            }
+
+            ;
+
+            --color-primary-dark: {
+                    {
+                    default colorPicker.value.colorPicker.primary-dark '#aca47d'
+                }
+            }
+
+            ;
+
+            --color-primary-light: {
+                    {
+                    default colorPicker.value.colorPicker.primary-light '#f4f3ec'
+                }
+            }
+
+            ;
+
+            --color-dark: {
+                    {
+                    default colorPicker.value.colorPicker.dark '#2E2E2E'
+                }
+            }
+
+            ;
+
+            --color-accent: {
+                    {
+                    default colorPicker.value.colorPicker.accent '#1E56A0'
+                }
+            }
+
+            ;
+
+            --color-cursor: {
+                    {
+                    default colorPicker.value.colorPicker.cursor '#c9a802'
+                }
+            }
+
+            ;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            color: var(--color-dark);
+            background-color: #ffffff;
+            overflow-x: hidden;
+            cursor: none;
+        }
+
+        .font-primary {
+            font-family: var(--font-primary);
+        }
+
+        .font-secondary {
+            font-family: var(--font-secondary);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Custom Cursor */
+        .cursor {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: var(--color-cursor);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s ease;
+        }
+
+        .cursor-follower {
+            position: fixed;
+            width: 32px;
+            height: 32px;
+            border: 1px solid rgba(30, 86, 160, 0.3);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9998;
+            transition: all 0.15s ease;
+        }
+
+        @media (max-width: 768px) {
+
+            .cursor,
+            .cursor-follower {
+                display: none;
+            }
+
+            body {
+                cursor: auto !important;
+            }
+        }
+
+        /* Custom Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                transform: translateY(100%);
+            }
+
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scaleInUp {
+            from {
+                opacity: 0;
+                transform: scale(0.9) translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        @keyframes timelineProgress {
+            to {
+                height: 100%;
+            }
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9) translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        @keyframes philosophyShimmer {
+
+            0%,
+            100% {
+                opacity: 0.3;
+                transform: translateX(-100px);
+            }
+
+            50% {
+                opacity: 0.6;
+                transform: translateX(100px);
+            }
+        }
+
+        /* Scroll Reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Contact card active/pressed state */
+        .contact-card:active,
+        a.contact-card:active {
+            transform: translateY(0) !important;
+            transition-duration: 0.1s;
+        }
+
+        /* Focus states for accessibility */
+        *:focus {
+            outline: 2px solid var(--color-primary);
+            outline-offset: 2px;
+        }
+
+        button:focus,
+        a:focus {
+            outline: 2px solid var(--color-primary);
+            outline-offset: 2px;
+        }
+
+        /* High contrast mode */
+        @media (prefers-contrast: high) {
+
+            .value-card,
+            .contact-card,
+            .achievement-item {
+                border-width: 2px;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+
+            .header,
+            .cursor,
+            .cursor-follower {
+                display: none;
+            }
+
+            section {
+                padding: 40px 0;
+                break-inside: avoid;
+            }
+        }
+
+        .loaded .hero-title .title-line {
+            animation-play-state: running;
+        }
+
+        .focus-visible {
+            outline: 2px solid var(--color-accent) !important;
+            outline-offset: 4px !important;
+            border-radius: 4px;
+        }
+
+        img.lazy {
+            opacity: 0;
+            transition: opacity 0.6s ease;
+        }
+
+        img.lazy.loaded {
+            opacity: 1;
+        }
+
+        .timeline-track::before {
+            height: var(--progress, 0);
+            transition: height 2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .hero-image {
+                transform: none !important;
+            }
+
+            .marquee-track {
+                animation: none !important;
+            }
+
+            .cursor,
+            .cursor-follower {
+                display: none !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            .cursor,
+            .cursor-follower {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="min-h-screen flex flex-col justify-center relative py-10 px-4 sm:px-6 md:px-10 overflow-hidden"
+            role="banner">
+            <!-- Background Image -->
+            <img src="/6/assets/ted_bg.jpg" alt="Ted Pietka Background"
+                class="absolute inset-0 w-full h-full object-cover object-[80%_center] -z-10" />
+
+            <!-- Header -->
+            <header
+                class="fixed top-0 left-0 right-0 z-[1000] py-2 sm:py-2.5 bg-transparent transition-all duration-300"
+                role="banner">
+                <nav class="max-w-7xl mx-auto flex justify-between items-center px-6 md:px-0" role="navigation"
+                    aria-label="Main navigation">
+                    <div class="flex items-center gap-3">
+                        <span
+                            class="h-[35px] leading-[35px] w-[35px] bg-[var(--)] text-center rounded-full font-secondary font-semibold text-base tracking-tight">TED</span>
+                    </div>
+                    <a href="#contact"
+                        class="relative flex items-center gap-1 px-4 py-1 bg-transparent rounded-lg font-semibold text-sm text-primary backdrop-blur-[10px] overflow-hidden transition-all duration-300 uppercase tracking-wider hover:text-white hover:border-primary hover:-translate-y-0.5 active:translate-y-0 group"
+                        aria-label="Contact Ted Pietka">
+                        <div
+                            class="absolute inset-0 bg-[#535353] opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-[1]">
+                        </div>
+                        <div class="relative z-[2] flex items-center gap-2">
+                            <i data-feather="mail"
+                                class="w-6 h-6 transition-transform duration-300 group-hover:translate-x-0.5 header-icon"></i>
+                            <!-- <span>Contact</span> -->
+                        </div>
+                    </a>
+                </nav>
+            </header>
+
+            <!-- Gradient Overlay -->
+            <div
+                class="hidden md:block absolute h-1/2 left-0 right-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent">
+            </div>
+
+            <!-- Content -->
+            <div
+                class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center pt-0 lg:pt-0 relative z-10">
+                <div class="max-w-[600px] mt-0 md:mt-[250px] lg:mt-0">
+                    <h1
+                        class="mb-8 opacity-0 animate-[fadeInUp_1s_ease_0.4s_forwards] font-secondary font-bold text-4xl sm:text-5xl md:text-7xl lg:text-8xl tracking-tight leading-tight">
+                        <span
+                            class="block text-primary animate-[slideInUp_0.8s_cubic-bezier(0.4,0,0.2,1)_0.6s_forwards] translate-y-5">Tadeusz
+                            Pietka</span>
+                    </h1>
+                    <div class="flex items-center gap-4 mb-5 opacity-0 animate-[fadeInUp_1s_ease_0.2s_forwards]">
+                        <span
+                            class="text-xs sm:text-sm font-medium uppercase tracking-[0.05em] sm:tracking-[0.1em] text-[#e5dfda] leading-relaxed">C-Level
+                            Executive | Operating Partner | Strategic Growth Expert</span>
+                    </div>
+
+                    <p class="text-base text-gray-400 mb-12 opacity-0 animate-[fadeInUp_1s_ease_0.9s_forwards]">30+
+                        years delivering growth, capital markets execution and strategic transformation across banks,
+                        financial services and industry in Europe, GCC and North America.</p>
+                    <div class="flex items-center gap-6 opacity-0 animate-[fadeInUp_1s_ease_1.1s_forwards]">
+                        <div class="flex flex-col items-center">
+                            <span class="font-secondary text-2xl font-medium text-primary leading-none">30+</span>
+                            <span class="text-xs text-gray-400 uppercase tracking-wider mt-1">Years</span>
+                        </div>
+                        <div class="w-px h-[30px] bg-white/30"></div>
+                        <div class="flex flex-col items-center">
+                            <span class="font-secondary text-2xl font-medium text-primary leading-none">60+</span>
+                            <span class="text-xs text-gray-400 uppercase tracking-wider mt-1">Firms</span>
+                        </div>
+                        <div class="w-px h-[30px] bg-gray-200"></div>
+                        <div class="flex flex-col items-center">
+                            <span class="font-secondary text-2xl font-medium text-primary leading-none">$1B+</span>
+                            <span class="text-xs text-gray-400 uppercase tracking-wider mt-1">Deals</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="py-16 sm:py-20 md:py-24 lg:py-[120px] px-4 sm:px-6 md:px-10 relative bg-white" id="about">
+            <div
+                class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[350px_1fr] gap-4 sm:gap-12 md:gap-16 items-start">
+                <div class="lg:sticky lg:top-[140px]">
+                    <h2
+                        class="font-secondary font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-none">
+                        About</h2>
+                </div>
+                <div class="max-w-[800px]">
+                    <!-- Profile Photo -->
+
+
+                    <div class="mb-10">
+                        <p class="text-lg sm:text-xl md:text-2xl font-medium text-dark mb-8 leading-snug">I build
+                            businesses, connect capital with opportunity, and help leaders navigate complexity with
+                            confidence.</p>
+                        <p class="text-lg text-gray-600 mb-6">Over the past three decades, I have partnered with family
+                            offices, boards, and global institutions to scale banks, launch fintechs, and transform
+                            investment groups across transitional and emerging markets.</p>
+                        <p class="text-lg text-gray-600 mb-6">Based in Dubai, I advise on cross-border transactions,
+                            tokenisation, and the future of finance. What drives me is simple: turning ambitious ideas
+                            into lasting impact.</p>
+                    </div>
+
+                    <div class="mb-12">
+                        <div class="relative">
+                            <div
+                                class="relative w-full md:w-96 md:h-96 rounded-2xl overflow-hidden border-4 border-white shadow-xl">
+                                <img src="https://media.licdn.com/dms/image/v2/C4E03AQFXNlTN-_hegg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516178712587?e=1762992000&v=beta&t=bk5Cm9pDqdRczsUcPXTeqgV8oNlbsuao1rILe-WpJbU"
+                                    alt="Tadeusz Pietka" class="w-full h-full object-cover" />
+                            </div>
+                            <!-- Decorative accent -->
+                            <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-primary/10 rounded-2xl -z-10"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="py-16 sm:py-20 md:py-24 lg:py-[120px] px-4 sm:px-6 md:px-10 relative bg-primaryLight"
+            id="value">
+            <div
+                class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[350px_1fr] gap-8 sm:gap-12 md:gap-16 lg:gap-20 items-start">
+                <div class="lg:sticky lg:top-[140px]">
+                    <h2
+                        class="font-secondary font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-none">
+                        Expertise</h2>
+                </div>
+                <div class="max-w-[800px]">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-8">
+                        <div class="p-6 sm:p-8 md:p-10 border border-gray-200 rounded-[20px] bg-white transition-all duration-[400ms] hover:-translate-y-2 hover:border-accent/20 relative overflow-hidden group"
+                            data-category="growth">
+                            <div
+                                class="absolute top-0 left-0 w-full h-0.5 bg-primary -translate-x-full group-hover:translate-x-0 transition-transform duration-[400ms]">
+                            </div>
+                            <div class="flex items-center gap-4 mb-6">
+                                <i data-feather="trending-up" class="w-8 h-8 text-primaryDark"></i>
+                            </div>
+                            <h3 class="text-xl md:text-2xl font-medium text-dark mb-4">Value Creation & Growth</h3>
+                            <p class="text-gray-600 leading-relaxed m-0">Driving sustainable business expansion through
+                                strategy, innovation, and disciplined execution.</p>
+                        </div>
+                        <div class="p-6 sm:p-8 md:p-10 border border-gray-200 rounded-[20px] bg-white transition-all duration-[400ms] hover:-translate-y-2 hover:border-accent/20 relative overflow-hidden group"
+                            data-category="capital">
+                            <div
+                                class="absolute top-0 left-0 w-full h-0.5 bg-primary -translate-x-full group-hover:translate-x-0 transition-transform duration-[400ms]">
+                            </div>
+                            <div class="flex items-center gap-4 mb-6">
+                                <i data-feather="dollar-sign" class="w-8 h-8 text-primaryDark"></i>
+                            </div>
+                            <h3 class="text-xl md:text-2xl font-medium text-dark mb-4">Capital Raising & Investor Access
+                            </h3>
+                            <p class="text-gray-600 leading-relaxed m-0">Connecting businesses with global investors and
+                                structuring high-value funding rounds.</p>
+                        </div>
+                        <div class="p-6 sm:p-8 md:p-10 border border-gray-200 rounded-[20px] bg-white transition-all duration-[400ms] hover:-translate-y-2 hover:border-accent/20 relative overflow-hidden group"
+                            data-category="fintech">
+                            <div
+                                class="absolute top-0 left-0 w-full h-0.5 bg-primary -translate-x-full group-hover:translate-x-0 transition-transform duration-[400ms]">
+                            </div>
+                            <div class="flex items-center gap-4 mb-6">
+                                <i data-feather="smartphone" class="w-8 h-8 text-primaryDark"></i>
+                            </div>
+                            <h3 class="text-xl md:text-2xl font-medium text-dark mb-4">Banking & FinTech Innovation</h3>
+                            <p class="text-gray-600 leading-relaxed m-0">Advising on digital transformation, emerging
+                                tech, and new financial models.</p>
+                        </div>
+                        <div class="p-6 sm:p-8 md:p-10 border border-gray-200 rounded-[20px] bg-white transition-all duration-[400ms] hover:-translate-y-2 hover:border-accent/20 relative overflow-hidden group"
+                            data-category="advisory">
+                            <div
+                                class="absolute top-0 left-0 w-full h-0.5 bg-primary -translate-x-full group-hover:translate-x-0 transition-transform duration-[400ms]">
+                            </div>
+                            <div class="flex items-center gap-4 mb-6">
+                                <i data-feather="globe" class="w-8 h-8 text-primaryDark"></i>
+                            </div>
+                            <h3 class="text-xl md:text-2xl font-medium text-dark mb-4">Cross-Border Advisory</h3>
+                            <p class="text-gray-600 leading-relaxed m-0">Supporting cross-border partnerships, M&A, and
+                                market entry strategies.</p>
+                        </div>
+                        <div class="p-6 sm:p-8 md:p-10 border border-gray-200 rounded-[20px] bg-white transition-all duration-[400ms] hover:-translate-y-2 hover:border-accent/20 relative overflow-hidden group"
+                            data-category="realestate">
+                            <div
+                                class="absolute top-0 left-0 w-full h-0.5 bg-primary -translate-x-full group-hover:translate-x-0 transition-transform duration-[400ms]">
+                            </div>
+                            <div class="flex items-center gap-4 mb-6">
+                                <i data-feather="home" class="w-8 h-8 text-primaryDark"></i>
+                            </div>
+                            <h3 class="text-xl md:text-2xl font-medium text-dark mb-4">Real Estate & Tokenisation</h3>
+                            <p class="text-gray-600 leading-relaxed m-0">Bridging traditional assets with digital
+                                innovation and global investment flows.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects/Case Studies Section -->
+        <section class="py-16 sm:py-20 md:py-24 lg:py-[120px] px-4 sm:px-6 md:px-10 relative bg-white" id="projects">
+            <div
+                class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[350px_1fr] gap-8 sm:gap-12 md:gap-16 lg:gap-20 items-start">
+                <div class="lg:sticky lg:top-[140px]">
+                    <h2
+                        class="font-secondary font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-none">
+                        Projects</h2>
+                </div>
+                <div class="max-w-[900px]">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Project Card 1 -->
+                        <div
+                            class="group relative bg-white border border-gray-200 rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+                            <div class="aspect-video overflow-hidden bg-gray-100">
+                                <img src="https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&cs=tinysrgb&w=800&h=450"
+                                    alt="Yes Finance Platform"
+                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                            </div>
+                            <div class="p-4 sm:p-5 md:p-6">
+                                <h3
+                                    class="text-xl font-semibold text-dark mb-3 group-hover:text-primaryDark transition-colors duration-300">
+                                    Yes Finance Platform</h3>
+                                <p class="text-gray-600 text-sm leading-relaxed mb-4">Built and scaled a digital lending
+                                    platform from zero to 1M+ users across CEE markets with automated credit
+                                    decisioning.</p>
+                                <a href="#"
+                                    class="inline-flex items-center gap-2 text-primaryDark font-medium text-sm hover:gap-3 transition-all duration-300">
+                                    <span>View Case Study</span>
+                                    <i data-feather="arrow-right" class="w-4 h-4"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Project Card 2 -->
+                        <div
+                            class="group relative bg-white border border-gray-200 rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+                            <div class="aspect-video overflow-hidden bg-gray-100">
+                                <img src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=800&h=450"
+                                    alt="Getin Holding IPO"
+                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                            </div>
+                            <div class="p-4 sm:p-5 md:p-6">
+                                <h3
+                                    class="text-xl font-semibold text-dark mb-3 group-hover:text-primaryDark transition-colors duration-300">
+                                    Getin Holding IPO</h3>
+                                <p class="text-gray-600 text-sm leading-relaxed mb-4">Led strategic expansion and market
+                                    positioning, scaling market cap from $200M to $3B and executing London Stock
+                                    Exchange IPO.</p>
+                                <a href="#"
+                                    class="inline-flex items-center gap-2 text-primaryDark font-medium text-sm hover:gap-3 transition-all duration-300">
+                                    <span>View Case Study</span>
+                                    <i data-feather="arrow-right" class="w-4 h-4"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Project Card 3 -->
+                        <div
+                            class="group relative bg-white border border-gray-200 rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+                            <div class="aspect-video overflow-hidden bg-gray-100">
+                                <img src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=800&h=450"
+                                    alt="GE Capital Market Entry"
+                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                            </div>
+                            <div class="p-4 sm:p-5 md:p-6">
+                                <h3
+                                    class="text-xl font-semibold text-dark mb-3 group-hover:text-primaryDark transition-colors duration-300">
+                                    GE Capital Market Entry</h3>
+                                <p class="text-gray-600 text-sm leading-relaxed mb-4">Directed market entry strategies
+                                    and operational setup for GE Capital across Central European markets.</p>
+                                <a href="#"
+                                    class="inline-flex items-center gap-2 text-primaryDark font-medium text-sm hover:gap-3 transition-all duration-300">
+                                    <span>View Case Study</span>
+                                    <i data-feather="arrow-right" class="w-4 h-4"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Project Card 4 -->
+                        <div
+                            class="group relative bg-white border border-gray-200 rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+                            <div class="aspect-video overflow-hidden bg-gray-100">
+                                <img src="https://images.pexels.com/photos/3184639/pexels-photo-3184639.jpeg?auto=compress&cs=tinysrgb&w=800&h=450"
+                                    alt="Real Estate Tokenization"
+                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                            </div>
+                            <div class="p-4 sm:p-5 md:p-6">
+                                <h3
+                                    class="text-xl font-semibold text-dark mb-3 group-hover:text-primaryDark transition-colors duration-300">
+                                    Real Estate Tokenization</h3>
+                                <p class="text-gray-600 text-sm leading-relaxed mb-4">Pioneering blockchain-based real
+                                    estate tokenization platform connecting investors with premium property
+                                    opportunities in the GCC.</p>
+                                <a href="#"
+                                    class="inline-flex items-center gap-2 text-primaryDark font-medium text-sm hover:gap-3 transition-all duration-300">
+                                    <span>View Case Study</span>
+                                    <i data-feather="arrow-right" class="w-4 h-4"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section class="py-[120px] bg-primaryLight px-10 relative" id="achievements">
+            <div class="max-w-7xl mx-auto px-10 relative z-[1]">
+                <div class="text-center mb-20">
+                    <h2
+                        class="font-secondary font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-none">
+                        Key Achievements</h2>
+                </div>
+                <!-- Static Grid for Achievements -->
+                <div class="flex flex-wrap justify-center gap-6 mb-20">
+                    <div
+                        class="flex flex-col items-center text-center p-10 bg-white border border-primary rounded-xl relative transition-all duration-[400ms] shadow-sm hover:-translate-y-1 hover:border-gray-300 group w-full sm:w-[calc(50%-1rem)] md:w-[calc(33.333%-1.333rem)] lg:w-[calc(25%-1.5rem)]">
+                        <div
+                            class="absolute top-0 left-0 right-0 h-0.5 bg-primary rounded-t-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        </div>
+                        <span class="font-secondary text-5xl font-bold text-primaryDark leading-none mb-3">5</span>
+                        <span class="text-md text-gray-600 font-medium leading-relaxed">Banks & Conglomerates
+                            Built</span>
+                    </div>
+                    <div
+                        class="flex flex-col items-center text-center p-10 bg-white border border-primary rounded-xl relative transition-all duration-[400ms] shadow-sm hover:-translate-y-1 hover:border-gray-300 group w-full sm:w-[calc(50%-1rem)] md:w-[calc(33.333%-1.333rem)] lg:w-[calc(25%-1.5rem)]">
+                        <div
+                            class="absolute top-0 left-0 right-0 h-0.5 bg-primary rounded-t-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        </div>
+                        <span class="font-secondary text-5xl font-bold text-primaryDark leading-none mb-3">$1B</span>
+                        <span class="text-md text-gray-600 font-medium leading-relaxed">IPO on London Stock
+                            Exchange</span>
+                    </div>
+                    <div
+                        class="flex flex-col items-center text-center p-10 bg-white border border-primary rounded-xl relative transition-all duration-[400ms] shadow-sm hover:-translate-y-1 hover:border-gray-300 group w-full sm:w-[calc(50%-1rem)] md:w-[calc(33.333%-1.333rem)] lg:w-[calc(25%-1.5rem)]">
+                        <div
+                            class="absolute top-0 left-0 right-0 h-0.5 bg-primary rounded-t-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        </div>
+                        <span class="font-secondary text-5xl font-bold text-primaryDark leading-none mb-3">1M+</span>
+                        <span class="text-md text-gray-600 font-medium leading-relaxed">FinTech Users Scaled</span>
+                    </div>
+                    <div
+                        class="flex flex-col items-center text-center p-10 bg-white border border-primary rounded-xl relative transition-all duration-[400ms] shadow-sm hover:-translate-y-1 hover:border-gray-300 group w-full sm:w-[calc(50%-1rem)] md:w-[calc(33.333%-1.333rem)] lg:w-[calc(25%-1.5rem)]">
+                        <div
+                            class="absolute top-0 left-0 right-0 h-0.5 bg-primary rounded-t-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        </div>
+                        <span class="font-secondary text-5xl font-bold text-primaryDark leading-none mb-3">70</span>
+                        <span class="text-md text-gray-600 font-medium leading-relaxed">Bank Branches in 7 Months</span>
+                    </div>
+                    <div
+                        class="flex flex-col items-center text-center p-10 bg-white border border-primary rounded-xl relative transition-all duration-[400ms] shadow-sm hover:-translate-y-1 hover:border-gray-300 group w-full sm:w-[calc(50%-1rem)] md:w-[calc(33.333%-1.333rem)] lg:w-[calc(25%-1.5rem)]">
+                        <div
+                            class="absolute top-0 left-0 right-0 h-0.5 bg-primary rounded-t-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        </div>
+                        <span class="font-secondary text-5xl font-bold text-primaryDark leading-none mb-3">60+</span>
+                        <span class="text-md text-gray-600 font-medium leading-relaxed">Financial Services Firms</span>
+                    </div>
+                </div>
+
+                <!-- Client Logos with Infinite Scroll -->
+                <div class="pt-20 relative border-t border-gray-200">
+                    <div class="text-sm text-gray-600 font-medium uppercase tracking-[0.1em] mb-12 text-center">Trusted
+                        By</div>
+                    <div class="overflow-hidden relative">
+                        <div
+                            class="absolute top-0 bottom-0 left-0 w-[100px] bg-gradient-to-r from-primaryLight to-transparent z-[2] pointer-events-none">
+                        </div>
+                        <div
+                            class="absolute top-0 bottom-0 right-0 w-[100px] bg-gradient-to-l from-primaryLight to-transparent z-[2] pointer-events-none">
+                        </div>
+                        <div class="flex gap-12 animate-[marquee_30s_linear_infinite] w-max" id="partnersTrack">
+                            <div
+                                class="py-3 px-5 bg-white border border-gray-200 rounded-md transition-all duration-300 hover:bg-gray-50 hover:-translate-y-0.5 hover:shadow-md flex-shrink-0">
+                                <img src="https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=200&h=60"
+                                    alt="GE"
+                                    class="h-7 w-auto opacity-70 grayscale hover:opacity-90 hover:grayscale-0 transition-all duration-300" />
+                            </div>
+                            <div
+                                class="py-3 px-5 bg-white border border-gray-200 rounded-md transition-all duration-300 hover:bg-gray-50 hover:-translate-y-0.5 hover:shadow-md flex-shrink-0">
+                                <img src="https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=200&h=60"
+                                    alt="Allianz"
+                                    class="h-7 w-auto opacity-70 grayscale hover:opacity-90 hover:grayscale-0 transition-all duration-300" />
+                            </div>
+                            <div
+                                class="py-3 px-5 bg-white border border-gray-200 rounded-md transition-all duration-300 hover:bg-gray-50 hover:-translate-y-0.5 hover:shadow-md flex-shrink-0">
+                                <img src="https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=200&h=60"
+                                    alt="CFA Institute"
+                                    class="h-7 w-auto opacity-70 grayscale hover:opacity-90 hover:grayscale-0 transition-all duration-300" />
+                            </div>
+                            <div
+                                class="py-3 px-5 bg-white border border-gray-200 rounded-md transition-all duration-300 hover:bg-gray-50 hover:-translate-y-0.5 hover:shadow-md flex-shrink-0">
+                                <img src="https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=200&h=60"
+                                    alt="London Business School"
+                                    class="h-7 w-auto opacity-70 grayscale hover:opacity-90 hover:grayscale-0 transition-all duration-300" />
+                            </div>
+                            <div
+                                class="py-3 px-5 bg-white border border-gray-200 rounded-md transition-all duration-300 hover:bg-gray-50 hover:-translate-y-0.5 hover:shadow-md flex-shrink-0">
+                                <img src="https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=200&h=60"
+                                    alt="Inventity"
+                                    class="h-7 w-auto opacity-70 grayscale hover:opacity-90 hover:grayscale-0 transition-all duration-300" />
+                            </div>
+                            <div
+                                class="py-3 px-5 bg-white border border-gray-200 rounded-md transition-all duration-300 hover:bg-gray-50 hover:-translate-y-0.5 hover:shadow-md flex-shrink-0">
+                                <img src="https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=200&h=60"
+                                    alt="CICC"
+                                    class="h-7 w-auto opacity-70 grayscale hover:opacity-90 hover:grayscale-0 transition-all duration-300" />
+                            </div>
+                            <!-- Duplicate for seamless loop -->
+                            <div
+                                class="py-3 px-5 bg-white border border-gray-200 rounded-md transition-all duration-300 hover:bg-gray-50 hover:-translate-y-0.5 hover:shadow-md flex-shrink-0">
+                                <img src="https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=200&h=60"
+                                    alt="GE"
+                                    class="h-7 w-auto opacity-70 grayscale hover:opacity-90 hover:grayscale-0 transition-all duration-300" />
+                            </div>
+                            <div
+                                class="py-3 px-5 bg-white border border-gray-200 rounded-md transition-all duration-300 hover:bg-gray-50 hover:-translate-y-0.5 hover:shadow-md flex-shrink-0">
+                                <img src="https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=200&h=60"
+                                    alt="Allianz"
+                                    class="h-7 w-auto opacity-70 grayscale hover:opacity-90 hover:grayscale-0 transition-all duration-300" />
+                            </div>
+                            <div
+                                class="py-3 px-5 bg-white border border-gray-200 rounded-md transition-all duration-300 hover:bg-gray-50 hover:-translate-y-0.5 hover:shadow-md flex-shrink-0">
+                                <img src="https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=200&h=60"
+                                    alt="CFA Institute"
+                                    class="h-7 w-auto opacity-70 grayscale hover:opacity-90 hover:grayscale-0 transition-all duration-300" />
+                            </div>
+                            <div
+                                class="py-3 px-5 bg-white border border-gray-200 rounded-md transition-all duration-300 hover:bg-gray-50 hover:-translate-y-0.5 hover:shadow-md flex-shrink-0">
+                                <img src="https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=200&h=60"
+                                    alt="London Business School"
+                                    class="h-7 w-auto opacity-70 grayscale hover:opacity-90 hover:grayscale-0 transition-all duration-300" />
+                            </div>
+                            <div
+                                class="py-3 px-5 bg-white border border-gray-200 rounded-md transition-all duration-300 hover:bg-gray-50 hover:-translate-y-0.5 hover:shadow-md flex-shrink-0">
+                                <img src="https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=200&h=60"
+                                    alt="Inventity"
+                                    class="h-7 w-auto opacity-70 grayscale hover:opacity-90 hover:grayscale-0 transition-all duration-300" />
+                            </div>
+                            <div
+                                class="py-3 px-5 bg-white border border-gray-200 rounded-md transition-all duration-300 hover:bg-gray-50 hover:-translate-y-0.5 hover:shadow-md flex-shrink-0">
+                                <img src="https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=200&h=60"
+                                    alt="CICC"
+                                    class="h-7 w-auto opacity-70 grayscale hover:opacity-90 hover:grayscale-0 transition-all duration-300" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section class="py-16 sm:py-20 md:py-24 lg:py-[120px] px-4 sm:px-6 md:px-10 relative bg-white" id="timeline">
+            <div
+                class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[350px_1fr] gap-8 sm:gap-12 md:gap-16 lg:gap-20 items-start">
+                <div class="lg:sticky lg:top-[140px]">
+                    <h2
+                        class="font-secondary font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-none">
+                        Journey</h2>
+                </div>
+                <div class="max-w-[800px]">
+                    <div class="relative px-10 md:px-20">
+                        <div class="absolute left-[5px] md:left-[46px] top-0 bottom-0 w-0.5 bg-gray-300">
+                            <div
+                                class="absolute top-0 left-0 w-full h-0 bg-primary animate-[timelineProgress_2s_ease-out_0.5s_forwards]">
+                            </div>
+                        </div>
+                        <div
+                            class="relative mb-10 py-4 px-4 bg-white rounded-lg transition-all duration-[400ms] hover:translate-x-1 hover:border-primary">
+                            <div
+                                class="absolute -left-10 top-1/2 -translate-y-1/2 w-3 h-3 bg-white border-[3px] border-primary rounded-full shadow-[0_0_0_3px_rgba(255,255,255,1)] transition-all duration-300 hover:scale-110">
+                            </div>
+                            <div
+                                class="font-secondary text-xs font-semibold text-primaryDark mb-2 uppercase tracking-wider">
+                                2025–Present</div>
+                            <h3 class="text-xl font-semibold text-dark mb-3">CICC Dubai</h3>
+                            <p class="text-gray-600 m-0 leading-relaxed text-sm font-medium">Advisory Board Member</p>
+                        </div>
+                        <div
+                            class="relative mb-10 py-4 px-4 bg-white rounded-lg transition-all duration-[400ms] hover:translate-x-1 hover:border-primary">
+                            <div
+                                class="absolute -left-10 top-1/2 -translate-y-1/2 w-3 h-3 bg-white border-[3px] border-primary rounded-full shadow-[0_0_0_3px_rgba(255,255,255,1)] transition-all duration-300 hover:scale-110">
+                            </div>
+                            <div
+                                class="font-secondary text-xs font-semibold text-primaryDark mb-2 uppercase tracking-wider">
+                                2021–Present</div>
+                            <h3 class="text-xl font-semibold text-dark mb-3">Inventity Partners</h3>
+                            <p class="text-gray-600 m-0 leading-relaxed text-sm font-medium">Co-Founder & Managing
+                                Director</p>
+                        </div>
+                        <div
+                            class="relative mb-10 py-4 px-4 bg-white rounded-lg transition-all duration-[400ms] hover:translate-x-1 hover:border-primary">
+                            <div
+                                class="absolute -left-10 top-1/2 -translate-y-1/2 w-3 h-3 bg-white border-[3px] border-primary rounded-full shadow-[0_0_0_3px_rgba(255,255,255,1)] transition-all duration-300 hover:scale-110">
+                            </div>
+                            <div
+                                class="font-secondary text-xs font-semibold text-primaryDark mb-2 uppercase tracking-wider">
+                                2015–2020</div>
+                            <h3 class="text-xl font-semibold text-dark mb-3">Yes Finance</h3>
+                            <p class="text-gray-600 m-0 leading-relaxed text-sm font-medium">Co-founder, scaled to 1M+
+                                users</p>
+                        </div>
+                        <div
+                            class="timeline-item relative mb-10 py-4 px-4 bg-white rounded-lg transition-all duration-[400ms] hover:translate-x-1 hover:border-primary hidden">
+                            <div
+                                class="absolute -left-10 top-1/2 -translate-y-1/2 w-3 h-3 bg-white border-[3px] border-primary rounded-full shadow-[0_0_0_3px_rgba(255,255,255,1)] transition-all duration-300 hover:scale-110">
+                            </div>
+                            <div
+                                class="font-secondary text-xs font-semibold text-primaryDark mb-2 uppercase tracking-wider">
+                                2004–2006</div>
+                            <h3 class="text-xl font-semibold text-dark mb-3">Getin Holding</h3>
+                            <p class="text-gray-600 m-0 leading-relaxed text-sm font-medium">Scaled market cap $200M →
+                                $3B</p>
+                        </div>
+                        <div
+                            class="timeline-item relative mb-10 py-4 px-4 bg-white rounded-lg transition-all duration-[400ms] hover:translate-x-1 hover:border-primary hidden">
+                            <div
+                                class="absolute -left-10 top-1/2 -translate-y-1/2 w-3 h-3 bg-white border-[3px] border-primary rounded-full shadow-[0_0_0_3px_rgba(255,255,255,1)] transition-all duration-300 hover:scale-110">
+                            </div>
+                            <div
+                                class="font-secondary text-xs font-semibold text-primaryDark mb-2 uppercase tracking-wider">
+                                2003–2004</div>
+                            <h3 class="text-xl font-semibold text-dark mb-3">GE Capital</h3>
+                            <p class="text-gray-600 m-0 leading-relaxed text-sm font-medium">COO/CCO, market entry
+                                strategies</p>
+                        </div>
+                    </div>
+                    <div class="relative md:px-10 mt-8">
+                        <button id="viewMoreBtn"
+                            class="inline-flex items-center gap-2 px-6 py-3 text-dark rounded-lg font-medium text-sm uppercase tracking-wider transition-all duration-300 hover:-translate-y-0.5">
+                            <span id="viewMoreText">View More</span>
+                            <i data-feather="chevron-down" class="w-4 h-4 transition-transform duration-300"
+                                id="viewMoreIcon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section class="py-16 sm:py-20 md:py-24 lg:py-[120px] px-4 sm:px-6 md:px-10 relative bg-primaryLight"
+            id="education">
+            <div
+                class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[350px_1fr] gap-8 sm:gap-12 md:gap-16 lg:gap-20 items-start">
+                <div class="lg:sticky lg:top-[140px]">
+                    <h2
+                        class="font-secondary font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-none">
+                        Education</h2>
+                </div>
+                <div class="max-w-[800px]">
+                    <div class="space-y-6">
+                        <div
+                            class="group relative overflow-hidden bg-white rounded-xl border border-gray-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            </div>
+                            <div class="relative p-4 md:p-6">
+                                <div class="flex items-start justify-between gap-4">
+                                    <div class="flex-1">
+                                        <h3
+                                            class="text-xl font-semibold text-dark mb-2 group-hover:text-primaryDark transition-colors duration-300">
+                                            MBA in Finance</h3>
+                                        <div class="flex items-center gap-2 text-gray-600">
+                                            <i data-feather="map-pin" class="w-4 h-4"></i>
+                                            <span class="text-base font-medium">London Business School</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex-shrink-0 px-4 py-2 bg-primary/10 rounded-lg">
+                                        <span class="font-secondary text-sm font-bold text-primaryDark">1995</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-primaryDark to-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300">
+                            </div>
+                        </div>
+
+                        <div
+                            class="group relative overflow-hidden bg-white rounded-xl border border-gray-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            </div>
+                            <div class="relative p-4 md:p-6">
+                                <div class="flex items-start justify-between gap-4">
+                                    <div class="flex-1">
+                                        <h3
+                                            class="text-xl font-semibold text-dark mb-2 group-hover:text-primaryDark transition-colors duration-300">
+                                            BA in Economics</h3>
+                                        <div class="flex items-center gap-2 text-gray-600">
+                                            <i data-feather="map-pin" class="w-4 h-4"></i>
+                                            <span class="text-base font-medium">University of Warsaw</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex-shrink-0 px-4 py-2 bg-primary/10 rounded-lg">
+                                        <span class="font-secondary text-sm font-bold text-primaryDark">1992</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-primaryDark to-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300">
+                            </div>
+                        </div>
+
+                        <div
+                            class="group relative overflow-hidden bg-white rounded-xl border border-gray-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            </div>
+                            <div class="relative p-4 md:p-6">
+                                <div class="flex items-start justify-between gap-4">
+                                    <div class="flex-1">
+                                        <h3
+                                            class="text-xl font-semibold text-dark mb-2 group-hover:text-primaryDark transition-colors duration-300">
+                                            Chartered Financial Analyst (CFA)</h3>
+                                        <div class="flex items-center gap-2 text-gray-600">
+                                            <i data-feather="award" class="w-4 h-4"></i>
+                                            <span class="text-base font-medium">CFA Institute</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex-shrink-0 px-4 py-2 bg-primary/10 rounded-lg">
+                                        <span class="font-secondary text-sm font-bold text-primaryDark">Certified</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-primaryDark to-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Testimonials Section -->
+        <section class="py-16 sm:py-20 md:py-24 lg:py-[120px] px-4 sm:px-6 md:px-10 relative bg-white"
+            id="testimonials">
+            <div
+                class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[350px_1fr] gap-8 sm:gap-12 md:gap-16 lg:gap-20 items-start">
+                <div class="lg:sticky lg:top-[140px]">
+                    <h2
+                        class="font-secondary font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-none">
+                        Testimonials</h2>
+                </div>
+                <div class="max-w-[900px]">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Testimonial 1 -->
+                        <div
+                            class="group relative bg-white p-5 sm:p-6 md:p-8 rounded-xl border border-gray-200 transition-all duration-300 hover:border-primary hover:shadow-lg">
+                            <div class="absolute top-6 left-6 text-primary/20 text-6xl font-serif leading-none">"</div>
+                            <div class="relative z-10">
+                                <p class="text-gray-700 text-base leading-relaxed mb-6 italic">Ted's strategic vision
+                                    and operational expertise were instrumental in scaling our platform. His ability to
+                                    navigate complex markets and build high-performing teams is exceptional.</p>
+                                <div class="flex items-center gap-4 pt-4 border-t border-gray-100">
+                                    <div
+                                        class="w-12 h-12 rounded-full bg-primary/50 flex items-center justify-center flex-shrink-0">
+                                        <span class="font-secondary font-semibold text-primaryDark text-sm">JK</span>
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold text-dark text-sm">John Kowalski</div>
+                                        <div class="text-gray-500 text-xs">CEO, Tech Ventures Ltd</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 2 -->
+                        <div
+                            class="group relative bg-white p-5 sm:p-6 md:p-8 rounded-xl border border-gray-200 transition-all duration-300 hover:border-primary hover:shadow-lg">
+                            <div class="absolute top-6 left-6 text-primary/20 text-6xl font-serif leading-none">"</div>
+                            <div class="relative z-10">
+                                <p class="text-gray-700 text-base leading-relaxed mb-6 italic">Working with Ted has been
+                                    transformative for our business. His deep understanding of financial markets and
+                                    capital raising strategies helped us secure critical funding at the right valuation.
+                                </p>
+                                <div class="flex items-center gap-4 pt-4 border-t border-gray-100">
+                                    <div
+                                        class="w-12 h-12 rounded-full bg-primary/50 flex items-center justify-center flex-shrink-0">
+                                        <span class="font-secondary font-semibold text-primaryDark text-sm">SA</span>
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold text-dark text-sm">Sarah Anderson</div>
+                                        <div class="text-gray-500 text-xs">Managing Partner, Capital Growth Fund</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 3 -->
+                        <div
+                            class="group relative bg-white p-5 sm:p-6 md:p-8 rounded-xl border border-gray-200 transition-all duration-300 hover:border-primary hover:shadow-lg">
+                            <div class="absolute top-6 left-6 text-primary/20 text-6xl font-serif leading-none">"</div>
+                            <div class="relative z-10">
+                                <p class="text-gray-700 text-base leading-relaxed mb-6 italic">Ted brings a rare
+                                    combination of strategic thinking and hands-on execution. His guidance during our
+                                    expansion into European markets was invaluable and resulted in exceeding our growth
+                                    targets.</p>
+                                <div class="flex items-center gap-4 pt-4 border-t border-gray-100">
+                                    <div
+                                        class="w-12 h-12 rounded-full bg-primary/50 flex items-center justify-center flex-shrink-0">
+                                        <span class="font-secondary font-semibold text-primaryDark text-sm">MR</span>
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold text-dark text-sm">Michael Rodriguez</div>
+                                        <div class="text-gray-500 text-xs">Board Member, FinTech Solutions</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 4 -->
+                        <div
+                            class="group relative bg-white p-5 sm:p-6 md:p-8 rounded-xl border border-gray-200 transition-all duration-300 hover:border-primary hover:shadow-lg">
+                            <div class="absolute top-6 left-6 text-primary/20 text-6xl font-serif leading-none">"</div>
+                            <div class="relative z-10">
+                                <p class="text-gray-700 text-base leading-relaxed mb-6 italic">A true professional with
+                                    exceptional network and deal-making capabilities. Ted's advisory on our real estate
+                                    tokenization project helped us navigate regulatory challenges and attract
+                                    institutional investors.</p>
+                                <div class="flex items-center gap-4 pt-4 border-t border-gray-100">
+                                    <div
+                                        class="w-12 h-12 rounded-full bg-primary/50 flex items-center justify-center flex-shrink-0">
+                                        <span class="font-secondary font-semibold text-primaryDark text-sm">LC</span>
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold text-dark text-sm">Lisa Chen</div>
+                                        <div class="text-gray-500 text-xs">Founder, PropTech Innovations</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="py-[120px] bg-primaryLight px-10 relative" id="contact">
+            <div
+                class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[350px_1fr] gap-8 sm:gap-12 md:gap-16 lg:gap-20 items-start">
+                <div class="lg:sticky lg:top-[140px]">
+                    <div class="font-secondary text-base font-medium text-primary mb-4 opacity-70">05</div>
+                    <h2
+                        class="font-secondary font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-none">
+                        Connect</h2>
+                </div>
+                <div class="max-w-[800px]">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Email Card -->
+                        <a href="mailto:tedpietka@pm.me"
+                            class="contact-card flex items-center gap-4 sm:gap-5 md:gap-6 p-5 sm:p-6 md:p-8 border border-gray-200 rounded-[20px] bg-white transition-all duration-300 hover:-translate-y-1 hover:border-accent/20 hover:shadow-lg cursor-pointer no-underline group">
+                            <div
+                                class="w-12 h-12 border border-gray-200 rounded-full flex items-center justify-center flex-shrink-0 transition-colors duration-300 group-hover:border-primary group-hover:bg-primary/5">
+                                <i data-feather="mail"
+                                    class="w-5 h-5 text-primaryDark transition-colors duration-300 group-hover:text-primary"></i>
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <span class="text-sm text-gray-600 font-medium">Email</span>
+                                <span
+                                    class="font-medium text-dark group-hover:text-primary transition-colors duration-300">tedpietka@pm.me</span>
+                            </div>
+                        </a>
+
+                        <!-- LinkedIn Card -->
+                        <a href="https://www.linkedin.com/in/tedpietka" target="_blank" rel="noopener noreferrer"
+                            class="contact-card flex items-center gap-4 sm:gap-5 md:gap-6 p-5 sm:p-6 md:p-8 border border-gray-200 rounded-[20px] bg-white transition-all duration-300 hover:-translate-y-1 hover:border-accent/20 hover:shadow-lg cursor-pointer no-underline group">
+                            <div
+                                class="w-12 h-12 border border-gray-200 rounded-full flex items-center justify-center flex-shrink-0 transition-colors duration-300 group-hover:border-primary group-hover:bg-primary/5">
+                                <i data-feather="linkedin"
+                                    class="w-5 h-5 text-primaryDark transition-colors duration-300 group-hover:text-primary"></i>
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <span class="text-sm text-gray-600 font-medium">LinkedIn</span>
+                                <span
+                                    class="font-medium text-dark group-hover:text-primary transition-colors duration-300">Connect</span>
+                            </div>
+                        </a>
+
+                        <!-- WhatsApp Card -->
+                        <div class="contact-card flex items-center gap-4 sm:gap-5 md:gap-6 p-5 sm:p-6 md:p-8 border border-gray-200 rounded-[20px] bg-white transition-all duration-300 hover:-translate-y-1 hover:border-accent/20 hover:shadow-lg cursor-pointer group"
+                            data-contact-type="whatsapp" id="whatsappCard">
+                            <div
+                                class="w-12 h-12 border border-gray-200 rounded-full flex items-center justify-center flex-shrink-0 transition-colors duration-300 group-hover:border-primary group-hover:bg-primary/5">
+                                <i data-feather="message-circle"
+                                    class="w-5 h-5 text-primaryDark transition-colors duration-300 group-hover:text-primary"></i>
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <span class="text-sm text-gray-600 font-medium">WhatsApp</span>
+                                <span
+                                    class="font-medium text-dark group-hover:text-primary transition-colors duration-300">Connect</span>
+                            </div>
+                        </div>
+
+                        <!-- Phone Card -->
+                        <a href="tel:+971501234567"
+                            class="contact-card flex items-center gap-4 sm:gap-5 md:gap-6 p-5 sm:p-6 md:p-8 border border-gray-200 rounded-[20px] bg-white transition-all duration-300 hover:-translate-y-1 hover:border-accent/20 hover:shadow-lg cursor-pointer no-underline group">
+                            <div
+                                class="w-12 h-12 border border-gray-200 rounded-full flex items-center justify-center flex-shrink-0 transition-colors duration-300 group-hover:border-primary group-hover:bg-primary/5">
+                                <i data-feather="phone"
+                                    class="w-5 h-5 text-primaryDark transition-colors duration-300 group-hover:text-primary"></i>
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <span class="text-sm text-gray-600 font-medium">Phone</span>
+                                <span
+                                    class="font-medium text-dark group-hover:text-primary transition-colors duration-300">+971
+                                    50 123 4567</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 md:py-7 px-4 sm:px-6 md:px-10" role="contentinfo">
+        <div
+            class="max-w-7xl mx-auto flex flex-col md:flex-row justify-center items-center gap-4 text-center md:text-left">
+            <div class="text-sm text-gray-400">© 2025 Ted Pietka. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            'use strict';
+
+            // Check for reduced motion preference
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            // Get CSS variables for consistent theming
+            const getColor = (colorName) => {
+                return getComputedStyle(document.documentElement).getPropertyValue(`--color-${colorName}`).trim();
+            };
+
+            // Custom cursor functionality
+            function initCustomCursor() {
+                if (window.innerWidth <= 768 || prefersReducedMotion) return;
+
+                const cursor = document.querySelector('.cursor');
+                const cursorFollower = document.querySelector('.cursor-follower');
+
+                if (!cursor || !cursorFollower) return;
+
+                let mouseX = 0;
+                let mouseY = 0;
+                let cursorX = 0;
+                let cursorY = 0;
+                let followerX = 0;
+                let followerY = 0;
+
+                // Update mouse position
+                document.addEventListener('mousemove', (e) => {
+                    mouseX = e.clientX;
+                    mouseY = e.clientY;
+                });
+
+                // Animate cursors
+                function animateCursor() {
+                    // Cursor follows mouse directly
+                    cursorX += (mouseX - cursorX) * 0.9;
+                    cursorY += (mouseY - cursorY) * 0.9;
+
+                    // Follower has more lag
+                    followerX += (mouseX - followerX) * 0.1;
+                    followerY += (mouseY - followerY) * 0.1;
+
+                    cursor.style.transform = `translate(${cursorX - 4}px, ${cursorY - 4}px)`;
+                    cursorFollower.style.transform = `translate(${followerX - 16}px, ${followerY - 16}px)`;
+
+                    requestAnimationFrame(animateCursor);
+                }
+
+                animateCursor();
+
+                // Cursor interactions
+                const interactiveElements = document.querySelectorAll('a, button, .value-card, .contact-card, .achievement-item');
+
+                interactiveElements.forEach(el => {
+                    el.addEventListener('mouseenter', () => {
+                        cursor.style.transform += ' scale(1.5)';
+                        cursorFollower.style.transform += ' scale(1.5)';
+                        cursorFollower.style.borderColor = getColor('accent');
+                    });
+
+                    el.addEventListener('mouseleave', () => {
+                        cursor.style.transform = cursor.style.transform.replace(' scale(1.5)', '');
+                        cursorFollower.style.transform = cursorFollower.style.transform.replace(' scale(1.5)', '');
+                        cursorFollower.style.borderColor = rgba(30, 86, 160, 0.3);
+                    });
+                });
+            }
+
+            // Initialize Feather Icons
+            function initFeatherIcons() {
+                if (typeof feather !== 'undefined') {
+                    feather.replace();
+                }
+            }
+
+            // Intersection Observer for scroll reveals
+            function initScrollReveal() {
+                if (prefersReducedMotion) return;
+
+                const revealElements = document.querySelectorAll('.reveal, .section-content, .value-card, .contact-card, .timeline-item');
+
+                if (!revealElements.length) return;
+
+                const revealObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                        }
+                    });
+                }, {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -100px 0px'
+                });
+
+                revealElements.forEach(el => {
+                    el.classList.add('reveal');
+                    revealObserver.observe(el);
+                });
+            }
+
+
+            // Smooth scrolling for anchor links
+            function initSmoothScrolling() {
+                const anchorLinks = document.querySelectorAll('a[href^="#"]');
+
+                anchorLinks.forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+
+                        const targetId = link.getAttribute('href').substring(1);
+                        const targetElement = document.getElementById(targetId);
+
+                        if (targetElement) {
+                            const header = document.querySelector('header[role="banner"]');
+                            const headerHeight = header ? header.offsetHeight : 60;
+                            const targetPosition = targetElement.offsetTop - headerHeight - 40;
+
+                            if (prefersReducedMotion) {
+                                window.scrollTo(0, targetPosition);
+                            } else {
+                                window.scrollTo({
+                                    top: targetPosition,
+                                    behavior: 'smooth'
+                                });
+                            }
+                        }
+                    });
+                });
+            }
+
+            // Header scroll effects
+            function initHeaderEffects() {
+                const header = document.querySelector('header[role="banner"]');
+                const headerIcon = document.querySelector('.header-icon');
+                if (!header) return;
+
+                let lastScrollY = 0;
+                let ticking = false;
+
+                function updateHeader() {
+                    const scrollY = window.pageYOffset;
+
+                    if (scrollY > 50) {
+                        header.style.background = rgba(255, 255, 255, 0.98);
+                        header.style.backdropFilter = 'blur(10px)';
+                        header.style.boxShadow = `0 1px 3px rgba(0, 0, 0, 0.1)`;
+
+                        // Change icon color to dark when header is white
+                        if (headerIcon) {
+                            headerIcon.style.color = getColor('dark');
+                        }
+                    } else {
+                        header.style.background = 'transparent';
+                        header.style.backdropFilter = 'blur(0)';
+                        header.style.boxShadow = 'none';
+
+                        // Reset icon color to primary when header is transparent
+                        if (headerIcon) {
+                            headerIcon.style.color = getColor('primary');
+                        }
+                    }
+
+                    lastScrollY = scrollY;
+                    ticking = false;
+                }
+
+                function requestTick() {
+                    if (!ticking) {
+                        requestAnimationFrame(updateHeader);
+                        ticking = true;
+                    }
+                }
+
+                window.addEventListener('scroll', requestTick, { passive: true });
+            }
+
+            // Marquee pause on hover
+            function initMarqueeControls() {
+                const partnersTrack = document.getElementById('partnersTrack');
+                if (!partnersTrack) return;
+
+                partnersTrack.addEventListener('mouseenter', () => {
+                    partnersTrack.style.animationPlayState = 'paused';
+                });
+
+                partnersTrack.addEventListener('mouseleave', () => {
+                    partnersTrack.style.animationPlayState = 'running';
+                });
+            }
+
+            // Enhanced focus management
+            function initFocusManagement() {
+                let hadKeyboardEvent = true;
+                const keyboardKeys = [
+                    'Tab', 'Enter', ' ', 'Escape', 'ArrowUp', 'ArrowDown',
+                    'ArrowLeft', 'ArrowRight', 'Home', 'End', 'PageUp', 'PageDown'
+                ];
+
+                function pointerEvent() {
+                    hadKeyboardEvent = false;
+                }
+
+                function keyboardEvent(e) {
+                    if (keyboardKeys.includes(e.key)) {
+                        hadKeyboardEvent = true;
+                    }
+                }
+
+                document.addEventListener('keydown', keyboardEvent, true);
+                document.addEventListener('mousedown', pointerEvent, true);
+                document.addEventListener('pointerdown', pointerEvent, true);
+                document.addEventListener('touchstart', pointerEvent, true);
+
+                document.addEventListener('focusin', (e) => {
+                    if (hadKeyboardEvent) {
+                        e.target.classList.add('focus-visible');
+                    }
+                });
+
+                document.addEventListener('focusout', (e) => {
+                    e.target.classList.remove('focus-visible');
+                });
+            }
+
+            // Performance optimization: Debounce function
+            function debounce(func, wait, immediate) {
+                let timeout;
+                return function executedFunction() {
+                    const context = this;
+                    const args = arguments;
+
+                    const later = function () {
+                        timeout = null;
+                        if (!immediate) func.apply(context, args);
+                    };
+
+                    const callNow = immediate && !timeout;
+                    clearTimeout(timeout);
+                    timeout = setTimeout(later, wait);
+
+                    if (callNow) func.apply(context, args);
+                };
+            }
+
+            // Error handling for external resources
+            function handleResourceErrors() {
+                if (typeof feather === 'undefined') {
+                    console.warn('Feather Icons not loaded. Icons may not display correctly.');
+                }
+
+                document.addEventListener('error', (e) => {
+                    if (e.target.tagName === 'IMG') {
+                        console.warn('Image failed to load:', e.target.src);
+                        e.target.style.opacity = '0.5';
+                        e.target.alt = 'Image unavailable';
+                    }
+                }, true);
+            }
+
+            // Accessibility enhancements
+            function initAccessibility() {
+                // Add keyboard navigation for interactive elements
+                const interactiveElements = document.querySelectorAll('.value-card, .contact-card, .achievement-item');
+
+                interactiveElements.forEach(element => {
+                    const hasLinks = element.querySelector('a');
+                    if (hasLinks && !element.hasAttribute('tabindex')) {
+                        element.setAttribute('tabindex', '0');
+                    }
+
+                    // Add keyboard interaction
+                    element.addEventListener('keydown', (e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            const link = element.querySelector('a');
+                            if (link) {
+                                e.preventDefault();
+                                link.click();
+                            }
+                        }
+                    });
+                });
+
+                // Enhance button accessibility
+                const buttons = document.querySelectorAll('button, .contact-button');
+                buttons.forEach(button => {
+                    if (!button.hasAttribute('aria-label') && !button.textContent.trim()) {
+                        button.setAttribute('aria-label', 'Interactive element');
+                    }
+                });
+
+            }
+
+            // Initialize everything when DOM is ready
+            function init() {
+                // Core functionality
+                initFeatherIcons();
+                initScrollReveal();
+                initSmoothScrolling();
+                initHeaderEffects();
+                initFocusManagement();
+                initAccessibility();
+                initMarqueeControls();
+
+                // Enhanced features (only if not reduced motion)
+                if (!prefersReducedMotion) {
+                    initCustomCursor();
+                }
+                handleResourceErrors();
+
+                // Mark page as loaded
+                document.body.classList.add('loaded');
+            }
+
+            // Wait for DOM and external resources
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                init();
+            }
+
+            // Re-initialize Feather icons when they load
+            window.addEventListener('load', () => {
+                if (typeof feather !== 'undefined') {
+                    feather.replace();
+                }
+            });
+
+            // Handle resize events
+            const debouncedResize = debounce(() => {
+                // Reinitialize cursor on resize
+                if (window.innerWidth > 768 && !prefersReducedMotion) {
+                    initCustomCursor();
+                }
+            }, 250);
+
+            window.addEventListener('resize', debouncedResize, { passive: true });
+
+            // WhatsApp direct link functionality
+            function initWhatsAppLink() {
+                const whatsappCard = document.getElementById('whatsappCard');
+
+                if (!whatsappCard) return;
+
+                // WhatsApp number (replace with actual number)
+                const whatsappNumber = '971501234567'; // UAE format
+                const whatsappMessage = 'Hello Ted, I would like to connect with you.';
+                const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
+                // Open WhatsApp directly when clicking the entire card
+                whatsappCard.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    window.open(whatsappUrl, '_blank');
+                });
+
+                // Add keyboard accessibility
+                whatsappCard.setAttribute('tabindex', '0');
+                whatsappCard.setAttribute('role', 'link');
+                whatsappCard.setAttribute('aria-label', 'Connect on WhatsApp');
+
+                whatsappCard.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        window.open(whatsappUrl, '_blank');
+                    }
+                });
+            }
+
+            // Initialize WhatsApp link
+            initWhatsAppLink();
+
+            // Timeline View More functionality
+            function initTimelineViewMore() {
+                const viewMoreBtn = document.getElementById('viewMoreBtn');
+                const viewMoreText = document.getElementById('viewMoreText');
+                const viewMoreIcon = document.getElementById('viewMoreIcon');
+                const timelineItems = document.querySelectorAll('.timeline-item');
+
+                if (!viewMoreBtn || timelineItems.length === 0) return;
+
+                let isExpanded = false;
+
+                viewMoreBtn.addEventListener('click', function () {
+                    isExpanded = !isExpanded;
+
+                    timelineItems.forEach((item, index) => {
+                        if (isExpanded) {
+                            // Show items with slide down animation
+                            item.style.maxHeight = '0';
+                            item.style.opacity = '0';
+                            item.style.overflow = 'hidden';
+                            item.style.transition = 'max-height 0.5s ease, opacity 0.5s ease, margin 0.5s ease';
+                            item.classList.remove('hidden');
+
+                            // Trigger reflow
+                            void item.offsetHeight;
+
+                            // Animate in with stagger
+                            setTimeout(() => {
+                                item.style.maxHeight = '500px';
+                                item.style.opacity = '1';
+                            }, index * 100);
+                        } else {
+                            // Hide items with slide up animation
+                            item.style.maxHeight = '0';
+                            item.style.opacity = '0';
+                            item.style.marginBottom = '0';
+
+                            setTimeout(() => {
+                                item.classList.add('hidden');
+                                item.style.maxHeight = '';
+                                item.style.opacity = '';
+                                item.style.overflow = '';
+                                item.style.marginBottom = '';
+                            }, 500);
+                        }
+                    });
+
+                    // Update button text and icon
+                    viewMoreText.textContent = isExpanded ? 'View Less' : 'View More';
+                    viewMoreIcon.style.transform = isExpanded ? 'rotate(180deg)' : 'rotate(0deg)';
+
+                    // Re-initialize feather icons for the chevron
+                    if (typeof feather !== 'undefined') {
+                        feather.replace();
+                    }
+                });
+            }
+
+            // Initialize timeline view more
+            initTimelineViewMore();
+        })();
+    </script>
+</body>
+
+</html>

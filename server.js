@@ -46,7 +46,7 @@ hbs.registerHelper("gt", function (a, b) {
 });
 
 app.get("/", (req, res) => {
-  res.redirect("/4");
+  res.redirect("/6");
 });
 
 app.get("/1", (req, res) => {
@@ -67,6 +67,10 @@ app.get("/4", (req, res) => {
 
 app.get("/5", (req, res) => {
   res.render("5", data);
+});
+
+app.get("/6", (req, res) => {
+  res.render("6", data);
 });
 
 app.listen(3001, () =>
