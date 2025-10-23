@@ -18,7 +18,6 @@
     {{else}}
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
     {{/if}}
-    <script src="https://unpkg.com/feather-icons"></script>
 
     <style>
         :root {
@@ -41,7 +40,6 @@
             color: var(--color-dark);
             background-color: #ffffff;
             overflow-x: hidden;
-            cursor: none;
         }
 
         .font-primary {
@@ -68,6 +66,7 @@
 
         /* Custom Cursor */
         .cursor {
+            display: none;
             position: fixed;
             width: 10px;
             height: 10px;
@@ -79,6 +78,7 @@
         }
 
         .cursor-follower {
+            display: none;
             position: fixed;
             width: 32px;
             height: 32px;
@@ -315,18 +315,18 @@
                     aria-label="Main navigation">
                     <div class="flex items-center gap-3">
                         <span
+                        id="header-logo-badge"
                             class="h-[35px] leading-[35px] w-[35px] bg-[var(--color-primary)] text-center rounded-full font-secondary font-semibold text-base tracking-tight">TED</span>
                     </div>
                     <a href="#contact"
+                    id="header-contact-link"
                         class="relative flex items-center gap-1 px-4 py-1 bg-transparent rounded-lg font-semibold text-sm text-[var(--color-primary)] backdrop-blur-[10px] overflow-hidden transition-all duration-300 uppercase tracking-wider hover:text-white hover:border-[var(--color-primary)] hover:-translate-y-0.5 active:translate-y-0 group"
                         aria-label="Contact Ted Pietka">
                         <div
                             class="absolute inset-0 bg-[#535353] opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-[1]">
                         </div>
-                        <div class="relative z-[2] flex items-center gap-2">
-                            <i data-feather="mail"
-                                class="w-6 h-6 transition-transform duration-300 group-hover:translate-x-0.5 header-icon"></i>
-                            <!-- <span>Contact</span> -->
+                        <div class="relative z-[2] flex items-center gap-2 ">
+                            <span>Contact</span> 
                         </div>
                     </a>
                 </nav>
@@ -433,25 +433,9 @@
                             <div
                                 class="absolute top-0 left-0 w-full h-0.5 bg-[var(--color-primary)] -translate-x-full group-hover:translate-x-0 transition-transform duration-[400ms]">
                             </div>
-                            <div class="flex items-center gap-4 mb-6">
-                                <i data-feather="trending-up" class="w-8 h-8 text-[var(--color-primary-dark)]"></i>
-                            </div>
                             <h3 class="text-xl md:text-2xl font-medium text-[var(--color-dark)] mb-4">Value Creation & Growth</h3>
                             <p class="text-gray-600 leading-relaxed m-0">Driving sustainable business expansion through
                                 strategy, innovation, and disciplined execution.</p>
-                        </div>
-                        <div class="p-6 sm:p-8 md:p-10 border border-gray-200 rounded-[20px] bg-white transition-all duration-[400ms] hover:-translate-y-2 hover:border-[var(--color-accent)/20] relative overflow-hidden group"
-                            data-category="capital">
-                            <div
-                                class="absolute top-0 left-0 w-full h-0.5 bg-[var(--color-primary)] -translate-x-full group-hover:translate-x-0 transition-transform duration-[400ms]">
-                            </div>
-                            <div class="flex items-center gap-4 mb-6">
-                                <i data-feather="dollar-sign" class="w-8 h-8 text-[var(--color-primary-dark)]"></i>
-                            </div>
-                            <h3 class="text-xl md:text-2xl font-medium text-[var(--color-dark)] mb-4">Capital Raising & Investor Access
-                            </h3>
-                            <p class="text-gray-600 leading-relaxed m-0">Connecting businesses with global investors and
-                                structuring high-value funding rounds.</p>
                         </div>
                     </div>
                 </div>
@@ -487,7 +471,6 @@
                                 <a href="#"
                                     class="inline-flex items-center gap-2 text-[var(--color-primary-dark)] font-medium text-sm hover:gap-3 transition-all duration-300">
                                     <span>View Case Study</span>
-                                    <i data-feather="arrow-right" class="w-4 h-4"></i>
                                 </a>
                             </div>
                         </div>
@@ -604,7 +587,6 @@
                                             class="text-xl font-semibold text-[var(--color-dark)] mb-2 group-hover:text-[var(--color-primary-dark)] transition-colors duration-300">
                                             MBA in Finance</h3>
                                         <div class="flex items-center gap-2 text-gray-600">
-                                            <i data-feather="map-pin" class="w-4 h-4"></i>
                                             <span class="text-base font-medium">London Business School</span>
                                         </div>
                                     </div>
@@ -677,8 +659,8 @@
                             class="contact-card flex items-center gap-4 sm:gap-5 md:gap-6 p-5 sm:p-6 md:p-8 border border-gray-200 rounded-[20px] bg-white transition-all duration-300 hover:-translate-y-1 hover:border-[var(--color-accent)/20] hover:shadow-lg cursor-pointer no-underline group">
                             <div
                                 class="w-12 h-12 border border-gray-200 rounded-full flex items-center justify-center flex-shrink-0 transition-colors duration-300 group-hover:border-[var(--color-primary)] group-hover:bg-[var(--color-primary)/5]">
-                                <i data-feather="mail"
-                                    class="w-5 h-5 text-[var(--color-primary-dark)] transition-colors duration-300 group-hover:text-[var(--color-primary)]"></i>
+                                {{!-- <i data-feather="mail"
+                                    class="w-5 h-5 text-[var(--color-primary-dark)] transition-colors duration-300 group-hover:text-[var(--color-primary)]"></i> --}}
                             </div>
                             <div class="flex flex-col gap-1">
                                 <span class="text-sm text-gray-600 font-medium">Email</span>
@@ -716,10 +698,14 @@
             function initCustomCursor() {
                 if (window.innerWidth <= 768 || prefersReducedMotion) return;
 
+                document.body.style.cursor = 'none';
                 const cursor = document.querySelector('.cursor');
                 const cursorFollower = document.querySelector('.cursor-follower');
 
                 if (!cursor || !cursorFollower) return;
+
+                cursor.style.display = 'block';
+                cursorFollower.style.display = 'block';
 
                 let mouseX = 0;
                 let mouseY = 0;
@@ -768,13 +754,6 @@
                         cursorFollower.style.borderColor = rgba(30, 86, 160, 0.3);
                     });
                 });
-            }
-
-            // Initialize Feather Icons
-            function initFeatherIcons() {
-                if (typeof feather !== 'undefined') {
-                    feather.replace();
-                }
             }
 
             // Intersection Observer for scroll reveals
@@ -832,10 +811,12 @@
                 });
             }
 
-            // Header scroll effects
+           // Header scroll effects
             function initHeaderEffects() {
                 const header = document.querySelector('header[role="banner"]');
-                const headerIcon = document.querySelector('.header-icon');
+                const contactButton = document.getElementById('header-contact-link');
+                const logoBadge = document.getElementById('header-logo-badge');
+
                 if (!header) return;
 
                 let lastScrollY = 0;
@@ -845,22 +826,33 @@
                     const scrollY = window.pageYOffset;
 
                     if (scrollY > 50) {
-                        header.style.background = rgba(255, 255, 255, 0.98);
+                        header.style.background = 'rgba(255, 255, 255, 0.98)';
                         header.style.backdropFilter = 'blur(10px)';
-                        header.style.boxShadow = `0 1px 3px rgba(0, 0, 0, 0.1)`;
+                        header.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
 
-                        // Change icon color to dark when header is white
-                        if (headerIcon) {
-                            headerIcon.style.color = getColor('dark');
+                        // Change contact button color to dark
+                        if (contactButton) {
+                            contactButton.style.color = getColor('dark');
                         }
+                        // Change logo badge to dark background and light text
+                        if (logoBadge) {
+                            logoBadge.style.backgroundColor = getColor('dark');
+                            logoBadge.style.color = getColor('primary-light');
+                        }
+
                     } else {
                         header.style.background = 'transparent';
                         header.style.backdropFilter = 'blur(0)';
                         header.style.boxShadow = 'none';
 
-                        // Reset icon color to primary when header is transparent
-                        if (headerIcon) {
-                            headerIcon.style.color = getColor('primary');
+                        // Reset contact button color
+                        if (contactButton) {
+                            contactButton.style.color = getColor('primary');
+                        }
+                        // Reset logo badge colors
+                        if (logoBadge) {
+                            logoBadge.style.backgroundColor = getColor('primary');
+                            logoBadge.style.color = getColor('dark');
                         }
                     }
 
@@ -948,10 +940,6 @@
 
             // Error handling for external resources
             function handleResourceErrors() {
-                if (typeof feather === 'undefined') {
-                    console.warn('Feather Icons not loaded. Icons may not display correctly.');
-                }
-
                 document.addEventListener('error', (e) => {
                     if (e.target.tagName === 'IMG') {
                         console.warn('Image failed to load:', e.target.src);
@@ -996,8 +984,6 @@
 
             // Initialize everything when DOM is ready
             function init() {
-                // Core functionality
-                initFeatherIcons();
                 initScrollReveal();
                 initSmoothScrolling();
                 initHeaderEffects();
@@ -1022,13 +1008,6 @@
                 init();
             }
 
-            // Re-initialize Feather icons when they load
-            window.addEventListener('load', () => {
-                if (typeof feather !== 'undefined') {
-                    feather.replace();
-                }
-            });
-
             // Handle resize events
             const debouncedResize = debounce(() => {
                 // Reinitialize cursor on resize
@@ -1038,100 +1017,6 @@
             }, 250);
 
             window.addEventListener('resize', debouncedResize, { passive: true });
-
-            // WhatsApp direct link functionality
-            function initWhatsAppLink() {
-                const whatsappCard = document.getElementById('whatsappCard');
-
-                if (!whatsappCard) return;
-
-                // WhatsApp number (replace with actual number)
-                const whatsappNumber = '971501234567'; // UAE format
-                const whatsappMessage = 'Hello Ted, I would like to connect with you.';
-                const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
-
-                // Open WhatsApp directly when clicking the entire card
-                whatsappCard.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    window.open(whatsappUrl, '_blank');
-                });
-
-                // Add keyboard accessibility
-                whatsappCard.setAttribute('tabindex', '0');
-                whatsappCard.setAttribute('role', 'link');
-                whatsappCard.setAttribute('aria-label', 'Connect on WhatsApp');
-
-                whatsappCard.addEventListener('keydown', (e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        window.open(whatsappUrl, '_blank');
-                    }
-                });
-            }
-
-            // Initialize WhatsApp link
-            initWhatsAppLink();
-
-            // Timeline View More functionality
-            function initTimelineViewMore() {
-                const viewMoreBtn = document.getElementById('viewMoreBtn');
-                const viewMoreText = document.getElementById('viewMoreText');
-                const viewMoreIcon = document.getElementById('viewMoreIcon');
-                const timelineItems = document.querySelectorAll('.timeline-item');
-
-                if (!viewMoreBtn || timelineItems.length === 0) return;
-
-                let isExpanded = false;
-
-                viewMoreBtn.addEventListener('click', function () {
-                    isExpanded = !isExpanded;
-
-                    timelineItems.forEach((item, index) => {
-                        if (isExpanded) {
-                            // Show items with slide down animation
-                            item.style.maxHeight = '0';
-                            item.style.opacity = '0';
-                            item.style.overflow = 'hidden';
-                            item.style.transition = 'max-height 0.5s ease, opacity 0.5s ease, margin 0.5s ease';
-                            item.classList.remove('hidden');
-
-                            // Trigger reflow
-                            void item.offsetHeight;
-
-                            // Animate in with stagger
-                            setTimeout(() => {
-                                item.style.maxHeight = '500px';
-                                item.style.opacity = '1';
-                            }, index * 100);
-                        } else {
-                            // Hide items with slide up animation
-                            item.style.maxHeight = '0';
-                            item.style.opacity = '0';
-                            item.style.marginBottom = '0';
-
-                            setTimeout(() => {
-                                item.classList.add('hidden');
-                                item.style.maxHeight = '';
-                                item.style.opacity = '';
-                                item.style.overflow = '';
-                                item.style.marginBottom = '';
-                            }, 500);
-                        }
-                    });
-
-                    // Update button text and icon
-                    viewMoreText.textContent = isExpanded ? 'View Less' : 'View More';
-                    viewMoreIcon.style.transform = isExpanded ? 'rotate(180deg)' : 'rotate(0deg)';
-
-                    // Re-initialize feather icons for the chevron
-                    if (typeof feather !== 'undefined') {
-                        feather.replace();
-                    }
-                });
-            }
-
-            // Initialize timeline view more
-            initTimelineViewMore();
         })();
     </script>
 </body>
