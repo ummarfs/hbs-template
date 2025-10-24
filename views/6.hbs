@@ -23,12 +23,12 @@
         :root {
         --font-primary: {{ default fontPicker.value.fontPicker.primary.family 'Inter' }};
         --font-secondary: {{ default fontPicker.value.fontPicker.secondary.family 'Manrope' }};
-        --color-primary: {{ default colorPicker.value.colorPicker.primary '#ede8d0' }};
-        --color-primary-dark: {{ default colorPicker.value.colorPicker.primary-dark '#aca47d' }};
-        --color-primary-light: {{ default colorPicker.value.colorPicker.primary-light '#f4f3ec' }};
-        --color-dark: {{ default colorPicker.value.colorPicker.dark '#2E2E2E' }};
-        --color-accent: {{ default colorPicker.value.colorPicker.accent '#1E56A0' }};
-        --color-cursor: {{ default colorPicker.value.colorPicker.cursor '#c9a802' }};
+        --color-primary: {{ default colorPalette.value.colorPalette.primary '#ede8d0' }};
+        --color-primary-dark: {{ default colorPalette.value.colorPalette.primary-dark '#aca47d' }};
+        --color-primary-light: {{ default colorPalette.value.colorPalette.primary-light '#f4f3ec' }};
+        --color-dark: {{ default colorPalette.value.colorPalette.dark '#2E2E2E' }};
+        --color-accent: {{ default colorPalette.value.colorPalette.accent '#1E56A0' }};
+        --color-cursor: {{ default colorPalette.value.colorPalette.cursor '#c9a802' }};
         }
 
         html {
@@ -334,7 +334,7 @@
                             class="absolute inset-0 bg-[#535353] opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-[1]">
                         </div>
                         <div class="relative z-[2] flex items-center gap-2 ">
-                            <span>{{default contacts.value.contacts.navbarName 'Contact'}}</span> 
+                            <span>{{default social.value.social.navbarName 'Contact'}}</span> 
                         </div>
                     </a>
                 </nav>
@@ -412,12 +412,12 @@
                             <div
                                 class="relative w-full md:w-96 md:h-96 rounded-2xl overflow-hidden border-4 border-white shadow-xl">
                                 {{#if about.value.about.image}}
-                                <img src="{{about.value.about.image}}" class="w-full h-full object-cover" />
+                                <img src="{{about.value.about.image}}" alt="about image" class="w-full h-full object-cover" />
                                 {{else}}
                                 {{#if personal_info.value.profilePicureUrl}}
-                                <img src="{{personal_info.value.profilePicureUrl}}" class="w-full h-full object-cover" />
+                                <img src="{{personal_info.value.profilePicureUrl}}" alt="profile pic" class="w-full h-full object-cover" />
                                 {{else}}
-                                <img src="https://vise-page.s3.us-east-1.amazonaws.com/asset/image-1760421874209-faceless-male-silhouette-in-suit--t3chat--1.png"  class="w-full h-full object-cover" />
+                                <img alt="default image" src="https://vise-page.s3.us-east-1.amazonaws.com/asset/image-1760421874209-faceless-male-silhouette-in-suit--t3chat--1.png"  class="w-full h-full object-cover" />
                                 {{/if}}
                                 {{/if}}
                             </div>
@@ -531,8 +531,7 @@
                 <div class="pt-20 relative border-t border-gray-200 section-wrapper"  data-edit-section="client_logos"
                     data-section="client_logos"
                     data-title="Client Logos">
-                    <div class="text-sm text-gray-600 font-medium uppercase tracking-[0.1em] mb-12 text-center">{{default client_logos.value.client_logos.section_title 'Trusted
-                    By'}}</div>
+                    <div class="text-sm text-gray-600 font-medium uppercase tracking-[0.1em] mb-12 text-center">{{default client_logos.value.client_logos.section_title 'Trusted By'}}</div>
                     <div class="overflow-hidden relative">
                         <div
                             class="absolute top-0 bottom-0 left-0 w-[100px] bg-gradient-to-r from-[var(--color-primary-light)] to-transparent z-[2] pointer-events-none">
@@ -716,19 +715,23 @@
                 </div>
                 <div class="max-w-[800px]">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        {{#each social.value.social.items}}
-                        <a href="{{this.url}}" target="_blank" rel="noopener noreferrer"
-                            class="contact-card flex items-center gap-4 sm:gap-5 md:gap-6 p-5 sm:p-6 md:p-8 border border-gray-200 rounded-[20px] bg-white transition-all duration-300 hover:-translate-y-1 hover:border-[var(--color-accent)/20] hover:shadow-lg cursor-pointer no-underline group">
-                            <div
-                                class="w-12 h-12 border border-gray-200 rounded-full flex items-center justify-center flex-shrink-0 transition-colors duration-300 group-hover:border-[var(--color-primary)] group-hover:bg-[var(--color-primary)/5]">
-                                {{socialIcon url=this.url
-                                label=this.label size=40 className="size-12"}}
-                            </div>
-                            <div class="flex flex-col gap-1">
-                                <span class="text-sm text-gray-600 font-medium">{{this.label}}</span>
-                            </div>
-                        </a>
-                        {{/each}}
+                {{#each social.value.social.items}}
+                <a href="{{this.url}}" target="_blank" rel="noopener noreferrer" class="contact-card flex items-center justify-between gap-4 p-6 border border-gray-200 rounded-2xl 
+                               bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg 
+                               hover:border-[var(--color-accent)/20] no-underline group">
+                
+                    <span class="text-base font-semibold text-gray-900 transition-colors 
+                                     group-hover:text-[var(--color-accent)]">
+                        {{this.label}}
+                    </span>
+                
+                    <span class="text-xl font-normal text-gray-400 transition-all duration-300 
+                                     group-hover:text-[var(--color-accent)] group-hover:translate-x-1">
+                        &rarr;
+                    </span>
+                
+                </a>
+                {{/each}}
                     </div>
                 </div>
             </div>
