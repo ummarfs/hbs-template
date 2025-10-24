@@ -301,8 +301,11 @@
     <!-- Main Content -->
     <main id="main-content">
         <!-- Hero Section -->
-        <section class="min-h-screen flex flex-col justify-center relative py-10 px-4 sm:px-6 md:px-10 overflow-hidden"
-            role="banner">
+        <section class="min-h-screen flex flex-col justify-center relative py-10 px-4 sm:px-6 md:px-10 overflow-hidden section-wrapper"
+            role="banner" 
+            data-edit-section="personal_info"
+            data-section="personal_info"
+            data-title="Personal Info">
             <!-- Background Image -->
             <img src="{{default personal_info.value.coverImage 'https://images.unsplash.com/photo-1706801484143-9cc962a0e033?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1374'}}" alt="Ted Pietka Background"
                 class="absolute inset-0 w-full h-full object-cover object-[80%_center] -z-10" />
@@ -365,7 +368,9 @@
                     {{!-- Key Stats --}}
                     {{#if stats.value.stats.items}}
                     {{#unless stats.meta.hide}}
-                    <div class="flex items-center gap-6 opacity-0 animate-[fadeInUp_1s_ease_1.1s_forwards]">
+                    <div class="flex items-center gap-6 opacity-0 animate-[fadeInUp_1s_ease_1.1s_forwards] section-wrapper" data-edit-section="stats"
+                            data-section="stats"
+                            data-title="Stats">
                         {{#each stats.value.stats.items}}
                         <div class="flex flex-col items-center">
                             <span class="font-secondary text-2xl font-medium text-[var(--color-primary)] leading-none">{{this.number}}</span>
@@ -383,7 +388,9 @@
         <!-- About Section -->
         {{#if about.value.about.content}}
         {{#unless about.meta.hide}}
-        <section class="py-16 sm:py-20 md:py-24 lg:py-[120px] px-4 sm:px-6 md:px-10 relative bg-white" id="about">
+        <section class="py-16 sm:py-20 md:py-24 lg:py-[120px] px-4 sm:px-6 md:px-10 relative bg-white section-wrapper" id="about"  data-edit-section="about"
+                    data-section="about"
+                    data-title="About Me">
             <div
                 class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[350px_1fr] gap-4 sm:gap-12 md:gap-16 items-start">
                 <div class="lg:sticky lg:top-[140px]">
@@ -427,8 +434,10 @@
         <!-- Services Section -->
         {{#if services.value.services.items}}
         {{#unless services.meta.hide}}
-        <section class="py-16 sm:py-20 md:py-24 lg:py-[120px] px-4 sm:px-6 md:px-10 relative bg-[var(--color-primary-light)]"
-            id="value">
+        <section class="py-16 sm:py-20 md:py-24 lg:py-[120px] px-4 sm:px-6 md:px-10 relative bg-[var(--color-primary-light)] section-wrapper"
+            id="value"   data-edit-section="services"
+                    data-section="services"
+                    data-title="Services">
             <div
                 class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[350px_1fr] gap-8 sm:gap-12 md:gap-16 lg:gap-20 items-start">
                 <div class="lg:sticky lg:top-[140px]">
@@ -454,7 +463,9 @@
         <!-- Projects-->
         {{#if projects.value.projects.items}}
         {{#unless projects.meta.hide}}
-        <section class="py-16 sm:py-20 md:py-24 lg:py-[120px] px-4 sm:px-6 md:px-10 relative bg-white" id="projects">
+        <section class="py-16 sm:py-20 md:py-24 lg:py-[120px] px-4 sm:px-6 md:px-10 relative bg-white section-wrapper" id="projects"  data-edit-section="projects"
+                    data-section="projects"
+                    data-title="Projects">
             <div
                 class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[350px_1fr] gap-8 sm:gap-12 md:gap-16 lg:gap-20 items-start">
                 <div class="lg:sticky lg:top-[140px]">
@@ -495,7 +506,9 @@
         <!-- Achievements Section -->
         {{#if achievements.value.achievements.items}}
         {{#unless achievements.meta.hide}}
-        <section class="py-[120px] bg-[var(--color-primary-light)] px-10 relative" id="achievements">
+        <section class="py-[120px] bg-[var(--color-primary-light)] px-10 relative section-wrapper" id="achievements"  data-edit-section="achievements"
+                    data-section="achievements"
+                    data-title="Achievements">
             <div class="max-w-7xl mx-auto px-10 relative z-[1]">
                 <div class="text-center mb-20">
                     <h2
@@ -515,7 +528,9 @@
                 <!-- Client Logos -->
                 {{#if client_logos.value.client_logos.items}}
                 {{#unless client_logos.meta.hide}}
-                <div class="pt-20 relative border-t border-gray-200">
+                <div class="pt-20 relative border-t border-gray-200 section-wrapper"  data-edit-section="client_logos"
+                    data-section="client_logos"
+                    data-title="Client Logos">
                     <div class="text-sm text-gray-600 font-medium uppercase tracking-[0.1em] mb-12 text-center">{{default client_logos.value.client_logos.section_title 'Trusted
                     By'}}</div>
                     <div class="overflow-hidden relative">
@@ -555,7 +570,9 @@
         <!-- Experience Section -->
         {{#if experiences.value.experiences.items}}
         {{#unless experiences.meta.hide}}
-        <section class="py-16 sm:py-20 md:py-24 lg:py-[120px] px-4 sm:px-6 md:px-10 relative bg-white" id="timeline">
+        <section class="py-16 sm:py-20 md:py-24 lg:py-[120px] px-4 sm:px-6 md:px-10 relative bg-white section-wrapper" id="timeline" data-edit-section="experiences"
+    data-section="experiences"
+    data-title="Experience">
             <div
                 class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[350px_1fr] gap-8 sm:gap-12 md:gap-16 lg:gap-20 items-start">
                 <div class="lg:sticky lg:top-[140px]">
@@ -593,8 +610,11 @@
         <!-- Education Section -->
         {{#if educations.value.educations.items}}
         {{#unless educations.meta.hide}}
-        <section class="py-16 sm:py-20 md:py-24 lg:py-[120px] px-4 sm:px-6 md:px-10 relative bg-[var(--color-primary-light)]"
-            id="education">
+        <section class="py-16 sm:py-20 md:py-24 lg:py-[120px] px-4 sm:px-6 md:px-10 relative bg-[var(--color-primary-light)] section-wrapper"
+            id="education"
+             data-edit-section="educations"
+                    data-section="educations"
+                    data-title="Education">
             <div
                 class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[350px_1fr] gap-8 sm:gap-12 md:gap-16 lg:gap-20 items-start">
                 <div class="lg:sticky lg:top-[140px]">
@@ -642,8 +662,10 @@
         <!-- Testimonials Section -->
         {{#if testimonials.value.testimonials.items}}
         {{#unless testimonials.meta.hide}}
-        <section class="py-16 sm:py-20 md:py-24 lg:py-[120px] px-4 sm:px-6 md:px-10 relative bg-white"
-            id="testimonials">
+        <section class="py-16 sm:py-20 md:py-24 lg:py-[120px] px-4 sm:px-6 md:px-10 relative bg-white section-wrapper"
+            id="testimonials"  data-edit-section="testimonials"
+                    data-section="testimonials"
+                    data-title="Testimonials">
             <div
                 class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[350px_1fr] gap-8 sm:gap-12 md:gap-16 lg:gap-20 items-start">
                 <div class="lg:sticky lg:top-[140px]">
@@ -682,7 +704,9 @@
         <!-- Contact Section -->
         {{#if social.value.social.items}}
         {{#unless social.meta.hide}}
-        <section class="py-[120px] bg-[var(--color-primary-light)] px-10 relative" id="contact">
+        <section class="py-[120px] bg-[var(--color-primary-light)] px-10 relative section-wrapper" id="contact" data-edit-section="social"
+                    data-section="social"
+                    data-title="Social Links">
             <div
                 class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[350px_1fr] gap-8 sm:gap-12 md:gap-16 lg:gap-20 items-start">
                 <div class="lg:sticky lg:top-[140px]">
