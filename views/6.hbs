@@ -529,10 +529,10 @@
                 <!-- Client Logos -->
                 {{#if client_logos.value.client_logos.items}}
                 {{#unless client_logos.meta.hide}}
-                <div class="pt-20 relative border-t border-gray-200 section-wrapper"  data-edit-section="client_logos"
-                    data-section="client_logos"
-                    data-title="Client Logos">
-                    <div class="text-sm text-gray-600 font-medium uppercase tracking-[0.1em] mb-12 text-center">{{default client_logos.value.client_logos.section_title 'Trusted By'}}</div>
+                <div class="pt-20 relative border-t border-gray-200 section-wrapper" data-edit-section="client_logos"
+                    data-section="client_logos" data-title="Client Logos">
+                    <div class="text-sm text-gray-600 font-medium uppercase tracking-[0.1em] mb-12 text-center">{{default
+                        client_logos.value.client_logos.section_title 'Trusted By'}}</div>
                     <div class="overflow-hidden relative">
                         <div
                             class="absolute top-0 bottom-0 left-0 w-[100px] bg-gradient-to-r from-[var(--color-primary-light)] to-transparent z-[2] pointer-events-none">
@@ -548,7 +548,7 @@
                                     class="h-7 w-auto opacity-70 grayscale hover:opacity-90 hover:grayscale-0 transition-all duration-300" />
                             </div>
                             {{/each}}
-                           
+                
                             <!-- Duplicate for seamless loop -->
                             {{#each client_logos.value.client_logos.items}}
                             <div
@@ -557,15 +557,62 @@
                                     class="h-7 w-auto opacity-70 grayscale hover:opacity-90 hover:grayscale-0 transition-all duration-300" />
                             </div>
                             {{/each}}
+                
+                            {{#each client_logos.value.client_logos.items}}
+                            <div
+                                class="py-3 px-5 bg-white border border-gray-200 rounded-md transition-all duration-300 hover:bg-gray-50 hover:-translate-y-0.5 hover:shadow-md flex-shrink-0">
+                                <img src="{{this.url}}"
+                                    class="h-7 w-auto opacity-70 grayscale hover:opacity-90 hover:grayscale-0 transition-all duration-300" />
+                            </div>
+                            {{/each}}
+                
+                            {{#each client_logos.value.client_logos.items}}
+                            <div
+                                class="py-3 px-5 bg-white border border-gray-200 rounded-md transition-all duration-300 hover:bg-gray-50 hover:-translate-y-0.5 hover:shadow-md flex-shrink-0">
+                                <img src="{{this.url}}"
+                                    class="h-7 w-auto opacity-70 grayscale hover:opacity-90 hover:grayscale-0 transition-all duration-300" />
+                            </div>
+                            {{/each}}
+                
+                            {{#each client_logos.value.client_logos.items}}
+                            <div
+                                class="py-3 px-5 bg-white border border-gray-200 rounded-md transition-all duration-300 hover:bg-gray-50 hover:-translate-y-0.5 hover:shadow-md flex-shrink-0">
+                                <img src="{{this.url}}"
+                                    class="h-7 w-auto opacity-70 grayscale hover:opacity-90 hover:grayscale-0 transition-all duration-300" />
+                            </div>
+                            {{/each}}
+                
+                            {{#each client_logos.value.client_logos.items}}
+                            <div
+                                class="py-3 px-5 bg-white border border-gray-200 rounded-md transition-all duration-300 hover:bg-gray-50 hover:-translate-y-0.5 hover:shadow-md flex-shrink-0">
+                                <img src="{{this.url}}"
+                                    class="h-7 w-auto opacity-70 grayscale hover:opacity-90 hover:grayscale-0 transition-all duration-300" />
+                            </div>
+                            {{/each}}
+                            {{#each client_logos.value.client_logos.items}}
+                            <div
+                                class="py-3 px-5 bg-white border border-gray-200 rounded-md transition-all duration-300 hover:bg-gray-50 hover:-translate-y-0.5 hover:shadow-md flex-shrink-0">
+                                <img src="{{this.url}}"
+                                    class="h-7 w-auto opacity-70 grayscale hover:opacity-90 hover:grayscale-0 transition-all duration-300" />
+                            </div>
+                            {{/each}}
+                            {{#each client_logos.value.client_logos.items}}
+                            <div
+                                class="py-3 px-5 bg-white border border-gray-200 rounded-md transition-all duration-300 hover:bg-gray-50 hover:-translate-y-0.5 hover:shadow-md flex-shrink-0">
+                                <img src="{{this.url}}"
+                                    class="h-7 w-auto opacity-70 grayscale hover:opacity-90 hover:grayscale-0 transition-all duration-300" />
+                            </div>
+                            {{/each}}
+                
                         </div>
                     </div>
                 </div>
                 {{/unless}}
                 {{/if}}
-            </div>
-        </section>
-        {{/unless}}
-        {{/if}}
+                </div>
+                </section>
+                {{/unless}}
+                {{/if}}
 
         <!-- Experience Section -->
         {{#if experiences.value.experiences.items}}
