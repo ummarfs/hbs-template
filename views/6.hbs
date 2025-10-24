@@ -552,14 +552,16 @@
         {{/unless}}
         {{/if}}
 
-        <!-- Timeline Section -->
+        <!-- Experience Section -->
+        {{#if experiences.value.experiences.items}}
+        {{#unless experiences.meta.hide}}
         <section class="py-16 sm:py-20 md:py-24 lg:py-[120px] px-4 sm:px-6 md:px-10 relative bg-white" id="timeline">
             <div
                 class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[350px_1fr] gap-8 sm:gap-12 md:gap-16 lg:gap-20 items-start">
                 <div class="lg:sticky lg:top-[140px]">
                     <h2
                         class="font-secondary font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-none">
-                        Journey</h2>
+                        {{default experiences.value.experiences.section_title 'Journey'}}</h2>
                 </div>
                 <div class="max-w-[800px]">
                     <div class="relative px-10 md:px-20">
@@ -568,6 +570,7 @@
                                 class="absolute top-0 left-0 w-full h-0 bg-[var(--color-primary)] animate-[timelineProgress_2s_ease-out_0.5s_forwards]">
                             </div>
                         </div>
+                        {{#each experiences.value.experiences.items}}
                         <div
                             class="relative mb-10 py-4 px-4 bg-white rounded-lg transition-all duration-[400ms] hover:translate-x-1 hover:border-[var(--color-primary)]">
                             <div
@@ -575,16 +578,21 @@
                             </div>
                             <div
                                 class="font-secondary text-xs font-semibold text-[var(--color-primary-dark)] mb-2 uppercase tracking-wider">
-                                2025–Present</div>
-                            <h3 class="text-xl font-semibold text-[var(--color-dark)] mb-3">CICC Dubai</h3>
-                            <p class="text-gray-600 m-0 leading-relaxed text-sm font-medium">Advisory Board Member</p>
+                                {{this.startDate.year}} - {{#if this.endDate}}{{this.endDate.year}}{{else}}Present{{/if}}</div>
+                            <h3 class="text-xl font-semibold text-[var(--color-dark)] mb-3">{{this.companyName}}</h3>
+                            <p class="text-gray-600 m-0 leading-relaxed text-sm font-medium">{{this.title}}</p>
                         </div>
+                        {{/each}}
                     </div>
                 </div>
             </div>
         </section>
+        {{/unless}}
+        {{/if}}
 
         <!-- Education Section -->
+        {{#if educations.value.educations.items}}
+        {{#unless educations.meta.hide}}
         <section class="py-16 sm:py-20 md:py-24 lg:py-[120px] px-4 sm:px-6 md:px-10 relative bg-[var(--color-primary-light)]"
             id="education">
             <div
@@ -592,27 +600,29 @@
                 <div class="lg:sticky lg:top-[140px]">
                     <h2
                         class="font-secondary font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-none">
-                        Education</h2>
+                        {{default educations.value.educations.section_title 'Education'}}</h2>
                 </div>
                 <div class="max-w-[800px]">
                     <div class="space-y-6">
+                        {{#each educations.value.educations.items}}
                         <div
                             class="group relative overflow-hidden bg-white rounded-xl border border-gray-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
                             <div
                                 class="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)/5]to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             </div>
                             <div class="relative p-4 md:p-6">
+
                                 <div class="flex items-start justify-between gap-4">
                                     <div class="flex-1">
                                         <h3
                                             class="text-xl font-semibold text-[var(--color-dark)] mb-2 group-hover:text-[var(--color-primary-dark)] transition-colors duration-300">
-                                            MBA in Finance</h3>
+                                           {{this.degreeName}}</h3>
                                         <div class="flex items-center gap-2 text-gray-600">
-                                            <span class="text-base font-medium">London Business School</span>
+                                            <span class="text-base font-medium">{{this.schoolName}}</span>
                                         </div>
                                     </div>
                                     <div class="flex-shrink-0 px-4 py-2 bg-[var(--color-primary)/10] rounded-lg">
-                                        <span class="font-secondary text-sm font-bold text-[var(--color-primary-dark)]">1995</span>
+                                        <span class="font-secondary text-sm font-bold text-[var(--color-primary-dark)]">{{#if this.endDate.year}}{{this.endDate.year}}{{else}}Present{{/if}}</span>
                                     </div>
                                 </div>
                             </div>
@@ -620,13 +630,18 @@
                                 class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[var(--color-primary)] via-[var(--color-primary-dark)] to-[var(--color-primary)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300">
                             </div>
                         </div>
+                        {{/each}}
                     </div>
                 </div>
             </div>
         </section>
+        {{/unless}}
+        {{/if}}
 
 
         <!-- Testimonials Section -->
+        {{#if testimonials.value.testimonials.items}}
+        {{#unless testimonials.meta.hide}}
         <section class="py-16 sm:py-20 md:py-24 lg:py-[120px] px-4 sm:px-6 md:px-10 relative bg-white"
             id="testimonials">
             <div
@@ -634,72 +649,75 @@
                 <div class="lg:sticky lg:top-[140px]">
                     <h2
                         class="font-secondary font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-none">
-                        Testimonials</h2>
+                        {{default testimonials.value.testimonials.section_title 'Testimonials'}}</h2>
                 </div>
                 <div class="max-w-[900px]">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <!-- Testimonial 1 -->
+                        {{#each testimonials.value.testimonials.items}}
                         <div
                             class="group relative bg-white p-5 sm:p-6 md:p-8 rounded-xl border border-gray-200 transition-all duration-300 hover:border-[var(--color-primary)] hover:shadow-lg">
-                            <div class="absolute top-6 left-6 text-[var(--color-primary)/20] text-6xl font-serif leading-none">"</div>
+                            <div class="absolute top-6 left-6 text-[var(--color-primary)/20] text-xl font-serif leading-none">"</div>
                             <div class="relative z-10">
-                                <p class="text-gray-700 text-base leading-relaxed mb-6 italic">Ted's strategic vision
-                                    and operational expertise were instrumental in scaling our platform. His ability to
-                                    navigate complex markets and build high-performing teams is exceptional.</p>
+                                <p class="text-gray-700 text-base leading-relaxed mb-6 italic">{{this.recommendationText}}</p>
                                 <div class="flex items-center gap-4 pt-4 border-t border-gray-100">
                                     <div
                                         class="w-12 h-12 rounded-full bg-[var(--color-primary)/50] flex items-center justify-center flex-shrink-0">
-                                        <span class="font-secondary font-semibold text-[var(--color-primary-dark)] text-sm">JK</span>
+                                        <span class="font-secondary font-semibold text-[var(--color-primary-dark)] text-sm">{{firstChar this.recommenderName}}</span>
                                     </div>
                                     <div>
-                                        <div class="font-semibold text-[var(--color-dark)] text-sm">John Kowalski</div>
-                                        <div class="text-gray-500 text-xs">CEO, Tech Ventures Ltd</div>
+                                        <div class="font-semibold text-[var(--color-dark)] text-sm">{{this.recommenderName}}</div>
+                                        <div class="text-gray-500 text-xs">{{this.designation}}</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        {{/each}}
                     </div>
                 </div>
             </div>
         </section>
+        {{/unless}}
+        {{/if}}
 
         <!-- Contact Section -->
+        {{#if social.value.social.items}}
+        {{#unless social.meta.hide}}
         <section class="py-[120px] bg-[var(--color-primary-light)] px-10 relative" id="contact">
             <div
                 class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[350px_1fr] gap-8 sm:gap-12 md:gap-16 lg:gap-20 items-start">
                 <div class="lg:sticky lg:top-[140px]">
-                    <div class="font-secondary text-base font-medium text-[var(--color-primary)] mb-4 opacity-70">05</div>
                     <h2
                         class="font-secondary font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-none">
-                        Connect</h2>
+                        {{default social.value.social.section_title 'Connect'}}</h2>
                 </div>
                 <div class="max-w-[800px]">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <!-- Email Card -->
-                        <a href="mailto:tedpietka@pm.me"
+                        {{#each social.value.social.items}}
+                        <a href="{{this.url}}" target="_blank" rel="noopener noreferrer"
                             class="contact-card flex items-center gap-4 sm:gap-5 md:gap-6 p-5 sm:p-6 md:p-8 border border-gray-200 rounded-[20px] bg-white transition-all duration-300 hover:-translate-y-1 hover:border-[var(--color-accent)/20] hover:shadow-lg cursor-pointer no-underline group">
                             <div
                                 class="w-12 h-12 border border-gray-200 rounded-full flex items-center justify-center flex-shrink-0 transition-colors duration-300 group-hover:border-[var(--color-primary)] group-hover:bg-[var(--color-primary)/5]">
-                                {{!-- <i data-feather="mail"
-                                    class="w-5 h-5 text-[var(--color-primary-dark)] transition-colors duration-300 group-hover:text-[var(--color-primary)]"></i> --}}
+                                {{socialIcon url=this.url
+                                label=this.label size=40 className="size-12"}}
                             </div>
                             <div class="flex flex-col gap-1">
-                                <span class="text-sm text-gray-600 font-medium">Email</span>
-                                <span
-                                    class="font-medium text-[var(--color-dark)] group-hover:text-[var(--color-primary)] transition-colors duration-300">tedpietka@pm.me</span>
+                                <span class="text-sm text-gray-600 font-medium">{{this.label}}</span>
                             </div>
                         </a>
+                        {{/each}}
                     </div>
                 </div>
             </div>
         </section>
+        {{/unless}}
+        {{/if}}
     </main>
 
     <!-- Footer -->
     <footer class="bg-[var(--color-dark)] text-white py-4 md:py-7 px-4 sm:px-6 md:px-10" role="contentinfo">
         <div
             class="max-w-7xl mx-auto flex flex-col md:flex-row justify-center items-center gap-4 text-center md:text-left">
-            <div class="text-sm text-gray-400">© 2025 Ted Pietka. All rights reserved.</div>
+            <div class="text-sm text-gray-400">© {{currentYear}} {{personal_info.value.firstName}} {{personal_info.value.lastName}}. All rights reserved.</div>
         </div>
     </footer>
 
