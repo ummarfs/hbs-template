@@ -3,4 +3,4 @@
 3 = STRATIFY
 4 = PROFOLIo
 5 = pERSONA
-6 = PARAGoN
+6 = aurom
