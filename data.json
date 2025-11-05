@@ -430,12 +430,13 @@
     },
     "value": {
       "colorPalette": {
-        "primary": "#ede8d0",
-        "primary-dark": "#aca47d",
-        "primary-light": "#f4f3ec",
-        "dark": "#2E2E2E",
-        "accent": "#1E56A0",
-        "cursor": "#c9a802"
+        "background": "#083344",
+        "surface": "rgba(17, 94, 119, 0.1)",
+        "accent": "#fdba74",
+        "accent-hover": "#fb923c",
+        "text-primary": "#ffffff",
+        "text-secondary": "rgba(255, 255, 255, 0.8)",
+        "border": "rgba(255, 255, 255, 0.1)"
       }
     }
   },
@@ -643,14 +644,24 @@
     },
     "value": {
       "fontPicker": {
-        "primary": {
-          "url": "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap",
-          "family": "Inter",
+        "heading": {
+          "url": "https://fonts.googleapis.com/css2?family=Forum:wght@400;700&display=swap",
+          "family": "Forum",
+          "category": "serif"
+        },
+        "body": {
+          "url": "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap",
+          "family": "DM Sans",
           "category": "sans-serif"
         },
-        "secondary": {
-          "url": "https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap",
-          "family": "Manrope",
+        "nav": {
+          "url": "https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap",
+          "family": "Poppins",
+          "category": "sans-serif"
+        },
+        "accent": {
+          "url": "https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap",
+          "family": "Raleway",
           "category": "sans-serif"
         }
       }
@@ -664,20 +675,20 @@
       "achievements": {
         "items": [
           {
-           "label": "Banks & Conglomerates Built",
-           "number": "5"
+            "label": "Banks & Conglomerates Built",
+            "number": "5"
           },
           {
-           "label": "Successful Startups Advised",
-           "number": "10"
+            "label": "Successful Startups Advised",
+            "number": "10"
           },
           {
-           "label": "Years of Industry Experience",
-           "number": "15"
+            "label": "Years of Industry Experience",
+            "number": "15"
           },
           {
-           "label": "Countries Served",
-           "number": "8"
+            "label": "Countries Served",
+            "number": "8"
           }
         ],
         "section_title": "Professional Achievements"
