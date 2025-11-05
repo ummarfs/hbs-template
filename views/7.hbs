@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. Evelyn Reed - Integrative Health</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      content: [],
+      theme: {
+        extend: {
+          fontFamily: {
+            times_new_roman: ['Times New Roman'],
+            arial: ['Arial'],
+            open_sans: ['Open Sans', 'sans-serif'],
+            poppins: ['Poppins', 'sans-serif'],
+            forum: ['Forum', 'cursive'],
+            raleway: ['Raleway', 'sans-serif'],
+            dm_sans: ['DM Sans', 'sans-serif']
+          },
+          // For the accordion
+          transitionProperty: {
+            'max-height': 'max-height'
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    @font-face {
+      font-family: 'DM Sans';
+      src: url('https://fonts.gstatic.com/s/dmsans/v17/rP2tp2ywxg089UriI5-g4vlH9VoD8CmcqZG40F9JadbnoEwAopxRSW32.woff2') format("woff2");
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Forum';
+      src: url('https://fonts.gstatic.com/s/forum/v19/6aey4Ky-Vb8Ew8IROpI.woff2') format("woff2");
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Poppins';
+      src: url('https://fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrJJfecg.woff2') format("woff2");
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Raleway';
+      src: url('https://fonts.gstatic.com/s/raleway/v37/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvaorCIPrE.woff2') format("woff2");
+      font-weight: 400;
+      font-style: normal;
+    }
+  </style>
+</head>
+
+<body class="bg-cyan-950 text-white font-dm_sans antialiased">
+
+  <header class="sticky top-0 z-50 bg-cyan-950 bg-opacity-90 backdrop-blur-md border-b border-white/10">
+    <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+
+        <a href="/" class="text-2xl font-forum tracking-[2px]">
+          Dr. Evelyn Reed
+        </a>
+
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="#about"
+            class="text-sm font-poppins tracking-wider uppercase hover:text-orange-300 transition-colors">About</a>
+          <a href="#services"
+            class="text-sm font-poppins tracking-wider uppercase hover:text-orange-300 transition-colors">Services</a>
+          <a href="#clinic"
+            class="text-sm font-poppins tracking-wider uppercase hover:text-orange-300 transition-colors">Clinic</a>
+          <a href="#testimonials"
+            class="text-sm font-poppins tracking-wider uppercase hover:text-orange-300 transition-colors">Testimonials</a>
+          <a href="#faq"
+            class="text-sm font-poppins tracking-wider uppercase hover:text-orange-300 transition-colors">FAQ</a>
+          <a href="#contact"
+            class="font-raleway text-sm font-semibold text-orange-300 border border-orange-300/40 rounded-lg px-6 py-3 hover:bg-orange-300 hover:text-cyan-950 transition-colors">
+            Book Appointment
+          </a>
+        </div>
+
+        <button id="menu-button" class="md:hidden p-2 rounded-md hover:bg-white/10 transition-colors"
+          aria-label="Toggle menu" aria-expanded="false">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        </button>
+
+      </div>
+    </nav>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-cyan-950 border-t border-white/10">
+      <div class="flex flex-col space-y-4 p-6">
+        <a href="#about"
+          class="block text-sm font-poppins tracking-wider uppercase hover:text-orange-300 transition-colors">About</a>
+        <a href="#services"
+          class="block text-sm font-poppins tracking-wider uppercase hover:text-orange-300 transition-colors">Services</a>
+        <a href="#clinic"
+          class="block text-sm font-poppins tracking-wider uppercase hover:text-orange-300 transition-colors">Clinic</a>
+        <a href="#testimonials"
+          class="block text-sm font-poppins tracking-wider uppercase hover:text-orange-300 transition-colors">Testimonials</a>
+        <a href="#faq"
+          class="block text-sm font-poppins tracking-wider uppercase hover:text-orange-300 transition-colors">FAQ</a>
+        <a href="#contact"
+          class="block text-center mt-4 font-raleway text-sm font-semibold text-orange-300 border border-orange-300/40 rounded-lg px-6 py-3 hover:bg-orange-300 hover:text-cyan-950 transition-colors">
+          Book Appointment
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="min-h-screen flex items-center justify-center text-center -mt-20 py-20">
+      <div class="max-w-4xl mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-forum tracking-wide text-white/90" data-aos="fade-up">
+          Welcome to the Practice of Dr. Evelyn Reed
+        </h2>
+        <h1 class="text-5xl sm:text-6xl md:text-7xl font-forum tracking-wide text-orange-300 mt-4" data-aos="fade-up"
+          data-aos-delay="200">
+          YOUR PARTNER IN HEALTH & WELLNESS
+        </h1>
+      </div>
+    </section>
+
+    <section class="h-96 bg-cover bg-fixed bg-center"
+      style="background-image: url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=2370&q=80');">
+    </section>
+
+    <section id="about" class="py-24 sm:py-32">
+      <div class="max-w-3xl mx-auto px-4 text-center" data-aos="fade-up">
+        <h2 class="text-4xl md:text-5xl font-forum tracking-wide text-orange-300">
+          Our Philosophy of Care
+        </h2>
+        <div class="text-base md:text-lg text-white/80 leading-relaxed space-y-6 mt-8">
+          <p>
+            Our practice is built on the philosophy that true wellness comes from a balance of mind, body, and spirit.
+            We provide a welcoming, modern environment where you are heard, respected, and empowered to take an active
+            role in your health journey.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 sm:py-32 bg-cyan-900/10">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center" data-aos="fade-up">
+          <div data-aos="zoom-in">
+            <img
+              src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2370&q=80"
+              alt="Dr. Evelyn Reed" class="rounded-lg shadow-2xl object-cover w-full h-full">
+          </div>
+          <div data-aos="fade-left" data-aos-delay="200">
+            <h2 class="text-4xl md:text-5xl font-forum tracking-wide text-orange-300">
+              Meet Dr. Evelyn Reed
+            </h2>
+            <p class="text-base md:text-lg text-white/80 leading-relaxed mt-6">
+              Dr. Evelyn Reed is a board-certified specialist in integrative health, dedicated to providing
+              patient-centered care that addresses the whole person. With over 15 years of experience, she combines
+              conventional medicine with evidence-based holistic therapies to help you achieve optimal health.
+            </p>
+            <ul class="space-y-4 mt-8 text-white/80">
+              <li class="flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="w-5 h-5 mr-3 text-orange-300 flex-shrink-0">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                </svg>
+                Board-Certified in Integrative Medicine
+              </li>
+              <li class="flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="w-5 h-5 mr-3 text-orange-300 flex-shrink-0">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                </svg>
+                MD from Cornell University Medical College
+              </li>
+              <li class="flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="w-5 h-5 mr-3 text-orange-300 flex-shrink-0">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                </svg>
+                Residency at NewYork-Presbyterian Hospital
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-48 bg-cover bg-fixed bg-center text-center"
+      style="background-image: url('https://images.unsplash.com/photo-1576091160550-2173dba999ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2370&q=80');">
+      <div class="max-w-4xl mx-auto px-4" data-aos="fade-in" data-aos-duration="1000">
+        <h1 class="text-5xl sm:text-6xl md:text-7xl font-forum tracking-wide">
+          ADVANCED SOLUTIONS, PERSONALIZED CARE
+        </h1>
+        <h4 class="text-xl md:text-2xl font-dm_sans tracking-wide mt-4">
+          Integrative Health Specialist, New York
+        </h4>
+      </div>
+    </section>
+
+    <section id="approach" class="py-24 sm:py-32">
+      <div class="max-w-6xl mx-auto px-4" data-aos="fade-up">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
+
+          <div class="md:col-span-1 mb-12 md:mb-0">
+            <h1 class="text-5xl sm:text-6xl font-forum text-orange-300 leading-tight text-center md:text-left">
+              OUR COMMITMENT TO YOUR HEALTH
+            </h1>
+          </div>
+
+          <div class="md:col-span-2">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-12">
+              <div class="text-center" data-aos="zoom-in" data-aos-delay="100">
+                <h3 class="text-5xl font-forum text-orange-300">Flexible</h3>
+                <p class="text-sm font-dm_sans text-white/80 mt-2">Scheduling</p>
+              </div>
+              <div class="text-center" data-aos="zoom-in" data-aos-delay="200">
+                <h3 class="text-5xl font-forum text-orange-300">Expert</h3>
+                <p class="text-sm font-dm_sans text-white/80 mt-2">Medical Staff</p>
+              </div>
+              <div class="text-center" data-aos="zoom-in" data-aos-delay="300">
+                <h3 class="text-5xl font-forum text-orange-300">Patient</h3>
+                <p class="text-sm font-dm_sans text-white/80 mt-2">First Approach</p>
+              </div>
+              <div class="text-center" data-aos="zoom-in" data-aos-delay="400">
+                <h3 class="text-5xl font-forum text-orange-300">Holistic</h3>
+                <p class="text-sm font-dm_sans text-white/80 mt-2">Care Plans</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="py-24 sm:py-32 bg-cyan-900/10">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-4xl md:text-5xl font-forum tracking-wide text-orange-300 text-center mb-16" data-aos="fade-up">
+          Our Services
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+          <div class="border border-white/10 rounded-lg p-8" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="text-2xl font-forum text-orange-300 mb-4">Primary Care</h3>
+            <p class="text-white/70 leading-relaxed">
+              Comprehensive health services for all ages, including routine check-ups, chronic disease management, and
+              acute illness care.
+            </p>
+          </div>
+
+          <div class="border border-white/10 rounded-lg p-8" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="text-2xl font-forum text-orange-300 mb-4">Preventative Health</h3>
+            <p class="text-white/70 leading-relaxed">
+              Proactive wellness plans, including nutritional counseling, fitness guidance, and advanced health
+              screenings to prevent illness.
+            </p>
+          </div>
+
+          <div class="border border-white/10 rounded-lg p-8" data-aos="fade-up" data-aos-delay="300">
+            <h3 class="text-2xl font-forum text-orange-300 mb-4">Telehealth Services</h3>
+            <p class="text-white/70 leading-relaxed">
+              Convenient virtual consultations from the comfort of your home, ensuring you get the care you need, when
+              you need it.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="clinic" class="py-24 sm:py-32">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-4xl md:text-5xl font-forum tracking-wide text-orange-300 text-center mb-16" data-aos="fade-up">
+          Clinic Gallery
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+          <div class="overflow-hidden rounded-lg shadow-lg" data-aos="zoom-in" data-aos-delay="100">
+            <img
+              src="https://images.unsplash.com/photo-1551192017-e940a1a4481c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2370&q=80"
+              alt="Clinic Lobby"
+              class="w-full h-64 object-cover hover:scale-110 transition-transform duration-300 ease-in-out" />
+          </div>
+          <div class="overflow-hidden rounded-lg shadow-lg" data-aos="zoom-in" data-aos-delay="200">
+            <img
+              src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2264&q=80"
+              alt="Friendly Staff"
+              class="w-full h-64 object-cover hover:scale-110 transition-transform duration-300 ease-in-out" />
+          </div>
+          <div class="overflow-hidden rounded-lg shadow-lg" data-aos="zoom-in" data-aos-delay="300">
+            <img
+              src="https://images.unsplash.com/photo-1578496479903-71f652a276b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2370&q=80"
+              alt="Exam Room"
+              class="w-full h-64 object-cover hover:scale-110 transition-transform duration-300 ease-in-out" />
+          </div>
+          <div class="overflow-hidden rounded-lg shadow-lg" data-aos="zoom-in" data-aos-delay="100">
+            <img
+              src="https://images.unsplash.com/photo-1517836357463-d25afe037e95?ixlib=rb-4.0.3&auto=format&fit=crop&w=2370&q=80"
+              alt="Wellness and Fitness"
+              class="w-full h-64 object-cover hover:scale-110 transition-transform duration-300 ease-in-out" />
+          </div>
+          <div class="overflow-hidden rounded-lg shadow-lg" data-aos="zoom-in" data-aos-delay="200">
+            <img
+              src="https://images.unsplash.com/photo-1628348070889-cb656235b4eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=2370&q=80"
+              alt="Modern Technology"
+              class="w-full h-64 object-cover hover:scale-110 transition-transform duration-300 ease-in-out" />
+          </div>
+          <div class="overflow-hidden rounded-lg shadow-lg" data-aos="zoom-in" data-aos-delay="300">
+            <img
+              src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2370&q=80"
+              alt="Patient Consultation"
+              class="w-full h-64 object-cover hover:scale-110 transition-transform duration-300 ease-in-out" />
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="py-24 sm:py-32 bg-cyan-900/10">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-4xl md:text-5xl font-forum tracking-wide text-orange-300 text-center mb-16" data-aos="fade-up">
+          What Our Patients Say
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+          <div class="bg-cyan-950 border border-white/10 rounded-lg p-8" data-aos="fade-up" data-aos-delay="100">
+            <p class="text-white/80 leading-relaxed italic">
+              "Dr. Reed is the first doctor who truly listened to me. Her integrative approach has made a profound
+              difference in my health where others failed."
+            </p>
+            <p class="font-semibold text-orange-300 mt-6">- Sarah J.</p>
+          </div>
+
+          <div class="bg-cyan-950 border border-white/10 rounded-lg p-8" data-aos="fade-up" data-aos-delay="200">
+            <p class="text-white/80 leading-relaxed italic">
+              "The entire clinic is professional, warm, and welcoming. I finally feel like I have a true partner in my
+              health journey. I can't recommend this practice enough."
+            </p>
+            <p class="font-semibold text-orange-300 mt-6">- Michael B.</p>
+          </div>
+
+          <div class="bg-cyan-950 border border-white/10 rounded-lg p-8" data-aos="fade-up" data-aos-delay="300">
+            <p class="text-white/80 leading-relaxed italic">
+              "Booking an appointment was easy, and the telehealth service is incredibly convenient. Dr. Reed is
+              patient, thorough, and highly knowledgeable."
+            </p>
+            <p class="font-semibold text-orange-300 mt-6">- Emily K.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="py-24 sm:py-32">
+      <div class="max-w-3xl mx-auto px-4">
+        <h2 class="text-4xl md:text-5xl font-forum tracking-wide text-orange-300 text-center mb-16" data-aos="fade-up">
+          Frequently Asked Questions
+        </h2>
+        <div class="space-y-6" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="border-b border-white/10">
+            <button data-accordion-button class="w-full flex justify-between items-center text-left py-5">
+              <span class="text-lg font-semibold text-white/90">What insurance plans do you accept?</span>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor" class="w-6 h-6 text-orange-300 transition-transform duration-300 transform">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+              </svg>
+            </button>
+            <div data-accordion-answer class="max-h-0 overflow-hidden transition-max-height duration-500 ease-in-out">
+              <p class="pb-5 pr-10 text-white/70 leading-relaxed">
+                We accept a wide range of plans, including Aetna, Cigna, Blue Cross Blue Shield, and UnitedHealthcare.
+                Please call our office with your specific insurance details to confirm coverage.
+              </p>
+            </div>
+          </div>
+
+          <div class="border-b border-white/10">
+            <button data-accordion-button class="w-full flex justify-between items-center text-left py-5">
+              <span class="text-lg font-semibold text-white/90">What should I bring to my first appointment?</span>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor" class="w-6 h-6 text-orange-300 transition-transform duration-300 transform">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+              </svg>
+            </button>
+            <div data-accordion-answer class="max-h-0 overflow-hidden transition-max-height duration-500 ease-in-out">
+              <p class="pb-5 pr-10 text-white/70 leading-relaxed">
+                Please bring your photo ID, insurance card, a list of any current medications (including supplements),
+                and any relevant medical records or test results you may have.
+              </p>
+            </div>
+          </div>
+
+          <div class="border-b border-white/10">
+            <button data-accordion-button class="w-full flex justify-between items-center text-left py-5">
+              <span class="text-lg font-semibold text-white/90">Do you offer same-day appointments?</span>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor" class="w-6 h-6 text-orange-300 transition-transform duration-300 transform">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+              </svg>
+            </button>
+            <div data-accordion-answer class="max-h-0 overflow-hidden transition-max-height duration-500 ease-in-out">
+              <p class="pb-5 pr-10 text-white/70 leading-relaxed">
+                We reserve a limited number of slots for same-day acute care appointments for existing patients. Please
+                call our office as early in the day as possible to check for availability.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="py-24 sm:py-32 bg-cyan-900/10">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center" data-aos="fade-up">
+
+          <div data-aos="zoom-in">
+            <img
+              src="https://px-s3-img.pixpa.com/com/large/627114/627114-1651243627-florian-schmidinger-b-79noqf95i-unsplash.jpg?auto=format&fit=crop&w=2370&q=80"
+              alt="Clinic Technology" class="w-full h-full object-cover rounded-lg shadow-lg">
+          </div>
+
+          <form class="space-y-6" data-aos="fade-up">
+            <h2 class="text-4xl md:text-5xl font-forum tracking-wide text-orange-300 mb-8">
+              Request an Appointment
+            </h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label for="first-name" class="block text-sm font-medium text-white/80 mb-2">First Name *</label>
+                <input type="text" id="first-name" name="first-name" required
+                  class="block w-full bg-transparent border border-white/20 rounded-lg p-3 focus:ring-orange-300 focus:border-orange-300 transition-colors">
+              </div>
+              <div>
+                <label for="last-name" class="block text-sm font-medium text-white/80 mb-2">Last Name *</label>
+                <input type="text" id="last-name" name="last-name" required
+                  class="block w-full bg-transparent border border-white/20 rounded-lg p-3 focus:ring-orange-300 focus:border-orange-300 transition-colors">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label for="email" class="block text-sm font-medium text-white/80 mb-2">Email *</label>
+                <input type="email" id="email" name="email" required
+                  class="block w-full bg-transparent border border-white/20 rounded-lg p-3 focus:ring-orange-300 focus:border-orange-300 transition-colors">
+              </div>
+              <div>
+                <label for="phone" class="block text-sm font-medium text-white/80 mb-2">Phone</label>
+                <input type="tel" id="phone" name="phone"
+                  class="block w-full bg-transparent border border-white/20 rounded-lg p-3 focus:ring-orange-300 focus:border-orange-300 transition-colors">
+              </div>
+            </div>
+
+            <div>
+              <label for="date" class="block text-sm font-medium text-white/80 mb-2">Preferred Date</label>
+              <input type="date" id="date" name="date"
+                class="block w-full bg-transparent border border-white/20 rounded-lg p-3 focus:ring-orange-300 focus:border-orange-300 transition-colors"
+                style="color-scheme: dark;">
+            </div>
+
+            <div>
+              <label for="message" class="block text-sm font-medium text-white/80 mb-2">Message *</label>
+              <textarea id="message" name="message" rows="4" required
+                placeholder="Briefly describe the reason for your visit..."
+                class="block w-full bg-transparent border border-white/20 rounded-lg p-3 focus:ring-orange-300 focus:border-orange-300 transition-colors placeholder:text-white/30"></textarea>
+            </div>
+
+            <div>
+              <button type="submit"
+                class="w-full font-raleway text-base font-bold text-cyan-950 bg-orange-300 rounded-lg px-8 py-4 hover:bg-orange-400 transition-colors">
+                Request Appointment
+              </button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 sm:py-32">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
+
+          <div data-aos="fade-up" data-aos-delay="100">
+            <div class="flex justify-center md:justify-start">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-10 h-10 text-orange-300">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-forum text-orange-300 mt-6 mb-4">Address</h3>
+            <p class="text-white/70 leading-relaxed">
+              123 Wellness Way, Suite 400<br>New York, NY 10001
+            </p>
+          </div>
+
+          <div data-aos="fade-up" data-aos-delay="200">
+            <div class="flex justify-center md:justify-start">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-10 h-10 text-orange-300">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-2.892-1.46-5.17-3.743-6.63-6.63l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 6.75Z" />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-forum text-orange-300 mt-6 mb-4">Contact Us</h3>
+            <p class="text-white/70 leading-relaxed">
+              Phone: (212) 555-0123<br>Email: info@drreed.com
+            </p>
+          </div>
+
+          <div data-aos="fade-up" data-aos-delay="300">
+            <div class="flex justify-center md:justify-start">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-10 h-10 text-orange-300">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-forum text-orange-300 mt-6 mb-4">Opening Hours</h3>
+            <ul class="text-white/70 leading-relaxed space-y-1">
+              <li>Monday - Thursday: 9:00 AM - 5:00 PM</li>
+              <li>Friday: 9:00 AM - 3:00 PM</li>
+              <li>Saturday & Sunday: Closed</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="h-[450px] md:h-[550px]">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3000.77661604858!2d-71.954200684579!3d41.008433979300!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e8ac014f526b77%3A0x438f46e50868f6b!2sLake%20Montauk!5e0!3m2!1sen!2sus!4v1678886400000!5m2!1sen!2sus"
+        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </section>
+
+  </main>
+
+  <footer class="py-12 border-t border-white/10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:flex sm:justify-between sm:items-center">
+      <p class="text-sm text-white/60">
+        © 2025 Dr. Evelyn Reed, MD. All rights reserved.
+      </p>
+      <div class="flex justify-center space-x-6 mt-4 sm:mt-0">
+        <a href="#" class="text-white/60 hover:text-orange-300 transition-colors" aria-label="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <rect x="2" y="9" width="4" height="12"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+        </a>
+        <a href="#" class="text-white/60 hover:text-orange-300 transition-colors" aria-label="Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 700,
+      once: true,
+      offset: 100
+    });
+
+    // Mobile Menu & Accordion
+    document.addEventListener('DOMContentLoaded', () => {
+      // Mobile Menu
+      const menuButton = document.getElementById('menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileNavLinks = mobileMenu.querySelectorAll('a');
+
+      menuButton.addEventListener('click', () => {
+        const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+        menuButton.setAttribute('aria-expanded', !isExpanded);
+        mobileMenu.classList.toggle('hidden');
+      });
+
+      mobileNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          menuButton.setAttribute('aria-expanded', 'false');
+          mobileMenu.classList.add('hidden');
+        });
+      });
+
+      // Accordion
+      const accordionButtons = document.querySelectorAll('[data-accordion-button]');
+
+      accordionButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const answer = button.nextElementSibling;
+          const icon = button.querySelector('svg');
+
+          if (answer.style.maxHeight) {
+            // Close
+            answer.style.maxHeight = null;
+            icon.classList.remove('rotate-45');
+          } else {
+            // Open
+            answer.style.maxHeight = answer.scrollHeight + 'px';
+            icon.classList.add('rotate-45');
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+
+</html>
