@@ -239,7 +239,13 @@
         "messageInputLabel": "What's your biggest business challenge right now?",
         "navbarName": "Work With Me",
         "addressText": "00 Terry Francine St. San Francisco, CA 94158",
-        "bgImage": "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+        "bgImage": "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+        "image": "https://px-s3-img.pixpa.com/com/large/627114/627114-1651243627-florian-schmidinger-b-79noqf95i-unsplash.jpg?auto=format&fit=crop&w=2370&q=80",
+        "messageInputPlaceholder": "Briefly describe the reason for your visit...",
+        "openingHours": [
+          "Monday - Thursday: 9:00 AM - 5:00 PM",
+          "Friday: 9:00 AM - 3:00 PM"
+        ]
       }
     }
   },
@@ -702,20 +708,11 @@
     "value": {
       "gallery": {
         "items": [
-          {
-            "url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
-            "caption": "Team Collaboration"
-          },
-          {
-            "url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
-            "caption": "Innovative Solutions"
-          },
-          {
-            "url": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
-            "caption": "Strategic Planning"
-          }
+          "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+          "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+          "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
         ],
-        "section_title": "Gallery",
+        "section_title": "Clinic Gallery",
         "navbarName": "Gallery"
       }
     }
@@ -737,23 +734,61 @@
     },
     "value": {
       "banner": {
-        "image":"https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=2370&q=80"
+        "image": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=2370&q=80"
       }
     }
   },
-  "practitioner":{
+  "practitioner": {
     "meta": {
       "hide": false
     },
     "value": {
       "practitioner": {
-        "section_title":"Meet Dr. Evelyn Reed",
-        "image":"https://images.unsplash.com/photo-1537368910025-700350fe46c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2370&q=80",
-        "content":"Dr. Evelyn Reed is a board-certified specialist in integrative health, dedicated to providing patient-centered care that addresses the whole person. With over 15 years of experience, she combines conventional medicine with evidence-based holistic therapies to help you achieve optimal health.",
-        "achievements":[
+        "section_title": "Meet Dr. Evelyn Reed",
+        "image": "https://images.unsplash.com/photo-1537368910025-700350fe46c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2370&q=80",
+        "content": "Dr. Evelyn Reed is a board-certified specialist in integrative health, dedicated to providing patient-centered care that addresses the whole person. With over 15 years of experience, she combines conventional medicine with evidence-based holistic therapies to help you achieve optimal health.",
+        "achievements": [
           "Board-Certified in Integrative Medicine",
           "MD from Cornell University Medical College"
         ]
+      }
+    }
+  },
+  "callout_banner": {
+    "meta": {
+      "hide": false
+    },
+    "value": {
+      "callout_banner": {
+        "title": "ADVANCED SOLUTIONS, PERSONALIZED CARE",
+        "subtitle": "Integrative Health Specialist, New York",
+        "image": "https://images.unsplash.com/photo-1544377193-33dcf4d68fb5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2370&q=80"
+      }
+    }
+  },
+  "approach": {
+    "meta": {
+      "hide": false
+    },
+    "value": {
+      "approach": {
+        "section_title": "OUR COMMITMENT TO YOUR HEALTH",
+        "items": [
+          {
+            "text": "Flexible",
+            "subtext": "Scheduling"
+          }
+        ]
+      }
+    }
+  },
+  "map": {
+    "meta": {
+      "hide": false
+    },
+    "value": {
+      "map": {
+        "url":"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3000.77661604858!2d-71.954200684579!3d41.008433979300!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e8ac014f526b77%3A0x438f46e50868f6b!2sLake%20Montauk!5e0!3m2!1sen!2sus!4v1678886400000!5m2!1sen!2sus"
       }
     }
   }
