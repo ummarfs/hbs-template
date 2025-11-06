@@ -694,5 +694,67 @@
         "section_title": "Professional Achievements"
       }
     }
+  },
+  "gallery": {
+    "meta": {
+      "hide": false
+    },
+    "value": {
+      "gallery": {
+        "items": [
+          {
+            "url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+            "caption": "Team Collaboration"
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+            "caption": "Innovative Solutions"
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+            "caption": "Strategic Planning"
+          }
+        ],
+        "section_title": "Gallery",
+        "navbarName": "Gallery"
+      }
+    }
+  },
+  "hero": {
+    "meta": {
+      "hide": false
+    },
+    "value": {
+      "hero": {
+        "subheading": "Welcome to the Practice of Dr. Evelyn Reed",
+        "heading": "YOUR PARTNER IN HEALTH & WELLNESS"
+      }
+    }
+  },
+  "banner": {
+    "meta": {
+      "hide": false
+    },
+    "value": {
+      "banner": {
+        "image":"https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=2370&q=80"
+      }
+    }
+  },
+  "practitioner":{
+    "meta": {
+      "hide": false
+    },
+    "value": {
+      "practitioner": {
+        "section_title":"Meet Dr. Evelyn Reed",
+        "image":"https://images.unsplash.com/photo-1537368910025-700350fe46c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2370&q=80",
+        "content":"Dr. Evelyn Reed is a board-certified specialist in integrative health, dedicated to providing patient-centered care that addresses the whole person. With over 15 years of experience, she combines conventional medicine with evidence-based holistic therapies to help you achieve optimal health.",
+        "achievements":[
+          "Board-Certified in Integrative Medicine",
+          "MD from Cornell University Medical College"
+        ]
+      }
+    }
   }
 }

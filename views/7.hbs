@@ -81,24 +81,48 @@
       <div class="flex justify-between items-center h-20">
 
         <a href="/" class="text-2xl font-heading tracking-[2px]">
-          Dr. Evelyn Reed
+          {{personal_info.value.firstName}} {{personal_info.value.lastName}}
         </a>
 
         <div class="hidden md:flex items-center space-x-8">
+          {{#if about.value.about.content}}
+          {{#unless about.meta.hide}}
           <a href="#about"
-            class="text-sm font-nav tracking-wider uppercase hover:text-[var(--accent)] transition-colors">About</a>
+            class="text-sm font-nav tracking-wider uppercase hover:text-[var(--accent)] transition-colors">{{default about.value.about.navbarName 'About'}}</a>
+          {{/unless}}
+          {{/if}}
+          {{#if services.value.services.items}}
+          {{#unless services.meta.hide}}
           <a href="#services"
-            class="text-sm font-nav tracking-wider uppercase hover:text-[var(--accent)] transition-colors">Services</a>
-          <a href="#clinic"
-            class="text-sm font-nav tracking-wider uppercase hover:text-[var(--accent)] transition-colors">Clinic</a>
+            class="text-sm font-nav tracking-wider uppercase hover:text-[var(--accent)] transition-colors">{{default services.value.services.navbarName 'Services'}}</a>
+          {{/unless}}
+          {{/if}}
+            {{#if gallery.value.gallery.items}}
+            {{#unless gallery.meta.hide}}
+          <a href="#gallery"
+            class="text-sm font-nav tracking-wider uppercase hover:text-[var(--accent)] transition-colors">{{default gallery.value.gallery.navbarName 'Gallery'}}</a>
+            {{/unless}}
+            {{/if}}
+            {{#if testimonials.value.testimonials.items}}
+            {{#unless testimonials.meta.hide}}
           <a href="#testimonials"
-            class="text-sm font-nav tracking-wider uppercase hover:text-[var(--accent)] transition-colors">Testimonials</a>
+            class="text-sm font-nav tracking-wider uppercase hover:text-[var(--accent)] transition-colors">{{default testimonials.value.testimonials.navbarName 'Testimonials'}}</a>
+            {{/unless}}
+            {{/if}}
+            {{#if faq.value.faq.items}}
+            {{#unless faq.meta.hide}}
           <a href="#faq"
-            class="text-sm font-nav tracking-wider uppercase hover:text-[var(--accent)] transition-colors">FAQ</a>
+            class="text-sm font-nav tracking-wider uppercase hover:text-[var(--accent)] transition-colors">{{default faq.value.faq.navbarName 'FAQ'}}</a>
+            {{/unless}}
+            {{/if}}
+            {{#if contacts.value.contacts}}
+            {{#unless contacts.meta.hide}}
           <a href="#contact"
             class="font-accent text-sm font-semibold text-[var(--accent)] border border-[var(--accent)] rounded-lg px-6 py-3 hover:bg-[var(--accent)] hover:text-[var(--background)] transition-colors">
-            Book Appointment
+            {{default contacts.value.contacts.buttonText 'Book Appointment'}}
           </a>
+          {{/unless}}
+          {{/if}}
         </div>
 
         <button id="menu-button" class="md:hidden p-2 rounded-md hover:bg-[var(--border)] transition-colors"
@@ -114,101 +138,151 @@
 
     <div id="mobile-menu" class="hidden md:hidden bg-[var(--background)] border-t border-[var(--border)]">
       <div class="flex flex-col space-y-4 p-6">
+        {{#if about.value.about.content}}
+        {{#unless about.meta.hide}}
         <a href="#about"
-          class="block text-sm font-nav tracking-wider uppercase hover:text-[var(--accent)] transition-colors">About</a>
+          class="block text-sm font-nav tracking-wider uppercase hover:text-[var(--accent)] transition-colors">{{default about.value.about.navbarName 'About'}}</a>
+        {{/unless}}
+        {{/if}}
+        {{#if services.value.services.items}}
+        {{#unless services.meta.hide}}
         <a href="#services"
-          class="block text-sm font-nav tracking-wider uppercase hover:text-[var(--accent)] transition-colors">Services</a>
-        <a href="#clinic"
-          class="block text-sm font-nav tracking-wider uppercase hover:text-[var(--accent)] transition-colors">Clinic</a>
+          class="block text-sm font-nav tracking-wider uppercase hover:text-[var(--accent)] transition-colors">{{default services.value.services.navbarName 'Services'}}</a>
+        {{/unless}}
+        {{/if}}
+        {{#if gallery.value.gallery.items}}
+        {{#unless gallery.meta.hide}}
+        <a href="#gallery"
+          class="block text-sm font-nav tracking-wider uppercase hover:text-[var(--accent)] transition-colors">{{default gallery.value.gallery.navbarName 'Gallery'}}</a>
+        {{/unless}}
+        {{/if}}
+        {{#if testimonials.value.testimonials.items}}
+        {{#unless testimonials.meta.hide}}
         <a href="#testimonials"
-          class="block text-sm font-nav tracking-wider uppercase hover:text-[var(--accent)] transition-colors">Testimonials</a>
+          class="block text-sm font-nav tracking-wider uppercase hover:text-[var(--accent)] transition-colors">{{default testimonials.value.testimonials.navbarName 'Testimonials'}}</a>
+        {{/unless}}
+        {{/if}}
+        {{#if faq.value.faq.items}}
+        {{#unless faq.meta.hide}}
         <a href="#faq"
-          class="block text-sm font-nav tracking-wider uppercase hover:text-[var(--accent)] transition-colors">FAQ</a>
+          class="block text-sm font-nav tracking-wider uppercase hover:text-[var(--accent)] transition-colors">{{default faq.value.faq.navbarName 'FAQ'}}</a>
+        {{/unless}}
+        {{/if}}
+        {{#if contacts.value.contacts}}
+        {{#unless contacts.meta.hide}}
         <a href="#contact"
           class="block text-center mt-4 font-accent text-sm font-semibold text-[var(--accent)] border border-[var(--accent)] rounded-lg px-6 py-3 hover:bg-[var(--accent)] hover:text-[var(--background)] transition-colors">
-          Book Appointment
+        {{default contacts.value.contacts.buttonText 'Book Appointment'}}
         </a>
+        {{/unless}}
+        {{/if}}
       </div>
     </div>
   </header>
 
   <main>
 
+    {{#if hero.value.hero}}
+    {{#unless hero.meta.hide}}
     <section class="min-h-screen flex items-center justify-center text-center -mt-20 py-20">
       <div class="max-w-4xl mx-auto px-4">
         <h2 class="text-3xl md:text-4xl font-heading tracking-wide text-[var(--text-secondary)]" data-aos="fade-up">
-          Welcome to the Practice of Dr. Evelyn Reed
+          {{#if hero.value.hero.subheading}}
+          {{hero.value.hero.subheading}}
+          {{else}}
+          Welcome to the Practice of {{personal_info.value.firstName}} {{personal_info.value.lastName}}
+          {{/if}}
         </h2>
         <h1 class="text-5xl sm:text-6xl md:text-7xl font-heading tracking-wide text-[var(--accent)] mt-4" data-aos="fade-up"
           data-aos-delay="200">
-          YOUR PARTNER IN HEALTH & WELLNESS
+          {{default hero.value.hero.heading 'YOUR PARTNER IN HEALTH & WELLNESS'}}
         </h1>
       </div>
     </section>
+    {{/unless}}
+    {{/if}}
 
+   {{#if banner.value.banner}}
+   {{#unless banner.meta.hide}}
     <section class="h-96 bg-cover bg-fixed bg-center"
-      style="background-image: url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=2370&q=80');">
+      style="background-image: url('{{default banner.value.banner.image 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=2370&q=80'}}');">
     </section>
+    {{/unless}}
+    {{/if}}
 
+{{#if about.value.about.content}}
+{{#unless about.meta.hide}}
     <section id="about" class="py-24 sm:py-32">
       <div class="max-w-3xl mx-auto px-4 text-center" data-aos="fade-up">
         <h2 class="text-4xl md:text-5xl font-heading tracking-wide text-[var(--accent)]">
-          Our Philosophy of Care
+        {{default about.value.about.section_title 'Our Philosophy of Care'}}
         </h2>
         <div class="text-base md:text-lg text-[var(--text-secondary)] leading-relaxed space-y-6 mt-8">
           <p>
-            Our practice is built on the philosophy that true wellness comes from a balance of mind, body, and spirit.
+            {{!-- Our practice is built on the philosophy that true wellness comes from a balance of mind, body, and spirit.
             We provide a welcoming, modern environment where you are heard, respected, and empowered to take an active
-            role in your health journey.
+            role in your health journey. --}}
+            {{about.value.about.content}}
           </p>
         </div>
       </div>
     </section>
+    {{/unless}}
+    {{/if}}
 
+    {{#if practitioner.value.practitioner.content}}
+    {{#unless practitioner.meta.hide}}
     <section class="py-24 sm:py-32 bg-[var(--surface)]">
       <div class="max-w-6xl mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center" data-aos="fade-up">
           <div data-aos="zoom-in">
+            {{#if practitioner.value.practitioner.image}}
             <img
-              src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2370&q=80"
+              src="{{practitioner.value.practitioner.image}}"
               alt="Dr. Evelyn Reed" class="rounded-lg shadow-2xl object-cover w-full h-full">
+              {{else}}
+              {{#if personal_info.value.profilePicureUrl}}
+              <img src="{{personal_info.value.profilePicureUrl}}"
+                alt="Dr. Evelyn Reed" class="rounded-lg shadow-2xl object-cover w-full h-full">
+                {{else}}
+                <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2370&q=80"
+                  alt="Dr. Evelyn Reed" class="rounded-lg shadow-2xl object-cover w-full h-full">
+                  {{/if}}
+                  {{/if}}
           </div>
           <div data-aos="fade-left" data-aos-delay="200">
             <h2 class="text-4xl md:text-5xl font-heading tracking-wide text-[var(--accent)]">
-              Meet Dr. Evelyn Reed
+              {{#if practitioner.value.practitioner.section_title}}
+             {{practitioner.value.practitioner.section_title}}
+              {{else}}
+              Meet {{personal_info.value.firstName}} {{personal_info.value.lastName}}
+              {{/if}}
             </h2>
             <p class="text-base md:text-lg text-[var(--text-secondary)] leading-relaxed mt-6">
-              Dr. Evelyn Reed is a board-certified specialist in integrative health, dedicated to providing
+              {{practitioner.value.practitioner.content}}
+              {{!-- Dr. Evelyn Reed is a board-certified specialist in integrative health, dedicated to providing
               patient-centered care that addresses the whole person. With over 15 years of experience, she combines
-              conventional medicine with evidence-based holistic therapies to help you achieve optimal health.
+              conventional medicine with evidence-based holistic therapies to help you achieve optimal health. --}}
             </p>
+            {{#if practitioner.value.practitioner.achievements}}
             <ul class="space-y-4 mt-8 text-[var(--text-secondary)]">
+              {{#each practitioner.value.practitioner.achievements}}
               <li class="flex items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                   stroke="currentColor" class="w-5 h-5 mr-3 text-[var(--accent)] flex-shrink-0">
                   <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
                 </svg>
-                Board-Certified in Integrative Medicine
+                {{this}}
               </li>
-              <li class="flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                  stroke="currentColor" class="w-5 h-5 mr-3 text-[var(--accent)] flex-shrink-0">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                </svg>
-                MD from Cornell University Medical College
-              </li>
-              <li class="flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                  stroke="currentColor" class="w-5 h-5 mr-3 text-[var(--accent)] flex-shrink-0">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                </svg>
-                Residency at NewYork-Presbyterian Hospital
-              </li>
+              {{/each}}
             </ul>
+            {{/if}}
           </div>
         </div>
       </div>
     </section>
+    {{/unless}}
+    {{/if}}
 
     <section class="py-48 bg-cover bg-fixed bg-center text-center"
       style="background-image: url('https://images.unsplash.com/photo-1576091160550-2173dba999ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2370&q=80');">
@@ -275,7 +349,7 @@
       </div>
     </section>
 
-    <section id="clinic" class="py-24 sm:py-32">
+    <section id="gallery" class="py-24 sm:py-32">
       <div class="max-w-6xl mx-auto px-4">
         <h2 class="text-4xl md:text-5xl font-heading tracking-wide text-[var(--accent)] text-center mb-16" data-aos="fade-up">
           Clinic Gallery
@@ -340,7 +414,7 @@
 
           <div class="bg-[var(--background)] border border-[var(--border)] rounded-lg p-8" data-aos="fade-up" data-aos-delay="200">
             <p class="text-[var(--text-secondary)] leading-relaxed italic">
-              "The entire clinic is professional, warm, and welcoming. I finally feel like I have a true partner in my
+              "The entire gallery is professional, warm, and welcoming. I finally feel like I have a true partner in my
               health journey. I can't recommend this practice enough."
             </p>
             <p class="font-semibold text-[var(--accent)] mt-6">- Michael B.</p>
