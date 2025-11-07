@@ -9,6 +9,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 {{#if fontPicker.value.fontPicker.heading}}
 <link href="{{fontPicker.value.fontPicker.heading.url}}" rel="stylesheet">
@@ -30,8 +31,6 @@
 {{else}}
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
 {{/if}}
-
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <style>
     :root {
@@ -79,11 +78,13 @@
   <header class="sticky top-0 z-50 bg-[var(--background)] bg-opacity-90 backdrop-blur-md border-b border-[var(--border)]">
     <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-20">
-
-        <a href="/" class="text-2xl font-heading tracking-[2px]">
-          {{personal_info.value.firstName}} {{personal_info.value.lastName}}
-        </a>
-
+        <section class="section-wrapper" data-edit-section="personal_info"
+  data-section="personal_info" data-title="Name">
+<a href="/" class="text-2xl font-heading tracking-[2px]" >
+  {{personal_info.value.firstName}} {{personal_info.value.lastName}}
+</a>
+        </section>
+       
         <div class="hidden md:flex items-center space-x-8">
           {{#if about.value.about.content}}
           {{#unless about.meta.hide}}
@@ -184,7 +185,9 @@
 
     {{#if hero.value.hero}}
     {{#unless hero.meta.hide}}
-    <section class="min-h-screen flex items-center justify-center text-center -mt-20 py-20">
+    <section class="min-h-screen flex items-center justify-center text-center -mt-20 py-20 section-wrapper"  data-edit-section="hero"
+                    data-section="hero"
+                    data-title="Hero Section">
       <div class="max-w-4xl mx-auto px-4">
         <h2 class="text-3xl md:text-4xl font-heading tracking-wide text-[var(--text-secondary)]" data-aos="fade-up">
           {{#if hero.value.hero.subheading}}
@@ -204,7 +207,10 @@
 
    {{#if banner.value.banner}}
    {{#unless banner.meta.hide}}
-    <section class="h-96 bg-cover bg-fixed bg-center"
+    <section class="h-96 bg-cover bg-fixed bg-center section-wrapper"
+     data-edit-section="banner"
+                    data-section="banner"
+                    data-title="Banner"
       style="background-image: url('{{default banner.value.banner.image 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=2370&q=80'}}');">
     </section>
     {{/unless}}
@@ -212,16 +218,16 @@
 
 {{#if about.value.about.content}}
 {{#unless about.meta.hide}}
-    <section id="about" class="py-24 sm:py-32">
+    <section id="about" class="py-24 sm:py-32 section-wrapper"
+     data-edit-section="about"
+                    data-section="about"
+                    data-title="About">
       <div class="max-w-3xl mx-auto px-4 text-center" data-aos="fade-up">
         <h2 class="text-4xl md:text-5xl font-heading tracking-wide text-[var(--accent)]">
         {{default about.value.about.section_title 'Our Philosophy of Care'}}
         </h2>
         <div class="text-base md:text-lg text-[var(--text-secondary)] leading-relaxed space-y-6 mt-8">
           <p>
-            {{!-- Our practice is built on the philosophy that true wellness comes from a balance of mind, body, and spirit.
-            We provide a welcoming, modern environment where you are heard, respected, and empowered to take an active
-            role in your health journey. --}}
             {{about.value.about.content}}
           </p>
         </div>
@@ -232,7 +238,9 @@
 
     {{#if practitioner.value.practitioner.content}}
     {{#unless practitioner.meta.hide}}
-    <section class="py-24 sm:py-32 bg-[var(--surface)]">
+    <section class="py-24 sm:py-32 bg-[var(--surface)] section-wrapper"  data-edit-section="practitioner"
+                    data-section="practitioner"
+                    data-title="Practitioner">
       <div class="max-w-6xl mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center" data-aos="fade-up">
           <div data-aos="zoom-in">
@@ -260,9 +268,6 @@
             </h2>
             <p class="text-base md:text-lg text-[var(--text-secondary)] leading-relaxed mt-6">
               {{practitioner.value.practitioner.content}}
-              {{!-- Dr. Evelyn Reed is a board-certified specialist in integrative health, dedicated to providing
-              patient-centered care that addresses the whole person. With over 15 years of experience, she combines
-              conventional medicine with evidence-based holistic therapies to help you achieve optimal health. --}}
             </p>
             {{#if practitioner.value.practitioner.achievements}}
             <ul class="space-y-4 mt-8 text-[var(--text-secondary)]">
@@ -285,7 +290,10 @@
     {{/if}}
 
    {{#unless callout_banner.meta.hide}}
-    <section class="py-48 bg-cover bg-fixed bg-center text-center relative"
+    <section class="py-48 bg-cover bg-fixed bg-center text-center relative section-wrapper"
+     data-edit-section="callout_banner"
+                    data-section="callout_banner"
+                    data-title="Callout Banner"
       style="background-image: url('{{default callout_banner.value.callout_banner.image 'https://images.unsplash.com/photo-1544377193-33dcf4d68fb5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2370&q=80'}}');">
       <div class="absolute inset-0 bg-black opacity-50"></div>
       <div class="max-w-4xl mx-auto px-4" data-aos="fade-in" data-aos-duration="1000">
@@ -301,7 +309,9 @@
 
     {{#if approach.value.approach.items}}
     {{#unless approach.meta.hide}}
-    <section id="approach" class="py-24 sm:py-32">
+    <section id="approach" class="py-24 sm:py-32 section-wrapper"  data-edit-section="approach"
+                    data-section="approach"
+                    data-title="Approach">
       <div class="max-w-6xl mx-auto px-4" data-aos="fade-up">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
           <div class="md:col-span-1 mb-12 md:mb-0">
@@ -327,7 +337,9 @@
 
     {{#if services.value.services.items}}
     {{#unless services.meta.hide}}
-    <section id="services" class="py-24 sm:py-32 bg-[var(--surface)]">
+    <section id="services" class="py-24 sm:py-32 bg-[var(--surface)] section-wrapper"  data-edit-section="services"
+                    data-section="services"
+                    data-title="Services">
       <div class="max-w-6xl mx-auto px-4">
         <h2 class="text-4xl md:text-5xl font-heading tracking-wide text-[var(--accent)] text-center mb-16" data-aos="fade-up">
          {{default services.value.services.section_title 'Our Services'}}
@@ -349,7 +361,9 @@
 
     {{#if gallery.value.gallery.items}}
     {{#unless gallery.meta.hide}}
-    <section id="gallery" class="py-24 sm:py-32">
+    <section id="gallery" class="py-24 sm:py-32 section-wrapper" data-edit-section="gallery"
+                    data-section="gallery"
+                    data-title="Gallery">
       <div class="max-w-6xl mx-auto px-4">
         <h2 class="text-4xl md:text-5xl font-heading tracking-wide text-[var(--accent)] text-center mb-16" data-aos="fade-up">
           {{default gallery.value.gallery.section_title 'Clinic Gallery'}}
@@ -358,7 +372,7 @@
          {{#each gallery.value.gallery.items}}
           <div class="overflow-hidden rounded-lg shadow-lg" data-aos="zoom-in" data-aos-delay="100">
             <img
-              src="{{this}}"
+              src="{{this.image}}"
               alt="image {{@index}}"
               class="w-full h-64 object-cover hover:scale-110 transition-transform duration-300 ease-in-out" />
           </div>
@@ -371,7 +385,9 @@
 
     {{#if testimonials.value.testimonials.items}}
     {{#unless testimonials.meta.hide}}
-    <section id="testimonials" class="py-24 sm:py-32 bg-[var(--surface)]/10">
+    <section id="testimonials" class="py-24 sm:py-32 bg-[var(--surface)]/10 section-wrapper"  data-edit-section="testimonials"
+                    data-section="testimonials"
+                    data-title="Testimonials">
       <div class="max-w-6xl mx-auto px-4">
         <h2 class="text-4xl md:text-5xl font-heading tracking-wide text-[var(--accent)] text-center mb-16" data-aos="fade-up">
           {{default testimonials.value.testimonials.section_title 'What Our Patients Say'}}
@@ -393,7 +409,9 @@
 
     {{#if faq.value.faq.items}}
     {{#unless faq.meta.hide}}
-    <section id="faq" class="py-24 sm:py-32">
+    <section id="faq" class="py-24 sm:py-32 section-wrapper"  data-edit-section="faq"
+                    data-section="faq"
+                    data-title="FAQ">
       <div class="max-w-3xl mx-auto px-4">
         <h2 class="text-4xl md:text-5xl font-heading tracking-wide text-[var(--accent)] text-center mb-16" data-aos="fade-up">
           {{default faq.value.faq.section_title 'Frequently Asked Questions'}}
@@ -423,7 +441,9 @@
 
     {{#if contacts.value.contacts.contactForm}}
     {{#unless contacts.meta.hide}}
-    <section id="contact" class="py-24 sm:py-32 bg-[var(--surface)]">
+    <section id="contact" class="py-24 sm:py-32 bg-[var(--surface)] section-wrapper"  data-edit-section="contacts"
+                    data-section="contacts"
+                    data-title="Contacts">
       <div class="max-w-6xl mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center" data-aos="fade-up">
 
@@ -491,15 +511,15 @@
     </section>
     {{/unless}}
     {{/if}}
+
 {{#if contacts.value.contacts}}
 {{#unless contacts.meta.hide}}
-<section class="py-24 sm:py-32">
+<section class="py-24 sm:py-32 section-wrapper" data-edit-section="contacts" data-section="contacts"
+  data-title="Contacts">
   <div class="max-w-6xl mx-auto px-4">
-
-    <div class="flex flex-col md:flex-row flex-wrap justify-center gap-12 text-center md:text-left">
-
+    <div class="flex flex-col md:flex-row justify-center gap-12 text-center md:text-left">
       {{#if contacts.value.contacts.addressText}}
-      <div class="w-full md:max-w-sm" data-aos="fade-up" data-aos-delay="100">
+      <div class="w-full md:w-1/3 md:flex-shrink-0" data-aos="fade-up" data-aos-delay="100">
         <div class="flex justify-center md:justify-start">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
             stroke="currentColor" class="w-10 h-10 text-[var(--accent)]">
@@ -509,14 +529,12 @@
           </svg>
         </div>
         <h3 class="text-2xl font-heading text-[var(--accent)] mt-6 mb-4">Address</h3>
-
         <p class="text-[var(--text-secondary)] leading-relaxed break-words">
           {{contacts.value.contacts.addressText}}
         </p>
       </div>
       {{/if}}
-
-      <div class="w-full md:max-w-sm" data-aos="fade-up" data-aos-delay="200">
+      <div class="w-full md:w-1/3 md:flex-shrink-0" data-aos="fade-up" data-aos-delay="200">
         <div class="flex justify-center md:justify-start">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
             stroke="currentColor" class="w-10 h-10 text-[var(--accent)]">
@@ -525,7 +543,6 @@
           </svg>
         </div>
         <h3 class="text-2xl font-heading text-[var(--accent)] mt-6 mb-4">Contact Us</h3>
-
         <div class="text-[var(--text-secondary)] leading-relaxed space-y-1 break-words">
           {{#if contacts.value.contacts.phone}}
           <p>Phone: {{contacts.value.contacts.phone}}</p>
@@ -535,9 +552,8 @@
           {{/if}}
         </div>
       </div>
-
       {{#if contacts.value.contacts.openingHours}}
-      <div class="w-full md:max-w-sm" data-aos="fade-up" data-aos-delay="300">
+      <div class="w-full md:w-1/3 md:flex-shrink-0" data-aos="fade-up" data-aos-delay="300">
         <div class="flex justify-center md:justify-start">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
             stroke="currentColor" class="w-10 h-10 text-[var(--accent)]">
@@ -552,7 +568,6 @@
         </ul>
       </div>
       {{/if}}
-
     </div>
   </div>
 </section>
@@ -561,9 +576,11 @@
     
     {{#if map.value.map.url}}
     {{#unless map.meta.hide}}
-    <section class="h-[450px] md:h-[550px]">
+    <section class="h-[450px] md:h-[550px] section-wrapper"  data-edit-section="map"
+                    data-section="map"
+                    data-title="Map">
       <iframe
-        src="{{default map.value.map.url 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3000.77661604858!2d-71.954200684579!3d41.008433979300!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e8ac014f526b77%3A0x438f46e50868f6b!2sLake%20Montauk!5e0!3m2!1sen!2sus!4v1678886400000!5m2!1sen!2sus'}}"
+        src="{{map.value.map.url}}"
         width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
         referrerpolicy="no-referrer-when-downgrade">
       </iframe>
@@ -581,7 +598,9 @@
 
       {{#if social.value.social.items}}
       {{#unless social.meta.hide}}
-      <div class="flex justify-center space-x-6 mt-4 sm:mt-0">
+      <div class="flex justify-center space-x-6 mt-4 sm:mt-0 section-wrapper"  data-edit-section="social"
+                    data-section="social"
+                    data-title="Social">
         {{#each social.value.social.items}}
         <a href="{{this.url}}" class="text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors" aria-label="{{this.label}}">
         {{{socialIcon url=this.url
